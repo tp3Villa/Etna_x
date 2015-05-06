@@ -6,7 +6,7 @@ using System.Text;
 using System.Data;
 using ETNA.SGI.Data.Exportacion;
 
-
+//
 
 namespace ETNA.SGI.Bussiness.Exportacion
 {
