@@ -1,0 +1,23 @@
+C:\Users\LAPDIER1\Desktop\UPC\Taller de Proyectos 2\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\LAPDIER1\Desktop\UPC\Taller de Proyectos 2\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\LAPDIER1\Desktop\UPC\Taller de Proyectos 2\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.dll
+C:\Users\LAPDIER1\Desktop\UPC\Taller de Proyectos 2\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.pdb
+C:\Users\User\Desktop\TP2 FINAL PRESENTAR\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\User\Desktop\TP2 FINAL PRESENTAR\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\User\Desktop\TP2 FINAL PRESENTAR\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\TP2 FINAL PRESENTAR\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.dll
+C:\Users\User\Desktop\TP2 FINAL PRESENTAR\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.pdb
+C:\Users\User\Desktop\TP2 Terminar FINAL\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\User\Desktop\TP2 Terminar FINAL\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\User\Desktop\TP2 Terminar FINAL\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.dll
+C:\Users\User\Desktop\TP2 Terminar FINAL\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.pdb
+C:\Users\LAPDIER1\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\LAPDIER1\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\LAPDIER1\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.csprojResolveAssemblyReference.cache
+C:\Users\LAPDIER1\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.dll
+C:\Users\LAPDIER1\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.pdb
+C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.dll
+C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.pdb
