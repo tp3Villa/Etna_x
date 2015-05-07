@@ -1,0 +1,9 @@
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.BusinessEntity\bin\Debug\ETNA.BusinessEntity.dll
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.BusinessEntity\bin\Debug\ETNA.BusinessEntity.pdb
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.BusinessEntity\obj\Debug\ETNA.BusinessEntity.dll
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.BusinessEntity\obj\Debug\ETNA.BusinessEntity.pdb
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.BusinessEntity\bin\Debug\ETNA.BusinessEntity.dll
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.BusinessEntity\bin\Debug\ETNA.BusinessEntity.pdb
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.BusinessEntity\obj\Debug\ETNA.BusinessEntity.dll
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.BusinessEntity\obj\Debug\ETNA.BusinessEntity.pdb
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.BusinessEntity\obj\Debug\ETNA.BusinessEntity.csprojResolveAssemblyReference.cache

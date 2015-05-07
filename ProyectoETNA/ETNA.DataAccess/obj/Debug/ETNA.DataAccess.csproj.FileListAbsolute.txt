@@ -1,0 +1,14 @@
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.DataAccess\obj\Debug\ETNA.DataAccess.csprojResolveAssemblyReference.cache
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.DataAccess\bin\Debug\ETNA.DataAccess.dll
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.DataAccess\bin\Debug\ETNA.DataAccess.pdb
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.DataAccess\bin\Debug\ETNA.BusinessEntity.dll
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.DataAccess\bin\Debug\ETNA.BusinessEntity.pdb
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.DataAccess\obj\Debug\ETNA.DataAccess.dll
+D:\UPC\TP2\Arquitectura\ETNA\ETNA.DataAccess\obj\Debug\ETNA.DataAccess.pdb
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.DataAccess\bin\Debug\ETNA.DataAccess.dll
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.DataAccess\bin\Debug\ETNA.DataAccess.pdb
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.DataAccess\bin\Debug\ETNA.BusinessEntity.dll
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.DataAccess\bin\Debug\ETNA.BusinessEntity.pdb
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.DataAccess\obj\Debug\ETNA.DataAccess.csprojResolveAssemblyReference.cache
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.DataAccess\obj\Debug\ETNA.DataAccess.dll
+D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.DataAccess\obj\Debug\ETNA.DataAccess.pdb
