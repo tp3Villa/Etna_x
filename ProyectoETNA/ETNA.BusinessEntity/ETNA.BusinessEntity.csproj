@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayGenerics.cs" />
+    <Compile Include="Compras\CotizacionBE.cs" />
     <Compile Include="Comun\PersonaBE.cs" />
     <Compile Include="Comun\TablaTipoBE.cs" />
     <Compile Include="Logistica\AlmacenBE.cs" />
