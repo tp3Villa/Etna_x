@@ -36,8 +36,8 @@ namespace ETNA.SGI.Data.Compras
         }
 
 
-        /*
-        public int DInsertCabReq(eReqCab eReqCab)
+        
+        public int DInsertProveedor(EProveedor EProveedor)
         {
             int i = 0;
             try
@@ -45,10 +45,12 @@ namespace ETNA.SGI.Data.Compras
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
 
-                string sql = "INSERT INTO Requerimiento (Cod_Cab_Req, Cli_Cab_Req, Pais_Cab_Req, Destino_Cab_Req, IATA_Cab_Req, Fec_Reg_Cab_Req, Fec_Esp_Cab_Req, Pre_Tot_Cab_Req, Est_Cab_Req, Obs_Cab_Req) " +
-                " VALUES (" + eReqCab.Cod_Cab_Req + ", " + eReqCab.Cli_Cab_Req + ", '" + eReqCab.Pais_Cab_Req + "', " +
-                " '" + eReqCab.Destino_Cab_Req + "', '" + eReqCab.IATA_Cab_Req + "', " + eReqCab.Fec_Reg_Cab_Req + ", " +
-                " " + eReqCab.Fec_Esp_Cab_Req + ", " + eReqCab.Pre_Tot_Cab_Req + ", '" + eReqCab.Est_Cab_Req + "', '" + eReqCab.Obs_Cab_Req + "')";
+                string sql = "INSERT INTO Proveedor (codProveedor, razonSocial, direccion, telefono, fechaRegistro, email, ruc, observacion) " +
+                " VALUES (" + EProveedor.CodProveedor + ", " + EProveedor.RazonSocial + ", '" + EProveedor.Direccion + "', " +
+                " '" + EProveedor.Telefono + "', '" + EProveedor.FechaRegistro + "', " + EProveedor.Email + ", " +
+                " " + EProveedor.Ruc +   "', '" + EProveedor.Observacion + "')";
+                            
+                
                 cmd.CommandText = sql;
                 cmd.Connection = cn.Conectar;
                 cmd.Connection.Open();
@@ -62,7 +64,7 @@ namespace ETNA.SGI.Data.Compras
             return i;
         }
 
-        */
+      
 
     }
 }

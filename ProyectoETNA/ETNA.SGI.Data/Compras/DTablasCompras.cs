@@ -40,6 +40,15 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
+        public DataTable DCorrelativoProveedor()
+        {
+            //iDB2DataAdapter da = new iDB2DataAdapter("SELECT R01CPE AS CODIGO,R01NOM AS NOMBRE FROM QS36F.RIPMGEN5 ORDER BY R01CPE", cn.Conectar);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT count(*)+1 AS corr FROM Proveedor", cn.Conectar);
+            DataTable tabla = new DataTable();
+            da.Fill(tabla);
+            return tabla;
+        }
+
 
     
     }
