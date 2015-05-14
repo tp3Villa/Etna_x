@@ -192,6 +192,7 @@
             this.Controls.Add(this.groupBox6);
             this.Name = "frmListadoProveedor";
             this.Text = "Lista de Proveedores";
+            this.Load += new System.EventHandler(this.frmListadoProveedor_Load);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
