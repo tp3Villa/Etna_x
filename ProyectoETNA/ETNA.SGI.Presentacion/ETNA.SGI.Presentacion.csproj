@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Compras\frmListadoProveedor_BKP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Compras\frmListadoProveedor_BKP.Designer.cs">
+      <DependentUpon>frmListadoProveedor_BKP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Compras\frmProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,12 +66,6 @@
     </Compile>
     <Compile Include="Formularios\Compras\frmListadoOrdenCompra.Designer.cs">
       <DependentUpon>frmListadoOrdenCompra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoProveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoProveedor.Designer.cs">
-      <DependentUpon>frmListadoProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Compras\frmOrdenCompra.cs">
       <SubType>Form</SubType>
@@ -171,14 +171,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Compras\frmListadoProveedor_BKP.resx">
+      <DependentUpon>frmListadoProveedor_BKP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compras\frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compras\frmListadoOrdenCompra.resx">
       <DependentUpon>frmListadoOrdenCompra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmListadoProveedor.resx">
-      <DependentUpon>frmListadoProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Exportacion\frmActualizarInfoRequerimiento.resx">
       <DependentUpon>frmActualizarInfoRequerimiento.cs</DependentUpon>
