@@ -29,10 +29,6 @@ namespace ETNA.SGI.Bussiness.Compras
         {
             return oDatTab.DProductoBusquedaXCodigo(Bus);
         }
-
-        public DataTable BCorrelativoProveedor()
-        {
-            return oDatTab.DCorrelativoProveedor();
-        }
+               
     }
 }

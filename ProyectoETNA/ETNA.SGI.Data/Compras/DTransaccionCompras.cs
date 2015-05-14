@@ -34,37 +34,6 @@ namespace ETNA.SGI.Data.Compras
             catch { throw; }
             return i;
         }
-
-
         
-        public int DInsertProveedor(EProveedor EProveedor)
-        {
-            int i = 0;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-
-                string sql = "INSERT INTO Proveedor (codProveedor, razonSocial, direccion, telefono, fechaRegistro, email, ruc, observacion) " +
-                " VALUES (" + EProveedor.CodProveedor + ", " + EProveedor.RazonSocial + ", '" + EProveedor.Direccion + "', " +
-                " '" + EProveedor.Telefono + "', '" + EProveedor.FechaRegistro + "', " + EProveedor.Email + ", " +
-                " " + EProveedor.Ruc +   "', '" + EProveedor.Observacion + "')";
-                            
-                
-                cmd.CommandText = sql;
-                cmd.Connection = cn.Conectar;
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-                i = 1;
-                cmd.Dispose();
-                cn.Conectar.Dispose();
-                cn.Conectar.Close();
-            }
-            catch { throw; }
-            return i;
-        }
-
-      
-
     }
 }

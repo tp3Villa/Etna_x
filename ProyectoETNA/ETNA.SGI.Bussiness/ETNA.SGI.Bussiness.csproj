@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compras\BLoginCompras.cs" />
+    <Compile Include="Compras\BProveedor.cs" />
     <Compile Include="Compras\BTablasCompras.cs" />
     <Compile Include="Compras\BTransaccionCompras.cs" />
     <Compile Include="Exportacion\BLogin.cs" />
