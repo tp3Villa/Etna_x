@@ -28,11 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.Location = new System.Drawing.Point(112, 26);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(100, 20);
+            this.txtRazonSocial.TabIndex = 0;
+            // 
+            // frmActualizarProveedor
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(292, 262);
+            this.Controls.Add(this.txtRazonSocial);
+            this.Name = "frmActualizarProveedor";
             this.Text = "frmActualizarProveedor";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox txtRazonSocial;
     }
 }
