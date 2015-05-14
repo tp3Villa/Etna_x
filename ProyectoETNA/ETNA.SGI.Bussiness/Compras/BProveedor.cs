@@ -28,9 +28,9 @@ namespace ETNA.SGI.Bussiness.Compras
             return dProveedor.DCorrelativoProveedor();
         }
 
-        public DataTable DGetAllProveedor()
+        public DataTable DGetAllProveedor(EProveedor EProveedor)
         {
-            return dProveedor.DGetAllProveedor();
+            return dProveedor.DGetAllProveedor(EProveedor);
         }
 
         public int BInsertProveedor(EProveedor EProveedor)
