@@ -62,6 +62,7 @@
             this.stStrip03 = new System.Windows.Forms.ToolStripStatusLabel();
             this.stStrip04 = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ordenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.stStrip.SuspendLayout();
@@ -179,14 +180,14 @@
             // 
             this.clientesToolStripMenuItem.Image = global::ETNA.SGI.Presentacion.Properties.Resources.conference1;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // paisesToolStripMenuItem
             // 
             this.paisesToolStripMenuItem.Image = global::ETNA.SGI.Presentacion.Properties.Resources.PAISES;
             this.paisesToolStripMenuItem.Name = "paisesToolStripMenuItem";
-            this.paisesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.paisesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.paisesToolStripMenuItem.Text = "Paises";
             this.paisesToolStripMenuItem.Click += new System.EventHandler(this.paisesToolStripMenuItem_Click);
             // 
@@ -216,7 +217,8 @@
             // Compras
             // 
             this.Compras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Compras_Proveedor});
+            this.Compras_Proveedor,
+            this.ordenDeCompraToolStripMenuItem});
             this.Compras.Name = "Compras";
             this.Compras.Size = new System.Drawing.Size(67, 20);
             this.Compras.Text = "&Compras";
@@ -225,7 +227,7 @@
             // 
             this.Compras_Proveedor.Image = ((System.Drawing.Image)(resources.GetObject("Compras_Proveedor.Image")));
             this.Compras_Proveedor.Name = "Compras_Proveedor";
-            this.Compras_Proveedor.Size = new System.Drawing.Size(152, 22);
+            this.Compras_Proveedor.Size = new System.Drawing.Size(169, 22);
             this.Compras_Proveedor.Text = "Proveedor";
             this.Compras_Proveedor.Visible = false;
             this.Compras_Proveedor.Click += new System.EventHandler(this.Compras_Proveedor_Click);
@@ -342,6 +344,14 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // ordenDeCompraToolStripMenuItem
+            // 
+            this.ordenDeCompraToolStripMenuItem.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
+            this.ordenDeCompraToolStripMenuItem.Name = "ordenDeCompraToolStripMenuItem";
+            this.ordenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.ordenDeCompraToolStripMenuItem.Text = "Orden de Compra";
+            this.ordenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +416,7 @@
         private System.Windows.Forms.ToolStripMenuItem ETN02S;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paisesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenDeCompraToolStripMenuItem;
     }
 }
 

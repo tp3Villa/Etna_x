@@ -182,5 +182,11 @@ namespace ETNA.SGI.Presentacion
         {
 
         }
+
+        private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.Compras.frmListadoOrdenCompra frm = new Formularios.Compras.frmListadoOrdenCompra();
+            frm.Show();
+        }
     }
 }
