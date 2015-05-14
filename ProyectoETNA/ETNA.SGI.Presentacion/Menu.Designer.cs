@@ -47,8 +47,8 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Compras = new System.Windows.Forms.ToolStripMenuItem();
-            this.proveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN01C = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN02C = new System.Windows.Forms.ToolStripMenuItem();
             this.Exportacion = new System.Windows.Forms.ToolStripMenuItem();
             this.ETN05S = new System.Windows.Forms.ToolStripMenuItem();
             this.ETN06S = new System.Windows.Forms.ToolStripMenuItem();
@@ -217,28 +217,29 @@
             // Compras
             // 
             this.Compras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.proveedorToolStripMenuItem,
-            this.ordenDeCompraToolStripMenuItem});
+            this.ETN01C,
+            this.ETN02C});
             this.Compras.Name = "Compras";
             this.Compras.Size = new System.Drawing.Size(67, 20);
             this.Compras.Text = "&Compras";
             this.Compras.Click += new System.EventHandler(this.Compras_Click);
             // 
-            // proveedorToolStripMenuItem
+            // ETN01C
             // 
-            this.proveedorToolStripMenuItem.Image = global::ETNA.SGI.Presentacion.Properties.Resources.BO12;
-            this.proveedorToolStripMenuItem.Name = "proveedorToolStripMenuItem";
-            this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.proveedorToolStripMenuItem.Text = "Proveedor";
-            this.proveedorToolStripMenuItem.Click += new System.EventHandler(this.proveedorToolStripMenuItem_Click);
+            this.ETN01C.Image = global::ETNA.SGI.Presentacion.Properties.Resources.BO12;
+            this.ETN01C.Name = "ETN01C";
+            this.ETN01C.Size = new System.Drawing.Size(169, 22);
+            this.ETN01C.Text = "Proveedor";
+            this.ETN01C.Click += new System.EventHandler(this.proveedorToolStripMenuItem_Click);
             // 
-            // ordenDeCompraToolStripMenuItem
+            // ETN02C
             // 
-            this.ordenDeCompraToolStripMenuItem.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
-            this.ordenDeCompraToolStripMenuItem.Name = "ordenDeCompraToolStripMenuItem";
-            this.ordenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.ordenDeCompraToolStripMenuItem.Text = "Orden de Compra";
-            this.ordenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
+            this.ETN02C.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
+            this.ETN02C.Name = "ETN02C";
+            this.ETN02C.Size = new System.Drawing.Size(169, 22);
+            this.ETN02C.Text = "Orden de Compra";
+            this.ETN02C.Visible = false;
+            this.ETN02C.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
             // 
             // Exportacion
             // 
@@ -392,7 +393,7 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Compras;
-        private System.Windows.Forms.ToolStripMenuItem proveedorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ETN01C;
         private System.Windows.Forms.ToolStripMenuItem Exportacion;
         private System.Windows.Forms.ToolStripMenuItem ETN06S;
         private System.Windows.Forms.ToolStripMenuItem Consultas;
@@ -416,7 +417,7 @@
         private System.Windows.Forms.ToolStripMenuItem ETN02S;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paisesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ordenDeCompraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ETN02C;
     }
 }
 
