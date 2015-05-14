@@ -50,9 +50,9 @@ namespace ETNA.SGI.Data.Compras
                 cmd.CommandType = CommandType.Text;
 
                 string sql = "INSERT INTO Proveedor (codProveedor, razonSocial, direccion, telefono, fechaRegistro, email, ruc, observacion) " +
-                " VALUES (" + EProveedor.CodProveedor + ", " + EProveedor.RazonSocial + ", '" + EProveedor.Direccion + "', " +
-                " '" + EProveedor.Telefono + "', '" + EProveedor.FechaRegistro + "', " + EProveedor.Email + ", " +
-                " " + EProveedor.Ruc + "', '" + EProveedor.Observacion + "')";
+                " VALUES (" + EProveedor.CodProveedor + ", '" + EProveedor.RazonSocial + "', '" + EProveedor.Direccion + "', " +
+                " " + EProveedor.Telefono + ", '" + EProveedor.FechaRegistro + "', '" + EProveedor.Email + "', " +
+                " " + EProveedor.Ruc + ", '" + EProveedor.Observacion + "')";
 
 
                 cmd.CommandText = sql;
@@ -77,13 +77,13 @@ namespace ETNA.SGI.Data.Compras
                 cmd.CommandType = CommandType.Text;
 
                 string sql = "UPDATE Proveedor" +
-                             "SET razonSocial = " + EProveedor.RazonSocial +
-                              ",direccion = " + EProveedor.Direccion +
+                             "SET razonSocial = '" + EProveedor.RazonSocial + "'" +
+                              ",direccion = '" + EProveedor.Direccion + "'" +
                               ",telefono = " + EProveedor.Telefono +
                               ",fechaRegistro = " + EProveedor.FechaRegistro +
-                              ",email = " + EProveedor.Email +
+                              ",email = '" + EProveedor.Email + "'" +
                               ",ruc = " + EProveedor.Ruc +
-                              ",observacion = " + EProveedor.Observacion +
+                              ",observacion = '" + EProveedor.Observacion + "'" +
                          "WHERE codProveedor = " + EProveedor.CodProveedor;
 
                 cmd.CommandText = sql;
