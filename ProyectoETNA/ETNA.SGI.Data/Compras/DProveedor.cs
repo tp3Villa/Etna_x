@@ -31,9 +31,11 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
-        public DataTable DGetAllProveedor()
+        public DataTable DGetAllProveedor(EProveedor EProveedor)
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT codProveedor,razonSocial,direccion,telefono,fechaRegistro,email,ruc,observacion FROM Proveedor", cn.Conectar);
+            string sql = "SELECT codProveedor,razonSocial,direccion,telefono,fechaRegistro,email,ruc,observacion FROM Proveedor " +
+                          "WHERE razonSocial like '%" + EProveedor.RazonSocial + "'";
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
             DataTable tabla = new DataTable();
             da.Fill(tabla);
             return tabla;
