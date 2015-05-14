@@ -47,7 +47,8 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Compras = new System.Windows.Forms.ToolStripMenuItem();
-            this.Compras_Proveedor = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exportacion = new System.Windows.Forms.ToolStripMenuItem();
             this.ETN05S = new System.Windows.Forms.ToolStripMenuItem();
             this.ETN06S = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +63,6 @@
             this.stStrip03 = new System.Windows.Forms.ToolStripStatusLabel();
             this.stStrip04 = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ordenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.stStrip.SuspendLayout();
@@ -217,20 +217,28 @@
             // Compras
             // 
             this.Compras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Compras_Proveedor,
+            this.proveedorToolStripMenuItem,
             this.ordenDeCompraToolStripMenuItem});
             this.Compras.Name = "Compras";
             this.Compras.Size = new System.Drawing.Size(67, 20);
             this.Compras.Text = "&Compras";
+            this.Compras.Click += new System.EventHandler(this.Compras_Click);
             // 
-            // Compras_Proveedor
+            // proveedorToolStripMenuItem
             // 
-            this.Compras_Proveedor.Image = ((System.Drawing.Image)(resources.GetObject("Compras_Proveedor.Image")));
-            this.Compras_Proveedor.Name = "Compras_Proveedor";
-            this.Compras_Proveedor.Size = new System.Drawing.Size(169, 22);
-            this.Compras_Proveedor.Text = "Proveedor";
-            this.Compras_Proveedor.Visible = false;
-            this.Compras_Proveedor.Click += new System.EventHandler(this.Compras_Proveedor_Click);
+            this.proveedorToolStripMenuItem.Image = global::ETNA.SGI.Presentacion.Properties.Resources.BO12;
+            this.proveedorToolStripMenuItem.Name = "proveedorToolStripMenuItem";
+            this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.proveedorToolStripMenuItem.Text = "Proveedor";
+            this.proveedorToolStripMenuItem.Click += new System.EventHandler(this.proveedorToolStripMenuItem_Click);
+            // 
+            // ordenDeCompraToolStripMenuItem
+            // 
+            this.ordenDeCompraToolStripMenuItem.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
+            this.ordenDeCompraToolStripMenuItem.Name = "ordenDeCompraToolStripMenuItem";
+            this.ordenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.ordenDeCompraToolStripMenuItem.Text = "Orden de Compra";
+            this.ordenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
             // 
             // Exportacion
             // 
@@ -344,14 +352,6 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // ordenDeCompraToolStripMenuItem
-            // 
-            this.ordenDeCompraToolStripMenuItem.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
-            this.ordenDeCompraToolStripMenuItem.Name = "ordenDeCompraToolStripMenuItem";
-            this.ordenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.ordenDeCompraToolStripMenuItem.Text = "Orden de Compra";
-            this.ordenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,7 +392,7 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Compras;
-        private System.Windows.Forms.ToolStripMenuItem Compras_Proveedor;
+        private System.Windows.Forms.ToolStripMenuItem proveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Exportacion;
         private System.Windows.Forms.ToolStripMenuItem ETN06S;
         private System.Windows.Forms.ToolStripMenuItem Consultas;

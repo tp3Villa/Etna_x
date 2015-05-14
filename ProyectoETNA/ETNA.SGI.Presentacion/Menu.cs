@@ -172,7 +172,7 @@ namespace ETNA.SGI.Presentacion
             this.Cursor = Cursors.Default;   
         }
 
-        private void Compras_Proveedor_Click(object sender, EventArgs e)
+        private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Formularios.Compras.frmActualizarProveedor frm = new Formularios.Compras.frmActualizarProveedor();
             frm.Show();
@@ -185,8 +185,13 @@ namespace ETNA.SGI.Presentacion
 
         private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.Compras.frmListadoOrdenCompra frm = new Formularios.Compras.frmListadoOrdenCompra();
-            frm.Show();
+           // Formularios.Compras.frmListadoOrdenCompra frm = new Formularios.Compras.frmListadoOrdenCompra();
+            //frm.Show();
+        }
+
+        private void Compras_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
