@@ -39,8 +39,13 @@
             this.ruc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.lblRazonSocial = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label11
@@ -75,9 +80,9 @@
             this.email,
             this.ruc,
             this.observacion});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 162);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 187);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(732, 154);
+            this.dataGridView1.Size = new System.Drawing.Size(732, 102);
             this.dataGridView1.TabIndex = 102;
             // 
             // codigo
@@ -117,18 +122,60 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(22, 130);
+            this.btnNuevo.Location = new System.Drawing.Point(12, 158);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(121, 23);
             this.btnNuevo.TabIndex = 103;
             this.btnNuevo.Text = "Añadir Proveedor";
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblRazonSocial);
+            this.groupBox1.Controls.Add(this.txtRazonSocial);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox1.Location = new System.Drawing.Point(12, 67);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(742, 85);
+            this.groupBox1.TabIndex = 104;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Criterios de Búsqueda";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
+            this.btnBuscar.Location = new System.Drawing.Point(676, 16);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(55, 57);
+            this.btnBuscar.TabIndex = 103;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.Location = new System.Drawing.Point(125, 34);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(146, 20);
+            this.txtRazonSocial.TabIndex = 104;
+            // 
+            // lblRazonSocial
+            // 
+            this.lblRazonSocial.AutoSize = true;
+            this.lblRazonSocial.Location = new System.Drawing.Point(10, 40);
+            this.lblRazonSocial.Name = "lblRazonSocial";
+            this.lblRazonSocial.Size = new System.Drawing.Size(86, 13);
+            this.lblRazonSocial.TabIndex = 105;
+            this.lblRazonSocial.Text = "Razón Social:";
+            // 
             // frmListadoProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 328);
+            this.ClientSize = new System.Drawing.Size(766, 312);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox6);
@@ -136,6 +183,8 @@
             this.Text = "Lista de Proveedores";
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -153,5 +202,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ruc;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtRazonSocial;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblRazonSocial;
     }
 }
