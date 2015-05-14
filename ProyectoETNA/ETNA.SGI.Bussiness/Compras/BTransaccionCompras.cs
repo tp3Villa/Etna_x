@@ -17,6 +17,11 @@ namespace ETNA.SGI.Bussiness.Compras
             return oDatTab.DTransaccionVarias(sql);
         }
 
+        public int BInsertProveedor(EProveedor EProveedor)
+        {
+            return oDatTab.DInsertProveedor(EProveedor);
+        }
+
       
     }
 }
