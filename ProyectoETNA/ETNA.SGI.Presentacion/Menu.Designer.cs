@@ -238,6 +238,7 @@
             this.ETN02C.Name = "ETN02C";
             this.ETN02C.Size = new System.Drawing.Size(169, 22);
             this.ETN02C.Text = "Orden de Compra";
+            this.ETN02C.Visible = false;
             this.ETN02C.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
             // 
             // Exportacion
