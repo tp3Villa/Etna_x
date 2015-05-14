@@ -5,3 +5,10 @@ C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.DataAccess\bin\Debug\ET
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.DataAccess\obj\Debug\ETNA.SGL.Data.csprojResolveAssemblyReference.cache
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.DataAccess\obj\Debug\ETNA.DataAccess.dll
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.DataAccess\obj\Debug\ETNA.DataAccess.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.DataAccess\bin\Debug\ETNA.DataAccess.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.DataAccess\bin\Debug\ETNA.DataAccess.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.DataAccess\bin\Debug\ETNA.BusinessEntity.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.DataAccess\bin\Debug\ETNA.BusinessEntity.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.DataAccess\obj\Debug\ETNA.SGL.Data.csprojResolveAssemblyReference.cache
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.DataAccess\obj\Debug\ETNA.DataAccess.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.DataAccess\obj\Debug\ETNA.DataAccess.pdb

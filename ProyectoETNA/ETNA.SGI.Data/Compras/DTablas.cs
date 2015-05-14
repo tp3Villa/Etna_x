@@ -13,6 +13,14 @@ namespace ETNA.SGI.Data.Compras
     {
         DConexion cn = new DConexion();
 
+        public DataTable getSELECTLIBRE(string SQL)
+        {
+            //iDB2DataAdapter da = new iDB2DataAdapter("SELECT R01CPE AS CODIGO,R01NOM AS NOMBRE FROM QS36F.RIPMGEN5 ORDER BY R01CPE", cn.Conectar);
+            SqlDataAdapter da = new SqlDataAdapter(SQL, cn.Conectar);
+            DataTable tabla = new DataTable();
+            da.Fill(tabla);
+            return tabla;
+        }
 
         public DataTable DProducto()
         {
@@ -22,6 +30,16 @@ namespace ETNA.SGI.Data.Compras
             da.Fill(tabla);
             return tabla;
         }
+
+        public DataTable DProductoBusquedaXCodigo(string Bus)
+        {
+            //iDB2DataAdapter da = new iDB2DataAdapter("SELECT R01CPE AS CODIGO,R01NOM AS NOMBRE FROM QS36F.RIPMGEN5 ORDER BY R01CPE", cn.Conectar);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM producto WHERE Cod_Prod='" + Bus + "'", cn.Conectar);
+            DataTable tabla = new DataTable();
+            da.Fill(tabla);
+            return tabla;
+        }
+
 
     
     }

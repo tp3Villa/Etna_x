@@ -77,3 +77,14 @@ C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\bin\ETNA.SG
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\obj\Debug\ETNA.SGI.WebSite.csprojResolveAssemblyReference.cache
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\obj\Debug\ETNA.SGI.WebSite.dll
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\obj\Debug\ETNA.SGI.WebSite.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\bin\ETNA.SGI.WebSite.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\bin\ETNA.SGI.WebSite.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\bin\ETNA.SGI.Bussiness.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\bin\ETNA.SGI.Entity.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\bin\ETNA.SGI.Data.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\bin\ETNA.SGI.Bussiness.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\bin\ETNA.SGI.Entity.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\bin\ETNA.SGI.Data.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\obj\Debug\ETNA.SGI.WebSite.csprojResolveAssemblyReference.cache
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\obj\Debug\ETNA.SGI.WebSite.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.WebSite\obj\Debug\ETNA.SGI.WebSite.pdb
