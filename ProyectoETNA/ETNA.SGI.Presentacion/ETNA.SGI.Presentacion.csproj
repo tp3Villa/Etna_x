@@ -55,6 +55,18 @@
     <Compile Include="Formularios\Compras\frmActualizarProveedor.Designer.cs">
       <DependentUpon>frmActualizarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Compras\frmListadoOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Compras\frmListadoOrdenCompra.Designer.cs">
+      <DependentUpon>frmListadoOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Compras\frmOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Compras\frmOrdenCompra.Designer.cs">
+      <DependentUpon>frmOrdenCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Exportacion\frmActualizarInfoRequerimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +167,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Compras\frmActualizarProveedor.resx">
       <DependentUpon>frmActualizarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Compras\frmListadoOrdenCompra.resx">
+      <DependentUpon>frmListadoOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Exportacion\frmActualizarInfoRequerimiento.resx">
       <DependentUpon>frmActualizarInfoRequerimiento.cs</DependentUpon>
