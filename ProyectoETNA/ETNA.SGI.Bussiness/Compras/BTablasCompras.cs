@@ -10,9 +10,9 @@ using ETNA.SGI.Data.Compras;
 
 namespace ETNA.SGI.Bussiness.Compras
 {
-    public class BTablas
+    public class BTablasCompras
     {
-        DTablas oDatTab = new DTablas();
+        DTablasCompras oDatTab = new DTablasCompras();
 
         public DataTable getSELECTLIBRE(string SQL)
         {

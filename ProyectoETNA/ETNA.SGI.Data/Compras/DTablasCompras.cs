@@ -9,7 +9,7 @@ using System.Data;
 
 namespace ETNA.SGI.Data.Compras
 {
-    public class DTablas
+    public class DTablasCompras
     {
         DConexion cn = new DConexion();
 

@@ -11,6 +11,7 @@ using System.Diagnostics;
 
 using ETNA.SGI.Bussiness.Exportacion;
 
+
 namespace ETNA.SGI.Presentacion
 {
     public partial class Menu : Form
@@ -171,10 +172,15 @@ namespace ETNA.SGI.Presentacion
             this.Cursor = Cursors.Default;   
         }
 
-        private void ETN04S_Click(object sender, EventArgs e)
+        private void Compras_Proveedor_Click(object sender, EventArgs e)
         {
-            Formularios.Exportacion.frmActualizarInfoRequerimiento frm = new Formularios.Exportacion.frmActualizarInfoRequerimiento();
+            Formularios.Compras.frmActualizarProveedor frm = new Formularios.Compras.frmActualizarProveedor();
             frm.Show();
+        }
+
+        private void Exportacion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

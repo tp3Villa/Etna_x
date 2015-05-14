@@ -46,10 +46,8 @@
             this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Ventas = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN03S = new System.Windows.Forms.ToolStripMenuItem();
             this.Compras = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN04S = new System.Windows.Forms.ToolStripMenuItem();
+            this.Compras_Proveedor = new System.Windows.Forms.ToolStripMenuItem();
             this.Exportacion = new System.Windows.Forms.ToolStripMenuItem();
             this.ETN05S = new System.Windows.Forms.ToolStripMenuItem();
             this.ETN06S = new System.Windows.Forms.ToolStripMenuItem();
@@ -126,7 +124,6 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Sistema,
-            this.Ventas,
             this.Compras,
             this.Exportacion,
             this.Consultas,
@@ -182,14 +179,14 @@
             // 
             this.clientesToolStripMenuItem.Image = global::ETNA.SGI.Presentacion.Properties.Resources.conference1;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // paisesToolStripMenuItem
             // 
             this.paisesToolStripMenuItem.Image = global::ETNA.SGI.Presentacion.Properties.Resources.PAISES;
             this.paisesToolStripMenuItem.Name = "paisesToolStripMenuItem";
-            this.paisesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.paisesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.paisesToolStripMenuItem.Text = "Paises";
             this.paisesToolStripMenuItem.Click += new System.EventHandler(this.paisesToolStripMenuItem_Click);
             // 
@@ -216,39 +213,22 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // Ventas
-            // 
-            this.Ventas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ETN03S});
-            this.Ventas.Name = "Ventas";
-            this.Ventas.Size = new System.Drawing.Size(54, 20);
-            this.Ventas.Text = "&Ventas";
-            // 
-            // ETN03S
-            // 
-            this.ETN03S.Image = global::ETNA.SGI.Presentacion.Properties.Resources.FACTURAR12;
-            this.ETN03S.Name = "ETN03S";
-            this.ETN03S.Size = new System.Drawing.Size(152, 22);
-            this.ETN03S.Text = "Menu Ventas";
-            this.ETN03S.Visible = false;
-            this.ETN03S.Click += new System.EventHandler(this.resquisicionesToolStripMenuItem_Click);
-            // 
             // Compras
             // 
             this.Compras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ETN04S});
+            this.Compras_Proveedor});
             this.Compras.Name = "Compras";
             this.Compras.Size = new System.Drawing.Size(67, 20);
             this.Compras.Text = "&Compras";
             // 
-            // ETN04S
+            // Compras_Proveedor
             // 
-            this.ETN04S.Image = ((System.Drawing.Image)(resources.GetObject("ETN04S.Image")));
-            this.ETN04S.Name = "ETN04S";
-            this.ETN04S.Size = new System.Drawing.Size(156, 22);
-            this.ETN04S.Text = "Menu Compras";
-            this.ETN04S.Visible = false;
-            this.ETN04S.Click += new System.EventHandler(this.ETN04S_Click);
+            this.Compras_Proveedor.Image = ((System.Drawing.Image)(resources.GetObject("Compras_Proveedor.Image")));
+            this.Compras_Proveedor.Name = "Compras_Proveedor";
+            this.Compras_Proveedor.Size = new System.Drawing.Size(152, 22);
+            this.Compras_Proveedor.Text = "Proveedor";
+            this.Compras_Proveedor.Visible = false;
+            this.Compras_Proveedor.Click += new System.EventHandler(this.Compras_Proveedor_Click);
             // 
             // Exportacion
             // 
@@ -260,6 +240,7 @@
             this.Exportacion.Name = "Exportacion";
             this.Exportacion.Size = new System.Drawing.Size(81, 20);
             this.Exportacion.Text = "&Exportación";
+            this.Exportacion.Click += new System.EventHandler(this.Exportacion_Click);
             // 
             // ETN05S
             // 
@@ -400,10 +381,8 @@
         private System.Windows.Forms.ToolStripMenuItem administraciónDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem Ventas;
-        private System.Windows.Forms.ToolStripMenuItem ETN03S;
         private System.Windows.Forms.ToolStripMenuItem Compras;
-        private System.Windows.Forms.ToolStripMenuItem ETN04S;
+        private System.Windows.Forms.ToolStripMenuItem Compras_Proveedor;
         private System.Windows.Forms.ToolStripMenuItem Exportacion;
         private System.Windows.Forms.ToolStripMenuItem ETN06S;
         private System.Windows.Forms.ToolStripMenuItem Consultas;

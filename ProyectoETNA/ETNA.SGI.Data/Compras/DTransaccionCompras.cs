@@ -11,7 +11,7 @@ using ETNA.SGI.Entity.Compras;
 
 namespace ETNA.SGI.Data.Compras
 {
-    public class DTransaccion
+    public class DTransaccionCompras
     {
         DConexion cn = new DConexion();
 

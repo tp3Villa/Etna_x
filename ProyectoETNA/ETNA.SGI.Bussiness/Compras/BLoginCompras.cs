@@ -8,9 +8,9 @@ using ETNA.SGI.Data.Compras;
 //
 namespace ETNA.SGI.Bussiness.Compras
 {
-    public class BLogin
+    public class BLoginCompras
     {
-        DLogin oDatTab = new DLogin();
+        DLoginCompras oDatTab = new DLoginCompras();
 
         public DataTable BLogueo(ETNA.SGI.Entity.Compras.ELogin ObjEn)
         {

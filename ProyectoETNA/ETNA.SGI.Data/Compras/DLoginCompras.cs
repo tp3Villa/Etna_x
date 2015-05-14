@@ -9,7 +9,7 @@ using System.Data.OleDb;
 
 namespace ETNA.SGI.Data.Compras
 {
-    public class DLogin
+    public class DLoginCompras
     {
         DConexion cn = new DConexion();
 

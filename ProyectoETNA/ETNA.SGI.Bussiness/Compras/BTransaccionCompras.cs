@@ -8,9 +8,9 @@ using ETNA.SGI.Entity.Compras;
 
 namespace ETNA.SGI.Bussiness.Compras
 {
-    public class BTransaccion
+    public class BTransaccionCompras
     {
-        DTransaccion oDatTab = new DTransaccion();
+        DTransaccionCompras oDatTab = new DTransaccionCompras();
 
         public int BTransaccionVarias(string sql)
         {
