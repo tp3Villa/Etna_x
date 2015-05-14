@@ -262,4 +262,6 @@ C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Presentacion\ob
 C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Presentacion\obj\x86\Debug\ETNA.SGI.Presentacion.Menu.resources
 C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Presentacion\obj\x86\Debug\ETNA.SGI.Presentacion.Properties.Resources.resources
 C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Presentacion\obj\x86\Debug\ETNA.SGI.Presentacion.csproj.GenerateResource.Cache
-C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Presentacion\obj\x86\Debug\ETNA.SGI.Presentacion.Formularios.Compras.frmActualizarProveedor.resources
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Presentacion\obj\x86\Debug\ETNA.SGI.Presentacion.Formularios.Compras.frmProveedor.resources
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Presentacion\obj\x86\Debug\ETNA.SGI.Presentacion.Formularios.Compras.frmListadoOrdenCompra.resources
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Presentacion\obj\x86\Debug\ETNA.SGI.Presentacion.Formularios.Compras.frmListadoProveedor.resources

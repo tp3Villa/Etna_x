@@ -40,9 +40,9 @@
             this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.lblRazonSocial = new System.Windows.Forms.Label();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -71,6 +71,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
@@ -82,6 +84,7 @@
             this.observacion});
             this.dataGridView1.Location = new System.Drawing.Point(12, 187);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(732, 102);
             this.dataGridView1.TabIndex = 102;
             // 
@@ -89,36 +92,43 @@
             // 
             this.codigo.HeaderText = "Código";
             this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
             // 
             // RazonSocial
             // 
             this.RazonSocial.HeaderText = "Razon Social";
             this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
             // 
             // Direccion
             // 
             this.Direccion.HeaderText = "Dirección";
             this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
             // 
             // telefono
             // 
             this.telefono.HeaderText = "Telefono";
             this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
             // 
             // email
             // 
             this.email.HeaderText = "Email";
             this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
             // ruc
             // 
             this.ruc.HeaderText = "RUC";
             this.ruc.Name = "ruc";
+            this.ruc.ReadOnly = true;
             // 
             // observacion
             // 
             this.observacion.HeaderText = "Observación";
             this.observacion.Name = "observacion";
+            this.observacion.ReadOnly = true;
             // 
             // btnNuevo
             // 
@@ -128,6 +138,7 @@
             this.btnNuevo.TabIndex = 103;
             this.btnNuevo.Text = "Añadir Proveedor";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // groupBox1
             // 
@@ -143,6 +154,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
             // 
+            // lblRazonSocial
+            // 
+            this.lblRazonSocial.AutoSize = true;
+            this.lblRazonSocial.Location = new System.Drawing.Point(10, 40);
+            this.lblRazonSocial.Name = "lblRazonSocial";
+            this.lblRazonSocial.Size = new System.Drawing.Size(86, 13);
+            this.lblRazonSocial.TabIndex = 105;
+            this.lblRazonSocial.Text = "Razón Social:";
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.Location = new System.Drawing.Point(125, 34);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(146, 20);
+            this.txtRazonSocial.TabIndex = 104;
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
@@ -153,22 +180,6 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(125, 34);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(146, 20);
-            this.txtRazonSocial.TabIndex = 104;
-            // 
-            // lblRazonSocial
-            // 
-            this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(10, 40);
-            this.lblRazonSocial.Name = "lblRazonSocial";
-            this.lblRazonSocial.Size = new System.Drawing.Size(86, 13);
-            this.lblRazonSocial.TabIndex = 105;
-            this.lblRazonSocial.Text = "Razón Social:";
             // 
             // frmListadoProveedor
             // 

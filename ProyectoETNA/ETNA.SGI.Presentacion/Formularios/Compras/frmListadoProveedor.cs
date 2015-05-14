@@ -15,5 +15,13 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
             InitializeComponent();
         }
-    }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Formularios.Compras.frmProveedor frm = new frmProveedor();
+            frm.ShowDialog();
+        }
+
+
+            }
 }
