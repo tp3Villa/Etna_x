@@ -31,7 +31,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ruc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -61,16 +67,52 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codProveedor});
+            this.codigo,
+            this.RazonSocial,
+            this.Direccion,
+            this.telefono,
+            this.email,
+            this.ruc,
+            this.observacion});
             this.dataGridView1.Location = new System.Drawing.Point(22, 162);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(732, 159);
+            this.dataGridView1.Size = new System.Drawing.Size(732, 154);
             this.dataGridView1.TabIndex = 102;
             // 
-            // codProveedor
+            // codigo
             // 
-            this.codProveedor.HeaderText = "Código";
-            this.codProveedor.Name = "codProveedor";
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.HeaderText = "Razon Social";
+            this.RazonSocial.Name = "RazonSocial";
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Dirección";
+            this.Direccion.Name = "Direccion";
+            // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            // 
+            // ruc
+            // 
+            this.ruc.HeaderText = "RUC";
+            this.ruc.Name = "ruc";
+            // 
+            // observacion
+            // 
+            this.observacion.HeaderText = "Observación";
+            this.observacion.Name = "observacion";
             // 
             // frmListadoProveedor
             // 
@@ -92,6 +134,12 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ruc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
     }
 }
