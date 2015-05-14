@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ETNA.SGI.Bussiness.Compras
 {
-    class BProveedor
+    public class BProveedor
     {
         private DProveedor dProveedor = DProveedor.getInstance();
 
