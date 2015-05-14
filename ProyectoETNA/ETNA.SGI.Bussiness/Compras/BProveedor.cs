@@ -10,16 +10,42 @@ namespace ETNA.SGI.Bussiness.Compras
 {
     class BProveedor
     {
-        DProveedor oDatTab = new DProveedor();
+        private DProveedor dProveedor = DProveedor.getInstance();
+
+        private static BProveedor bProveedor;
+
+        public static BProveedor getInstance()
+        {
+            if (bProveedor == null)
+            {
+                bProveedor = new BProveedor();
+            }
+            return bProveedor;
+        }   
 
         public DataTable BCorrelativoProveedor()
         {
-            return oDatTab.DCorrelativoProveedor();
+            return dProveedor.DCorrelativoProveedor();
+        }
+
+        public DataTable DGetAllProveedor()
+        {
+            return dProveedor.DGetAllProveedor();
         }
 
         public int BInsertProveedor(EProveedor EProveedor)
         {
-            return oDatTab.DInsertProveedor(EProveedor);
+            return dProveedor.DInsertProveedor(EProveedor);
+        }
+
+        public int DUpdateProveedor(EProveedor EProveedor)
+        {
+            return dProveedor.DUpdateProveedor(EProveedor);
+        }
+
+        public int DDeleteProveedor(int CodProveedor)
+        {
+            return dProveedor.DDeleteProveedor(CodProveedor);
         }
     }
 }

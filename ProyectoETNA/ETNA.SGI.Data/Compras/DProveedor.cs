@@ -10,11 +10,30 @@ namespace ETNA.SGI.Data.Compras
 {
     public class DProveedor
     {
-        DConexion cn = new DConexion();
+
+        private DConexion cn = new DConexion();
+
+        private static DProveedor dProveedor;
+
+        public static DProveedor getInstance()
+        {
+            if (dProveedor == null){
+                dProveedor = new DProveedor();
+            }
+            return dProveedor;
+        }        
 
         public DataTable DCorrelativoProveedor()
         {
             SqlDataAdapter da = new SqlDataAdapter("SELECT count(*)+1 AS corr FROM Proveedor", cn.Conectar);
+            DataTable tabla = new DataTable();
+            da.Fill(tabla);
+            return tabla;
+        }
+
+        public DataTable DGetAllProveedor()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT codProveedor,razonSocial,direccion,telefono,fechaRegistro,email,ruc,observacion FROM Proveedor", cn.Conectar);
             DataTable tabla = new DataTable();
             da.Fill(tabla);
             return tabla;
@@ -33,6 +52,60 @@ namespace ETNA.SGI.Data.Compras
                 " '" + EProveedor.Telefono + "', '" + EProveedor.FechaRegistro + "', " + EProveedor.Email + ", " +
                 " " + EProveedor.Ruc + "', '" + EProveedor.Observacion + "')";
 
+
+                cmd.CommandText = sql;
+                cmd.Connection = cn.Conectar;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                i = 1;
+                cmd.Dispose();
+                cn.Conectar.Dispose();
+                cn.Conectar.Close();
+            }
+            catch { throw; }
+            return i;
+        }
+
+        public int DUpdateProveedor(EProveedor EProveedor)
+        {
+            int i = 0;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+
+                string sql = "UPDATE Proveedor" +
+                             "SET razonSocial = " + EProveedor.RazonSocial +
+                              ",direccion = " + EProveedor.Direccion +
+                              ",telefono = " + EProveedor.Telefono +
+                              ",fechaRegistro = " + EProveedor.FechaRegistro +
+                              ",email = " + EProveedor.Email +
+                              ",ruc = " + EProveedor.Ruc +
+                              ",observacion = " + EProveedor.Observacion +
+                         "WHERE codProveedor = " + EProveedor.CodProveedor;
+
+                cmd.CommandText = sql;
+                cmd.Connection = cn.Conectar;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                i = 1;
+                cmd.Dispose();
+                cn.Conectar.Dispose();
+                cn.Conectar.Close();
+            }
+            catch { throw; }
+            return i;
+        }
+
+        public int DDeleteProveedor(int CodProveedor)
+        {
+            int i = 0;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+
+                string sql = "DELETE Proveedor WHERE codProveedor = " + CodProveedor;
 
                 cmd.CommandText = sql;
                 cmd.Connection = cn.Conectar;
