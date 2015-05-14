@@ -17,5 +17,6 @@ namespace ETNA.SGI.Bussiness.Compras
             return oDatTab.DLogueo(ObjEn);
         }
 
+
     }
 }
