@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 
 using ETNA.SGI.Bussiness.Compras;
-using ETNA.SGI.Data.Compras;
 using ETNA.SGI.Entity.Compras;
 using ETNA.SGI.Utils;
 using System.Globalization;
@@ -29,6 +28,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         EProveedor proveedor = new EProveedor();
        // BProveedor tProveedor =  new BProveedor();
+        BProveedor bProveedor = BProveedor.getInstance(); 
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
@@ -50,25 +50,32 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
             if (MessageBox.Show("Se procederá a grabar el proveedor", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-               /* string corr = "";
-
-                corr = objBus.BCorrelativoProveedor().Rows[0][0].ToString();
+               /* 
 
 
                 objtra = new BTransaccionCompras();
 
                 objBus = new BTablasCompras(); */
+
+                string corr = "";
+
+                corr = bProveedor.BCorrelativoProveedor().Rows[0][0].ToString();
+
                 fecha = FechaSis.ToShortDateString().Substring(6, 4) + FechaSis.ToShortDateString().Substring(3, 2) + FechaSis.ToShortDateString().Substring(0, 2);
                 
                 proveedor = new EProveedor();
-                proveedor.CodProveedor = Convert.ToInt32("1");
+                proveedor.CodProveedor = Convert.ToInt32(corr);
                 proveedor.RazonSocial = txtRazonSocial.Text.Trim();
                 proveedor.Direccion = txtDire.Text.Trim();
                 proveedor.Telefono = Convert.ToInt32(txtTelefono.Text.Trim());
                 proveedor.FechaRegistro = FechaSis;
                 proveedor.Email = txtEmail.Text.Trim();
-                proveedor.Ruc = Convert.ToInt32(txtRUC.Text.Trim());
+                //proveedor.Ruc = Convert.ToInt32(txtRUC.Text.Trim());
+                proveedor.Ruc = 1;
                 proveedor.Observacion = txtObs.Text.Trim();
+
+                int result = bProveedor.BInsertProveedor(proveedor);
+
                 /*
 
                 objtra = new BTransaccionCompras();
