@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Compras\ELogin.cs" />
     <Compile Include="Compras\EProveedor.cs" />
     <Compile Include="Exportacion\ELogin.cs" />
     <Compile Include="Exportacion\eReqCab.cs" />

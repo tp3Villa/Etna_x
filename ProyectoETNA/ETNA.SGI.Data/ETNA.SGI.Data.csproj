@@ -41,10 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compras\DLoginCompras.cs" />
     <Compile Include="Compras\DProveedor.cs" />
-    <Compile Include="Compras\DTablasCompras.cs" />
-    <Compile Include="Compras\DTransaccionCompras.cs" />
     <Compile Include="DConexion.cs" />
     <Compile Include="Exportacion\DLogin.cs" />
     <Compile Include="Exportacion\DTablas.cs" />
