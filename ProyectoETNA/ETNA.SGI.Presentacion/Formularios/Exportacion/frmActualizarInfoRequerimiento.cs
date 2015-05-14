@@ -102,5 +102,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
                 catch { }
             }
         }
+
+        private void txtCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
