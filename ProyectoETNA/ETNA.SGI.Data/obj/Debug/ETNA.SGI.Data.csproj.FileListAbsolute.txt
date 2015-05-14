@@ -54,3 +54,10 @@ C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Data\bin\Debug\
 C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.csprojResolveAssemblyReference.cache
 C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.dll
 C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.pdb
+C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Data\bin\Debug\ETNA.SGI.Data.dll
+C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Data\bin\Debug\ETNA.SGI.Data.pdb
+C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Data\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Data\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.csprojResolveAssemblyReference.cache
+C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.dll
+C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.pdb
