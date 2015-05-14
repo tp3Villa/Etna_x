@@ -19,6 +19,7 @@ namespace ETNA.SGI.Bussiness.Compras
             return oDatTab.getSELECTLIBRE(SQL);
         }
 
+
            public DataTable BProducto()
         {
             return oDatTab.DProducto();

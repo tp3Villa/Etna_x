@@ -14,6 +14,7 @@ namespace ETNA.SGI.Entity.Compras
             set { usuario = value; }
         }
 
+
         string pasw;
         public string Pasw
         {
