@@ -61,3 +61,12 @@ C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.csprojResolveAssemblyReference.cache
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.dll
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.csprojResolveAssemblyReference.cache
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.pdb

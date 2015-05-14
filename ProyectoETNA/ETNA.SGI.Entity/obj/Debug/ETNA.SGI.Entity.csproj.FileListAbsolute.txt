@@ -31,3 +31,8 @@ C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ET
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.csprojResolveAssemblyReference.cache
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.dll
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.csprojResolveAssemblyReference.cache
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.dll
+C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.pdb
