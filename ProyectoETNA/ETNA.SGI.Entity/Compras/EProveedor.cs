@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ETNA.SGI.Entity.Exportacion
+namespace ETNA.SGI.Entity.Compras
 {
     public class EProveedor
     {
@@ -32,15 +32,15 @@ namespace ETNA.SGI.Entity.Exportacion
 
         private int telefono;
 
-        public int Telefono
+       public int Telefono
         {
-            get { return telefono; }
+           get { return telefono; }
             set { telefono = value; }
         }
 
         private DateTime fechaRegistro;
 
-        public DateTime FechaRegistro
+       public DateTime FechaRegistro
         {
             get { return fechaRegistro; }
             set { fechaRegistro = value; }

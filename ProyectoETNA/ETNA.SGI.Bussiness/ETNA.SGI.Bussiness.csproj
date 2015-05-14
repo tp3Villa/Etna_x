@@ -40,16 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Compras\BLogin.cs" />
+    <Compile Include="Compras\BTablas.cs" />
+    <Compile Include="Compras\BTransaccion.cs" />
     <Compile Include="Exportacion\BLogin.cs" />
     <Compile Include="Exportacion\BTablas.cs" />
     <Compile Include="Exportacion\BTransaccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Compras\" />
-    <Folder Include="Ventas\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ETNA.SGI.Data\ETNA.SGI.Data.csproj">
       <Project>{5A4B0A2A-5372-4A63-8B21-ADD9DCC591CD}</Project>
