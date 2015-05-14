@@ -15,5 +15,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
             InitializeComponent();
         }
+
+        private void frmProveedor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
