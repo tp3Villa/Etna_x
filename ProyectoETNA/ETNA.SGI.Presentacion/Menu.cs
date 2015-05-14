@@ -179,7 +179,7 @@ namespace ETNA.SGI.Presentacion
 
         private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.Compras.frmActualizarProveedor frm = new Formularios.Compras.frmActualizarProveedor();
+            Formularios.Compras.frmProveedor frm = new Formularios.Compras.frmProveedor();
             frm.Show();
         }
 

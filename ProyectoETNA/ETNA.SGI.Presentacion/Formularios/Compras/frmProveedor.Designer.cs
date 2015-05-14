@@ -1,6 +1,6 @@
 ﻿namespace ETNA.SGI.Presentacion.Formularios.Compras
 {
-    partial class frmActualizarProveedor
+    partial class frmProveedor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActualizarProveedor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedor));
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.txtRUC = new System.Windows.Forms.TextBox();

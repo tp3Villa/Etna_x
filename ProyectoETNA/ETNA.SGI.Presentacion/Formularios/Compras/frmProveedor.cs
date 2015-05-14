@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace ETNA.SGI.Presentacion.Formularios.Compras
 {
-    public partial class frmActualizarProveedor : Form
+    public partial class frmProveedor : Form
     {
-        public frmActualizarProveedor()
+        public frmProveedor()
         {
             InitializeComponent();
         }

@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Compras\frmActualizarProveedor.cs">
+    <Compile Include="Formularios\Compras\frmProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Compras\frmActualizarProveedor.Designer.cs">
-      <DependentUpon>frmActualizarProveedor.cs</DependentUpon>
+    <Compile Include="Formularios\Compras\frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Compras\frmListadoOrdenCompra.cs">
       <SubType>Form</SubType>
@@ -171,8 +171,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Compras\frmActualizarProveedor.resx">
-      <DependentUpon>frmActualizarProveedor.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Compras\frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compras\frmListadoOrdenCompra.resx">
       <DependentUpon>frmListadoOrdenCompra.cs</DependentUpon>
