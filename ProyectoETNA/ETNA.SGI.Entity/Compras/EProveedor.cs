@@ -8,7 +8,7 @@ namespace ETNA.SGI.Entity.Compras
     public class EProveedor
     {
         private int codProveedor;
-
+        
         public int CodProveedor
         {
             get { return codProveedor; }
