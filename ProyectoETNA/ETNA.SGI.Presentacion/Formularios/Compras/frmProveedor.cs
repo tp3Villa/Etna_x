@@ -70,8 +70,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 proveedor.Telefono = Convert.ToInt32(txtTelefono.Text.Trim());
                 proveedor.FechaRegistro = FechaSis;
                 proveedor.Email = txtEmail.Text.Trim();
-                //proveedor.Ruc = Convert.ToInt32(txtRUC.Text.Trim());
-                proveedor.Ruc = 1;
+                proveedor.Ruc = Convert.ToInt32(txtRUC.Text.Trim());
+                //proveedor.Ruc = 1;
                 proveedor.Observacion = txtObs.Text.Trim();
 
                 int result = bProveedor.BInsertProveedor(proveedor);
