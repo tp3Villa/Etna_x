@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,7 +49,6 @@
             this.fechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lugarEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ver = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -146,8 +144,7 @@
             this.codProveedor,
             this.fechaEntrega,
             this.lugarEntrega,
-            this.estado,
-            this.ver});
+            this.estado});
             this.dataGridView1.Location = new System.Drawing.Point(10, 153);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
@@ -229,17 +226,6 @@
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
             // 
-            // ver
-            // 
-            this.ver.DataPropertyName = "3";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ver.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ver.HeaderText = "Ver Documento";
-            this.ver.Name = "ver";
-            this.ver.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ver.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ver.Width = 200;
-            // 
             // frmListadoOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +263,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn valida;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn codRequerimiento;
@@ -285,9 +273,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn lugarEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.DataGridViewLinkColumn ver;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
 
     }
 }
