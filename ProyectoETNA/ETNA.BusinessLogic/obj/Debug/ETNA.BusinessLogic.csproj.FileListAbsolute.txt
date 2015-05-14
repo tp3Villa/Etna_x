@@ -18,6 +18,15 @@ D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETN
 D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.BusinessLogic\obj\Debug\ETNA.BusinessLogic.csprojResolveAssemblyReference.cache
 D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.BusinessLogic\obj\Debug\ETNA.BusinessLogic.dll
 D:\JRM Documentos\jcarrillo\Documentos\UPC\TP2\Entregables\Arquitectura\ETNA\ETNA.BusinessLogic\obj\Debug\ETNA.BusinessLogic.pdb
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.BusinessLogic\bin\Debug\ETNA.BusinessLogic.dll
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.BusinessLogic\bin\Debug\ETNA.BusinessLogic.pdb
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.BusinessLogic\bin\Debug\ETNA.BusinessEntity.dll
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.BusinessLogic\bin\Debug\ETNA.DataAccess.dll
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.BusinessLogic\bin\Debug\ETNA.BusinessEntity.pdb
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.BusinessLogic\bin\Debug\ETNA.DataAccess.pdb
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.BusinessLogic\obj\Debug\ETNA.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.BusinessLogic\obj\Debug\ETNA.BusinessLogic.dll
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.BusinessLogic\obj\Debug\ETNA.BusinessLogic.pdb
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.BusinessLogic\bin\Debug\ETNA.BusinessLogic.dll
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.BusinessLogic\bin\Debug\ETNA.BusinessLogic.pdb
 C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.BusinessLogic\bin\Debug\ETNA.BusinessEntity.dll

@@ -86,15 +86,21 @@
     <Content Include="Imagenes\cabecera.jpg" />
     <Content Include="Imagenes\comisiones.jpg" />
     <Content Include="Imagenes\entrar.gif" />
+    <Content Include="Imagenes\InitialImage.png" />
     <Content Include="Imagenes\login2.JPG" />
     <Content Include="Imagenes\Pr_.jpg" />
+    <Content Include="Imagenes\SelectedButton.png" />
     <Content Include="JavaScript\popCalendar.js" />
     <Content Include="JavaScript\validacion.js" />
+    <Content Include="Logistica\frmActualizarInventario.aspx" />
+    <Content Include="Logistica\frmActUbiProducto.aspx" />
     <Content Include="Logistica\frmConsultaMovimientosAlmacen.aspx" />
     <Content Include="Logistica\frmGeneracionMovimiento.aspx" />
     <Content Include="Logistica\frmMantenimientoProgramacionInventario.aspx" />
     <Content Include="Logistica\frmMovimientosAlmacen.aspx" />
     <Content Include="Logistica\frmProgramacionInventario.aspx" />
+    <Content Include="Logistica\frmSolicitudReposicionStock.aspx" />
+    <Content Include="Logistica\frmTomaInventario.aspx" />
     <Content Include="Seguridad\Error.aspx" />
     <Content Include="Seguridad\Index.aspx" />
     <Content Include="Seguridad\Login.aspx" />
@@ -145,6 +151,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\frmActualizarInventario.aspx.cs">
+      <DependentUpon>frmActualizarInventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmActualizarInventario.aspx.designer.cs">
+      <DependentUpon>frmActualizarInventario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmActUbiProducto.aspx.cs">
+      <DependentUpon>frmActUbiProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmActUbiProducto.aspx.designer.cs">
+      <DependentUpon>frmActUbiProducto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\frmConsultaMovimientosAlmacen.aspx.cs">
       <DependentUpon>frmConsultaMovimientosAlmacen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -179,6 +199,20 @@
     </Compile>
     <Compile Include="Logistica\frmProgramacionInventario.aspx.designer.cs">
       <DependentUpon>frmProgramacionInventario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmSolicitudReposicionStock.aspx.cs">
+      <DependentUpon>frmSolicitudReposicionStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmSolicitudReposicionStock.aspx.designer.cs">
+      <DependentUpon>frmSolicitudReposicionStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmTomaInventario.aspx.cs">
+      <DependentUpon>frmTomaInventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmTomaInventario.aspx.designer.cs">
+      <DependentUpon>frmTomaInventario.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage\MasterPrincipal.master.cs">
       <DependentUpon>MasterPrincipal.master</DependentUpon>
@@ -301,13 +335,13 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ETNA.BusinessEntity\ETNA.BusinessEntity.csproj">
+    <ProjectReference Include="..\ETNA.BusinessEntity\ETNA.SGL.Entity.csproj">
       <Project>{EFDE5B11-EBC0-4396-B96D-A2B78197F6F1}</Project>
-      <Name>SGR.BusinessEntity</Name>
+      <Name>ETNA.SGL.Entity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ETNA.BusinessLogic\ETNA.BusinessLogic.csproj">
+    <ProjectReference Include="..\ETNA.BusinessLogic\ETNA.SGL.Business.csproj">
       <Project>{2FF8945A-A6FD-4FEA-BF88-9810DAB681E5}</Project>
-      <Name>SGR.BusinessLogic</Name>
+      <Name>ETNA.SGL.Business</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

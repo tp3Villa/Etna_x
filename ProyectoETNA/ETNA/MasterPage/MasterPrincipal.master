@@ -51,9 +51,9 @@
             </div>
             <div id="derecha">
                 <a class="headerLink" href="../Seguridad/Index.aspx">Inicio</a>&nbsp;|
-                <a class="headerLink" href="#" >Manual de Usuario</a>&nbsp;|                
+                <a class="headerLink" href="#" >Manual del Usuario</a>&nbsp;|                
                 <a class="headerLink" href="#" >Manual Word</a>&nbsp;| 
-                <a class="headerLink" href="../Seguridad/Login.aspx?OUT=SI" >Cerrar Sesion</a>                
+                <a class="headerLink" href="../Seguridad/Login.aspx?OUT=SI" >Cerrar Sesión</a>                
                 
             </div>
             </div>
@@ -79,9 +79,15 @@
                         <asp:MenuItem 
                             Text="Logística" Value="Logistica">
                             <asp:MenuItem NavigateUrl="~/Logistica/frmMovimientosAlmacen.aspx" 
-                                Text="Movimientos Almacén" Value="MovimientosAlmacen"></asp:MenuItem>                            
+                                Text="Movimientos de Almacén" Value="MovimientosAlmacen"></asp:MenuItem>                            
                             <asp:MenuItem NavigateUrl="~/Logistica/frmProgramacionInventario.aspx" 
-                                Text="Programación Inventario" Value="ProgramacionInventario"></asp:MenuItem>                            
+                                Text="Programación de Inventario" Value="ProgramacionInventario"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Logistica/frmActualizarInventario.aspx" 
+                                Text="Actualización de Inventario" Value="ActualizarInventario"></asp:MenuItem>                            
+                            <asp:MenuItem NavigateUrl="~/Logistica/frmSolicitudReposicionStock.aspx" 
+                                Text="Solicitud de Reposición de Stock" Value="SolicitudReposicionStock"></asp:MenuItem>                            
+                            <asp:MenuItem NavigateUrl="~/Logistica/frmActUbiProducto.aspx" 
+                                Text="Actualización de Ubicación de Producto" Value="ActualizarUbicacionProducto"></asp:MenuItem>                            
                         </asp:MenuItem>
                     </Items>
                     <StaticHoverStyle BackColor="#666666" ForeColor="White" />

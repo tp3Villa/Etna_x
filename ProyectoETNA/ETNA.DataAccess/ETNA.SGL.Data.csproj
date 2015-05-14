@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2FF8945A-A6FD-4FEA-BF88-9810DAB681E5}</ProjectGuid>
+    <ProjectGuid>{C5A3FDE3-4C89-44E0-A8E3-5B20FD36A5AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ETNA.BusinessLogic</RootNamespace>
-    <AssemblyName>ETNA.BusinessLogic</AssemblyName>
+    <RootNamespace>ETNA.DataAccess</RootNamespace>
+    <AssemblyName>ETNA.DataAccess</AssemblyName>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -60,20 +60,24 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comun\PersonaBL.cs" />
-    <Compile Include="Logistica\AlmacenBL.cs" />
-    <Compile Include="Logistica\DetalleDocumentoAlmacenBL.cs" />
-    <Compile Include="Logistica\DetalleDocumentoPendienteBL.cs" />
-    <Compile Include="Logistica\DocumentoAlmacenBL.cs" />
-    <Compile Include="Logistica\DocumentoPendienteBL.cs" />
-    <Compile Include="Logistica\LoteBL.cs" />
-    <Compile Include="Logistica\ProgramacionInventarioBL.cs" />
-    <Compile Include="Logistica\StockBL.cs" />
+    <Compile Include="Base\ConexionBD.cs" />
+    <Compile Include="Comun\PersonaDA.cs" />
+    <Compile Include="Logistica\AlmacenDA.cs" />
+    <Compile Include="Logistica\DetalleDocumentoAlmacenDA.cs" />
+    <Compile Include="Logistica\DetalleDocumentoPendienteDA.cs" />
+    <Compile Include="Logistica\DocumentoAlmacenDA.cs" />
+    <Compile Include="Logistica\DocumentoPendienteDA.cs" />
+    <Compile Include="Logistica\LoteDA.cs" />
+    <Compile Include="Logistica\ProgramacionInventarioDA.cs" />
+    <Compile Include="Logistica\StockDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -94,13 +98,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ETNA.BusinessEntity\ETNA.BusinessEntity.csproj">
+    <ProjectReference Include="..\ETNA.BusinessEntity\ETNA.SGL.Entity.csproj">
       <Project>{EFDE5B11-EBC0-4396-B96D-A2B78197F6F1}</Project>
-      <Name>ETNA.BusinessEntity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ETNA.DataAccess\ETNA.DataAccess.csproj">
-      <Project>{C5A3FDE3-4C89-44E0-A8E3-5B20FD36A5AE}</Project>
-      <Name>ETNA.DataAccess</Name>
+      <Name>ETNA.SGL.Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

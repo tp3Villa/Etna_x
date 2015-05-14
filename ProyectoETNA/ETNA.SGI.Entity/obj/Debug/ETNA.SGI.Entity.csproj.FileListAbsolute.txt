@@ -21,3 +21,13 @@ C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\b
 C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.csprojResolveAssemblyReference.cache
 C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.dll
 C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.pdb
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.csprojResolveAssemblyReference.cache
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.dll
+C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.pdb
+C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.dll
+C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\bin\Debug\ETNA.SGI.Entity.pdb
+C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.csprojResolveAssemblyReference.cache
+C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.dll
+C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Entity\obj\Debug\ETNA.SGI.Entity.pdb
