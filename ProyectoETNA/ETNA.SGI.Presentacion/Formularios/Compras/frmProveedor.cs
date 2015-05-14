@@ -7,6 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using ETNA.SGI.Bussiness.Compras;
+using ETNA.SGI.Data.Compras;
+using ETNA.SGI.Entity.Compras;
+using ETNA.SGI.Utils;
+using System.Globalization;
+
 namespace ETNA.SGI.Presentacion.Formularios.Compras
 {
     public partial class frmProveedor : Form
@@ -21,13 +27,18 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         }
 
+        EProveedor proveedor = new EProveedor();
+       // BProveedor tProveedor =  new BProveedor();
+
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             /* UPC - 14.02.2015 - Edinson Rojas Villarreyes - Begin */
             /* Se valida que se ingrese los campos requeridos */
 
+            DateTime FechaSis = DateTime.Now;
+
             string fecha;
-            //FechaSis = DateTime.Now;
+            FechaSis = DateTime.Now;
 
             if (txtRazonSocial.Text == "") { MessageBox.Show("Ingresar Razón Social", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtRazonSocial.Focus(); this.Cursor = Cursors.Default; return; }
             if (txtRUC.Text == "") { MessageBox.Show("Ingresar RUC", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtRUC.Focus(); this.Cursor = Cursors.Default; return; }
@@ -37,7 +48,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             //if (richTextBox1.Text == "") { MessageBox.Show("Ingresar Observaciones", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); richTextBox1.Focus(); this.Cursor = Cursors.Default; return; }
             if (txtObs.Text == "") { MessageBox.Show("Ingresar Observaciones", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtObs.Focus(); this.Cursor = Cursors.Default; return; }
 
-            if (MessageBox.Show("Se Procedera a Grabar el proveedor", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Se procederá a grabar el proveedor", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                /* string corr = "";
 
@@ -46,20 +57,19 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
                 objtra = new BTransaccionCompras();
 
-                objBus = new BTablasCompras();
+                objBus = new BTablasCompras(); */
                 fecha = FechaSis.ToShortDateString().Substring(6, 4) + FechaSis.ToShortDateString().Substring(3, 2) + FechaSis.ToShortDateString().Substring(0, 2);
-
+                
                 proveedor = new EProveedor();
-                proveedor.CodProveedor = Convert.ToInt32(corr);
+                proveedor.CodProveedor = Convert.ToInt32("1");
                 proveedor.RazonSocial = txtRazonSocial.Text.Trim();
-                proveedor.Direccion = txtdir.Text.Trim();
+                proveedor.Direccion = txtDire.Text.Trim();
                 proveedor.Telefono = Convert.ToInt32(txtTelefono.Text.Trim());
                 proveedor.FechaRegistro = FechaSis;
                 proveedor.Email = txtEmail.Text.Trim();
-                proveedor.Ruc = Convert.ToInt32(txtRuc.Text.Trim());
-                proveedor.Observacion = richTextBox1.Text.Trim();
-
-
+                proveedor.Ruc = Convert.ToInt32(txtRUC.Text.Trim());
+                proveedor.Observacion = txtObs.Text.Trim();
+                /*
 
                 objtra = new BTransaccionCompras();
                 int h = objtra.BInsertProveedor(proveedor);
