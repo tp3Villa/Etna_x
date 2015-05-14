@@ -56,6 +56,11 @@ namespace ETNA.SGI.Presentacion
                     string opcion1 = dvOpcionesxUsuario[i]["cod_men"].ToString().Trim() + "S";
                     string opcion2 = dvOpcionesxUsuario[i]["cod_men"].ToString().Trim() + "T";
 
+                    // Para cargar opciones del modulo Compra
+                    // Ejemplo codigo: ETN01C
+                    try { item2.DropDownItems[opcion].Visible = true; }
+                    catch { }
+
                     //if ((opcion!="RQG06") && (opcion!="RQG07"))
                     //{
                     //    toolStrip1.Items[opcion].Enabled = true;
@@ -75,7 +80,7 @@ namespace ETNA.SGI.Presentacion
                     try { item1.DropDownItems[opcion1].Visible = true; }
                     catch { }
                     try { item2.DropDownItems[opcion1].Visible = true; }
-                    catch { }
+                    catch { }                    
                     try { item3.DropDownItems[opcion1].Visible = true; }
                     catch { }
                     try { item4.DropDownItems[opcion1].Visible = true; }
@@ -185,8 +190,8 @@ namespace ETNA.SGI.Presentacion
 
         private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // Formularios.Compras.frmListadoOrdenCompra frm = new Formularios.Compras.frmListadoOrdenCompra();
-            //frm.Show();
+            Formularios.Compras.frmListadoOrdenCompra frm = new Formularios.Compras.frmListadoOrdenCompra();
+            frm.Show();
         }
 
         private void Compras_Click(object sender, EventArgs e)
