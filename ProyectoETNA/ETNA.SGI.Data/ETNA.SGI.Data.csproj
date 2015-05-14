@@ -41,16 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compras\DLogin.cs" />
+    <Compile Include="Compras\DTablas.cs" />
+    <Compile Include="Compras\DTransaccion.cs" />
     <Compile Include="DConexion.cs" />
     <Compile Include="Exportacion\DLogin.cs" />
     <Compile Include="Exportacion\DTablas.cs" />
     <Compile Include="Exportacion\DTransaccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Compras\" />
-    <Folder Include="Ventas\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ETNA.SGI.Entity\ETNA.SGI.Entity.csproj">
       <Project>{9D5B3824-833F-413A-B2F7-15F37A5E645F}</Project>
