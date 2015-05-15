@@ -37,8 +37,13 @@ namespace ETNA.SGI.Data.Compras
                           "WHERE razonSocial like '%" + EProveedor.RazonSocial + "'";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
             DataTable tabla = new DataTable();
-            da.Fill(tabla);
+            try
+            {
+                da.Fill(tabla);
+            }
+            catch {  }
             return tabla;
+                
         }
 
         public int DInsertProveedor(EProveedor EProveedor)
