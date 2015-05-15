@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -216,8 +216,8 @@
             // codProducto
             // 
             this.codProducto.DataPropertyName = "1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codProducto.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codProducto.DefaultCellStyle = dataGridViewCellStyle1;
             this.codProducto.HeaderText = "Producto";
             this.codProducto.Name = "codProducto";
             this.codProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -323,6 +323,7 @@
             this.button3.TabIndex = 118;
             this.button3.Text = "CANCELAR";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox6
             // 

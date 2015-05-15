@@ -20,5 +20,11 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Formularios.Compras.frmOrdenCompra frm = new frmOrdenCompra();
+            frm.ShowDialog();
+        }
     }
 }
