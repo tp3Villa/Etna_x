@@ -48,14 +48,21 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             //if (richTextBox1.Text == "") { MessageBox.Show("Ingresar Observaciones", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); richTextBox1.Focus(); this.Cursor = Cursors.Default; return; }
             if (txtObs.Text == "") { MessageBox.Show("Ingresar Observaciones", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtObs.Focus(); this.Cursor = Cursors.Default; return; }
 
+            System.Text.RegularExpressions.Regex rEmail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+
+            if (txtEmail.Text.Length > 0 && txtEmail.Text.Trim().Length != 0)
+            {
+                if (!rEmail.IsMatch(txtEmail.Text.Trim()))
+                {
+                    MessageBox.Show("Correo eléctronico inválido", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmail.Focus();
+                    this.Cursor = Cursors.Default; return;
+                    
+                }
+            }
+
             if (MessageBox.Show("Se procederá a grabar el proveedor", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-               /* 
-
-
-                objtra = new BTransaccionCompras();
-
-                objBus = new BTablasCompras(); */
 
                 string corr = "";
 
@@ -77,13 +84,6 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
                 int result = bProveedor.BInsertProveedor(proveedor);
 
-                /*
-
-                objtra = new BTransaccionCompras();
-                int h = objtra.BInsertProveedor(proveedor);
-
-
-                */
                 MessageBox.Show("Proveedor Ingresado Correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -97,7 +97,26 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Se procederá cerrar la ventana, desea continuar?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
+
+        private void txtRUC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            /* Validamos sólo el ingreso de nùmeros */
+            const char Delete = (char)8;
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            /* Validamos sólo el ingreso de nùmeros */
+            const char Delete = (char)8;
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
+        }
+
+                
     }
 }

@@ -72,9 +72,11 @@
             // txtRUC
             // 
             this.txtRUC.Location = new System.Drawing.Point(99, 55);
+            this.txtRUC.MaxLength = 11;
             this.txtRUC.Name = "txtRUC";
             this.txtRUC.Size = new System.Drawing.Size(100, 20);
             this.txtRUC.TabIndex = 2;
+            this.txtRUC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRUC_KeyPress);
             // 
             // txtDire
             // 
@@ -89,6 +91,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 4;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtEmail
             // 
