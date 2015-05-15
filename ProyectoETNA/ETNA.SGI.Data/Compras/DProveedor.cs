@@ -34,7 +34,7 @@ namespace ETNA.SGI.Data.Compras
         public DataTable DGetAllProveedor(EProveedor EProveedor)
         {
             string sql = "SELECT codProveedor,razonSocial,direccion,telefono,fechaRegistro,email,ruc,observacion FROM Proveedor " +
-                          "WHERE razonSocial like '%" + EProveedor.RazonSocial + "'";
+                          "WHERE razonSocial like '%" + EProveedor.RazonSocial + "%'";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
             DataTable tabla = new DataTable();
             try
