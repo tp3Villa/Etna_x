@@ -48,7 +48,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label11.Location = new System.Drawing.Point(6, 12);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(730, 29);
+            this.label11.Size = new System.Drawing.Size(841, 29);
             this.label11.TabIndex = 0;
             this.label11.Text = "Lista de Proveedores";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -58,7 +58,7 @@
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Location = new System.Drawing.Point(12, 12);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(742, 49);
+            this.groupBox6.Size = new System.Drawing.Size(853, 49);
             this.groupBox6.TabIndex = 101;
             this.groupBox6.TabStop = false;
             // 
@@ -70,7 +70,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(11, 187);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(732, 102);
+            this.dataGridView1.Size = new System.Drawing.Size(854, 262);
             this.dataGridView1.TabIndex = 102;
             // 
             // btnNuevo
@@ -92,7 +92,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
             this.groupBox1.Location = new System.Drawing.Point(12, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(742, 85);
+            this.groupBox1.Size = new System.Drawing.Size(853, 85);
             this.groupBox1.TabIndex = 104;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
@@ -116,7 +116,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
-            this.btnBuscar.Location = new System.Drawing.Point(676, 16);
+            this.btnBuscar.Location = new System.Drawing.Point(792, 19);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(55, 57);
             this.btnBuscar.TabIndex = 103;
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 312);
+            this.ClientSize = new System.Drawing.Size(959, 461);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dataGridView1);
