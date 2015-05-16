@@ -102,6 +102,7 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
             // 
             // dataGridView1
             // 
@@ -122,6 +123,7 @@
             this.btnNuevo.TabIndex = 107;
             this.btnNuevo.Text = "Añadir Cotización";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // frmListadoCotizacion
             // 
