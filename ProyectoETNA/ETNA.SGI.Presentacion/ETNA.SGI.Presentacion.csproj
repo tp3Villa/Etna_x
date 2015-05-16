@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Compras\frmListadoCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Compras\frmListadoCotizacion.Designer.cs">
+      <DependentUpon>frmListadoCotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Compras\frmListadoProveedor_BKP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Compras\frmListadoCotizacion.resx">
+      <DependentUpon>frmListadoCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compras\frmListadoProveedor_BKP.resx">
       <DependentUpon>frmListadoProveedor_BKP.cs</DependentUpon>
     </EmbeddedResource>
