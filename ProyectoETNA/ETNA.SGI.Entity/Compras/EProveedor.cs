@@ -54,9 +54,9 @@ namespace ETNA.SGI.Entity.Compras
             set { email = value; }
         }
 
-        private int ruc;
+        private long ruc;
 
-        public int Ruc
+        public long Ruc
         {
             get { return ruc; }
             set { ruc = value; }

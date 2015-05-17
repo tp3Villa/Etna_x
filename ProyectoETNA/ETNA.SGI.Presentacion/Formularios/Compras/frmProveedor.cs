@@ -112,12 +112,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                     proveedor.CodProveedor = Convert.ToInt32(corr);
                     proveedor.RazonSocial = txtRazonSocial.Text.Trim();
                     proveedor.Direccion = txtDire.Text.Trim();
-                    // proveedor.Telefono = Convert.ToInt32(txtTelefono.Text.Trim());
-                    proveedor.Telefono = 123;
+                    proveedor.Telefono = Convert.ToInt32(txtTelefono.Text.Trim());
                     proveedor.FechaRegistro = FechaSis;
                     proveedor.Email = txtEmail.Text.Trim();
-                    //proveedor.Ruc = Convert.ToInt32(txtRUC.Text.Trim());
-                    proveedor.Ruc = 1;
+                    proveedor.Ruc = Convert.ToInt64(txtRUC.Text.Trim());
                     proveedor.Observacion = txtObs.Text.Trim();
                     proveedor.CodCondicionPago = Convert.ToInt32(txtCondPago.Text.Trim());
 
