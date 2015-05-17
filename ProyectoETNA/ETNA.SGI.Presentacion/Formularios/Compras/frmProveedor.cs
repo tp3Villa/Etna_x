@@ -76,6 +76,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             if (txtTelefono.Text == "") { MessageBox.Show("Ingresar Teléfono", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtTelefono.Focus(); this.Cursor = Cursors.Default; return; }
             if (txtDire.Text == "") { MessageBox.Show("Ingresar Direccion", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtDire.Focus(); this.Cursor = Cursors.Default; return; }
             if (txtEmail.Text == "") { MessageBox.Show("Ingresar Correo Eléctronico", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtEmail.Focus(); this.Cursor = Cursors.Default; return; }
+            if (txtCondPago.Text == "") { MessageBox.Show("Ingresar condición de pago", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtEmail.Focus(); this.Cursor = Cursors.Default; return; }
             //if (richTextBox1.Text == "") { MessageBox.Show("Ingresar Observaciones", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); richTextBox1.Focus(); this.Cursor = Cursors.Default; return; }
             if (txtObs.Text == "") { MessageBox.Show("Ingresar Observaciones", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtObs.Focus(); this.Cursor = Cursors.Default; return; }
 
