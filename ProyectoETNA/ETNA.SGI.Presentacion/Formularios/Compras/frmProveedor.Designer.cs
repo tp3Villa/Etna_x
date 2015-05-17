@@ -44,6 +44,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCondPago = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rdInactivo = new System.Windows.Forms.RadioButton();
             this.rdActivo = new System.Windows.Forms.RadioButton();
@@ -52,7 +53,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
-            this.btnCondPago = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -214,6 +214,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información";
             // 
+            // btnCondPago
+            // 
+            this.btnCondPago.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
+            this.btnCondPago.Location = new System.Drawing.Point(166, 168);
+            this.btnCondPago.Name = "btnCondPago";
+            this.btnCondPago.Size = new System.Drawing.Size(33, 25);
+            this.btnCondPago.TabIndex = 105;
+            this.btnCondPago.UseVisualStyleBackColor = true;
+            this.btnCondPago.Click += new System.EventHandler(this.button1_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.rdInactivo);
@@ -261,6 +271,7 @@
             // 
             // txtCondPago
             // 
+            this.txtCondPago.Enabled = false;
             this.txtCondPago.Location = new System.Drawing.Point(99, 171);
             this.txtCondPago.Name = "txtCondPago";
             this.txtCondPago.Size = new System.Drawing.Size(61, 20);
@@ -302,16 +313,6 @@
             this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
-            // 
-            // btnCondPago
-            // 
-            this.btnCondPago.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
-            this.btnCondPago.Location = new System.Drawing.Point(166, 168);
-            this.btnCondPago.Name = "btnCondPago";
-            this.btnCondPago.Size = new System.Drawing.Size(33, 25);
-            this.btnCondPago.TabIndex = 105;
-            this.btnCondPago.UseVisualStyleBackColor = true;
-            this.btnCondPago.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmProveedor
             // 
