@@ -73,6 +73,38 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
+        public DataTable DGetCotizacionById(ECotizacion eCotizacion)
+        {
+            string sql = "SELECT c.codCotizacion,c.codRequerimiento,c.codProveedor, p.razonSocial,c.descripcion,c.telefono, c.fechaExpiracion,e.desEstado " +
+                              "FROM Cotizacion c " +
+                              "INNER JOIN Proveedor p " +
+                              "ON c.codProveedor = p.codProveedor " +
+                              "INNER JOIN Estado e " +
+                              "ON c.codEstado = e.codEstado " +
+                          "WHERE  ( @codCotizacion = 0 OR c.codCotizacion = @codCotizacion ) " +
+                          "AND ( @codRequerimiento = 0 OR c.codRequerimiento = @codRequerimiento ) " +
+                          "AND ( @codEstado = 0 OR c.codEstado = @codEstado )";
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            // Create the SelectCommand.
+            SqlCommand command = new SqlCommand(sql, cn.Conectar);
+
+            // Add the parameters for the SelectCommand.
+            command.Parameters.Add("@codCotizacion", SqlDbType.Int);
+            command.Parameters["@codCotizacion"].Value = eCotizacion.CodCotizacion;
+            command.Parameters.Add("@codRequerimiento", SqlDbType.Int);
+            command.Parameters["@codRequerimiento"].Value = eCotizacion.CodRequerimiento;
+            command.Parameters.Add("@codEstado", SqlDbType.Int);
+            command.Parameters["@codEstado"].Value = eCotizacion.CodEstado;
+
+            adapter.SelectCommand = command;
+
+            DataTable tabla = new DataTable();
+            adapter.Fill(tabla);
+            return tabla;
+        }
+
         public DataTable DGetAllCotizacionDetalle(ECotizacionDetalle eCotizacionDetalle)
         {
             string sql = "SELECT c.codCotizacion,c.idProducto,c.cantidad,c.precioUnidad,c.descuento " +
