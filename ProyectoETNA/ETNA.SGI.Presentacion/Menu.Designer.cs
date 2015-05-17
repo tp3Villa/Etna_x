@@ -32,12 +32,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Sistema = new System.Windows.Forms.ToolStripMenuItem();
+            this.administraciónDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN01S = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN02S = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paisesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Compras = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN010C = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN011C = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN012C = new System.Windows.Forms.ToolStripMenuItem();
             this.Exportacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN05S = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN06S = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN07S = new System.Windows.Forms.ToolStripMenuItem();
+            this.ETN08S = new System.Windows.Forms.ToolStripMenuItem();
             this.Consultas = new System.Windows.Forms.ToolStripMenuItem();
             this.Reportes = new System.Windows.Forms.ToolStripMenuItem();
             this.stStrip = new System.Windows.Forms.StatusStrip();
@@ -47,23 +64,6 @@
             this.stStrip03 = new System.Windows.Forms.ToolStripStatusLabel();
             this.stStrip04 = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.tsbExit = new System.Windows.Forms.ToolStripButton();
-            this.administraciónDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN01S = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN02S = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paisesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN01C = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN02C = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN03C = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN05S = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN06S = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN07S = new System.Windows.Forms.ToolStripMenuItem();
-            this.ETN08S = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.stStrip.SuspendLayout();
@@ -88,10 +88,34 @@
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(14, 5, 14, 5);
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(37, 51);
+            this.toolStripButton1.Text = "Calc.";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 61);
+            // 
+            // tsbExit
+            // 
+            this.tsbExit.Image = global::ETNA.SGI.Presentacion.Properties.Resources.close;
+            this.tsbExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbExit.Margin = new System.Windows.Forms.Padding(14, 5, 14, 5);
+            this.tsbExit.Name = "tsbExit";
+            this.tsbExit.Size = new System.Drawing.Size(36, 51);
+            this.tsbExit.Text = "&Salir";
+            this.tsbExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbExit.Click += new System.EventHandler(this.tsbExit_Click);
             // 
             // toolStripSeparator1
             // 
@@ -125,117 +149,6 @@
             this.Sistema.Name = "Sistema";
             this.Sistema.Size = new System.Drawing.Size(60, 20);
             this.Sistema.Text = "&Sistema";
-            // 
-            // Compras
-            // 
-            this.Compras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ETN01C,
-            this.ETN02C,
-            this.ETN03C});
-            this.Compras.Name = "Compras";
-            this.Compras.Size = new System.Drawing.Size(67, 20);
-            this.Compras.Text = "&Compras";
-            this.Compras.Click += new System.EventHandler(this.Compras_Click);
-            // 
-            // Exportacion
-            // 
-            this.Exportacion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ETN05S,
-            this.ETN06S,
-            this.ETN07S,
-            this.ETN08S});
-            this.Exportacion.Name = "Exportacion";
-            this.Exportacion.Size = new System.Drawing.Size(81, 20);
-            this.Exportacion.Text = "&Exportación";
-            this.Exportacion.Click += new System.EventHandler(this.Exportacion_Click);
-            // 
-            // Consultas
-            // 
-            this.Consultas.Name = "Consultas";
-            this.Consultas.Size = new System.Drawing.Size(71, 20);
-            this.Consultas.Text = "&Consultas";
-            // 
-            // Reportes
-            // 
-            this.Reportes.Name = "Reportes";
-            this.Reportes.Size = new System.Drawing.Size(65, 20);
-            this.Reportes.Text = "Reportes";
-            // 
-            // stStrip
-            // 
-            this.stStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stStrip00,
-            this.stStrip01,
-            this.stStrip02,
-            this.stStrip03,
-            this.stStrip04});
-            this.stStrip.Location = new System.Drawing.Point(0, 379);
-            this.stStrip.Name = "stStrip";
-            this.stStrip.Size = new System.Drawing.Size(691, 22);
-            this.stStrip.TabIndex = 10;
-            this.stStrip.Text = "statusStrip1";
-            // 
-            // stStrip00
-            // 
-            this.stStrip00.Name = "stStrip00";
-            this.stStrip00.Size = new System.Drawing.Size(300, 16);
-            // 
-            // stStrip01
-            // 
-            this.stStrip01.Name = "stStrip01";
-            this.stStrip01.Size = new System.Drawing.Size(111, 17);
-            this.stStrip01.Text = "Aplicación: nombre";
-            // 
-            // stStrip02
-            // 
-            this.stStrip02.Name = "stStrip02";
-            this.stStrip02.Size = new System.Drawing.Size(83, 17);
-            this.stStrip02.Text = "Usuario: name";
-            // 
-            // stStrip03
-            // 
-            this.stStrip03.Name = "stStrip03";
-            this.stStrip03.Size = new System.Drawing.Size(41, 17);
-            this.stStrip03.Text = "Fecha:";
-            // 
-            // stStrip04
-            // 
-            this.stStrip04.Name = "stStrip04";
-            this.stStrip04.Size = new System.Drawing.Size(36, 17);
-            this.stStrip04.Text = "Hora:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ETNA.SGI.Presentacion.Properties.Resources.ETc;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 116);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(570, 219);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(14, 5, 14, 5);
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(37, 51);
-            this.toolStripButton1.Text = "Calc.";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // tsbExit
-            // 
-            this.tsbExit.Image = global::ETNA.SGI.Presentacion.Properties.Resources.close;
-            this.tsbExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbExit.Margin = new System.Windows.Forms.Padding(14, 5, 14, 5);
-            this.tsbExit.Name = "tsbExit";
-            this.tsbExit.Size = new System.Drawing.Size(36, 51);
-            this.tsbExit.Text = "&Salir";
-            this.tsbExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbExit.Click += new System.EventHandler(this.tsbExit_Click);
             // 
             // administraciónDeToolStripMenuItem
             // 
@@ -302,31 +215,55 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // ETN01C
+            // Compras
             // 
-            this.ETN01C.Image = global::ETNA.SGI.Presentacion.Properties.Resources.BO12;
-            this.ETN01C.Name = "ETN01C";
-            this.ETN01C.Size = new System.Drawing.Size(169, 22);
-            this.ETN01C.Text = "Proveedor";
-            this.ETN01C.Click += new System.EventHandler(this.proveedorToolStripMenuItem_Click);
+            this.Compras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ETN010C,
+            this.ETN011C,
+            this.ETN012C});
+            this.Compras.Name = "Compras";
+            this.Compras.Size = new System.Drawing.Size(67, 20);
+            this.Compras.Text = "&Compras";
+            this.Compras.Click += new System.EventHandler(this.Compras_Click);
             // 
-            // ETN02C
+            // ETN010C
             // 
-            this.ETN02C.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
-            this.ETN02C.Name = "ETN02C";
-            this.ETN02C.Size = new System.Drawing.Size(169, 22);
-            this.ETN02C.Text = "Orden de Compra";
-            this.ETN02C.Visible = false;
-            this.ETN02C.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
+            this.ETN010C.Image = global::ETNA.SGI.Presentacion.Properties.Resources.BO12;
+            this.ETN010C.Name = "ETN010C";
+            this.ETN010C.Size = new System.Drawing.Size(169, 22);
+            this.ETN010C.Text = "Proveedor";
+            this.ETN010C.Visible = false;
+            this.ETN010C.Click += new System.EventHandler(this.proveedorToolStripMenuItem_Click);
             // 
-            // ETN03C
+            // ETN011C
             // 
-            this.ETN03C.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
-            this.ETN03C.Name = "ETN03C";
-            this.ETN03C.Size = new System.Drawing.Size(169, 22);
-            this.ETN03C.Text = "Cotizacion";
-            this.ETN03C.Visible = false;
-            this.ETN03C.Click += new System.EventHandler(this.ETN03C_Click);
+            this.ETN011C.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
+            this.ETN011C.Name = "ETN011C";
+            this.ETN011C.Size = new System.Drawing.Size(169, 22);
+            this.ETN011C.Text = "Orden de Compra";
+            this.ETN011C.Visible = false;
+            this.ETN011C.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
+            // 
+            // ETN012C
+            // 
+            this.ETN012C.Image = global::ETNA.SGI.Presentacion.Properties.Resources.CALC1;
+            this.ETN012C.Name = "ETN012C";
+            this.ETN012C.Size = new System.Drawing.Size(169, 22);
+            this.ETN012C.Text = "Cotizacion";
+            this.ETN012C.Visible = false;
+            this.ETN012C.Click += new System.EventHandler(this.ETN03C_Click);
+            // 
+            // Exportacion
+            // 
+            this.Exportacion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ETN05S,
+            this.ETN06S,
+            this.ETN07S,
+            this.ETN08S});
+            this.Exportacion.Name = "Exportacion";
+            this.Exportacion.Size = new System.Drawing.Size(81, 20);
+            this.Exportacion.Text = "&Exportación";
+            this.Exportacion.Click += new System.EventHandler(this.Exportacion_Click);
             // 
             // ETN05S
             // 
@@ -363,6 +300,70 @@
             this.ETN08S.Text = "Aprobación Solicitud";
             this.ETN08S.Visible = false;
             this.ETN08S.Click += new System.EventHandler(this.aprobacionSolicitudToolStripMenuItem_Click);
+            // 
+            // Consultas
+            // 
+            this.Consultas.Name = "Consultas";
+            this.Consultas.Size = new System.Drawing.Size(71, 20);
+            this.Consultas.Text = "&Consultas";
+            // 
+            // Reportes
+            // 
+            this.Reportes.Name = "Reportes";
+            this.Reportes.Size = new System.Drawing.Size(65, 20);
+            this.Reportes.Text = "Reportes";
+            // 
+            // stStrip
+            // 
+            this.stStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stStrip00,
+            this.stStrip01,
+            this.stStrip02,
+            this.stStrip03,
+            this.stStrip04});
+            this.stStrip.Location = new System.Drawing.Point(0, 379);
+            this.stStrip.Name = "stStrip";
+            this.stStrip.Size = new System.Drawing.Size(691, 22);
+            this.stStrip.TabIndex = 10;
+            this.stStrip.Text = "statusStrip1";
+            // 
+            // stStrip00
+            // 
+            this.stStrip00.Name = "stStrip00";
+            this.stStrip00.Size = new System.Drawing.Size(300, 16);
+            // 
+            // stStrip01
+            // 
+            this.stStrip01.Name = "stStrip01";
+            this.stStrip01.Size = new System.Drawing.Size(111, 17);
+            this.stStrip01.Text = "Aplicación: nombre";
+            // 
+            // stStrip02
+            // 
+            this.stStrip02.Name = "stStrip02";
+            this.stStrip02.Size = new System.Drawing.Size(83, 17);
+            this.stStrip02.Text = "Usuario: name";
+            // 
+            // stStrip03
+            // 
+            this.stStrip03.Name = "stStrip03";
+            this.stStrip03.Size = new System.Drawing.Size(41, 17);
+            this.stStrip03.Text = "Fecha:";
+            // 
+            // stStrip04
+            // 
+            this.stStrip04.Name = "stStrip04";
+            this.stStrip04.Size = new System.Drawing.Size(36, 17);
+            this.stStrip04.Text = "Hora:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ETNA.SGI.Presentacion.Properties.Resources.ETc;
+            this.pictureBox1.Location = new System.Drawing.Point(68, 116);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(570, 219);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // Menu
             // 
@@ -404,7 +405,7 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Compras;
-        private System.Windows.Forms.ToolStripMenuItem ETN01C;
+        private System.Windows.Forms.ToolStripMenuItem ETN010C;
         private System.Windows.Forms.ToolStripMenuItem Exportacion;
         private System.Windows.Forms.ToolStripMenuItem ETN06S;
         private System.Windows.Forms.ToolStripMenuItem Consultas;
@@ -428,8 +429,8 @@
         private System.Windows.Forms.ToolStripMenuItem ETN02S;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paisesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ETN02C;
-        private System.Windows.Forms.ToolStripMenuItem ETN03C;
+        private System.Windows.Forms.ToolStripMenuItem ETN011C;
+        private System.Windows.Forms.ToolStripMenuItem ETN012C;
     }
 }
 

@@ -35,62 +35,15 @@ namespace ETNA.SGI.Entity.Compras
             get { return codMoneda; }
             set { codMoneda = value; }
         }
-        private int codCondicionPago;
 
-        public int CodCondicionPago
-        {
-            get { return codCondicionPago; }
-            set { codCondicionPago = value; }
-        }
-        private DateTime fechaRegistro;
+        private int codEstado;
 
-        public DateTime FechaRegistro
+        public int CodEstado
         {
-            get { return fechaRegistro; }
-            set { fechaRegistro = value; }
+            get { return codEstado; }
+            set { codEstado = value; }
         }
-        private DateTime fechaActualizacion;
 
-        public DateTime FechaActualizacion
-        {
-            get { return fechaActualizacion; }
-            set { fechaActualizacion = value; }
-        }
-        private string usuarioRegistro;
-
-        public string UsuarioRegistro
-        {
-            get { return usuarioRegistro; }
-            set { usuarioRegistro = value; }
-        }
-        private string usuarioModificacion;
-
-        public string UsuarioModificacion
-        {
-            get { return usuarioModificacion; }
-            set { usuarioModificacion = value; }
-        }
-        private DateTime fechaEntrega;
-
-        public DateTime FechaEntrega
-        {
-            get { return fechaEntrega; }
-            set { fechaEntrega = value; }
-        }
-        private double subtotal;
-
-        public double Subtotal
-        {
-            get { return subtotal; }
-            set { subtotal = value; }
-        }
-        private double descuento;
-
-        public double Descuento
-        {
-            get { return descuento; }
-            set { descuento = value; }
-        }
         private double igv;
 
         public double Igv
@@ -98,13 +51,23 @@ namespace ETNA.SGI.Entity.Compras
             get { return igv; }
             set { igv = value; }
         }
-        private double total;
 
-        public double Total
+        private DateTime fechaEntrega;
+
+        public DateTime FechaEntrega
         {
-            get { return total; }
-            set { total = value; }
+            get { return fechaEntrega; }
+            set { fechaEntrega = value; }
         }
+
+        private string lugarEntrega;
+
+        public string LugarEntrega
+        {
+            get { return lugarEntrega; }
+            set { lugarEntrega = value; }
+        }
+
         private string observacion;
 
         public string Observacion
@@ -113,5 +76,36 @@ namespace ETNA.SGI.Entity.Compras
             set { observacion = value; }
         }
         
+        private DateTime fechaRegistro;
+
+        public DateTime FechaRegistro
+        {
+            get { return fechaRegistro; }
+            set { fechaRegistro = value; }
+        }
+
+        private DateTime fechaActualizacion;
+
+        public DateTime FechaActualizacion
+        {
+            get { return fechaActualizacion; }
+            set { fechaActualizacion = value; }
+        }
+
+        private string usuarioRegistro;
+
+        public string UsuarioRegistro
+        {
+            get { return usuarioRegistro; }
+            set { usuarioRegistro = value; }
+        }
+
+        private string usuarioModificacion;
+
+        public string UsuarioModificacion
+        {
+            get { return usuarioModificacion; }
+            set { usuarioModificacion = value; }
+        }
     }
 }

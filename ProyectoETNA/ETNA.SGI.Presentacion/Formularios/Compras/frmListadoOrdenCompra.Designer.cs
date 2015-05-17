@@ -28,29 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.valida = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codRequerimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codCotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lugarEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCodOC = new System.Windows.Forms.TextBox();
+            this.txtCodReq = new System.Windows.Forms.TextBox();
+            this.cboEstado = new System.Windows.Forms.ComboBox();
+            this.dtGridOC = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridOC)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox6
@@ -101,102 +92,49 @@
             this.label3.TabIndex = 103;
             this.label3.Text = "Requerimiento";
             // 
-            // textBox1
+            // txtCodOC
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 20);
-            this.textBox1.TabIndex = 104;
+            this.txtCodOC.Location = new System.Drawing.Point(79, 70);
+            this.txtCodOC.Name = "txtCodOC";
+            this.txtCodOC.Size = new System.Drawing.Size(79, 20);
+            this.txtCodOC.TabIndex = 104;
+            this.txtCodOC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodOC_KeyPress);
             // 
-            // textBox2
+            // txtCodReq
             // 
-            this.textBox2.Location = new System.Drawing.Point(271, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(79, 20);
-            this.textBox2.TabIndex = 105;
+            this.txtCodReq.Location = new System.Drawing.Point(271, 70);
+            this.txtCodReq.Name = "txtCodReq";
+            this.txtCodReq.Size = new System.Drawing.Size(79, 20);
+            this.txtCodReq.TabIndex = 105;
+            this.txtCodReq.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodReq_KeyPress);
             // 
-            // comboBox1
+            // cboEstado
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.Items.AddRange(new object[] {
             "GENERADA",
             "ANULADA"});
-            this.comboBox1.Location = new System.Drawing.Point(439, 70);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 106;
+            this.cboEstado.Location = new System.Drawing.Point(439, 70);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(121, 21);
+            this.cboEstado.TabIndex = 106;
             // 
-            // dataGridView1
+            // dtGridOC
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.valida,
-            this.codigo,
-            this.codRequerimiento,
-            this.codCotizacion,
-            this.codProveedor,
-            this.fechaEntrega,
-            this.lugarEntrega,
-            this.estado});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 153);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(742, 229);
-            this.dataGridView1.TabIndex = 107;
-            // 
-            // valida
-            // 
-            this.valida.HeaderText = "";
-            this.valida.Name = "valida";
-            this.valida.Width = 35;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "1";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigo.DefaultCellStyle = dataGridViewCellStyle1;
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            this.codigo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.codigo.Width = 120;
-            // 
-            // codRequerimiento
-            // 
-            this.codRequerimiento.HeaderText = "Requerimiento";
-            this.codRequerimiento.Name = "codRequerimiento";
-            // 
-            // codCotizacion
-            // 
-            this.codCotizacion.HeaderText = "Cotizacion";
-            this.codCotizacion.Name = "codCotizacion";
-            // 
-            // codProveedor
-            // 
-            this.codProveedor.HeaderText = "Proveedor";
-            this.codProveedor.Name = "codProveedor";
-            // 
-            // fechaEntrega
-            // 
-            this.fechaEntrega.HeaderText = "Fecha Entrega";
-            this.fechaEntrega.Name = "fechaEntrega";
-            // 
-            // lugarEntrega
-            // 
-            this.lugarEntrega.HeaderText = "Lugar Entrega";
-            this.lugarEntrega.Name = "lugarEntrega";
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
+            this.dtGridOC.AllowUserToAddRows = false;
+            this.dtGridOC.AllowUserToDeleteRows = false;
+            this.dtGridOC.AllowUserToResizeColumns = false;
+            this.dtGridOC.AllowUserToResizeRows = false;
+            this.dtGridOC.BackgroundColor = System.Drawing.Color.White;
+            this.dtGridOC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dtGridOC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtGridOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridOC.Location = new System.Drawing.Point(10, 153);
+            this.dtGridOC.Name = "dtGridOC";
+            this.dtGridOC.ReadOnly = true;
+            this.dtGridOC.RowHeadersVisible = false;
+            this.dtGridOC.Size = new System.Drawing.Size(742, 229);
+            this.dtGridOC.TabIndex = 107;
             // 
             // button1
             // 
@@ -235,18 +173,19 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dtGridOC);
+            this.Controls.Add(this.cboEstado);
+            this.Controls.Add(this.txtCodReq);
+            this.Controls.Add(this.txtCodOC);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox6);
             this.Name = "frmListadoOrdenCompra";
             this.Text = "Lista de Ordenes de Compra";
+            this.Load += new System.EventHandler(this.frmListadoOrdenCompra_Load);
             this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridOC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,21 +198,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtCodOC;
+        private System.Windows.Forms.TextBox txtCodReq;
+        private System.Windows.Forms.ComboBox cboEstado;
+        private System.Windows.Forms.DataGridView dtGridOC;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn valida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codRequerimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codCotizacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaEntrega;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lugarEntrega;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
 
     }
 }

@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compras\DEstado.cs" />
     <Compile Include="Compras\DCotizacion.cs" />
+    <Compile Include="Compras\DOrdenCompra.cs" />
     <Compile Include="Compras\DProveedor.cs" />
     <Compile Include="DConexion.cs" />
     <Compile Include="Exportacion\DLogin.cs" />

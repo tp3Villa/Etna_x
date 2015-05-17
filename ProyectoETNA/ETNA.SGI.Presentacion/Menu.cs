@@ -55,10 +55,11 @@ namespace ETNA.SGI.Presentacion
                     string opcion = dvOpcionesxUsuario[i]["cod_men"].ToString().Trim();
                     string opcion1 = dvOpcionesxUsuario[i]["cod_men"].ToString().Trim() + "S";
                     string opcion2 = dvOpcionesxUsuario[i]["cod_men"].ToString().Trim() + "T";
+                    string opcion3 = dvOpcionesxUsuario[i]["cod_men"].ToString().Trim() + "C";
 
                     // Para cargar opciones del modulo Compra
-                    // Ejemplo codigo: ETN01C
-                    try { item2.DropDownItems[opcion].Visible = true; }
+                    // Ejemplo codigo: ETN010C
+                    try { item2.DropDownItems[opcion3].Visible = true; }
                     catch { }
 
                     //if ((opcion!="RQG06") && (opcion!="RQG07"))

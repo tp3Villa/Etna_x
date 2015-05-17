@@ -101,8 +101,8 @@ namespace ETNA.SGI.Presentacion
             textBox1.CharacterCasing = CharacterCasing.Upper;
             textBox2.CharacterCasing = CharacterCasing.Upper;
             textBox1.Focus();
-            textBox1.Text = "ET22200";
-            textBox2.Text = "123456";
+            textBox1.Text = "JPEREZ";
+            textBox2.Text = "123";
 
         }
 
