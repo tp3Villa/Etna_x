@@ -91,6 +91,7 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dataGridView1
             // 
@@ -132,24 +133,28 @@
             // 
             // codCotizacion
             // 
+            this.codCotizacion.DataPropertyName = "codCotizacion";
             this.codCotizacion.HeaderText = "Cód. Cotización";
             this.codCotizacion.Name = "codCotizacion";
             this.codCotizacion.ReadOnly = true;
             // 
             // descripcion
             // 
+            this.descripcion.DataPropertyName = "descripcion";
             this.descripcion.HeaderText = "Descripción";
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             // 
             // codRequerimiento
             // 
+            this.codRequerimiento.DataPropertyName = "codRequerimiento";
             this.codRequerimiento.HeaderText = "Cód. Requerimiento";
             this.codRequerimiento.Name = "codRequerimiento";
             this.codRequerimiento.ReadOnly = true;
             // 
             // fechaExpiracion
             // 
+            this.fechaExpiracion.DataPropertyName = "fechaExpiracion";
             this.fechaExpiracion.HeaderText = "Fecha Expiración";
             this.fechaExpiracion.Name = "fechaExpiracion";
             this.fechaExpiracion.ReadOnly = true;
@@ -190,12 +195,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewTextBoxColumn codCotizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn codRequerimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaExpiracion;
         private System.Windows.Forms.DataGridViewImageColumn Aprobar;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label11;
     }
 }
