@@ -96,7 +96,10 @@ namespace ETNA.SGI.Bussiness.Compras
             return dCotizacion.DDeleteCotizacionDetalle(CodCotizacion, IdProducto);
         }
 
-
-
+         public DataTable DGetCotizacionAprobacion()
+        {
+            return dCotizacion.DGetCotizacionAprobacion();
+        }
+        
     }
 }
