@@ -47,10 +47,15 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rdActivo = new System.Windows.Forms.RadioButton();
+            this.rdInactivo = new System.Windows.Forms.RadioButton();
+            this.rdTodo = new System.Windows.Forms.RadioButton();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label11
@@ -177,6 +182,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.lblRazonSocial);
             this.groupBox1.Controls.Add(this.txtRazonSocial);
             this.groupBox1.Controls.Add(this.btnBuscar);
@@ -242,6 +248,51 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rdTodo);
+            this.groupBox3.Controls.Add(this.rdInactivo);
+            this.groupBox3.Controls.Add(this.rdActivo);
+            this.groupBox3.Location = new System.Drawing.Point(343, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(416, 57);
+            this.groupBox3.TabIndex = 106;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Estado";
+            // 
+            // rdActivo
+            // 
+            this.rdActivo.AutoSize = true;
+            this.rdActivo.Location = new System.Drawing.Point(7, 21);
+            this.rdActivo.Name = "rdActivo";
+            this.rdActivo.Size = new System.Drawing.Size(61, 17);
+            this.rdActivo.TabIndex = 0;
+            this.rdActivo.TabStop = true;
+            this.rdActivo.Text = "Activo";
+            this.rdActivo.UseVisualStyleBackColor = true;
+            // 
+            // rdInactivo
+            // 
+            this.rdInactivo.AutoSize = true;
+            this.rdInactivo.Location = new System.Drawing.Point(154, 21);
+            this.rdInactivo.Name = "rdInactivo";
+            this.rdInactivo.Size = new System.Drawing.Size(71, 17);
+            this.rdInactivo.TabIndex = 1;
+            this.rdInactivo.TabStop = true;
+            this.rdInactivo.Text = "Inactivo";
+            this.rdInactivo.UseVisualStyleBackColor = true;
+            // 
+            // rdTodo
+            // 
+            this.rdTodo.AutoSize = true;
+            this.rdTodo.Location = new System.Drawing.Point(278, 21);
+            this.rdTodo.Name = "rdTodo";
+            this.rdTodo.Size = new System.Drawing.Size(54, 17);
+            this.rdTodo.TabIndex = 2;
+            this.rdTodo.TabStop = true;
+            this.rdTodo.Text = "Todo";
+            this.rdTodo.UseVisualStyleBackColor = true;
+            // 
             // frmListadoProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +310,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -284,5 +337,9 @@
         private System.Windows.Forms.DataGridViewImageColumn editar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton rdTodo;
+        private System.Windows.Forms.RadioButton rdInactivo;
+        private System.Windows.Forms.RadioButton rdActivo;
     }
 }
