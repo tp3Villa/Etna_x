@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ETNA.SGI.Bussiness.Compras;
+using ETNA.SGI.Entity.Compras;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
             InitializeComponent();
         }
+
+        private BRequerimientoCompra bRequerimientoCompra = BRequerimientoCompra.getInstance();
 
         private void frmCotizacion_Load(object sender, EventArgs e)
         {
@@ -35,6 +39,12 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             frm.ShowDialog();
 
             txtRequerimiento.Text = frm.vCodigoReq;
+
+               DataTable tblDetalle = new DataTable();
+               tblDetalle = bRequerimientoCompra.ObtenerRequerimientoDetalleCompraCotizacion(txtRequerimiento.Text);
+            dataGridView1.DataSource = tblDetalle;
+
+            
         }
 
         private void btnFindProv_Click(object sender, EventArgs e)
@@ -44,10 +54,11 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
             txtProveedor.Text = frm.vCodigo;
         }
+        
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
- 
-
-
+        }
 
 
 

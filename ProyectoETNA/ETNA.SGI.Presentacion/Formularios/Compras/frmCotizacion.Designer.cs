@@ -44,16 +44,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.valida = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.codProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.valida = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.codProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -162,6 +163,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(137, 20);
             this.txtTelefono.TabIndex = 134;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label2
             // 
@@ -194,6 +196,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.valida,
             this.codProducto,
+            this.descripcionProducto,
             this.cantidad,
             this.precioUnidad,
             this.descuento});
@@ -202,38 +205,6 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(541, 136);
             this.dataGridView1.TabIndex = 136;
-            // 
-            // valida
-            // 
-            this.valida.HeaderText = "";
-            this.valida.Name = "valida";
-            this.valida.Width = 35;
-            // 
-            // codProducto
-            // 
-            this.codProducto.HeaderText = "Producto";
-            this.codProducto.Name = "codProducto";
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "1";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cantidad.Width = 120;
-            // 
-            // precioUnidad
-            // 
-            this.precioUnidad.HeaderText = "Precio";
-            this.precioUnidad.Name = "precioUnidad";
-            // 
-            // descuento
-            // 
-            this.descuento.HeaderText = "Descuento";
-            this.descuento.Name = "descuento";
             // 
             // btnSalir
             // 
@@ -290,6 +261,47 @@
             this.label5.TabIndex = 139;
             this.label5.Text = "Total";
             // 
+            // valida
+            // 
+            this.valida.HeaderText = "";
+            this.valida.Name = "valida";
+            this.valida.Width = 35;
+            // 
+            // codProducto
+            // 
+            this.codProducto.DataPropertyName = "codProducto";
+            this.codProducto.HeaderText = "Codigo Producto";
+            this.codProducto.Name = "codProducto";
+            this.codProducto.ReadOnly = true;
+            // 
+            // descripcionProducto
+            // 
+            this.descripcionProducto.HeaderText = "Descripcion";
+            this.descripcionProducto.Name = "descripcionProducto";
+            this.descripcionProducto.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "1";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle1;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cantidad.Width = 120;
+            // 
+            // precioUnidad
+            // 
+            this.precioUnidad.HeaderText = "Precio";
+            this.precioUnidad.Name = "precioUnidad";
+            // 
+            // descuento
+            // 
+            this.descuento.HeaderText = "Descuento";
+            this.descuento.Name = "descuento";
+            // 
             // frmCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,12 +355,13 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn valida;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn descuento;
-        private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.Label label5;
     }
 }

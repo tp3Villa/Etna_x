@@ -102,6 +102,7 @@
             this.txtRequerimiento.Name = "txtRequerimiento";
             this.txtRequerimiento.Size = new System.Drawing.Size(137, 20);
             this.txtRequerimiento.TabIndex = 136;
+            this.txtRequerimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRequerimiento_KeyPress);
             // 
             // label6
             // 
@@ -138,6 +139,7 @@
             this.txtCotizacion.Name = "txtCotizacion";
             this.txtCotizacion.Size = new System.Drawing.Size(137, 20);
             this.txtCotizacion.TabIndex = 132;
+            this.txtCotizacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCotizacion_KeyPress);
             // 
             // label2
             // 
