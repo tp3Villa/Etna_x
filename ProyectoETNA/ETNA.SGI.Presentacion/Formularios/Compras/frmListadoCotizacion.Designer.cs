@@ -28,36 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnFindReq = new System.Windows.Forms.Button();
             this.txtRequerimiento = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnFindProv = new System.Windows.Forms.Button();
             this.cboEstado = new System.Windows.Forms.ComboBox();
-            this.txtProveedor = new System.Windows.Forms.TextBox();
+            this.txtCotizacion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.valida = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.codCotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codRequerimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaExpiracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dtGridCot = new System.Windows.Forms.DataGridView();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridCot)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox6
@@ -83,13 +71,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnFindReq);
             this.groupBox1.Controls.Add(this.txtRequerimiento);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnFindProv);
             this.groupBox1.Controls.Add(this.cboEstado);
-            this.groupBox1.Controls.Add(this.txtProveedor);
+            this.groupBox1.Controls.Add(this.txtCotizacion);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,19 +87,9 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
             // 
-            // btnFindReq
-            // 
-            this.btnFindReq.Image = global::ETNA.SGI.Presentacion.Properties.Resources.apercu;
-            this.btnFindReq.Location = new System.Drawing.Point(243, 34);
-            this.btnFindReq.Name = "btnFindReq";
-            this.btnFindReq.Size = new System.Drawing.Size(27, 23);
-            this.btnFindReq.TabIndex = 137;
-            this.btnFindReq.UseVisualStyleBackColor = true;
-            // 
             // txtRequerimiento
             // 
-            this.txtRequerimiento.Enabled = false;
-            this.txtRequerimiento.Location = new System.Drawing.Point(100, 36);
+            this.txtRequerimiento.Location = new System.Drawing.Point(394, 36);
             this.txtRequerimiento.Name = "txtRequerimiento";
             this.txtRequerimiento.Size = new System.Drawing.Size(137, 20);
             this.txtRequerimiento.TabIndex = 136;
@@ -121,7 +97,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1, 39);
+            this.label6.Location = new System.Drawing.Point(295, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 13);
             this.label6.TabIndex = 135;
@@ -130,20 +106,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(292, 40);
+            this.label1.Location = new System.Drawing.Point(30, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 134;
-            this.label1.Text = "Proveedor:";
-            // 
-            // btnFindProv
-            // 
-            this.btnFindProv.Image = global::ETNA.SGI.Presentacion.Properties.Resources.apercu;
-            this.btnFindProv.Location = new System.Drawing.Point(519, 34);
-            this.btnFindProv.Name = "btnFindProv";
-            this.btnFindProv.Size = new System.Drawing.Size(27, 23);
-            this.btnFindProv.TabIndex = 133;
-            this.btnFindProv.UseVisualStyleBackColor = true;
+            this.label1.Text = "Codigo:";
             // 
             // cboEstado
             // 
@@ -156,13 +123,12 @@
             this.cboEstado.Size = new System.Drawing.Size(121, 21);
             this.cboEstado.TabIndex = 108;
             // 
-            // txtProveedor
+            // txtCotizacion
             // 
-            this.txtProveedor.Enabled = false;
-            this.txtProveedor.Location = new System.Drawing.Point(375, 37);
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(137, 20);
-            this.txtProveedor.TabIndex = 132;
+            this.txtCotizacion.Location = new System.Drawing.Point(113, 36);
+            this.txtCotizacion.Name = "txtCotizacion";
+            this.txtCotizacion.Size = new System.Drawing.Size(137, 20);
+            this.txtCotizacion.TabIndex = 132;
             // 
             // label2
             // 
@@ -184,32 +150,6 @@
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.valida,
-            this.codCotizacion,
-            this.codRequerimiento,
-            this.codProveedor,
-            this.descripcion,
-            this.telefono,
-            this.fechaExpiracion,
-            this.codEstado,
-            this.editar});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 158);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(860, 210);
-            this.dataGridView1.TabIndex = 109;
             // 
             // groupBox2
             // 
@@ -248,82 +188,41 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // valida
+            // dtGridCot
             // 
-            this.valida.HeaderText = "";
-            this.valida.Name = "valida";
-            this.valida.Width = 35;
-            // 
-            // codCotizacion
-            // 
-            this.codCotizacion.DataPropertyName = "codCotizacion";
-            this.codCotizacion.HeaderText = "Cotización";
-            this.codCotizacion.Name = "codCotizacion";
-            // 
-            // codRequerimiento
-            // 
-            this.codRequerimiento.DataPropertyName = "codRequerimiento";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codRequerimiento.DefaultCellStyle = dataGridViewCellStyle1;
-            this.codRequerimiento.HeaderText = "Requerimiento";
-            this.codRequerimiento.Name = "codRequerimiento";
-            this.codRequerimiento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.codRequerimiento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.codRequerimiento.Width = 120;
-            // 
-            // codProveedor
-            // 
-            this.codProveedor.DataPropertyName = "codProveedor";
-            this.codProveedor.HeaderText = "Proveedor";
-            this.codProveedor.Name = "codProveedor";
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "Teléfono";
-            this.telefono.Name = "telefono";
-            // 
-            // fechaExpiracion
-            // 
-            this.fechaExpiracion.DataPropertyName = "fechaExpiracion";
-            this.fechaExpiracion.HeaderText = "Fecha de Expiración";
-            this.fechaExpiracion.Name = "fechaExpiracion";
-            // 
-            // codEstado
-            // 
-            this.codEstado.DataPropertyName = "codEstado";
-            this.codEstado.HeaderText = "Estado";
-            this.codEstado.Name = "codEstado";
-            // 
-            // editar
-            // 
-            this.editar.HeaderText = "";
-            this.editar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Operaciones;
-            this.editar.Name = "editar";
+            this.dtGridCot.AllowUserToAddRows = false;
+            this.dtGridCot.AllowUserToDeleteRows = false;
+            this.dtGridCot.AllowUserToResizeColumns = false;
+            this.dtGridCot.AllowUserToResizeRows = false;
+            this.dtGridCot.BackgroundColor = System.Drawing.Color.White;
+            this.dtGridCot.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dtGridCot.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtGridCot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridCot.Location = new System.Drawing.Point(9, 157);
+            this.dtGridCot.Name = "dtGridCot";
+            this.dtGridCot.ReadOnly = true;
+            this.dtGridCot.RowHeadersVisible = false;
+            this.dtGridCot.Size = new System.Drawing.Size(853, 229);
+            this.dtGridCot.TabIndex = 111;
+            this.dtGridCot.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridCot_CellContentClick);
             // 
             // frmListadoCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 461);
+            this.Controls.Add(this.dtGridCot);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox6);
             this.Name = "frmListadoCotizacion";
             this.Text = "Listado de Cotizaciones";
-            this.Load += new System.EventHandler(this.frmListadoCotizacion_Load_1);
+            this.Load += new System.EventHandler(this.frmListadoCotizacion_Load);
             this.groupBox6.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridCot)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,23 +236,12 @@
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnFindProv;
-        private System.Windows.Forms.TextBox txtProveedor;
-        private System.Windows.Forms.Button btnFindReq;
+        private System.Windows.Forms.TextBox txtCotizacion;
         private System.Windows.Forms.TextBox txtRequerimiento;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn valida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codCotizacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codRequerimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaExpiracion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codEstado;
-        private System.Windows.Forms.DataGridViewImageColumn editar;
+        private System.Windows.Forms.DataGridView dtGridCot;
     }
 }

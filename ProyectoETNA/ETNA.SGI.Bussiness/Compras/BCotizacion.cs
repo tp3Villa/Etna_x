@@ -34,9 +34,9 @@ namespace ETNA.SGI.Bussiness.Compras
         }
 
 
-        public DataTable ObtenerCotizaciones()
+        public DataTable ObtenerListadoCotizacion(ECotizacion ECotizacion)
         {
-            return dCotizacion.DGetAllCotizacion();
+            return dCotizacion.DGetAllCotizacion(ECotizacion);
         }
 
 
