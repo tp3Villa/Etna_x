@@ -205,5 +205,11 @@ namespace ETNA.SGI.Presentacion
             Formularios.Compras.frmListadoCotizacion frm = new Formularios.Compras.frmListadoCotizacion();
             frm.Show();
         }
+
+        private void aprobacionCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.Compras.frmListadoAprobacionCotizacion frm = new Formularios.Compras.frmListadoAprobacionCotizacion();
+            frm.Show();
+        }
     }
 }
