@@ -43,7 +43,7 @@ namespace ETNA.SGI.Data.Compras
 
         public DataTable DGetAllCotizacion(ECotizacion eCotizacion)
         {
-            string sql = "SELECT c.codCotizacion,c.codRequerimiento,p.razonSocial,c.descripcion,c.codEstado,e.desEstado,c.telefono, c.fechaExpiracion " +
+            string sql = "SELECT c.codCotizacion,c.codRequerimiento,p.razonSocial,c.descripcion,c.telefono, c.fechaExpiracion,e.desEstado " +
                               "FROM Cotizacion c " +
                               "INNER JOIN Proveedor p " +
                               "ON c.codProveedor = p.codProveedor " +
@@ -52,7 +52,7 @@ namespace ETNA.SGI.Data.Compras
                           "WHERE  ( @codCotizacion = 0 OR c.codCotizacion = @codCotizacion ) " +
                           "AND ( @codRequerimiento = 0 OR c.codRequerimiento = @codRequerimiento ) " +
                           "AND ( @codEstado = 0 OR c.codEstado = @codEstado )";
-            
+
             SqlDataAdapter adapter = new SqlDataAdapter();
 
             // Create the SelectCommand.
@@ -160,7 +160,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-               // cn.Conectar.Dispose();
+                // cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }
@@ -205,7 +205,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-              //  cn.Conectar.Dispose();
+                //  cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }
@@ -232,7 +232,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-               // cn.Conectar.Dispose();
+                // cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }

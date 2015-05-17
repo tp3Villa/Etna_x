@@ -47,6 +47,7 @@
     <Compile Include="Compras\DMoneda.cs" />
     <Compile Include="Compras\DOrdenCompra.cs" />
     <Compile Include="Compras\DProveedor.cs" />
+    <Compile Include="Compras\DRequerimientoCompra.cs" />
     <Compile Include="DConexion.cs" />
     <Compile Include="Exportacion\DLogin.cs" />
     <Compile Include="Exportacion\DTablas.cs" />
