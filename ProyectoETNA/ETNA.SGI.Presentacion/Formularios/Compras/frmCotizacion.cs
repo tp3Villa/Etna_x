@@ -19,8 +19,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         private BRequerimientoCompra bRequerimientoCompra = BRequerimientoCompra.getInstance();
 
         ECotizacion cotizacion = new ECotizacion();
-        BCotizacion bCotizacion = BCotizacion.getInstance(); 
-
+        BCotizacion bCotizacion = BCotizacion.getInstance();
+        ECotizacionDetalle cotizacionDetalle = new ECotizacionDetalle();
         public frmCotizacion()
         {
             InitializeComponent();
@@ -42,7 +42,9 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 dtExpiracion.Text = tblDetalle.Rows[0]["fechaExpiracion"].ToString();
 
                 DataTable tblDetalle2 = new DataTable();
-                tblDetalle2 = bRequerimientoCompra.ObtenerRequerimientoDetalleCompraCotizacion(txtRequerimiento.Text);
+
+                cotizacionDetalle.CodCotizacion = icodCotizacion;
+                tblDetalle2 = bCotizacion.ObtenerCotizacionDetallePorId(cotizacionDetalle);
                 dataGridView1.DataSource = tblDetalle2;
 
             }
@@ -160,6 +162,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 {
                     cotizacion.FechaRegistro = FechaSis;
                     cotizacion.UsuarioRegistro = Program.Usuario;
+                    cotizacion.FechaActualizacion = FechaSis;
+                    cotizacion.UsuarioModificacion = Program.Usuario;
                 }
                 if (sOpcion == "UPD")
                 {
