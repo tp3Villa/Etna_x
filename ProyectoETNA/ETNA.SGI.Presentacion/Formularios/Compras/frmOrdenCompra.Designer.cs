@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -69,36 +69,44 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Navy;
             this.label1.Location = new System.Drawing.Point(29, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Moneda";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(309, 75);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Navy;
+            this.label3.Location = new System.Drawing.Point(318, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.Size = new System.Drawing.Size(90, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fecha Entrega";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Navy;
             this.label4.Location = new System.Drawing.Point(29, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.Size = new System.Drawing.Size(87, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Lugar Entrega";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.Navy;
             this.label5.Location = new System.Drawing.Point(29, 147);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Observacion";
             // 
@@ -106,7 +114,7 @@
             // 
             this.cboMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMoneda.FormattingEnabled = true;
-            this.cboMoneda.Location = new System.Drawing.Point(113, 71);
+            this.cboMoneda.Location = new System.Drawing.Point(130, 71);
             this.cboMoneda.Name = "cboMoneda";
             this.cboMoneda.Size = new System.Drawing.Size(121, 21);
             this.cboMoneda.TabIndex = 5;
@@ -114,21 +122,21 @@
             // dtpFechaEntrega
             // 
             this.dtpFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(393, 71);
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(410, 71);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(98, 20);
             this.dtpFechaEntrega.TabIndex = 6;
             // 
             // txtLugarEntrega
             // 
-            this.txtLugarEntrega.Location = new System.Drawing.Point(113, 108);
+            this.txtLugarEntrega.Location = new System.Drawing.Point(130, 108);
             this.txtLugarEntrega.Name = "txtLugarEntrega";
             this.txtLugarEntrega.Size = new System.Drawing.Size(291, 20);
             this.txtLugarEntrega.TabIndex = 7;
             // 
             // txtObservacion
             // 
-            this.txtObservacion.Location = new System.Drawing.Point(113, 144);
+            this.txtObservacion.Location = new System.Drawing.Point(130, 144);
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(291, 49);
@@ -137,16 +145,18 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Navy;
             this.label6.Location = new System.Drawing.Point(29, 211);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Requerimiento";
             // 
             // txtRequerimiento
             // 
             this.txtRequerimiento.Enabled = false;
-            this.txtRequerimiento.Location = new System.Drawing.Point(113, 208);
+            this.txtRequerimiento.Location = new System.Drawing.Point(130, 208);
             this.txtRequerimiento.Name = "txtRequerimiento";
             this.txtRequerimiento.Size = new System.Drawing.Size(80, 20);
             this.txtRequerimiento.TabIndex = 10;
@@ -154,7 +164,7 @@
             // btnBuscarRequerimiento
             // 
             this.btnBuscarRequerimiento.Image = global::ETNA.SGI.Presentacion.Properties.Resources.apercu;
-            this.btnBuscarRequerimiento.Location = new System.Drawing.Point(207, 208);
+            this.btnBuscarRequerimiento.Location = new System.Drawing.Point(224, 208);
             this.btnBuscarRequerimiento.Name = "btnBuscarRequerimiento";
             this.btnBuscarRequerimiento.Size = new System.Drawing.Size(27, 23);
             this.btnBuscarRequerimiento.TabIndex = 11;
@@ -164,16 +174,18 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.Navy;
             this.label7.Location = new System.Drawing.Point(31, 246);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 13);
+            this.label7.Size = new System.Drawing.Size(96, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "Cotiz. aprobada";
             // 
             // txtCotizacion
             // 
             this.txtCotizacion.Enabled = false;
-            this.txtCotizacion.Location = new System.Drawing.Point(113, 239);
+            this.txtCotizacion.Location = new System.Drawing.Point(130, 239);
             this.txtCotizacion.Name = "txtCotizacion";
             this.txtCotizacion.Size = new System.Drawing.Size(80, 20);
             this.txtCotizacion.TabIndex = 13;
@@ -194,10 +206,10 @@
             this.cantidad,
             this.precio,
             this.subtotal});
-            this.dtGridDetalleOC.Location = new System.Drawing.Point(32, 274);
+            this.dtGridDetalleOC.Location = new System.Drawing.Point(34, 274);
             this.dtGridDetalleOC.Name = "dtGridDetalleOC";
             this.dtGridDetalleOC.RowHeadersVisible = false;
-            this.dtGridDetalleOC.Size = new System.Drawing.Size(459, 157);
+            this.dtGridDetalleOC.Size = new System.Drawing.Size(474, 157);
             this.dtGridDetalleOC.TabIndex = 108;
             // 
             // valida
@@ -209,8 +221,8 @@
             // codProducto
             // 
             this.codProducto.DataPropertyName = "1";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codProducto.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codProducto.DefaultCellStyle = dataGridViewCellStyle2;
             this.codProducto.HeaderText = "Producto";
             this.codProducto.Name = "codProducto";
             this.codProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -235,7 +247,7 @@
             // txtProveedor
             // 
             this.txtProveedor.Enabled = false;
-            this.txtProveedor.Location = new System.Drawing.Point(276, 239);
+            this.txtProveedor.Location = new System.Drawing.Point(293, 239);
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.Size = new System.Drawing.Size(215, 20);
             this.txtProveedor.TabIndex = 110;
@@ -243,43 +255,51 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(214, 245);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.Navy;
+            this.label8.Location = new System.Drawing.Point(226, 245);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 13);
+            this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 109;
             this.label8.Text = "Proveedor";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.Navy;
             this.label9.Location = new System.Drawing.Point(29, 446);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 13);
+            this.label9.Size = new System.Drawing.Size(81, 13);
             this.label9.TabIndex = 111;
             this.label9.Text = "% Descuento";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.Navy;
             this.label10.Location = new System.Drawing.Point(31, 471);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(25, 13);
+            this.label10.Size = new System.Drawing.Size(28, 13);
             this.label10.TabIndex = 112;
             this.label10.Text = "IGV";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.Navy;
             this.label11.Location = new System.Drawing.Point(31, 497);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(31, 13);
+            this.label11.Size = new System.Drawing.Size(36, 13);
             this.label11.TabIndex = 113;
             this.label11.Text = "Total";
             // 
             // txtIgv
             // 
             this.txtIgv.Enabled = false;
-            this.txtIgv.Location = new System.Drawing.Point(113, 471);
+            this.txtIgv.Location = new System.Drawing.Point(130, 474);
             this.txtIgv.Name = "txtIgv";
             this.txtIgv.Size = new System.Drawing.Size(52, 20);
             this.txtIgv.TabIndex = 114;
@@ -287,14 +307,14 @@
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(113, 497);
+            this.txtTotal.Location = new System.Drawing.Point(130, 500);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(52, 20);
             this.txtTotal.TabIndex = 115;
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(113, 443);
+            this.txtDescuento.Location = new System.Drawing.Point(130, 446);
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(52, 20);
             this.txtDescuento.TabIndex = 116;
@@ -359,7 +379,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 623);
+            this.ClientSize = new System.Drawing.Size(541, 623);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.txtDescuento);
@@ -385,7 +405,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "frmOrdenCompra";
-            this.Text = "Generar Orden de Compra";
+            this.Text = "Generar Órden de Compra";
             this.Load += new System.EventHandler(this.frmOrdenCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridDetalleOC)).EndInit();
             this.groupBox6.ResumeLayout(false);

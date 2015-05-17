@@ -31,8 +31,10 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.codCondicionPago = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -65,8 +67,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboCategoria);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
@@ -77,10 +81,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de búsqueda";
             // 
+            // cboCategoria
+            // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(245, 23);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cboCategoria.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(173, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Categoria:";
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
-            this.btnBuscar.Location = new System.Drawing.Point(361, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(392, 19);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 43);
             this.btnBuscar.TabIndex = 2;
@@ -89,21 +111,21 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtDescripcion
+            // txtCodigo
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(121, 27);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(215, 20);
-            this.txtDescripcion.TabIndex = 1;
+            this.txtCodigo.Location = new System.Drawing.Point(66, 29);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(84, 20);
+            this.txtCodigo.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Descripción:";
+            this.label1.Text = "Código:";
             // 
             // dataGridView1
             // 
@@ -136,7 +158,7 @@
             this.desCondicionPago.Name = "desCondicionPago";
             this.desCondicionPago.ReadOnly = true;
             // 
-            // frmListadoCondicionPago
+            // frmListadoRequerimientoCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,7 +166,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox6);
-            this.Name = "frmListadoCondicionPago";
+            this.Name = "frmListadoRequerimientoCompra";
             this.Text = "Requerimiento de Compra";
             this.Load += new System.EventHandler(this.frmListadoRequerimientoCompra_Load);
             this.groupBox6.ResumeLayout(false);
@@ -161,10 +183,12 @@
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewLinkColumn codCondicionPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn desCondicionPago;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboCategoria;
     }
 }

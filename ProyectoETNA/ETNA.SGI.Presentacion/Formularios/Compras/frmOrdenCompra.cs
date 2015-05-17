@@ -44,13 +44,13 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             txtProveedor.Text = "";
             txtDescuento.Text = "0.00";
             txtIgv.Text = "";            
-            txtTotal.Text = "0.00";                 
-
+            txtTotal.Text = "0.00";
         }
 
         private void btnBuscarRequerimiento_Click(object sender, EventArgs e)
         {
-
+            Formularios.Compras.frmListadoRequerimientoCompra frm = new frmListadoRequerimientoCompra();
+            frm.ShowDialog();
         }
     }
 }

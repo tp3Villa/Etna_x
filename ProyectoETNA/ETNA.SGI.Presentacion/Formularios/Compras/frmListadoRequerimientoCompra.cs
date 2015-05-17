@@ -18,6 +18,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
     public partial class frmListadoRequerimientoCompra : Form
     {
 
+        private BCategoria bCategoria = BCategoria.getInstance();
         public int iCodRequerimientoCompra;
         public string vCodigo;
         public string vDescripcion;
@@ -37,6 +38,21 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void frmListadoRequerimientoCompra_Load(object sender, EventArgs e)
         {
+            // Carga de Combo Estado
+            DataTable dtCategoria = bCategoria.ObtenerListadoCategoria();
+            cboCategoria.DataSource = dtCategoria;
+            cboCategoria.DisplayMember = "desCategoria";
+            cboCategoria.ValueMember = "codCategoria";
+
+            DataRow dr = dtCategoria.NewRow();
+            dr["desCategoria"] = "Todos";
+            dr["codCategoria"] = 0;
+
+            dtCategoria.Rows.InsertAt(dr, 0);
+            cboCategoria.SelectedIndex = 0;
+
+            txtCodigo.Text = "";
+
             DataTable table = new DataTable();
             //table = bRequerimientoCompra.DGetAllRequerimientoCompra();
 
