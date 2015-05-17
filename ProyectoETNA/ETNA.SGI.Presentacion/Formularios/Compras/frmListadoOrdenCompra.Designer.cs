@@ -134,6 +134,7 @@
             this.dtGridOC.RowHeadersVisible = false;
             this.dtGridOC.Size = new System.Drawing.Size(686, 229);
             this.dtGridOC.TabIndex = 107;
+            this.dtGridOC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridOC_CellContentClick);
             // 
             // button2
             // 
