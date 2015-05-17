@@ -55,6 +55,12 @@
     <Compile Include="Formularios\Compras\frmCotizacion.Designer.cs">
       <DependentUpon>frmCotizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Compras\frmListadoCondicionPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Compras\frmListadoCondicionPago.Designer.cs">
+      <DependentUpon>frmListadoCondicionPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Compras\frmListadoCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Compras\frmCotizacion.resx">
       <DependentUpon>frmCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Compras\frmListadoCondicionPago.resx">
+      <DependentUpon>frmListadoCondicionPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compras\frmListadoCotizacion.resx">
       <DependentUpon>frmListadoCotizacion.cs</DependentUpon>

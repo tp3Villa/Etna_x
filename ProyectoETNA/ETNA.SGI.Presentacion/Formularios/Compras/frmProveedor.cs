@@ -182,6 +182,12 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Compras.frmListadoCondicionPago frm = new frmListadoCondicionPago();
+            frm.ShowDialog();
+        }
+
                 
     }
 }
