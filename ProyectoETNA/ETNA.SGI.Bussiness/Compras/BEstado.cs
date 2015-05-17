@@ -29,7 +29,7 @@ namespace ETNA.SGI.Bussiness.Compras
             return dEstado.DGetAllEstadoByOrdenCompra();
         }
 
-        public DataSet ObtenerListadoEstadoPorCotizacion()
+        public DataTable ObtenerListadoEstadoPorCotizacion()
         {
             return dEstado.DGetAllEstadoByCotizacion();
         }
