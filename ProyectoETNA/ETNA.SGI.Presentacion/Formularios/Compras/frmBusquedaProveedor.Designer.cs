@@ -31,13 +31,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.codProveedor = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.razonSocila = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +79,18 @@
             this.txtRazonSocial.Size = new System.Drawing.Size(146, 20);
             this.txtRazonSocial.TabIndex = 104;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
+            this.btnBuscar.Location = new System.Drawing.Point(792, 19);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(55, 57);
+            this.btnBuscar.TabIndex = 103;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -86,7 +98,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codProveedor,
-            this.razonSocila,
+            this.razonSocial,
             this.direccion,
             this.telefono,
             this.fechaRegistro,
@@ -129,18 +141,6 @@
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
-            this.btnBuscar.Location = new System.Drawing.Point(792, 19);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(55, 57);
-            this.btnBuscar.TabIndex = 103;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // codProveedor
             // 
             this.codProveedor.DataPropertyName = "codProveedor";
@@ -150,12 +150,12 @@
             this.codProveedor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.codProveedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // razonSocila
+            // razonSocial
             // 
-            this.razonSocila.DataPropertyName = "razonSocial";
-            this.razonSocila.HeaderText = "Razón Social";
-            this.razonSocila.Name = "razonSocila";
-            this.razonSocila.ReadOnly = true;
+            this.razonSocial.DataPropertyName = "razonSocial";
+            this.razonSocial.HeaderText = "Razón Social";
+            this.razonSocial.Name = "razonSocial";
+            this.razonSocial.ReadOnly = true;
             // 
             // direccion
             // 
@@ -227,14 +227,14 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewLinkColumn codProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocila;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn ruc;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
