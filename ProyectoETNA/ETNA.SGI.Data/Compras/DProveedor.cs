@@ -33,7 +33,7 @@ namespace ETNA.SGI.Data.Compras
 
         public DataTable DGetAllProveedor(EProveedor EProveedor)
         {
-            string sql = "SELECT codProveedor,razonSocial,direccion,telefono,fechaRegistro,email,ruc,observacion FROM Proveedor " +
+            string sql = "SELECT codProveedor,razonSocial,direccion,telefono,fechaRegistro,email,ruc,observacion,(CASE codEstado when 5 then 'Activo' else 'Inactivo' end)  estado FROM Proveedor " +
                           "WHERE razonSocial like '%" + EProveedor.RazonSocial + "%'";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
             DataTable tabla = new DataTable();
@@ -50,6 +50,21 @@ namespace ETNA.SGI.Data.Compras
         {
             string sql = "SELECT codProveedor,razonSocial,direccion,telefono,fechaRegistro,email,ruc,observacion,codCondicionPago,codEstado FROM Proveedor " +
                           "WHERE codProveedor = " + EProveedor.CodProveedor + "";
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
+            DataTable tabla = new DataTable();
+            try
+            {
+                da.Fill(tabla);
+            }
+            catch { }
+            return tabla;
+
+        }
+
+        public DataTable DGetProveedorWithStatus(EProveedor EProveedor)
+        {
+            string sql = "SELECT codProveedor,razonSocial,direccion,telefono,fechaRegistro,email,ruc,observacion, (CASE codEstado when 5 then 'Activo' else 'Inactivo' end)  estado FROM Proveedor " +
+                          "WHERE razonSocial like '%" + EProveedor.RazonSocial + "%' and codEstado ="+EProveedor.CodEstado+"";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
             DataTable tabla = new DataTable();
             try

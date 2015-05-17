@@ -34,6 +34,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         private void frmListadoProveedor_Load(object sender, EventArgs e)
         {
 
+            rdTodo.Checked = true;
+
             DataTable tblDetalle = new DataTable();
             
            tblDetalle =  bProveedor.DGetAllProveedor(proveedor);
@@ -48,7 +50,23 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             DataTable tblDetalle = new DataTable();
 
             proveedor.RazonSocial = txtRazonSocial.Text.Trim();
-            tblDetalle = bProveedor.DGetAllProveedor(proveedor);
+
+            if (rdActivo.Checked)
+            {
+                proveedor.CodEstado = 5;
+                tblDetalle = bProveedor.DGetProveedorWithStatus(proveedor);
+            }
+
+            if (rdInactivo.Checked) 
+            {
+                proveedor.CodEstado = 6;
+                tblDetalle = bProveedor.DGetProveedorWithStatus(proveedor);
+            }
+
+            if (rdTodo.Checked)
+            {
+                tblDetalle = bProveedor.DGetAllProveedor(proveedor);
+            }
 
             dataGridView1.DataSource = tblDetalle;
         }
