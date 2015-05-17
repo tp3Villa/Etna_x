@@ -223,6 +223,7 @@
             this.dtGridCot.RowHeadersVisible = false;
             this.dtGridCot.Size = new System.Drawing.Size(910, 229);
             this.dtGridCot.TabIndex = 111;
+            this.dtGridCot.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridCot_CellContentClick_1);
             // 
             // codCotizacion
             // 

@@ -108,7 +108,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         }
 
 
-        private void dtGridCot_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dtGridCot_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
@@ -116,11 +116,11 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 {
                     int p = dtGridCot.CurrentRow.Index;
                     Formularios.Compras.frmCotizacion frm = new frmCotizacion();
-                   // frm.sOpcion = "UPD";
+                    // frm.sOpcion = "UPD";
                     //frm.icodProveedor = Convert.ToInt32(dtGridCot.Rows[p].Cells["codCotizacion"].Value.ToString());
                     frm.ShowDialog();
 
-                    
+
 
                     DataTable tblDetalle = new DataTable();
 
@@ -130,6 +130,12 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 }
                 catch { }
             }
+            else if
+                (e.ColumnIndex == 1)
+            {
+                MessageBox.Show("aaa");
+            }
+
         }
 
            
