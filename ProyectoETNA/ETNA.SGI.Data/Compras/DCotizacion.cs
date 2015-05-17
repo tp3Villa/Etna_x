@@ -51,7 +51,7 @@ namespace ETNA.SGI.Data.Compras
 
         public DataTable DGetAllCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
         {
-            string sql = "SELECT codCotizacion, idProducto ,cantidad ,precioUnidad FROM CotizacionDetalle " +
+            string sql = "SELECT codCotizacion, idProducto ,cantidad ,precioUnidad, descuetno FROM CotizacionDetalle " +
                           "WHERE codCotizacion '" + ECotizacionDetalle.CodCotizacion + " ' AND idProducto= '" + ECotizacionDetalle.IdProducto+ "' ";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
             DataTable tabla = new DataTable();
@@ -171,8 +171,8 @@ namespace ETNA.SGI.Data.Compras
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
 
-                string sql = "INSERT INTO CotizacionDetalle (codCotizacion, idProducto ,cantidad  ,precioUnidad) " +
-                " VALUES (" + ECotizacionDetalle.CodCotizacion + ", '" + ECotizacionDetalle.IdProducto + "', '" + ECotizacionDetalle.Cantidad + "', " +
+                string sql = "INSERT INTO CotizacionDetalle (codCotizacion, idProducto ,cantidad  ,precioUnidad, descuento) " +
+                " VALUES (" + ECotizacionDetalle.CodCotizacion + ", '" + ECotizacionDetalle.IdProducto + "', '" + ECotizacionDetalle.Cantidad + "', " + "', '" + ECotizacionDetalle.Descuento + "', " +
                 " " + ECotizacionDetalle.PrecioUnidad + "')";
 
 
@@ -199,6 +199,7 @@ namespace ETNA.SGI.Data.Compras
 
                 string sql = "UPDATE CotizacionDetalle" +
                              "SET precioUnidad = '" + ECotizacionDetalle.PrecioUnidad + "'" +
+                              ",descuento = '" + ECotizacionDetalle.Descuento + "'" +
                          "WHERE codCotizacion = '" + ECotizacionDetalle.CodCotizacion + "' AND " +
                          " idProducto = '" + ECotizacionDetalle.IdProducto +"' ";
 
