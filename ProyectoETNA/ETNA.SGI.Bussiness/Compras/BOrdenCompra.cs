@@ -34,5 +34,10 @@ namespace ETNA.SGI.Bussiness.Compras
             return dOrdenCompra.DGetAllOrdenCompra(EOrdenCompra);
         }
 
+        public int ActualizarEstadoOrdenCompra(EOrdenCompra eOrdenCompra)
+        {
+            return dOrdenCompra.DUpdateEstadoOrdenCompra(eOrdenCompra);
+        }
+
     }
 }

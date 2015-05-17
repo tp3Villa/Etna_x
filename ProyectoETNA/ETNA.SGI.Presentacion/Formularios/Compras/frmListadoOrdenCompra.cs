@@ -15,8 +15,9 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
     {
         private BOrdenCompra bOrdenCompra = BOrdenCompra.getInstance();
         private BEstado bEstado = BEstado.getInstance();
-        DataTable dtOrdenCompra = new DataTable();
-        DataRow dr;
+        private DataTable dtOrdenCompra = new DataTable();
+        private DataRow dr;
+        private static int ESTADO_ANULADA = 3;
 
         public frmListadoOrdenCompra()
         {
@@ -149,6 +150,39 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             dtGridOC.Columns["modificar"].Width = 40;
             dtGridOC.Columns["anular"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dtGridOC.Columns["anular"].Width = 40;
+        }
+
+        private void dtGridOC_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Modificar
+            if (e.ColumnIndex == 7) 
+            {
+                MessageBox.Show("Modificar");
+
+            }
+
+            // Anular
+            if (e.ColumnIndex == 8)
+            {
+                if (MessageBox.Show("¿Está seguro que desea eliminar la Orden de Compra?\nNro OC: " + dtGridOC.Rows[e.RowIndex].Cells[0].Value.ToString(), "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    EOrdenCompra eOrdenCompra = new EOrdenCompra();
+                    eOrdenCompra.CodOrdenCompra = Int32.Parse(dtGridOC.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    eOrdenCompra.FechaActualizacion = DateTime.Today;
+                    eOrdenCompra.UsuarioModificacion = Program.Usuario.Trim();
+                    eOrdenCompra.CodEstado = ESTADO_ANULADA;
+                    bOrdenCompra.ActualizarEstadoOrdenCompra(eOrdenCompra);
+                    MessageBox.Show("Orden de compra anulada satisfactoriamente");
+                    cargaGrilla(new EOrdenCompra());
+                    resetFiltro();
+                }
+            }
+        }
+
+        private void resetFiltro() {
+            txtCodOC.Text = "";
+            txtCodReq.Text = "";
+            cboEstado.SelectedIndex = 0;
         }
 
         
