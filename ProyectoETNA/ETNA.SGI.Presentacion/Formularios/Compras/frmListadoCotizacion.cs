@@ -116,16 +116,14 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 {
                     int p = dtGridCot.CurrentRow.Index;
                     Formularios.Compras.frmCotizacion frm = new frmCotizacion();
-                    // frm.sOpcion = "UPD";
-                    //frm.icodProveedor = Convert.ToInt32(dtGridCot.Rows[p].Cells["codCotizacion"].Value.ToString());
+                     frm.sOpcion = "UPD";
+                    frm.icodCotizacion = Convert.ToInt32(dtGridCot.Rows[p].Cells["codCotizacion"].Value.ToString());
                     frm.ShowDialog();
 
 
 
                     DataTable tblDetalle = new DataTable();
-
                     //tblDetalle = bProveedor.DGetAllProveedor(proveedor);
-
                     //dataGridView1.DataSource = tblDetalle;
                 }
                 catch { }

@@ -13,16 +13,40 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 {
     public partial class frmCotizacion : Form
     {
+
+        public int icodCotizacion;
+        public string sOpcion;
+        private BRequerimientoCompra bRequerimientoCompra = BRequerimientoCompra.getInstance();
+
+        ECotizacion cotizacion = new ECotizacion();
+        BCotizacion bCotizacion = BCotizacion.getInstance(); 
+
         public frmCotizacion()
         {
             InitializeComponent();
         }
 
-        private BRequerimientoCompra bRequerimientoCompra = BRequerimientoCompra.getInstance();
-
         private void frmCotizacion_Load(object sender, EventArgs e)
         {
+            if (sOpcion == "UPD")
+            {
+                DataTable tblDetalle = new DataTable();
 
+                cotizacion.CodCotizacion = icodCotizacion;
+                tblDetalle = bCotizacion.ObtenerCotizacionPorId(cotizacion);
+
+                txtRequerimiento.Text = tblDetalle.Rows[0]["codRequerimiento"].ToString();
+                txtProveedor.Text = tblDetalle.Rows[0]["codProveedor"].ToString();
+                txtTelefono.Text = tblDetalle.Rows[0]["telefono"].ToString();
+                txtDescripcion.Text = tblDetalle.Rows[0]["descripcion"].ToString();
+                dtExpiracion.Text = tblDetalle.Rows[0]["fechaExpiracion"].ToString();
+              
+
+            }
+            else
+            {
+               txtRequerimiento.Text = "";
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
