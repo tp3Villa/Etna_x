@@ -32,6 +32,37 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
+        public DataSet DGetEstados()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT codEstado, desEstado FROM Estado", cn.Conectar);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
+
+        public DataTable DGetAllCotizacionByReq(string codRequerimiento)
+        {
+            string sql = "SELECT codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado FROM Cotizacion " +
+                        "WHERE codRequerimiento = '" + codRequerimiento + "'";
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
+            DataTable tabla = new DataTable();
+            try
+            {
+                da.Fill(tabla);
+            }
+            catch { }
+            return tabla;
+        }
+
+
+        public DataTable getSELECTLIBRE(string SQL)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(SQL, cn.Conectar);
+            DataTable tabla = new DataTable();
+            da.Fill(tabla);
+            return tabla;
+        }
 
         public DataTable DGetAllCotizacion(ECotizacion ECotizacion)
         {
@@ -52,7 +83,7 @@ namespace ETNA.SGI.Data.Compras
         public DataTable DGetAllCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
         {
             string sql = "SELECT codCotizacion, idProducto ,cantidad ,precioUnidad, descuetno FROM CotizacionDetalle " +
-                          "WHERE codCotizacion '" + ECotizacionDetalle.CodCotizacion + " ' AND idProducto= '" + ECotizacionDetalle.IdProducto+ "' ";
+                          "WHERE codCotizacion '" + ECotizacionDetalle.CodCotizacion + " ' AND idProducto= '" + ECotizacionDetalle.IdProducto + "' ";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
             DataTable tabla = new DataTable();
             try
@@ -201,7 +232,7 @@ namespace ETNA.SGI.Data.Compras
                              "SET precioUnidad = '" + ECotizacionDetalle.PrecioUnidad + "'" +
                               ",descuento = '" + ECotizacionDetalle.Descuento + "'" +
                          "WHERE codCotizacion = '" + ECotizacionDetalle.CodCotizacion + "' AND " +
-                         " idProducto = '" + ECotizacionDetalle.IdProducto +"' ";
+                         " idProducto = '" + ECotizacionDetalle.IdProducto + "' ";
 
                 cmd.CommandText = sql;
                 cmd.Connection = cn.Conectar;
@@ -225,7 +256,7 @@ namespace ETNA.SGI.Data.Compras
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
 
-                string sql = "DELETE CotizacionDetalle WHERE codCotizacion = '" + codCotizacion +"' AND idProducto ='"+ idProducto + "'";
+                string sql = "DELETE CotizacionDetalle WHERE codCotizacion = '" + codCotizacion + "' AND idProducto ='" + idProducto + "'";
 
                 cmd.CommandText = sql;
                 cmd.Connection = cn.Conectar;
