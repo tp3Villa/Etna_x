@@ -21,6 +21,11 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
  
 
 
