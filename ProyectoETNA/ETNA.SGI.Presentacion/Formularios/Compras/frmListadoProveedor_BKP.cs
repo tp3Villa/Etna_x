@@ -53,6 +53,23 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             dataGridView1.DataSource = tblDetalle;
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                try
+                {
+                    int p = dataGridView1.CurrentRow.Index;
+                    Formularios.Compras.frmProveedor frm = new frmProveedor();
+                    frm.sOpcion = "UPD";
+                    frm.icodProveedor = Convert.ToInt32(dataGridView1.Rows[p].Cells["codProveedor"].Value.ToString());
+                    frm.ShowDialog();
+
+                }
+                catch { }
+            }
+        }
+
 
      }
 }

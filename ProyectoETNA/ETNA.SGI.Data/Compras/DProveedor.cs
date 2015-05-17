@@ -46,6 +46,21 @@ namespace ETNA.SGI.Data.Compras
                 
         }
 
+        public DataTable DGetProveedorById(EProveedor EProveedor)
+        {
+            string sql = "SELECT codProveedor,razonSocial,direccion,telefono,fechaRegistro,email,ruc,observacion,codCondicionPago,codEstado FROM Proveedor " +
+                          "WHERE codProveedor = " + EProveedor.CodProveedor + "";
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
+            DataTable tabla = new DataTable();
+            try
+            {
+                da.Fill(tabla);
+            }
+            catch { }
+            return tabla;
+
+        }
+
         public int DInsertProveedor(EProveedor EProveedor)
         {
             int i = 0;
@@ -86,14 +101,18 @@ namespace ETNA.SGI.Data.Compras
                 cmd.CommandType = CommandType.Text;
 
                 string sql = "UPDATE Proveedor" +
-                             "SET razonSocial = '" + EProveedor.RazonSocial + "'" +
+                             " SET razonSocial = '" + EProveedor.RazonSocial + "'" +
                               ",direccion = '" + EProveedor.Direccion + "'" +
                               ",telefono = " + EProveedor.Telefono +
-                              ",fechaRegistro = " + EProveedor.FechaRegistro +
+                              ",fechaRegistro = '" + EProveedor.FechaRegistro +"'"+
                               ",email = '" + EProveedor.Email + "'" +
                               ",ruc = " + EProveedor.Ruc +
                               ",observacion = '" + EProveedor.Observacion + "'" +
-                         "WHERE codProveedor = " + EProveedor.CodProveedor;
+                              ",codCondicionPago = " + EProveedor.CodCondicionPago +
+                              ",codEstado = " + EProveedor.CodEstado +
+                              ",fechaActualizacion = '" + EProveedor.FechaActualizacion + "'" +
+                              ",usuarioModificacion = '" + EProveedor.UsuarioModificacion.Trim() + "'" +
+                         " WHERE codProveedor = " + EProveedor.CodProveedor;
 
                 cmd.CommandText = sql;
                 cmd.Connection = cn.Conectar;

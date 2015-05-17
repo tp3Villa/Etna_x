@@ -47,5 +47,10 @@ namespace ETNA.SGI.Bussiness.Compras
         {
             return dProveedor.DDeleteProveedor(CodProveedor);
         }
+
+        public DataTable DGetProveedorById(EProveedor EProveedor)
+        {
+            return dProveedor.DGetProveedorById(EProveedor);
+        }
     }
 }
