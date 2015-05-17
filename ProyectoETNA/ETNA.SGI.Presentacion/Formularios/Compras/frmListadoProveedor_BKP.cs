@@ -92,6 +92,13 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                     frm.icodProveedor = Convert.ToInt32(dataGridView1.Rows[p].Cells["codProveedor"].Value.ToString());
                     frm.ShowDialog();
 
+                    rdTodo.Checked = true;
+
+                    DataTable tblDetalle = new DataTable();
+
+                    tblDetalle = bProveedor.DGetAllProveedor(proveedor);
+
+                    dataGridView1.DataSource = tblDetalle; 
                 }
                 catch { }
             }
