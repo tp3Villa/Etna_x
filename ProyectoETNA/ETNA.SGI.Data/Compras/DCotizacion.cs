@@ -41,60 +41,103 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
-        public DataTable DGetAllCotizacion()
+        public DataTable DGetAllCotizacion(ECotizacion eCotizacion)
         {
-            string sql = "SELECT codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado FROM Cotizacion ";
-            SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
-            DataTable tabla = new DataTable();
-            try
-            {
-                da.Fill(tabla);
-            }
-            catch { }
-            return tabla;
+            string sql = "SELECT c.codCotizacion,c.codRequerimiento,p.razonSocial,c.descripcion,c.codEstado,e.desEstado,c.telefono, c.fechaExpiracion " +
+                              "FROM Cotizacion c " +
+                              "INNER JOIN Proveedor p " +
+                              "ON c.codProveedor = p.codProveedor " +
+                              "INNER JOIN Estado e " +
+                              "ON c.codEstado = e.codEstado " +
+                          "WHERE  ( @codCotizacion = 0 OR c.codCotizacion = @codCotizacion ) " +
+                          "AND ( @codRequerimiento = 0 OR c.codRequerimiento = @codRequerimiento ) " +
+                          "AND ( @codEstado = 0 OR c.codEstado = @codEstado )";
+            
+            SqlDataAdapter adapter = new SqlDataAdapter();
 
+            // Create the SelectCommand.
+            SqlCommand command = new SqlCommand(sql, cn.Conectar);
+
+            // Add the parameters for the SelectCommand.
+            command.Parameters.Add("@codCotizacion", SqlDbType.Int);
+            command.Parameters["@codCotizacion"].Value = eCotizacion.CodCotizacion;
+            command.Parameters.Add("@codRequerimiento", SqlDbType.Int);
+            command.Parameters["@codRequerimiento"].Value = eCotizacion.CodRequerimiento;
+            command.Parameters.Add("@codEstado", SqlDbType.Int);
+            command.Parameters["@codEstado"].Value = eCotizacion.CodEstado;
+
+            adapter.SelectCommand = command;
+
+            DataTable tabla = new DataTable();
+            adapter.Fill(tabla);
+            return tabla;
         }
 
-
-        public DataTable DGetAllCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
+        public DataTable DGetAllCotizacionDetalle(ECotizacionDetalle eCotizacionDetalle)
         {
-            string sql = "SELECT codCotizacion, idProducto ,cantidad ,precioUnidad, descuetno FROM CotizacionDetalle " +
-                          "WHERE codCotizacion '" + ECotizacionDetalle.CodCotizacion + " ' AND idProducto= '" + ECotizacionDetalle.IdProducto + "' ";
-            SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
+            string sql = "SELECT c.codCotizacion,c.idProducto,c.cantidad,c.precioUnidad,c.descuento " +
+                              "FROM CotizacionDetalle c " +
+                          "WHERE  ( @codCotizacion = 0 OR c.codCotizacion = @codCotizacion ) " +
+                          "AND ( @idProducto = 0 OR c.idProducto = @idProducto ) ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            // Create the SelectCommand.
+            SqlCommand command = new SqlCommand(sql, cn.Conectar);
+
+            // Add the parameters for the SelectCommand.
+            command.Parameters.Add("@codCotizacion", SqlDbType.Int);
+            command.Parameters["@codCotizacion"].Value = eCotizacionDetalle.CodCotizacion;
+            command.Parameters.Add("@idProducto", SqlDbType.Int);
+            command.Parameters["@idProducto"].Value = eCotizacionDetalle.IdProducto;
+
+            adapter.SelectCommand = command;
+
             DataTable tabla = new DataTable();
-            try
-            {
-                da.Fill(tabla);
-            }
-            catch { }
+            adapter.Fill(tabla);
             return tabla;
 
+
+
         }
-        public int DInsertCotizacion(ECotizacion ECotizacion)
+        public int DInsertCotizacion(ECotizacion eCotizacion)
         {
             int i = 0;
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
 
                 string sql = "INSERT INTO Cotizacion (codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado) " +
-                " VALUES (" + ECotizacion.CodCotizacion + ", '" + ECotizacion.CodRequerimiento + "', '" + ECotizacion.CodProveedor + "', " +
-                " " + ECotizacion.Descripcion + ", '" + ECotizacion.Telefono + "', '" + ECotizacion.FechaExpiracion + "', " +
-                " " + ECotizacion.CodEstado + "')";
+               " VALUES (@codCotizacion, @codRequerimiento, @codProveedor, @descripcion, @telefono, @fechaExpiracion, @codEstado)";
 
+                // Configurando los parametros
+                command.Parameters.Add("@codCotizacion", SqlDbType.Int);
+                command.Parameters["@codCotizacion"].Value = eCotizacion.CodCotizacion;
+                command.Parameters.Add("@codRequerimiento", SqlDbType.Int);
+                command.Parameters["@codRequerimiento"].Value = eCotizacion.CodRequerimiento;
+                command.Parameters.Add("@descripcion", SqlDbType.VarChar);
+                command.Parameters["@descripcion"].Value = eCotizacion.Descripcion;
+                command.Parameters.Add("@telefono", SqlDbType.Int);
+                command.Parameters["@telefono"].Value = eCotizacion.Telefono;
+                command.Parameters.Add("@fechaExpiracion", SqlDbType.Date);
+                command.Parameters["@fechaExpiracion"].Value = eCotizacion.FechaExpiracion;
+                command.Parameters.Add("@codEstado", SqlDbType.Int);
+                command.Parameters["@codEstado"].Value = eCotizacion.CodEstado;
 
-                cmd.CommandText = sql;
-                cmd.Connection = cn.Conectar;
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
+                command.CommandText = sql;
+                command.Connection = cn.Conectar;
+                command.Connection.Open();
+                command.ExecuteNonQuery();
                 i = 1;
-                cmd.Dispose();
-                cn.Conectar.Dispose();
-                cn.Conectar.Close();
+                command.Dispose();
+                //command.Connection.Dispose();
+                command.Connection.Close();
             }
             catch { throw; }
             return i;
+
+
         }
 
         public int DUpdateCotizacion(ECotizacion ECotizacion)
@@ -117,7 +160,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-                cn.Conectar.Dispose();
+               // cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }
@@ -139,7 +182,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-                cn.Conectar.Dispose();
+                //cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }
@@ -162,7 +205,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-                cn.Conectar.Dispose();
+              //  cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }
@@ -189,7 +232,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-                cn.Conectar.Dispose();
+               // cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }
@@ -216,7 +259,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-                cn.Conectar.Dispose();
+                //cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }
@@ -240,7 +283,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-                cn.Conectar.Dispose();
+                //cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }
