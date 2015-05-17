@@ -27,7 +27,7 @@ namespace ETNA.SGI.Data.Compras
 
         public DataTable DGetAllRequerimientoCompraCotizacion(ERequerimientoCompra eRequerimientoCompra)
         {
-            string sql = "SELECT rc.codRequerimiento, c.desCategoria, rc.fechaRegistro, rc.observaciones " +
+            string sql = "SELECT rc.codRequerimiento, c.desCategoria, rc.fechaRegistro, rc.observacion " +
                               "FROM RequerimientoCompra rc " +
                               "INNER JOIN Categoria c " +
                               "ON rc.codCategoria = c.codCategoria " +
