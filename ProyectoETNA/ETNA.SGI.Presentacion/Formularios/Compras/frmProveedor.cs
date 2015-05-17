@@ -186,6 +186,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
             Compras.frmListadoCondicionPago frm = new frmListadoCondicionPago();
             frm.ShowDialog();
+
+            txtCondPago.Text = frm.vCodigo;
         }
 
                 

@@ -19,6 +19,9 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
     {
 
         public int iCodCondicionPago;
+        public string vCodigo;
+        public string vDescripcion;
+
         private BCondicionPago bCondicionPago = BCondicionPago.getInstance();
         ECondicionPago eCondicionPago = new ECondicionPago();
 
@@ -38,6 +41,21 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             table = bCondicionPago.DGetAllCondicionPago();
 
             dataGridView1.DataSource = table; 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                try
+                {
+                    int p = dataGridView1.CurrentRow.Index;
+                    vCodigo = dataGridView1.Rows[p].Cells["codCondicionPago"].Value.ToString();
+                    vDescripcion = dataGridView1.Rows[p].Cells["desCondicionPago"].Value.ToString();
+                    this.Close();
+                }
+                catch { }
+            }
         }
     }
 }
