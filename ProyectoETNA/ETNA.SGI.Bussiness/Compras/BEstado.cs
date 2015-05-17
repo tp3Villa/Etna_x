@@ -29,5 +29,9 @@ namespace ETNA.SGI.Bussiness.Compras
             return dEstado.DGetAllEstadoByOrdenCompra();
         }
 
+        public DataSet ObtenerListadoEstadoPorCotizacion()
+        {
+            return dEstado.DGetAllEstadoByCotizacion();
+        }
     }
 }

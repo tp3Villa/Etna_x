@@ -11,7 +11,7 @@ namespace ETNA.SGI.Bussiness.Compras
     public class BCotizacion
     {
         private DCotizacion dCotizacion = DCotizacion.getInstance();
-        
+
         private static BCotizacion bCotizacion;
 
         public static BCotizacion getInstance()
@@ -23,9 +23,24 @@ namespace ETNA.SGI.Bussiness.Compras
             return bCotizacion;
         }
 
+        public DataTable getSELECTLIBRE(string SQL)
+        {
+            return bCotizacion.getSELECTLIBRE(SQL);
+        }
+
+        public DataSet DGetEstados()
+        {
+            return dCotizacion.DGetEstados();
+        }
+
         public DataTable BCorrelativoCotizacion()
         {
-            return bCotizacion.BCorrelativoCotizacion();
+            return dCotizacion.DCorrelativoCotizacion();
+        }
+
+        public DataTable DGetAllCotizacionByReq(string codRequerimiento)
+        {
+            return dCotizacion.DGetAllCotizacionByReq(codRequerimiento);
         }
 
         public DataTable DGetAllCotizacion(ECotizacion ECotizacion)
