@@ -55,6 +55,12 @@
     <Compile Include="Formularios\Compras\frmBusquedaProveedor.Designer.cs">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Compras\frmListadoReqCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Compras\frmListadoReqCotizacion.Designer.cs">
+      <DependentUpon>frmListadoReqCotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Compras\frmListadoRequerimientoCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Compras\frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Compras\frmListadoReqCotizacion.resx">
+      <DependentUpon>frmListadoReqCotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compras\frmListadoRequerimientoCompra.resx">
       <DependentUpon>frmListadoRequerimientoCompra.cs</DependentUpon>
