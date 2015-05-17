@@ -49,6 +49,9 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             else
             {
                txtRequerimiento.Text = "";
+               txtProveedor.Text = "";
+               txtTelefono.Text = "";
+               txtDescripcion.Text = "";
             }
         }
 
@@ -87,6 +90,94 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         }
 
+        private void dataGridView1_KeyPress(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int p = dataGridView1.CurrentRow.Index;
+
+     //           frm.icodCotizacion = Convert.ToInt32(dataGridView1.Rows[p].Cells["codCotizacion"].Value);
+     
+
+
+                for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
+                {
+       //             dr = dtOrdenCompra.NewRow();
+         //           dr["codigo"] = dataGridView1.Rows[i]["descuento"].value;
+               
+                }
+
+            }
+            catch { }
+
+
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            DateTime FechaSis = DateTime.Now;
+
+            string fecha;
+            FechaSis = DateTime.Now;
+
+            if (txtRequerimiento.Text == "") { MessageBox.Show("Seleccionar Requerimiento", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); btnFindReq.Focus(); this.Cursor = Cursors.Default; return; }
+            if (txtProveedor.Text == "") { MessageBox.Show("Seleccionar Proveedor", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); btnFindProv.Focus(); this.Cursor = Cursors.Default; return; }
+            if (txtTelefono.Text == "") { MessageBox.Show("Ingresar Teléfono", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtTelefono.Focus(); this.Cursor = Cursors.Default; return; }
+           
+            if (MessageBox.Show("Se procederá a grabar la cotización", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+
+                string corr = "";
+
+                if (sOpcion == "UPD")
+                {
+                    corr = Convert.ToString(icodCotizacion);
+                }
+                else
+                {
+                    corr = bCotizacion.CorrelativoCotizacion().Rows[0][0].ToString();
+
+                   // MessageBox.Show(corr);
+                }
+                fecha = FechaSis.ToShortDateString().Substring(6, 4) + FechaSis.ToShortDateString().Substring(3, 2) + FechaSis.ToShortDateString().Substring(0, 2);
+
+                cotizacion = new ECotizacion();
+                cotizacion.CodCotizacion = Convert.ToInt32(corr);
+                cotizacion.CodRequerimiento = Convert.ToInt32(txtRequerimiento.Text.Trim());
+                cotizacion.CodProveedor = Convert.ToInt32(txtProveedor.Text.Trim());
+                cotizacion.Descripcion = txtDescripcion.Text.Trim();
+                cotizacion.Telefono = Convert.ToInt32(txtTelefono.Text.Trim());
+                cotizacion.FechaExpiracion = Convert.ToDateTime(dtExpiracion.Text.Trim());
+                cotizacion.CodEstado = 4;
+       
+               
+                if (sOpcion == "UPD")
+                {
+                    cotizacion.FechaActualizacion = FechaSis;
+                    cotizacion.UsuarioModificacion = Program.Usuario;
+                }
+                else
+                {
+                    cotizacion.FechaRegistro = FechaSis;
+                    cotizacion.UsuarioRegistro = Program.Usuario;
+                }
+                if (sOpcion == "UPD")
+                {
+                    //bCotizacion.DUpdateProveedor(proveedor);
+                    //MessageBox.Show("Proveedor actualizado correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    int result = bCotizacion.InsertarCotizacion(cotizacion);
+                    MessageBox.Show("Cotizacion registrado correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                this.Close();
+
+
+
+            }
+        }
 
 
    

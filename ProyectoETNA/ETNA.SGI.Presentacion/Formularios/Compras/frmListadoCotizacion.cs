@@ -130,7 +130,6 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         }
 
-           
 
     }
 }
