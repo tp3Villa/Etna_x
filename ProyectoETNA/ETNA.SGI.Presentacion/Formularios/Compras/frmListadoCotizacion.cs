@@ -107,9 +107,29 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             dtGridCot.DataSource = tblDetalle;
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+
+        private void dtGridCot_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("Modificar");
+            if (e.ColumnIndex == 0)
+            {
+                try
+                {
+                    int p = dtGridCot.CurrentRow.Index;
+                    Formularios.Compras.frmCotizacion frm = new frmCotizacion();
+                   // frm.sOpcion = "UPD";
+                    //frm.icodProveedor = Convert.ToInt32(dtGridCot.Rows[p].Cells["codCotizacion"].Value.ToString());
+                    frm.ShowDialog();
+
+                    
+
+                    DataTable tblDetalle = new DataTable();
+
+                    //tblDetalle = bProveedor.DGetAllProveedor(proveedor);
+
+                    //dataGridView1.DataSource = tblDetalle;
+                }
+                catch { }
+            }
         }
 
            
