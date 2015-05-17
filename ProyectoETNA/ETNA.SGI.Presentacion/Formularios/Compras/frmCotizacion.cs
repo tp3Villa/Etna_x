@@ -167,13 +167,13 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 }
                 if (sOpcion == "UPD")
                 {
-                    //bCotizacion.DUpdateProveedor(proveedor);
-                    //MessageBox.Show("Proveedor actualizado correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bCotizacion.ActualizarCotizacion(cotizacion);
+                    MessageBox.Show("Cotizacion actualizada correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     int result = bCotizacion.InsertarCotizacion(cotizacion);
-                    MessageBox.Show("Cotizacion registrado correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cotizacion registrada correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 this.Close();
