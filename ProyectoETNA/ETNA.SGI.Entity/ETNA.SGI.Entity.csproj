@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Compras\ECategoria.cs" />
     <Compile Include="Compras\ECondicionPago.cs" />
     <Compile Include="Compras\ECotizacion.cs" />
     <Compile Include="Compras\ECotizacionDetalle.cs" />
