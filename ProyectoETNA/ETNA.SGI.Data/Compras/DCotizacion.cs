@@ -105,6 +105,32 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
+        public DataTable DGetCotizacionDetalleById(ECotizacionDetalle eCotizacionDetalle)
+        {
+            string sql = "SELECT c.idProducto, p.descripcionProducto, c.cantidad,c.precioUnidad,c.descuento " +
+                              "FROM CotizacionDetalle c " +
+                               "INNER JOIN Producto p " +
+                              "ON c.idProducto = p.idProducto " +
+                          "WHERE  ( @codCotizacion = 0 OR c.codCotizacion = @codCotizacion ) ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            // Create the SelectCommand.
+            SqlCommand command = new SqlCommand(sql, cn.Conectar);
+
+            // Add the parameters for the SelectCommand.
+            command.Parameters.Add("@codCotizacion", SqlDbType.Int);
+            command.Parameters["@codCotizacion"].Value = eCotizacionDetalle.CodCotizacion;
+            adapter.SelectCommand = command;
+
+            DataTable tabla = new DataTable();
+            adapter.Fill(tabla);
+            return tabla;
+
+
+
+        }
+
         public DataTable DGetAllCotizacionDetalle(ECotizacionDetalle eCotizacionDetalle)
         {
             string sql = "SELECT c.codCotizacion,c.idProducto,c.cantidad,c.precioUnidad,c.descuento " +
@@ -128,9 +154,7 @@ namespace ETNA.SGI.Data.Compras
             DataTable tabla = new DataTable();
             adapter.Fill(tabla);
             return tabla;
-
-
-
+                        
         }
         public int DInsertCotizacion(ECotizacion eCotizacion)
         {
