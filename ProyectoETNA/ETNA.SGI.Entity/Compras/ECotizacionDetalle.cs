@@ -38,5 +38,13 @@ namespace ETNA.SGI.Entity.Compras
             get { return precioUnidad; }
             set { precioUnidad = value; }
         }
+
+        private Double descuento;
+
+        public Double Descuento
+        {
+            get { return descuento; }
+            set { descuento = value; }
+        }
     }
 }
