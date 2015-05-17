@@ -164,14 +164,16 @@ namespace ETNA.SGI.Data.Compras
                 SqlCommand command = new SqlCommand();
                 command.CommandType = CommandType.Text;
 
-                string sql = "INSERT INTO Cotizacion (codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado) " +
-               " VALUES (@codCotizacion, @codRequerimiento, @codProveedor, @descripcion, @telefono, @fechaExpiracion, @codEstado)";
+                string sql = "INSERT INTO Cotizacion (codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado, fechaRegistro, fechaActualizacion, usuarioRegistro, usuarioModificacion) " +
+               " VALUES (@codCotizacion, @codRequerimiento, @codProveedor, @descripcion, @telefono, @fechaExpiracion, @codEstado, @fechaRegistro, @fechaActualizacion, @usuarioRegistro, @usuarioActualizacion)";
 
                 // Configurando los parametros
                 command.Parameters.Add("@codCotizacion", SqlDbType.Int);
                 command.Parameters["@codCotizacion"].Value = eCotizacion.CodCotizacion;
                 command.Parameters.Add("@codRequerimiento", SqlDbType.Int);
                 command.Parameters["@codRequerimiento"].Value = eCotizacion.CodRequerimiento;
+                command.Parameters.Add("@codProveedor", SqlDbType.Int);
+                command.Parameters["@codProveedor"].Value = eCotizacion.CodRequerimiento;
                 command.Parameters.Add("@descripcion", SqlDbType.VarChar);
                 command.Parameters["@descripcion"].Value = eCotizacion.Descripcion;
                 command.Parameters.Add("@telefono", SqlDbType.Int);
@@ -180,6 +182,17 @@ namespace ETNA.SGI.Data.Compras
                 command.Parameters["@fechaExpiracion"].Value = eCotizacion.FechaExpiracion;
                 command.Parameters.Add("@codEstado", SqlDbType.Int);
                 command.Parameters["@codEstado"].Value = eCotizacion.CodEstado;
+
+                command.Parameters.Add("@fechaRegistro", SqlDbType.DateTime);
+                command.Parameters["@fechaRegistro"].Value = eCotizacion.FechaRegistro;                
+                command.Parameters.Add("@fechaActualizacion", SqlDbType.DateTime);
+                command.Parameters["@fechaActualizacion"].Value = eCotizacion.FechaActualizacion;
+
+                   command.Parameters.Add("@usuarioRegistro", SqlDbType.VarChar);
+                command.Parameters["@usuarioRegistro"].Value = eCotizacion.UsuarioRegistro;
+
+                command.Parameters.Add("@usuarioActualizacion", SqlDbType.VarChar);
+                command.Parameters["@usuarioActualizacion"].Value = eCotizacion.UsuarioModificacion;
 
                 command.CommandText = sql;
                 command.Connection = cn.Conectar;
