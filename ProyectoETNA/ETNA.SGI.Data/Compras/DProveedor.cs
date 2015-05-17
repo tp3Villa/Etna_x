@@ -54,10 +54,14 @@ namespace ETNA.SGI.Data.Compras
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
 
-                string sql = "INSERT INTO Proveedor (codProveedor, razonSocial, direccion, telefono, fechaRegistro, email, ruc, observacion) " +
+                string sql = "INSERT INTO Proveedor (codProveedor, razonSocial, direccion, telefono, fechaRegistro, email, ruc, observacion,codCondicionPago,codEstado,usuarioRegistro) " +
                 " VALUES (" + EProveedor.CodProveedor + ", '" + EProveedor.RazonSocial + "', '" + EProveedor.Direccion + "', " +
                 " " + EProveedor.Telefono + ", '" + EProveedor.FechaRegistro + "', '" + EProveedor.Email + "', " +
-                " " + EProveedor.Ruc + ", '" + EProveedor.Observacion + "')";
+                " " + EProveedor.Ruc + ", '" + EProveedor.Observacion + "'" +
+                ", '" + EProveedor.CodCondicionPago + "'"  +
+                ", '" + EProveedor.CodEstado + "'" +
+                ", '" + EProveedor.UsuarioRegistro + "'" +
+                ")";
 
 
                 cmd.CommandText = sql;

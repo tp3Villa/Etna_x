@@ -69,5 +69,42 @@ namespace ETNA.SGI.Entity.Compras
             get { return observacion; }
             set { observacion = value; }
         }
+
+        private int codCondicionPago;
+        public int CodCondicionPago
+
+        {
+            get { return codCondicionPago; }
+            set { codCondicionPago = value; }
+        }
+
+        private int codEstado;
+        public int CodEstado
+        {
+            get { return codEstado; }
+            set { codEstado = value; }
+        }
+
+        private DateTime fechaActualizacion;
+        public DateTime FechaActualizacion
+        {
+            get { return fechaActualizacion; }
+            set { fechaActualizacion = value; }
+        }
+
+        private string usuarioRegistro;
+        public string UsuarioRegistro
+        {
+            get { return usuarioRegistro; }
+            set { usuarioRegistro = value; }
+        }
+
+        private string usuarioModificacion;
+        public string UsuarioModificacion
+        {
+            get { return usuarioModificacion; }
+            set { usuarioModificacion = value; }
+        }
+
     }
 }

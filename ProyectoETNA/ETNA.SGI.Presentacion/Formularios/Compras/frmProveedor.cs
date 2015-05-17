@@ -23,11 +23,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void frmProveedor_Load(object sender, EventArgs e)
         {
-
+            rdActivo.Checked = true;
         }
 
         EProveedor proveedor = new EProveedor();
-       // BProveedor tProveedor =  new BProveedor();
         BProveedor bProveedor = BProveedor.getInstance(); 
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -81,6 +80,17 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 //proveedor.Ruc = Convert.ToInt32(txtRUC.Text.Trim());
                 proveedor.Ruc = 1;
                 proveedor.Observacion = txtObs.Text.Trim();
+                proveedor.CodCondicionPago = Convert.ToInt32(txtCondPago.Text.Trim());
+
+                if (rdActivo.Checked)
+                { 
+                    proveedor.CodEstado = 5;
+                } else {
+                    proveedor.CodEstado = 6;
+                }
+
+                proveedor.FechaRegistro = FechaSis;
+                proveedor.UsuarioRegistro = Program.Usuario;
 
                 int result = bProveedor.BInsertProveedor(proveedor);
 

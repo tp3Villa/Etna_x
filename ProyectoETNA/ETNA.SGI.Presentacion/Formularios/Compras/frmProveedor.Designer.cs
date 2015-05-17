@@ -44,12 +44,18 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCondPago = new System.Windows.Forms.Label();
+            this.txtCondPago = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rdActivo = new System.Windows.Forms.RadioButton();
+            this.rdInactivo = new System.Windows.Forms.RadioButton();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRazonSocial
@@ -83,14 +89,14 @@
             this.txtDire.Location = new System.Drawing.Point(99, 108);
             this.txtDire.Name = "txtDire";
             this.txtDire.Size = new System.Drawing.Size(416, 20);
-            this.txtDire.TabIndex = 3;
+            this.txtDire.TabIndex = 4;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(99, 83);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 4;
+            this.txtTelefono.TabIndex = 3;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtEmail
@@ -102,11 +108,11 @@
             // 
             // txtObs
             // 
-            this.txtObs.Location = new System.Drawing.Point(99, 165);
+            this.txtObs.Location = new System.Drawing.Point(99, 197);
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(416, 51);
-            this.txtObs.TabIndex = 6;
+            this.txtObs.TabIndex = 7;
             // 
             // lblRUC
             // 
@@ -152,7 +158,7 @@
             // 
             this.lblObservacion.AutoSize = true;
             this.lblObservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObservacion.Location = new System.Drawing.Point(7, 172);
+            this.lblObservacion.Location = new System.Drawing.Point(7, 204);
             this.lblObservacion.Name = "lblObservacion";
             this.lblObservacion.Size = new System.Drawing.Size(82, 13);
             this.lblObservacion.TabIndex = 11;
@@ -181,6 +187,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.lblCondPago);
+            this.groupBox1.Controls.Add(this.txtCondPago);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtRazonSocial);
             this.groupBox1.Controls.Add(this.lblRazonSocial);
@@ -196,12 +205,29 @@
             this.groupBox1.Controls.Add(this.lblRUC);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
-            this.groupBox1.Location = new System.Drawing.Point(12, 78);
+            this.groupBox1.Location = new System.Drawing.Point(12, 61);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(539, 319);
+            this.groupBox1.Size = new System.Drawing.Size(539, 387);
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información";
+            // 
+            // lblCondPago
+            // 
+            this.lblCondPago.AutoSize = true;
+            this.lblCondPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCondPago.Location = new System.Drawing.Point(7, 177);
+            this.lblCondPago.Name = "lblCondPago";
+            this.lblCondPago.Size = new System.Drawing.Size(77, 13);
+            this.lblCondPago.TabIndex = 96;
+            this.lblCondPago.Text = "Cond. Pago:";
+            // 
+            // txtCondPago
+            // 
+            this.txtCondPago.Location = new System.Drawing.Point(99, 171);
+            this.txtCondPago.Name = "txtCondPago";
+            this.txtCondPago.Size = new System.Drawing.Size(202, 20);
+            this.txtCondPago.TabIndex = 6;
             // 
             // groupBox2
             // 
@@ -209,7 +235,7 @@
             this.groupBox2.Controls.Add(this.btnGrabar);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Navy;
-            this.groupBox2.Location = new System.Drawing.Point(199, 233);
+            this.groupBox2.Location = new System.Drawing.Point(209, 299);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(136, 81);
             this.groupBox2.TabIndex = 94;
@@ -240,11 +266,46 @@
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rdInactivo);
+            this.groupBox3.Controls.Add(this.rdActivo);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox3.Location = new System.Drawing.Point(10, 249);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(523, 44);
+            this.groupBox3.TabIndex = 104;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Estado";
+            // 
+            // rdActivo
+            // 
+            this.rdActivo.AutoSize = true;
+            this.rdActivo.Location = new System.Drawing.Point(30, 19);
+            this.rdActivo.Name = "rdActivo";
+            this.rdActivo.Size = new System.Drawing.Size(61, 17);
+            this.rdActivo.TabIndex = 0;
+            this.rdActivo.TabStop = true;
+            this.rdActivo.Text = "Activo";
+            this.rdActivo.UseVisualStyleBackColor = true;
+            // 
+            // rdInactivo
+            // 
+            this.rdInactivo.AutoSize = true;
+            this.rdInactivo.Location = new System.Drawing.Point(131, 19);
+            this.rdInactivo.Name = "rdInactivo";
+            this.rdInactivo.Size = new System.Drawing.Size(71, 17);
+            this.rdInactivo.TabIndex = 1;
+            this.rdInactivo.TabStop = true;
+            this.rdInactivo.Text = "Inactivo";
+            this.rdInactivo.UseVisualStyleBackColor = true;
+            // 
             // frmProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 409);
+            this.ClientSize = new System.Drawing.Size(562, 457);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox6);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -255,6 +316,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +342,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Label lblCondPago;
+        private System.Windows.Forms.TextBox txtCondPago;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton rdInactivo;
+        private System.Windows.Forms.RadioButton rdActivo;
     }
 }
