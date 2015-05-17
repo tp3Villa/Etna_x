@@ -100,6 +100,12 @@ namespace ETNA.SGI.Bussiness.Compras
         {
             return dCotizacion.DGetCotizacionAprobacion();
         }
+
+         public int DUpdateAprobacionCotizacion(ECotizacion ECotizacion)
+        {
+            return dCotizacion.DUpdateAprobacionCotizacion(ECotizacion);
+        }
+        
         
     }
 }

@@ -22,7 +22,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         }
 
         private BCotizacion bCotizacion = BCotizacion.getInstance();
-        
+        ECotizacion eCotizacion = new ECotizacion();
+
         private void frmListadoAprobacionCotizacion_Load(object sender, EventArgs e)
         {
             DataTable table = new DataTable();
@@ -50,7 +51,12 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                     {
                         int p = dataGridView1.CurrentRow.Index;
 
-                        bCotizacion.ActualizarEstadoCotizacion(Convert.ToInt32(dataGridView1.Rows[p].Cells["codCotizacion"].Value.ToString()), 2);
+                        eCotizacion.CodCotizacion = Convert.ToInt32(dataGridView1.Rows[p].Cells["codCotizacion"].Value.ToString());
+                        eCotizacion.CodEstado = 2;
+                        eCotizacion.UsuarioAprobacion = Program.Usuario;
+                        eCotizacion.FechaAprobacion =  DateTime.Now;
+                        
+                        int exito = bCotizacion.DUpdateAprobacionCotizacion(eCotizacion);
 
                         MessageBox.Show("La cotización fue aprobada. ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
