@@ -23,70 +23,61 @@ namespace ETNA.SGI.Bussiness.Compras
             return bCotizacion;
         }
 
-        public DataTable getSELECTLIBRE(string SQL)
+        public DataTable SelectLibre(string SQL)
         {
-            return bCotizacion.getSELECTLIBRE(SQL);
+            return dCotizacion.getSELECTLIBRE(SQL);
         }
 
-        public DataSet DGetEstados()
-        {
-            return dCotizacion.DGetEstados();
-        }
-
-        public DataTable BCorrelativoCotizacion()
+        public DataTable CorrelativoCotizacion()
         {
             return dCotizacion.DCorrelativoCotizacion();
         }
 
-        public DataTable DGetAllCotizacionByReq(string codRequerimiento)
-        {
-            return dCotizacion.DGetAllCotizacionByReq(codRequerimiento);
-        }
 
-        public DataTable DGetAllCotizacion(ECotizacion ECotizacion)
+        public DataTable ObtenerCotizaciones()
         {
-            return dCotizacion.DGetAllCotizacion(ECotizacion);
+            return dCotizacion.DGetAllCotizacion();
         }
 
 
-        public DataTable DGetAllCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
+        public DataTable ObtenerCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
         {
             return dCotizacion.DGetAllCotizacionDetalle(ECotizacionDetalle);
         }
 
-        public int DInsertCotizacion(ECotizacion ECotizacion)
+        public int InsertarCotizacion(ECotizacion ECotizacion)
         {
             return dCotizacion.DInsertCotizacion(ECotizacion);
         }
 
-        public int DUpdateCotizacion(ECotizacion ECotizacion)
+        public int ActualizarCotizacion(ECotizacion ECotizacion)
         {
             return dCotizacion.DUpdateCotizacion(ECotizacion);
         }
 
 
-        public int DUpdateEstadoCotizacion(int CodCotizacion, int CodEstado)
+        public int ActualizarEstadoCotizacion(int CodCotizacion, int CodEstado)
         {
             return dCotizacion.DUpdateEstadoCotizacion(CodCotizacion, CodEstado);
         }
 
-        public int DDeleteCotizacion(int CodCotizacion)
+        public int EliminarCotizacion(int CodCotizacion)
         {
             return dCotizacion.DDeleteCotizacion(CodCotizacion);
         }
 
-        public int DInsertCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
+        public int InsertarCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
         {
             return dCotizacion.DInsertCotizacionDetalle(ECotizacionDetalle);
         }
 
-        public int DUpdateCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
+        public int ActualizarCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
         {
             return dCotizacion.DUpdateCotizacionDetalle(ECotizacionDetalle);
         }
 
 
-        public int DDeleteCotizacionDetalle(int CodCotizacion, int IdProducto)
+        public int EliminarCotizacionDetalle(int CodCotizacion, int IdProducto)
         {
             return dCotizacion.DDeleteCotizacionDetalle(CodCotizacion, IdProducto);
         }
