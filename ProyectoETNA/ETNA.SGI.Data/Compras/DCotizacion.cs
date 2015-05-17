@@ -406,6 +406,7 @@ namespace ETNA.SGI.Data.Compras
             return i;
         }
 
+        /* Aprobación Cotización */
         public DataTable DGetCotizacionAprobacion()
         {
             //string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion from Cotizacion a INNER JOIN Proveedor b where a.codEstado = 4 and b.codProveedor = a.codProveedor and codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
@@ -424,6 +425,31 @@ namespace ETNA.SGI.Data.Compras
             DataTable tabla = new DataTable();
             adapter.Fill(tabla);
             return tabla;
+        }
+
+        public int DUpdateAprobacionCotizacion(ECotizacion ECotizacion)
+        {
+            int i = 0;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+
+                string sql = "UPDATE Cotizacion SET codEstado='" + ECotizacion.CodEstado 
+                    + "', usuarioAprobacion='"+ECotizacion.UsuarioAprobacion
+                    + "', fechaAprobacion='" + ECotizacion.FechaAprobacion+"'"
+                    +"WHERE codCotizacion='" + ECotizacion.CodCotizacion + "'";
+                cmd.CommandText = sql;
+                cmd.Connection = cn.Conectar;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                i = 1;
+                cmd.Dispose();
+                //cn.Conectar.Dispose();
+                cn.Conectar.Close();
+            }
+            catch { throw; }
+            return i;
         }
 
     }

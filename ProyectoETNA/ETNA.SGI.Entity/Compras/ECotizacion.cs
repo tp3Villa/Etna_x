@@ -93,6 +93,20 @@ namespace ETNA.SGI.Entity.Compras
             get { return usuarioModificacion; }
             set { usuarioModificacion = value; }
         }
+
+        private string usuarioAprobacion;
+        public string UsuarioAprobacion
+        {
+            get { return usuarioAprobacion; }
+            set { usuarioAprobacion = value; }
+        }
+
+        private DateTime fechaAprobacion;
+        public DateTime FechaAprobacion
+        {
+            get { return fechaAprobacion; }
+            set { fechaAprobacion = value; }
+        }
     }
 
 }
