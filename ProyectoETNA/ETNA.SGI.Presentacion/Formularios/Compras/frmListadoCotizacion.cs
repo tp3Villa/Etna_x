@@ -27,11 +27,14 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void frmListadoProveedor_Load(object sender, EventArgs e)
         {
+            dataGridView1.GridColor = Color.Red;
+            txtRequerimiento.Text = Program.Nombre;
 
-            DataTable tblDetalle = new DataTable();
+            cboEstado.DataSource = bCotizacion.DGetEstados();
+            cboEstado.DisplayMember = "desEstado";
+            cboEstado.ValueMember = "codEstado";
 
-            tblDetalle = bCotizacion.DGetAllCotizacion(cotizacion);
-            dataGridView1.DataSource = tblDetalle;
+            dataGridView1.DataSource = bCotizacion.DGetAllCotizacionByReq(Program.CodReq);
 
         }
 
@@ -44,12 +47,67 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
-            DataTable tblDetalle = new DataTable();
+            string criteria = "";
 
-            cotizacion.Descripcion = txtDescripcion.Text.Trim();
-            tblDetalle = bCotizacion.DGetAllCotizacion(cotizacion);
+            if (txtRequerimiento.Text == "")
+            {
+                criteria = " codRequerimiento ='" + txtRequerimiento.Text + "' ";
+            };
 
-            dataGridView1.DataSource = tblDetalle;
+            if (txtProveedor.Text == "")
+            {
+                if (criteria == "")
+                {
+                    criteria = " codProveedor ='" + txtProveedor.Text + "' ";
+                }
+                else 
+                {
+                    criteria = criteria + " AND codProveedor ='" + txtProveedor.Text + "' ";
+                };                              
+            };
+
+            if (txtProveedor.Text == "")
+            {
+                if (criteria == "")
+                {
+                    criteria = " codProveedor ='" + txtProveedor.Text + "' ";
+                }
+                else
+                {
+                    criteria = criteria + " AND codProveedor ='" + txtProveedor.Text + "' ";
+                };
+            };
+
+            if (cboEstado.ValueMember == "")
+            {
+                if (criteria == "")
+                {
+                    criteria = " codProveedor ='" + txtProveedor.Text + "' ";
+                }
+                else
+                {
+                    criteria = criteria + " AND codProveedor ='" + txtProveedor.Text + "' ";
+                };
+            };
+          
+          
+
+            dataGridView1.GridColor = Color.Red;
+            dataGridView1.DataSource = bCotizacion.getSELECTLIBRE("SELECT codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado FROM Cotizacion " +
+           " WHERE " + criteria + "");
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Formularios.Compras.frmCotizacion frm = new Formularios.Compras.frmCotizacion();
+            frm.Show();
+            this.Cursor = Cursors.Default;
         }
 
     }

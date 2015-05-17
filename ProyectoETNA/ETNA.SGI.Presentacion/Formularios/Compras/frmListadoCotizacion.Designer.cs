@@ -31,11 +31,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblRazonSocial = new System.Windows.Forms.Label();
+            this.btnFindReq = new System.Windows.Forms.Button();
+            this.txtRequerimiento = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnFindProv = new System.Windows.Forms.Button();
+            this.cboEstado = new System.Windows.Forms.ComboBox();
+            this.txtProveedor = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.valida = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.codCotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +50,14 @@
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaExpiracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox6
@@ -71,17 +81,16 @@
             this.label11.Text = "Lista de Cotizaciones";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(125, 34);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(146, 20);
-            this.txtDescripcion.TabIndex = 104;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblRazonSocial);
-            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.btnFindReq);
+            this.groupBox1.Controls.Add(this.txtRequerimiento);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnFindProv);
+            this.groupBox1.Controls.Add(this.cboEstado);
+            this.groupBox1.Controls.Add(this.txtProveedor);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
@@ -92,14 +101,77 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
             // 
-            // lblRazonSocial
+            // btnFindReq
             // 
-            this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(10, 40);
-            this.lblRazonSocial.Name = "lblRazonSocial";
-            this.lblRazonSocial.Size = new System.Drawing.Size(78, 13);
-            this.lblRazonSocial.TabIndex = 105;
-            this.lblRazonSocial.Text = "Descripción:";
+            this.btnFindReq.Image = global::ETNA.SGI.Presentacion.Properties.Resources.apercu;
+            this.btnFindReq.Location = new System.Drawing.Point(243, 34);
+            this.btnFindReq.Name = "btnFindReq";
+            this.btnFindReq.Size = new System.Drawing.Size(27, 23);
+            this.btnFindReq.TabIndex = 137;
+            this.btnFindReq.UseVisualStyleBackColor = true;
+            // 
+            // txtRequerimiento
+            // 
+            this.txtRequerimiento.Enabled = false;
+            this.txtRequerimiento.Location = new System.Drawing.Point(100, 36);
+            this.txtRequerimiento.Name = "txtRequerimiento";
+            this.txtRequerimiento.Size = new System.Drawing.Size(137, 20);
+            this.txtRequerimiento.TabIndex = 136;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 13);
+            this.label6.TabIndex = 135;
+            this.label6.Text = "Requerimiento:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(292, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 134;
+            this.label1.Text = "Proveedor:";
+            // 
+            // btnFindProv
+            // 
+            this.btnFindProv.Image = global::ETNA.SGI.Presentacion.Properties.Resources.apercu;
+            this.btnFindProv.Location = new System.Drawing.Point(519, 34);
+            this.btnFindProv.Name = "btnFindProv";
+            this.btnFindProv.Size = new System.Drawing.Size(27, 23);
+            this.btnFindProv.TabIndex = 133;
+            this.btnFindProv.UseVisualStyleBackColor = true;
+            // 
+            // cboEstado
+            // 
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.Items.AddRange(new object[] {
+            "GENERADA",
+            "ANULADA"});
+            this.cboEstado.Location = new System.Drawing.Point(629, 35);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(121, 21);
+            this.cboEstado.TabIndex = 108;
+            // 
+            // txtProveedor
+            // 
+            this.txtProveedor.Enabled = false;
+            this.txtProveedor.Location = new System.Drawing.Point(375, 37);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Size = new System.Drawing.Size(137, 20);
+            this.txtProveedor.TabIndex = 132;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(574, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 107;
+            this.label2.Text = "Estado:";
             // 
             // btnBuscar
             // 
@@ -112,16 +184,6 @@
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(9, 152);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(121, 23);
-            this.btnNuevo.TabIndex = 107;
-            this.btnNuevo.Text = "Añadir Cotización";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // dataGridView1
             // 
@@ -141,11 +203,12 @@
             this.descripcion,
             this.telefono,
             this.fechaExpiracion,
-            this.codEstado});
-            this.dataGridView1.Location = new System.Drawing.Point(9, 190);
+            this.codEstado,
+            this.editar});
+            this.dataGridView1.Location = new System.Drawing.Point(7, 158);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(847, 210);
+            this.dataGridView1.Size = new System.Drawing.Size(860, 210);
             this.dataGridView1.TabIndex = 109;
             // 
             // valida
@@ -195,13 +258,56 @@
             this.codEstado.HeaderText = "Estado";
             this.codEstado.Name = "codEstado";
             // 
+            // editar
+            // 
+            this.editar.HeaderText = "Editar";
+            this.editar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Operaciones;
+            this.editar.Name = "editar";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnNuevo);
+            this.groupBox2.Controls.Add(this.btnClose);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox2.Location = new System.Drawing.Point(355, 374);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(136, 81);
+            this.groupBox2.TabIndex = 110;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Opciones";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = global::ETNA.SGI.Presentacion.Properties.Resources.BO12;
+            this.btnNuevo.Location = new System.Drawing.Point(11, 18);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(55, 57);
+            this.btnNuevo.TabIndex = 6;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Image = global::ETNA.SGI.Presentacion.Properties.Resources.ELIMINA;
+            this.btnClose.Location = new System.Drawing.Point(72, 18);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(55, 57);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Salir";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmListadoCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 467);
+            this.ClientSize = new System.Drawing.Size(893, 461);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox6);
             this.Name = "frmListadoCotizacion";
@@ -210,6 +316,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -218,12 +325,20 @@
 
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblRazonSocial;
-        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.ComboBox cboEstado;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnFindProv;
+        private System.Windows.Forms.TextBox txtProveedor;
+        private System.Windows.Forms.Button btnFindReq;
+        private System.Windows.Forms.TextBox txtRequerimiento;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridViewCheckBoxColumn valida;
         private System.Windows.Forms.DataGridViewTextBoxColumn codCotizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn codRequerimiento;
@@ -232,5 +347,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaExpiracion;
         private System.Windows.Forms.DataGridViewTextBoxColumn codEstado;
+        private System.Windows.Forms.DataGridViewImageColumn editar;
     }
 }
