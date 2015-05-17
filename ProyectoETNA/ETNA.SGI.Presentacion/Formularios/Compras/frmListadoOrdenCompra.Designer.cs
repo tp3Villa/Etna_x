@@ -37,9 +37,8 @@
             this.txtCodReq = new System.Windows.Forms.TextBox();
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.dtGridOC = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridOC)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +48,7 @@
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Location = new System.Drawing.Point(10, 12);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(742, 49);
+            this.groupBox6.Size = new System.Drawing.Size(692, 49);
             this.groupBox6.TabIndex = 100;
             this.groupBox6.TabStop = false;
             // 
@@ -60,7 +59,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label11.Location = new System.Drawing.Point(6, 12);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(730, 29);
+            this.label11.Size = new System.Drawing.Size(677, 29);
             this.label11.TabIndex = 0;
             this.label11.Text = "Lista de Órdenes de Compra";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,7 +67,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 77);
+            this.label1.Location = new System.Drawing.Point(17, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 101;
@@ -77,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(384, 77);
+            this.label2.Location = new System.Drawing.Point(376, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 102;
@@ -86,7 +85,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(177, 77);
+            this.label3.Location = new System.Drawing.Point(177, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 103;
@@ -94,7 +93,7 @@
             // 
             // txtCodOC
             // 
-            this.txtCodOC.Location = new System.Drawing.Point(79, 70);
+            this.txtCodOC.Location = new System.Drawing.Point(79, 77);
             this.txtCodOC.Name = "txtCodOC";
             this.txtCodOC.Size = new System.Drawing.Size(79, 20);
             this.txtCodOC.TabIndex = 104;
@@ -102,7 +101,7 @@
             // 
             // txtCodReq
             // 
-            this.txtCodReq.Location = new System.Drawing.Point(271, 70);
+            this.txtCodReq.Location = new System.Drawing.Point(271, 77);
             this.txtCodReq.Name = "txtCodReq";
             this.txtCodReq.Size = new System.Drawing.Size(79, 20);
             this.txtCodReq.TabIndex = 105;
@@ -114,7 +113,7 @@
             this.cboEstado.Items.AddRange(new object[] {
             "GENERADA",
             "ANULADA"});
-            this.cboEstado.Location = new System.Drawing.Point(439, 70);
+            this.cboEstado.Location = new System.Drawing.Point(431, 77);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(121, 21);
             this.cboEstado.TabIndex = 106;
@@ -129,48 +128,40 @@
             this.dtGridOC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dtGridOC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtGridOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridOC.Location = new System.Drawing.Point(10, 153);
+            this.dtGridOC.Location = new System.Drawing.Point(12, 169);
             this.dtGridOC.Name = "dtGridOC";
             this.dtGridOC.ReadOnly = true;
             this.dtGridOC.RowHeadersVisible = false;
-            this.dtGridOC.Size = new System.Drawing.Size(742, 229);
+            this.dtGridOC.Size = new System.Drawing.Size(686, 229);
             this.dtGridOC.TabIndex = 107;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(612, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 108;
-            this.button1.Text = "BUSCAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 124);
+            this.button2.Image = global::ETNA.SGI.Presentacion.Properties.Resources.FACTURAR12;
+            this.button2.Location = new System.Drawing.Point(12, 116);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 23);
+            this.button2.Size = new System.Drawing.Size(120, 45);
             this.button2.TabIndex = 109;
             this.button2.Text = "GENERAR OC";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // button1
             // 
-            this.button3.Location = new System.Drawing.Point(107, 124);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 23);
-            this.button3.TabIndex = 110;
-            this.button3.Text = "ANULAR OC";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button1.Image = global::ETNA.SGI.Presentacion.Properties.Resources._16__Find_;
+            this.button1.Location = new System.Drawing.Point(579, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 23);
+            this.button1.TabIndex = 108;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmListadoOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 403);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(710, 411);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtGridOC);
@@ -204,7 +195,6 @@
         private System.Windows.Forms.DataGridView dtGridOC;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
 
     }
 }

@@ -111,7 +111,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             dtOrdenCompra.Columns.Add(new DataColumn("estado", typeof(string)));
             dtOrdenCompra.PrimaryKey = new DataColumn[] { dtOrdenCompra.Columns[0] };
             dtGridOC.DataSource = dtOrdenCompra;
-
+            
             DataGridViewImageColumn modificar = new DataGridViewImageColumn();
             modificar.Name = "modificar";
             modificar.HeaderText = "";
@@ -122,10 +122,12 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             DataGridViewImageColumn anular = new DataGridViewImageColumn();
             anular.Name = "anular";
             anular.HeaderText = "";
-            anular.Image = global::ETNA.SGI.Presentacion.Properties.Resources.non;
+            anular.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Cancel_Red_mini;
             anular.ReadOnly = true;
             dtGridOC.Columns.Add(anular);
 
+            // Estilos
+            dtGridOC.GridColor = Color.Red;
             dtGridOC.Columns["codigo"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dtGridOC.Columns["codigo"].Width = 60;
             dtGridOC.Columns["codigo"].HeaderText = "Codigo";
