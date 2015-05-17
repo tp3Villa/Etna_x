@@ -39,5 +39,37 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
             dataGridView1.DataSource = table;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                try
+                {
+                    if (MessageBox.Show("Se procederá a aprobar la Cotización, desea continuar?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        int p = dataGridView1.CurrentRow.Index;
+
+                        bCotizacion.ActualizarEstadoCotizacion(Convert.ToInt32(dataGridView1.Rows[p].Cells["codCotizacion"].Value.ToString()), 2);
+
+                        MessageBox.Show("La cotización fue aprobada. ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        DataTable table = new DataTable();
+                        table = bCotizacion.DGetCotizacionAprobacion();
+
+                        dataGridView1.DataSource = table;
+                    }                   
+                }
+                catch { }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Se procederá a cerrar la ventana, desea continuar?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
     }
 }

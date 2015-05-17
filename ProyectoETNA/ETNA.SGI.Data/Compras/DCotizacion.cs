@@ -231,7 +231,7 @@ namespace ETNA.SGI.Data.Compras
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
 
-                string sql = "UPDATE Cotizacion SET Est_Cab_Req='" + codEstado + "'  WHERE codCotizacion='" + codCotizacion + "'";
+                string sql = "UPDATE Cotizacion SET codEstado='" + codEstado + "'  WHERE codCotizacion='" + codCotizacion + "'";
                 cmd.CommandText = sql;
                 cmd.Connection = cn.Conectar;
                 cmd.Connection.Open();

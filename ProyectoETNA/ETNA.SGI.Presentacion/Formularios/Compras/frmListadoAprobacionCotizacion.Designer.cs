@@ -33,13 +33,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.codCotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codRequerimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaExpiracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aprobar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,6 +68,7 @@
             this.btnClose.Text = "Salir";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // groupBox1
             // 
@@ -109,27 +110,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(572, 165);
             this.dataGridView1.TabIndex = 113;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label11);
-            this.groupBox6.Location = new System.Drawing.Point(12, 12);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(572, 49);
-            this.groupBox6.TabIndex = 112;
-            this.groupBox6.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(6, 12);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(554, 29);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Aprobación de Cotización";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // codCotizacion
             // 
@@ -167,6 +148,27 @@
             this.Aprobar.ReadOnly = true;
             this.Aprobar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Aprobar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label11);
+            this.groupBox6.Location = new System.Drawing.Point(12, 12);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(572, 49);
+            this.groupBox6.TabIndex = 112;
+            this.groupBox6.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(6, 12);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(554, 29);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Aprobación de Cotización";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmListadoAprobacionCotizacion
             // 
