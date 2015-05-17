@@ -162,6 +162,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 {
                     cotizacion.FechaRegistro = FechaSis;
                     cotizacion.UsuarioRegistro = Program.Usuario;
+                    cotizacion.FechaActualizacion = FechaSis;
+                    cotizacion.UsuarioModificacion = Program.Usuario;
                 }
                 if (sOpcion == "UPD")
                 {
