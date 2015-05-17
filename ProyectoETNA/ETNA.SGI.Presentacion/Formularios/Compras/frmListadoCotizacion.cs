@@ -25,21 +25,20 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         private BEstado bEstado = BEstado.getInstance();
         ECotizacion cotizacion = new ECotizacion();
         ECotizacionDetalle cotizacionDetalle = new ECotizacionDetalle();
-
-        private void frmListadoProveedor_Load(object sender, EventArgs e)
+        private void frmListadoCotizacion_Load_1(object sender, EventArgs e)
         {
             dataGridView1.GridColor = Color.Red;
             txtRequerimiento.Text = Program.Nombre;
 
-            cboEstado.DataSource = bEstado.ObtenerListadoEstadoPorCotizacion();
+            // Carga de Combo Estado
+            DataTable dtEstado = bEstado.ObtenerListadoEstadoPorCotizacion();
+            cboEstado.DataSource = dtEstado;
             cboEstado.DisplayMember = "desEstado";
             cboEstado.ValueMember = "codEstado";
 
+            // Carga de Grilla            
             dataGridView1.DataSource = bCotizacion.ObtenerCotizaciones();
-
         }
-
-
         private void btnNuevo_Click_1(object sender, EventArgs e)
         {
             Formularios.Compras.frmProveedor frm = new frmProveedor();
@@ -110,6 +109,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             frm.Show();
             this.Cursor = Cursors.Default;
         }
+
+      
 
     }
 }

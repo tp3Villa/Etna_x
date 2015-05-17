@@ -42,6 +42,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.valida = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.codCotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codRequerimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +54,6 @@
             this.fechaExpiracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -211,59 +211,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(860, 210);
             this.dataGridView1.TabIndex = 109;
             // 
-            // valida
-            // 
-            this.valida.HeaderText = "";
-            this.valida.Name = "valida";
-            this.valida.Width = 35;
-            // 
-            // codCotizacion
-            // 
-            this.codCotizacion.HeaderText = "Cotización";
-            this.codCotizacion.Name = "codCotizacion";
-            // 
-            // codRequerimiento
-            // 
-            this.codRequerimiento.DataPropertyName = "1";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codRequerimiento.DefaultCellStyle = dataGridViewCellStyle1;
-            this.codRequerimiento.HeaderText = "Requerimiento";
-            this.codRequerimiento.Name = "codRequerimiento";
-            this.codRequerimiento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.codRequerimiento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.codRequerimiento.Width = 120;
-            // 
-            // codProveedor
-            // 
-            this.codProveedor.HeaderText = "Proveedor";
-            this.codProveedor.Name = "codProveedor";
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Teléfono";
-            this.telefono.Name = "telefono";
-            // 
-            // fechaExpiracion
-            // 
-            this.fechaExpiracion.HeaderText = "Fecha de Expiración";
-            this.fechaExpiracion.Name = "fechaExpiracion";
-            // 
-            // codEstado
-            // 
-            this.codEstado.HeaderText = "Estado";
-            this.codEstado.Name = "codEstado";
-            // 
-            // editar
-            // 
-            this.editar.HeaderText = "Editar";
-            this.editar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Operaciones;
-            this.editar.Name = "editar";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnNuevo);
@@ -301,6 +248,65 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // valida
+            // 
+            this.valida.HeaderText = "";
+            this.valida.Name = "valida";
+            this.valida.Width = 35;
+            // 
+            // codCotizacion
+            // 
+            this.codCotizacion.DataPropertyName = "codCotizacion";
+            this.codCotizacion.HeaderText = "Cotización";
+            this.codCotizacion.Name = "codCotizacion";
+            // 
+            // codRequerimiento
+            // 
+            this.codRequerimiento.DataPropertyName = "codRequerimiento";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codRequerimiento.DefaultCellStyle = dataGridViewCellStyle1;
+            this.codRequerimiento.HeaderText = "Requerimiento";
+            this.codRequerimiento.Name = "codRequerimiento";
+            this.codRequerimiento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.codRequerimiento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.codRequerimiento.Width = 120;
+            // 
+            // codProveedor
+            // 
+            this.codProveedor.DataPropertyName = "codProveedor";
+            this.codProveedor.HeaderText = "Proveedor";
+            this.codProveedor.Name = "codProveedor";
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.Name = "telefono";
+            // 
+            // fechaExpiracion
+            // 
+            this.fechaExpiracion.DataPropertyName = "fechaExpiracion";
+            this.fechaExpiracion.HeaderText = "Fecha de Expiración";
+            this.fechaExpiracion.Name = "fechaExpiracion";
+            // 
+            // codEstado
+            // 
+            this.codEstado.DataPropertyName = "codEstado";
+            this.codEstado.HeaderText = "Estado";
+            this.codEstado.Name = "codEstado";
+            // 
+            // editar
+            // 
+            this.editar.HeaderText = "";
+            this.editar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Operaciones;
+            this.editar.Name = "editar";
+            // 
             // frmListadoCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +318,7 @@
             this.Controls.Add(this.groupBox6);
             this.Name = "frmListadoCotizacion";
             this.Text = "Listado de Cotizaciones";
+            this.Load += new System.EventHandler(this.frmListadoCotizacion_Load_1);
             this.groupBox6.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
