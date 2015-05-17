@@ -25,6 +25,15 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
             Formularios.Compras.frmProveedor frm = new frmProveedor();
             frm.ShowDialog();
+
+            /* Se actualiza de nuevo el Listado */
+            rdTodo.Checked = true;
+
+            DataTable tblDetalle = new DataTable();
+
+            tblDetalle = bProveedor.DGetAllProveedor(proveedor);
+
+            dataGridView1.DataSource = tblDetalle; 
         }
 
 
@@ -34,36 +43,73 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         private void frmListadoProveedor_Load(object sender, EventArgs e)
         {
 
+            rdTodo.Checked = true;
+
             DataTable tblDetalle = new DataTable();
             
            tblDetalle =  bProveedor.DGetAllProveedor(proveedor);
 
-           dataGridView1.DataSource = tblDetalle;
-
-           /* DataTable tblDetalle = new DataTable();
-            tblDetalle.Columns.Add(new DataColumn("1", typeof(string)));
-            tblDetalle.Columns.Add(new DataColumn("2", typeof(string)));
-            tblDetalle.Columns.Add(new DataColumn("3", typeof(string)));
-
-            DataRow fila = tblDetalle.NewRow();
-            fila["1"] = "D0001";
-            fila["2"] = "Empresas Exportadoras";
-            fila["3"] = "Ver documento";
-            tblDetalle.Rows.Add(fila);
-
-            fila = tblDetalle.NewRow();
-            fila["1"] = "D0002";
-            fila["2"] = "Eventos Comerciales";
-            fila["3"] = "Ver documento";
-            tblDetalle.Rows.Add(fila);
-
-            fila = tblDetalle.NewRow();
-            fila["1"] = "D0003";
-            fila["2"] = "Requisitos de Calidad e Inocuidad";
-            fila["3"] = "Ver documento";
-            tblDetalle.Rows.Add(fila); */
+           dataGridView1.DataSource = tblDetalle; 
 
             
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataTable tblDetalle = new DataTable();
+
+            proveedor.RazonSocial = txtRazonSocial.Text.Trim();
+
+            if (rdActivo.Checked)
+            {
+                proveedor.CodEstado = 5;
+                tblDetalle = bProveedor.DGetProveedorWithStatus(proveedor);
+            }
+
+            if (rdInactivo.Checked) 
+            {
+                proveedor.CodEstado = 6;
+                tblDetalle = bProveedor.DGetProveedorWithStatus(proveedor);
+            }
+
+            if (rdTodo.Checked)
+            {
+                tblDetalle = bProveedor.DGetAllProveedor(proveedor);
+            }
+
+            dataGridView1.DataSource = tblDetalle;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                try
+                {
+                    int p = dataGridView1.CurrentRow.Index;
+                    Formularios.Compras.frmProveedor frm = new frmProveedor();
+                    frm.sOpcion = "UPD";
+                    frm.icodProveedor = Convert.ToInt32(dataGridView1.Rows[p].Cells["codProveedor"].Value.ToString());
+                    frm.ShowDialog();
+
+                    rdTodo.Checked = true;
+
+                    DataTable tblDetalle = new DataTable();
+
+                    tblDetalle = bProveedor.DGetAllProveedor(proveedor);
+
+                    dataGridView1.DataSource = tblDetalle; 
+                }
+                catch { }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Se procederá a cerrar la ventana, desea continuar?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
 
