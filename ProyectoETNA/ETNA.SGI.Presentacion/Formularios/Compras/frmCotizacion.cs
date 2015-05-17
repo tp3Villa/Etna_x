@@ -29,6 +29,22 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             }
         }
 
+        private void btnFindReq_Click(object sender, EventArgs e)
+        {
+            Compras.frmListadoReqCotizacion frm = new frmListadoReqCotizacion();
+            frm.ShowDialog();
+
+            txtRequerimiento.Text = frm.vCodigoReq;
+        }
+
+        private void btnFindProv_Click(object sender, EventArgs e)
+        {
+            Compras.frmBusquedaProveedor frm = new frmBusquedaProveedor();
+            frm.ShowDialog();
+
+            txtProveedor.Text = frm.vCodigo;
+        }
+
  
 
 

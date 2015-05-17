@@ -18,7 +18,6 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         private BCotizacion bCotizacion = BCotizacion.getInstance();
         private BEstado bEstado = BEstado.getInstance();
         DataTable dtCotizacion = new DataTable();
-        DataRow dr;
 
         public frmListadoCotizacion()
         {
@@ -63,8 +62,6 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
             eCotizacion.CodEstado = (int)cboEstado.SelectedValue;
 
-           // cargaGrilla(eCotizacion);
-
             DataTable tblDetalle = new DataTable();
             tblDetalle = bCotizacion.ObtenerListadoCotizacion(eCotizacion);
             dtGridCot.DataSource = tblDetalle;
@@ -101,9 +98,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             dtEstado.Rows.InsertAt(dr, 0);
             cboEstado.SelectedIndex = 0;
 
+            txtCotizacion.Text = "";
+            txtRequerimiento.Text = "";
+
             // Carga de Grilla
-           // crearColumnasGrid();
-           // cargaGrilla(new ECotizacion());
             DataTable tblDetalle = new DataTable();
             tblDetalle = bCotizacion.ObtenerListadoCotizacion(new ECotizacion());
             dtGridCot.DataSource = tblDetalle;
@@ -113,7 +111,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
             MessageBox.Show("Modificar");
         }
-     
+
            
 
     }

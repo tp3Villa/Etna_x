@@ -86,6 +86,7 @@
             this.btnFindReq.Size = new System.Drawing.Size(27, 23);
             this.btnFindReq.TabIndex = 124;
             this.btnFindReq.UseVisualStyleBackColor = true;
+            this.btnFindReq.Click += new System.EventHandler(this.btnFindReq_Click);
             // 
             // txtRequerimiento
             // 
@@ -146,6 +147,7 @@
             this.btnFindProv.Size = new System.Drawing.Size(27, 23);
             this.btnFindProv.TabIndex = 131;
             this.btnFindProv.UseVisualStyleBackColor = true;
+            this.btnFindProv.Click += new System.EventHandler(this.btnFindProv_Click);
             // 
             // txtDescripcion
             // 
