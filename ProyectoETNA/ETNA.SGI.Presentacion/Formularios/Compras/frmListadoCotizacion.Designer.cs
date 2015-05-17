@@ -28,14 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.valida = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.codCotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codRequerimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaExpiracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -104,17 +113,6 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 187);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(854, 262);
-            this.dataGridView1.TabIndex = 106;
-            // 
             // btnNuevo
             // 
             this.btnNuevo.Location = new System.Drawing.Point(9, 152);
@@ -125,13 +123,85 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.valida,
+            this.codCotizacion,
+            this.codRequerimiento,
+            this.codProveedor,
+            this.descripcion,
+            this.telefono,
+            this.fechaExpiracion,
+            this.codEstado});
+            this.dataGridView1.Location = new System.Drawing.Point(9, 190);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(847, 210);
+            this.dataGridView1.TabIndex = 109;
+            // 
+            // valida
+            // 
+            this.valida.HeaderText = "";
+            this.valida.Name = "valida";
+            this.valida.Width = 35;
+            // 
+            // codCotizacion
+            // 
+            this.codCotizacion.HeaderText = "Cotización";
+            this.codCotizacion.Name = "codCotizacion";
+            // 
+            // codRequerimiento
+            // 
+            this.codRequerimiento.DataPropertyName = "1";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codRequerimiento.DefaultCellStyle = dataGridViewCellStyle1;
+            this.codRequerimiento.HeaderText = "Requerimiento";
+            this.codRequerimiento.Name = "codRequerimiento";
+            this.codRequerimiento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.codRequerimiento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.codRequerimiento.Width = 120;
+            // 
+            // codProveedor
+            // 
+            this.codProveedor.HeaderText = "Proveedor";
+            this.codProveedor.Name = "codProveedor";
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.Name = "telefono";
+            // 
+            // fechaExpiracion
+            // 
+            this.fechaExpiracion.HeaderText = "Fecha de Expiración";
+            this.fechaExpiracion.Name = "fechaExpiracion";
+            // 
+            // codEstado
+            // 
+            this.codEstado.HeaderText = "Estado";
+            this.codEstado.Name = "codEstado";
+            // 
             // frmListadoCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 467);
-            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox6);
             this.Name = "frmListadoCotizacion";
@@ -152,7 +222,15 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblRazonSocial;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn valida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codCotizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codRequerimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaExpiracion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codEstado;
     }
 }
