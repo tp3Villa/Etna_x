@@ -48,6 +48,8 @@
     <Compile Include="Compras\EMoneda.cs" />
     <Compile Include="Compras\EOrdenCompra.cs" />
     <Compile Include="Compras\EProveedor.cs" />
+    <Compile Include="Compras\ERequerimientoCompraDetalle.cs" />
+    <Compile Include="Compras\ERquerimientoCompra.cs" />
     <Compile Include="Exportacion\ELogin.cs" />
     <Compile Include="Exportacion\eReqCab.cs" />
     <Compile Include="Exportacion\EReqDetalle.cs" />
