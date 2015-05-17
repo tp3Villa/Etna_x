@@ -40,8 +40,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
             txtRequerimiento.Text = frm.vCodigoReq;
 
-               DataTable tblDetalle = new DataTable();
-               tblDetalle = bRequerimientoCompra.ObtenerRequerimientoDetalleCompraCotizacion(txtRequerimiento.Text);
+            DataTable tblDetalle = new DataTable();
+            tblDetalle = bRequerimientoCompra.ObtenerRequerimientoDetalleCompraCotizacion(txtRequerimiento.Text);
             dataGridView1.DataSource = tblDetalle;
 
             

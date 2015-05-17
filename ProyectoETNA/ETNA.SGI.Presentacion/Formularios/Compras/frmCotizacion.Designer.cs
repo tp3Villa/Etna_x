@@ -49,8 +49,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.valida = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.codProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -194,8 +193,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.valida,
-            this.codProducto,
+            this.idProducto,
             this.descripcionProducto,
             this.cantidad,
             this.precioUnidad,
@@ -261,28 +259,23 @@
             this.label5.TabIndex = 139;
             this.label5.Text = "Total";
             // 
-            // valida
+            // idProducto
             // 
-            this.valida.HeaderText = "";
-            this.valida.Name = "valida";
-            this.valida.Width = 35;
-            // 
-            // codProducto
-            // 
-            this.codProducto.DataPropertyName = "codProducto";
-            this.codProducto.HeaderText = "Codigo Producto";
-            this.codProducto.Name = "codProducto";
-            this.codProducto.ReadOnly = true;
+            this.idProducto.DataPropertyName = "idProducto";
+            this.idProducto.HeaderText = "Codigo Producto";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
             // 
             // descripcionProducto
             // 
+            this.descripcionProducto.DataPropertyName = "descripcionProducto";
             this.descripcionProducto.HeaderText = "Descripcion";
             this.descripcionProducto.Name = "descripcionProducto";
             this.descripcionProducto.ReadOnly = true;
             // 
             // cantidad
             // 
-            this.cantidad.DataPropertyName = "1";
+            this.cantidad.DataPropertyName = "cantidad";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.cantidad.DefaultCellStyle = dataGridViewCellStyle1;
             this.cantidad.HeaderText = "Cantidad";
@@ -357,8 +350,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn valida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnidad;
