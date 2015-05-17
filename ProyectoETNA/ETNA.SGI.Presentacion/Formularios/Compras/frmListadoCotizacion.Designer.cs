@@ -42,6 +42,15 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.dtGridCot = new System.Windows.Forms.DataGridView();
+            this.codCotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codRequerimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaExpiracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnModificar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -53,7 +62,7 @@
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Location = new System.Drawing.Point(9, 2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(853, 49);
+            this.groupBox6.Size = new System.Drawing.Size(910, 49);
             this.groupBox6.TabIndex = 102;
             this.groupBox6.TabStop = false;
             // 
@@ -64,7 +73,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label11.Location = new System.Drawing.Point(6, 12);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(841, 29);
+            this.label11.Size = new System.Drawing.Size(898, 29);
             this.label11.TabIndex = 0;
             this.label11.Text = "Lista de Cotizaciones";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,7 +91,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
             this.groupBox1.Location = new System.Drawing.Point(9, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(853, 85);
+            this.groupBox1.Size = new System.Drawing.Size(910, 85);
             this.groupBox1.TabIndex = 105;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
@@ -142,7 +151,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
-            this.btnBuscar.Location = new System.Drawing.Point(792, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(810, 19);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(55, 57);
             this.btnBuscar.TabIndex = 103;
@@ -198,19 +207,91 @@
             this.dtGridCot.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dtGridCot.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtGridCot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridCot.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codCotizacion,
+            this.codRequerimiento,
+            this.razonSocial,
+            this.descripcion,
+            this.telefono,
+            this.fechaExpiracion,
+            this.desEstado,
+            this.btnModificar,
+            this.btnEliminar});
             this.dtGridCot.Location = new System.Drawing.Point(9, 157);
             this.dtGridCot.Name = "dtGridCot";
             this.dtGridCot.ReadOnly = true;
             this.dtGridCot.RowHeadersVisible = false;
-            this.dtGridCot.Size = new System.Drawing.Size(853, 229);
+            this.dtGridCot.Size = new System.Drawing.Size(910, 229);
             this.dtGridCot.TabIndex = 111;
-            this.dtGridCot.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridCot_CellContentClick);
+            // 
+            // codCotizacion
+            // 
+            this.codCotizacion.DataPropertyName = "codCotizacion";
+            this.codCotizacion.HeaderText = "Codigo";
+            this.codCotizacion.Name = "codCotizacion";
+            this.codCotizacion.ReadOnly = true;
+            // 
+            // codRequerimiento
+            // 
+            this.codRequerimiento.DataPropertyName = "codRequerimiento";
+            this.codRequerimiento.HeaderText = "Requerimiento";
+            this.codRequerimiento.Name = "codRequerimiento";
+            this.codRequerimiento.ReadOnly = true;
+            // 
+            // razonSocial
+            // 
+            this.razonSocial.DataPropertyName = "razonSocial";
+            this.razonSocial.HeaderText = "Proveedor";
+            this.razonSocial.Name = "razonSocial";
+            this.razonSocial.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
+            // fechaExpiracion
+            // 
+            this.fechaExpiracion.DataPropertyName = "fechaExpiracion";
+            this.fechaExpiracion.HeaderText = "Fecha Expiracion";
+            this.fechaExpiracion.Name = "fechaExpiracion";
+            this.fechaExpiracion.ReadOnly = true;
+            // 
+            // desEstado
+            // 
+            this.desEstado.DataPropertyName = "desEstado";
+            this.desEstado.HeaderText = "Estado";
+            this.desEstado.Name = "desEstado";
+            this.desEstado.ReadOnly = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.HeaderText = "";
+            this.btnModificar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.BO12;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.ReadOnly = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "";
+            this.btnEliminar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Cancel_Red_mini;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ReadOnly = true;
             // 
             // frmListadoCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 461);
+            this.ClientSize = new System.Drawing.Size(950, 463);
             this.Controls.Add(this.dtGridCot);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -243,5 +324,14 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dtGridCot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codCotizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codRequerimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaExpiracion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desEstado;
+        private System.Windows.Forms.DataGridViewImageColumn btnModificar;
+        private System.Windows.Forms.DataGridViewImageColumn btnEliminar;
     }
 }

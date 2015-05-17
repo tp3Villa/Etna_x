@@ -23,7 +23,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Deseas Cancelar la Transaccion", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
  
