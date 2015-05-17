@@ -28,19 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.codRequerimiento = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.desCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codRequerimiento,
+            this.desCategoria,
+            this.fechaRegistro,
+            this.observacion});
+            this.dataGridView1.Location = new System.Drawing.Point(16, 152);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(501, 146);
+            this.dataGridView1.TabIndex = 67;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox1.Location = new System.Drawing.Point(16, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(501, 82);
+            this.groupBox1.TabIndex = 66;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Criterios de búsqueda";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
+            this.btnBuscar.Location = new System.Drawing.Point(361, 19);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 43);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(121, 27);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(215, 20);
+            this.txtDescripcion.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Descripción:";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.lblBusqueda);
+            this.groupBox6.Location = new System.Drawing.Point(16, 2);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(501, 56);
+            this.groupBox6.TabIndex = 65;
+            this.groupBox6.TabStop = false;
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.BackColor = System.Drawing.Color.White;
+            this.lblBusqueda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblBusqueda.Location = new System.Drawing.Point(6, 16);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(489, 29);
+            this.lblBusqueda.TabIndex = 1;
+            this.lblBusqueda.Text = "Búsqueda de Requerimiento de Compra";
+            this.lblBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // codRequerimiento
+            // 
+            this.codRequerimiento.DataPropertyName = "codRequerimiento";
+            this.codRequerimiento.HeaderText = "Código";
+            this.codRequerimiento.Name = "codRequerimiento";
+            this.codRequerimiento.ReadOnly = true;
+            this.codRequerimiento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.codRequerimiento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // desCategoria
+            // 
+            this.desCategoria.DataPropertyName = "desCategoria";
+            this.desCategoria.HeaderText = "Categoria";
+            this.desCategoria.Name = "desCategoria";
+            this.desCategoria.ReadOnly = true;
+            // 
+            // fechaRegistro
+            // 
+            this.fechaRegistro.DataPropertyName = "fechaRegistro";
+            this.fechaRegistro.HeaderText = "Fecha  Registro";
+            this.fechaRegistro.Name = "fechaRegistro";
+            this.fechaRegistro.ReadOnly = true;
+            // 
+            // observacion
+            // 
+            this.observacion.DataPropertyName = "observacion";
+            this.observacion.HeaderText = "Observacion";
+            this.observacion.Name = "observacion";
+            this.observacion.ReadOnly = true;
             // 
             // frmListadoReqCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 268);
+            this.ClientSize = new System.Drawing.Size(594, 315);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox6);
             this.Name = "frmListadoReqCotizacion";
             this.Text = "frmListadoReqCotizacion";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label lblBusqueda;
+        private System.Windows.Forms.DataGridViewLinkColumn codRequerimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
     }
 }
