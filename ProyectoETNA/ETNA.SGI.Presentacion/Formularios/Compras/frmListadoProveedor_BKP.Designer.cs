@@ -45,9 +45,12 @@
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label11
@@ -57,7 +60,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label11.Location = new System.Drawing.Point(6, 12);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(841, 29);
+            this.label11.Size = new System.Drawing.Size(918, 29);
             this.label11.TabIndex = 0;
             this.label11.Text = "Lista de Proveedores";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -67,7 +70,7 @@
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Location = new System.Drawing.Point(12, 12);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(853, 49);
+            this.groupBox6.Size = new System.Drawing.Size(930, 49);
             this.groupBox6.TabIndex = 101;
             this.groupBox6.TabStop = false;
             // 
@@ -86,10 +89,10 @@
             this.ruc,
             this.observacion,
             this.editar});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 187);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 163);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(937, 260);
+            this.dataGridView1.Size = new System.Drawing.Size(937, 165);
             this.dataGridView1.TabIndex = 102;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -160,11 +163,15 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(12, 158);
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.Navy;
+            this.btnNuevo.Image = global::ETNA.SGI.Presentacion.Properties.Resources.BO12;
+            this.btnNuevo.Location = new System.Drawing.Point(7, 18);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(121, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(59, 57);
             this.btnNuevo.TabIndex = 103;
-            this.btnNuevo.Text = "Añadir Proveedor";
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -177,7 +184,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
             this.groupBox1.Location = new System.Drawing.Point(12, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(853, 85);
+            this.groupBox1.Size = new System.Drawing.Size(937, 90);
             this.groupBox1.TabIndex = 104;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
@@ -210,13 +217,38 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnClose);
+            this.groupBox2.Controls.Add(this.btnNuevo);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox2.Location = new System.Drawing.Point(423, 334);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(136, 81);
+            this.groupBox2.TabIndex = 111;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Opciones";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Image = global::ETNA.SGI.Presentacion.Properties.Resources.ELIMINA;
+            this.btnClose.Location = new System.Drawing.Point(72, 18);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(55, 57);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Salir";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmListadoProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 459);
+            this.ClientSize = new System.Drawing.Size(951, 426);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox6);
             this.Name = "frmListadoProveedor";
@@ -226,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -249,5 +282,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ruc;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
         private System.Windows.Forms.DataGridViewImageColumn editar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnClose;
     }
 }

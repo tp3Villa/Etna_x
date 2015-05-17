@@ -143,12 +143,12 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                     if (sOpcion == "UPD")
                     {
                         bProveedor.DUpdateProveedor(proveedor);
-                        MessageBox.Show("Proveedor actualizado Correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Proveedor actualizado correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         int result = bProveedor.BInsertProveedor(proveedor);
-                        MessageBox.Show("Proveedor Ingresado Correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Proveedor registrado correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     
                     this.Close();
@@ -162,7 +162,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Se procederá cerrar la ventana, desea continuar?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Se procederá a cerrar la ventana, desea continuar?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 this.Close();
             }
