@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Compras\BCondicionPago.cs" />
     <Compile Include="Compras\BCotizacion.cs" />
+    <Compile Include="Compras\BMoneda.cs" />
     <Compile Include="Compras\BOrdenCompra.cs" />
     <Compile Include="Compras\BProveedor.cs" />
     <Compile Include="Compras\BEstado.cs" />

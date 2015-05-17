@@ -42,8 +42,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Formularios.Compras.frmOrdenCompra frm = new frmOrdenCompra();
-            //frm.ShowDialog();
+            
         }
 
         private void txtCodOC_KeyPress(object sender, KeyPressEventArgs e)
@@ -183,6 +182,22 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             txtCodOC.Text = "";
             txtCodReq.Text = "";
             cboEstado.SelectedIndex = 0;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenerarOC_Click(object sender, EventArgs e)
+        {
+            Formularios.Compras.frmOrdenCompra frm = new frmOrdenCompra();
+            frm.ShowDialog();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         

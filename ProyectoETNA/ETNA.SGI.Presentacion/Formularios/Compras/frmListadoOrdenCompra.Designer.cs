@@ -37,10 +37,13 @@
             this.txtCodReq = new System.Windows.Forms.TextBox();
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.dtGridOC = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGenerarOC = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridOC)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox6
@@ -109,6 +112,7 @@
             // 
             // cboEstado
             // 
+            this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEstado.FormattingEnabled = true;
             this.cboEstado.Items.AddRange(new object[] {
             "GENERADA",
@@ -128,7 +132,7 @@
             this.dtGridOC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dtGridOC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtGridOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridOC.Location = new System.Drawing.Point(12, 169);
+            this.dtGridOC.Location = new System.Drawing.Point(12, 133);
             this.dtGridOC.Name = "dtGridOC";
             this.dtGridOC.ReadOnly = true;
             this.dtGridOC.RowHeadersVisible = false;
@@ -136,34 +140,63 @@
             this.dtGridOC.TabIndex = 107;
             this.dtGridOC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridOC_CellContentClick);
             // 
-            // button2
-            // 
-            this.button2.Image = global::ETNA.SGI.Presentacion.Properties.Resources.FACTURAR12;
-            this.button2.Location = new System.Drawing.Point(12, 116);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 45);
-            this.button2.TabIndex = 109;
-            this.button2.Text = "GENERAR OC";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button1
             // 
-            this.button1.Image = global::ETNA.SGI.Presentacion.Properties.Resources._16__Find_;
-            this.button1.Location = new System.Drawing.Point(579, 77);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Navy;
+            this.button1.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
+            this.button1.Location = new System.Drawing.Point(584, 67);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 23);
+            this.button1.Size = new System.Drawing.Size(58, 49);
             this.button1.TabIndex = 108;
+            this.button1.Text = "Buscar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGenerarOC);
+            this.groupBox2.Controls.Add(this.btnClose);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Navy;
+            this.groupBox2.Location = new System.Drawing.Point(273, 368);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(163, 81);
+            this.groupBox2.TabIndex = 111;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Opciones";
+            // 
+            // btnGenerarOC
+            // 
+            this.btnGenerarOC.Image = global::ETNA.SGI.Presentacion.Properties.Resources.FACTURAR12;
+            this.btnGenerarOC.Location = new System.Drawing.Point(11, 18);
+            this.btnGenerarOC.Name = "btnGenerarOC";
+            this.btnGenerarOC.Size = new System.Drawing.Size(81, 57);
+            this.btnGenerarOC.TabIndex = 6;
+            this.btnGenerarOC.Text = "Generar OC";
+            this.btnGenerarOC.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGenerarOC.UseVisualStyleBackColor = true;
+            this.btnGenerarOC.Click += new System.EventHandler(this.btnGenerarOC_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Image = global::ETNA.SGI.Presentacion.Properties.Resources.ELIMINA;
+            this.btnClose.Location = new System.Drawing.Point(98, 18);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(55, 57);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Salir";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmListadoOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 411);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(710, 457);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtGridOC);
             this.Controls.Add(this.cboEstado);
@@ -178,6 +211,7 @@
             this.Load += new System.EventHandler(this.frmListadoOrdenCompra_Load);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridOC)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,7 +229,9 @@
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.DataGridView dtGridOC;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnGenerarOC;
+        private System.Windows.Forms.Button btnClose;
 
     }
 }

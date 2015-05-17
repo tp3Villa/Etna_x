@@ -45,6 +45,7 @@
     <Compile Include="Compras\ECotizacion.cs" />
     <Compile Include="Compras\ECotizacionDetalle.cs" />
     <Compile Include="Compras\EEstado.cs" />
+    <Compile Include="Compras\EMoneda.cs" />
     <Compile Include="Compras\EOrdenCompra.cs" />
     <Compile Include="Compras\EProveedor.cs" />
     <Compile Include="Exportacion\ELogin.cs" />
