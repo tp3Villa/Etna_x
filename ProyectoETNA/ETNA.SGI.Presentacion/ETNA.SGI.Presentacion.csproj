@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Compras\frmListadoRequerimientoCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Compras\frmListadoRequerimientoCompra.Designer.cs">
+      <DependentUpon>frmListadoRequerimientoCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Compras\frmCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Compras\frmListadoRequerimientoCompra.resx">
+      <DependentUpon>frmListadoRequerimientoCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compras\frmCotizacion.resx">
       <DependentUpon>frmCotizacion.cs</DependentUpon>
     </EmbeddedResource>
