@@ -71,10 +71,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             dataGridView1.DataSource = tblDetalle;
         }
 
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.ColumnIndex == 0)
             {
                 try
