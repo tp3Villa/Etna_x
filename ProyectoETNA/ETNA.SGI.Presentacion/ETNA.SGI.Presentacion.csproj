@@ -91,12 +91,6 @@
     <Compile Include="Formularios\Compras\frmListadoCotizacion.Designer.cs">
       <DependentUpon>frmListadoCotizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Compras\frmListadoProveedor_BKP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoProveedor_BKP.Designer.cs">
-      <DependentUpon>frmListadoProveedor_BKP.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Compras\frmProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,9 +227,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compras\frmListadoCotizacion.resx">
       <DependentUpon>frmListadoCotizacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmListadoProveedor_BKP.resx">
-      <DependentUpon>frmListadoProveedor_BKP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compras\frmOrdenCompra.resx">
       <DependentUpon>frmOrdenCompra.cs</DependentUpon>
