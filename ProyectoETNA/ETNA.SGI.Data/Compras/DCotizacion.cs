@@ -32,29 +32,6 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
-        public DataSet DGetEstados()
-        {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT codEstado, desEstado FROM Estado", cn.Conectar);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            return ds;
-        }
-
-
-        public DataTable DGetAllCotizacionByReq(string codRequerimiento)
-        {
-            string sql = "SELECT codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado FROM Cotizacion " +
-                        "WHERE codRequerimiento = '" + codRequerimiento + "'";
-            SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
-            DataTable tabla = new DataTable();
-            try
-            {
-                da.Fill(tabla);
-            }
-            catch { }
-            return tabla;
-        }
-
 
         public DataTable getSELECTLIBRE(string SQL)
         {
@@ -64,10 +41,9 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
-        public DataTable DGetAllCotizacion(ECotizacion ECotizacion)
+        public DataTable DGetAllCotizacion()
         {
-            string sql = "SELECT codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado FROM Cotizacion " +
-                          "WHERE descripcion like '%" + ECotizacion.Descripcion + "%'";
+            string sql = "SELECT codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado FROM Cotizacion ";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn.Conectar);
             DataTable tabla = new DataTable();
             try
