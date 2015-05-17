@@ -40,7 +40,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 txtTelefono.Text = tblDetalle.Rows[0]["telefono"].ToString();
                 txtDescripcion.Text = tblDetalle.Rows[0]["descripcion"].ToString();
                 dtExpiracion.Text = tblDetalle.Rows[0]["fechaExpiracion"].ToString();
-              
+
+                DataTable tblDetalle2 = new DataTable();
+                tblDetalle2 = bRequerimientoCompra.ObtenerRequerimientoDetalleCompraCotizacion(txtRequerimiento.Text);
+                dataGridView1.DataSource = tblDetalle2;
 
             }
             else
