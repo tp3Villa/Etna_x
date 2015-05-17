@@ -37,8 +37,12 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codCondicionPago = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.desCondicionPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codRequerimiento = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.desCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -49,7 +53,7 @@
             this.groupBox6.Controls.Add(this.lblBusqueda);
             this.groupBox6.Location = new System.Drawing.Point(12, 12);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(501, 56);
+            this.groupBox6.Size = new System.Drawing.Size(567, 56);
             this.groupBox6.TabIndex = 62;
             this.groupBox6.TabStop = false;
             // 
@@ -60,13 +64,14 @@
             this.lblBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblBusqueda.Location = new System.Drawing.Point(6, 16);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(489, 29);
+            this.lblBusqueda.Size = new System.Drawing.Size(555, 29);
             this.lblBusqueda.TabIndex = 1;
             this.lblBusqueda.Text = "Búsqueda de Requerimiento de Compra";
             this.lblBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cboCategoria);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnBuscar);
@@ -76,7 +81,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
             this.groupBox1.Location = new System.Drawing.Point(12, 74);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(501, 82);
+            this.groupBox1.Size = new System.Drawing.Size(567, 82);
             this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de búsqueda";
@@ -87,7 +92,7 @@
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(245, 23);
             this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cboCategoria.Size = new System.Drawing.Size(135, 21);
             this.cboCategoria.TabIndex = 4;
             // 
             // label2
@@ -102,7 +107,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
-            this.btnBuscar.Location = new System.Drawing.Point(392, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(437, 19);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 43);
             this.btnBuscar.TabIndex = 2;
@@ -113,10 +118,12 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtCodigo.Location = new System.Drawing.Point(66, 29);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(84, 20);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label1
             // 
@@ -133,36 +140,73 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codCondicionPago,
-            this.desCondicionPago});
+            this.codRequerimiento,
+            this.desCategoria,
+            this.fechaRegistro,
+            this.usuarioRegistro,
+            this.observacion});
             this.dataGridView1.Location = new System.Drawing.Point(12, 162);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(501, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(570, 146);
             this.dataGridView1.TabIndex = 64;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // codCondicionPago
+            // codRequerimiento
             // 
-            this.codCondicionPago.DataPropertyName = "codCondicionPago";
-            this.codCondicionPago.HeaderText = "Código";
-            this.codCondicionPago.Name = "codCondicionPago";
-            this.codCondicionPago.ReadOnly = true;
-            this.codCondicionPago.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.codCondicionPago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.codRequerimiento.DataPropertyName = "codRequerimiento";
+            this.codRequerimiento.HeaderText = "Código";
+            this.codRequerimiento.Name = "codRequerimiento";
+            this.codRequerimiento.ReadOnly = true;
+            this.codRequerimiento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.codRequerimiento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.codRequerimiento.Width = 60;
             // 
-            // desCondicionPago
+            // desCategoria
             // 
-            this.desCondicionPago.DataPropertyName = "desCondicionPago";
-            this.desCondicionPago.HeaderText = "Descripción";
-            this.desCondicionPago.Name = "desCondicionPago";
-            this.desCondicionPago.ReadOnly = true;
+            this.desCategoria.DataPropertyName = "desCategoria";
+            this.desCategoria.HeaderText = "Categoria";
+            this.desCategoria.Name = "desCategoria";
+            this.desCategoria.ReadOnly = true;
+            // 
+            // fechaRegistro
+            // 
+            this.fechaRegistro.DataPropertyName = "fechaRegistro";
+            this.fechaRegistro.HeaderText = "FechaRegistro";
+            this.fechaRegistro.Name = "fechaRegistro";
+            this.fechaRegistro.ReadOnly = true;
+            // 
+            // usuarioRegistro
+            // 
+            this.usuarioRegistro.DataPropertyName = "usuarioRegistro";
+            this.usuarioRegistro.HeaderText = "Usuario Registro";
+            this.usuarioRegistro.Name = "usuarioRegistro";
+            this.usuarioRegistro.ReadOnly = true;
+            this.usuarioRegistro.Width = 110;
+            // 
+            // observacion
+            // 
+            this.observacion.DataPropertyName = "observacion";
+            this.observacion.HeaderText = "Observación";
+            this.observacion.Name = "observacion";
+            this.observacion.ReadOnly = true;
+            this.observacion.Width = 150;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(10, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(355, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "* Listado de requerimientos de compra aprobados y cotizados";
             // 
             // frmListadoRequerimientoCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 318);
+            this.ClientSize = new System.Drawing.Size(591, 318);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox6);
@@ -186,9 +230,13 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewLinkColumn codCondicionPago;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desCondicionPago;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.DataGridViewLinkColumn codRequerimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
+        private System.Windows.Forms.Label label3;
     }
 }

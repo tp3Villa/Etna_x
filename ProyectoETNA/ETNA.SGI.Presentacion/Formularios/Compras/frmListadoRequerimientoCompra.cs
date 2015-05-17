@@ -19,23 +19,17 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
     {
 
         private BCategoria bCategoria = BCategoria.getInstance();
+        private BRequerimientoCompra bRequerimientoCompra = BRequerimientoCompra.getInstance();
+
         public int iCodRequerimientoCompra;
         public string vCodigo;
         public string vDescripcion;
-
-        //private BRequerimientoCompra bRequerimientoCompra = BRequerimientoCompra.getInstance();
-        //ERequerimientoCompra eRequerimientoCompra = new ERequerimientoCompra();
-
+        
         public frmListadoRequerimientoCompra()
         {
             InitializeComponent();
         }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
+               
         private void frmListadoRequerimientoCompra_Load(object sender, EventArgs e)
         {
             // Carga de Combo Estado
@@ -53,10 +47,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
             txtCodigo.Text = "";
 
-            DataTable table = new DataTable();
-            //table = bRequerimientoCompra.DGetAllRequerimientoCompra();
-
-            dataGridView1.DataSource = table; 
+            // Carga de Grilla
+            cargarGrilla(new ERequerimientoCompra());
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -76,13 +68,29 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
+            ERequerimientoCompra eRequerimientoCompra = new ERequerimientoCompra();
+            if (!"".Equals(txtCodigo.Text))
+            {
+                eRequerimientoCompra.CodRequerimiento = Int32.Parse(txtCodigo.Text);
+            }
+            
+            eRequerimientoCompra.CodCategoria = (int)cboCategoria.SelectedValue;
 
-            //eRequerimientoCompra.DesRequerimientoCompra = txtDescripcion.Text;
+            cargarGrilla(eRequerimientoCompra);
+        }
 
-            //table = bRequerimientoCompra.DGetAllRequerimientoCompraByDesc(eRequerimientoCompra);
+        private void cargarGrilla(ERequerimientoCompra eRequerimientoCompra)
+        {
+            DataTable dtRequerimientoCompra = bRequerimientoCompra.ObtenerListadoRequerimientoCompraOrdenCompra(eRequerimientoCompra);
+            dataGridView1.DataSource = dtRequerimientoCompra; 
+        }
 
-            dataGridView1.DataSource = table; 
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
