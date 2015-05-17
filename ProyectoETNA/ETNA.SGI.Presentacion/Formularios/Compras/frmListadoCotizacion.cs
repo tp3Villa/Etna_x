@@ -22,6 +22,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         }
 
         private BCotizacion bCotizacion = BCotizacion.getInstance();
+        private BEstado bEstado = BEstado.getInstance();
         ECotizacion cotizacion = new ECotizacion();
         ECotizacionDetalle cotizacionDetalle = new ECotizacionDetalle();
 
@@ -30,11 +31,11 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             dataGridView1.GridColor = Color.Red;
             txtRequerimiento.Text = Program.Nombre;
 
-            cboEstado.DataSource = bCotizacion.DGetEstados();
+            cboEstado.DataSource = bEstado.ObtenerListadoEstadoPorCotizacion();
             cboEstado.DisplayMember = "desEstado";
             cboEstado.ValueMember = "codEstado";
 
-            dataGridView1.DataSource = bCotizacion.DGetAllCotizacionByReq(Program.CodReq);
+            dataGridView1.DataSource = bCotizacion.ObtenerCotizaciones();
 
         }
 
@@ -93,7 +94,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
           
 
             dataGridView1.GridColor = Color.Red;
-            dataGridView1.DataSource = bCotizacion.getSELECTLIBRE("SELECT codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado FROM Cotizacion " +
+            dataGridView1.DataSource = bCotizacion.SelectLibre("SELECT codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado FROM Cotizacion " +
            " WHERE " + criteria + "");
 
         }
