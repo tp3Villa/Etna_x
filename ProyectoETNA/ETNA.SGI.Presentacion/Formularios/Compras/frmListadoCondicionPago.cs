@@ -57,5 +57,16 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 catch { }
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataTable table = new DataTable();
+
+            eCondicionPago.DesCondicionPago = txtDescripcion.Text;
+
+            table = bCondicionPago.DGetAllCondicionPagoByDesc(eCondicionPago);
+
+            dataGridView1.DataSource = table; 
+        }
     }
 }

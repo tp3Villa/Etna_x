@@ -100,7 +100,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-                cn.Conectar.Dispose();
+                //cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }
@@ -135,7 +135,7 @@ namespace ETNA.SGI.Data.Compras
                 cmd.ExecuteNonQuery();
                 i = 1;
                 cmd.Dispose();
-                cn.Conectar.Dispose();
+                //cn.Conectar.Dispose();
                 cn.Conectar.Close();
             }
             catch { throw; }

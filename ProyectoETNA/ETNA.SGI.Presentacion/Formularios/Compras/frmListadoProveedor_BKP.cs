@@ -25,6 +25,15 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
             Formularios.Compras.frmProveedor frm = new frmProveedor();
             frm.ShowDialog();
+
+            /* Se actualiza de nuevo el Listado */
+            rdTodo.Checked = true;
+
+            DataTable tblDetalle = new DataTable();
+
+            tblDetalle = bProveedor.DGetAllProveedor(proveedor);
+
+            dataGridView1.DataSource = tblDetalle; 
         }
 
 

@@ -17,9 +17,9 @@ namespace ETNA.SGI.Entity.Compras
         }
 
 
-        private int desCondicionPago;
+        private string desCondicionPago;
 
-        public int DesCondicionPago
+        public string DesCondicionPago
         {
             get { return desCondicionPago; }
             set { desCondicionPago = value; }
