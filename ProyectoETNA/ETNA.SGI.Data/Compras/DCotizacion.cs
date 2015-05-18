@@ -256,32 +256,32 @@ namespace ETNA.SGI.Data.Compras
 
         }
 
-        public int DUpdateCotizacion(ECotizacion ECotizacion)
-        {
-            int i = 0;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
+        //public int DUpdateCotizacion(ECotizacion ECotizacion)
+        //{
+        //    int i = 0;
+        //    try
+        //    {
+        //        SqlCommand cmd = new SqlCommand();
+        //        cmd.CommandType = CommandType.Text;
 
-                string sql = "UPDATE Cotizacion" +
-                             "SET descripcion = '" + ECotizacion.Descripcion + "'" +
-                              ",fechaExpiracion = '" + ECotizacion.FechaExpiracion + "'" +
-                              ",telefono = " + ECotizacion.Telefono + "'" +
-                         "WHERE codCotizacion = " + ECotizacion.CodCotizacion;
+        //        string sql = "UPDATE Cotizacion" +
+        //                     "SET descripcion = '" + ECotizacion.Descripcion + "'" +
+        //                      ",fechaExpiracion = '" + ECotizacion.FechaExpiracion + "'" +
+        //                      ",telefono = " + ECotizacion.Telefono + "'" +
+        //                 "WHERE codCotizacion = " + ECotizacion.CodCotizacion;
 
-                cmd.CommandText = sql;
-                cmd.Connection = cn.Conectar;
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-                i = 1;
-                cmd.Dispose();
-                // cn.Conectar.Dispose();
-                cn.Conectar.Close();
-            }
-            catch { throw; }
-            return i;
-        }
+        //        cmd.CommandText = sql;
+        //        cmd.Connection = cn.Conectar;
+        //        cmd.Connection.Open();
+        //        cmd.ExecuteNonQuery();
+        //        i = 1;
+        //        cmd.Dispose();
+        //        // cn.Conectar.Dispose();
+        //        cn.Conectar.Close();
+        //    }
+        //    catch { throw; }
+        //    return i;
+        //}
 
         public int DUpdateEstadoCotizacion(int codCotizacion, int codEstado)
         {

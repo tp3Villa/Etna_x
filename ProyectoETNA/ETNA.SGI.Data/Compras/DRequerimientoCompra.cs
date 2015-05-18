@@ -107,5 +107,33 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
+        public DataTable DGetAllDetalleByCodRequerimientoCompra(int codRequerimientoCompra)
+        {
+            string sql = "select rq.codRequerimiento, ct.codCotizacion, pv.razonSocial, ctd.idProducto, pd.descripcionProducto, ctd.cantidad, ctd.precioUnidad, ctd.descuento from RequerimientoCompra rq " +
+                            "INNER JOIN Cotizacion ct " +
+                            "ON ct.codRequerimiento = rq.codRequerimiento " +
+                            "INNER JOIN Proveedor pv " +
+                            "ON pv.codProveedor = ct.codProveedor " +
+                            "INNER JOIN CotizacionDetalle ctd " +
+                            "ON ctd.codCotizacion = ct.codCotizacion " +
+                            "INNER JOIN producto pd " +
+                            "ON pd.idProducto = ctd.idProducto " +
+                         "WHERE rq.codRequerimiento = @codRequerimiento AND ct.codEstado = 2";
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand(sql, cn.Conectar);
+
+            // Configurando los parametros
+            command.Parameters.Add("@codRequerimiento", SqlDbType.Int);
+            command.Parameters["@codRequerimiento"].Value = codRequerimientoCompra;
+
+            adapter.SelectCommand = command;
+
+            DataTable tabla = new DataTable();
+            adapter.Fill(tabla);
+            return tabla;
+        }
+
     }
 }

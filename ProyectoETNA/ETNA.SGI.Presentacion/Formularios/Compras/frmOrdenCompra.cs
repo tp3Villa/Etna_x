@@ -13,6 +13,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
     public partial class frmOrdenCompra : Form
     {
         private BMoneda bMoneda = BMoneda.getInstance();
+        private static double IGV = 0.19;
 
         public frmOrdenCompra()
         {
@@ -42,15 +43,54 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             txtRequerimiento.Text = "";
             txtCotizacion.Text = "";
             txtProveedor.Text = "";
-            txtDescuento.Text = "0.00";
-            txtIgv.Text = "";            
-            txtTotal.Text = "0.00";
+            txtSubTotal.Text = 0.ToString("0.00");
+            txtIgv.Text = IGV.ToString("0.00");
+            txtTotal.Text = 0.ToString("0.00");
         }
 
         private void btnBuscarRequerimiento_Click(object sender, EventArgs e)
         {
             Formularios.Compras.frmListadoRequerimientoCompra frm = new frmListadoRequerimientoCompra();
+            frm.CodRequerimientoCompra = txtRequerimiento.Text;
+            frm.CodCotizacion = txtCotizacion.Text;
+            frm.Proveedor = txtProveedor.Text;
+            frm.TotalSinIGV = txtSubTotal.Text;
             frm.ShowDialog();
+            txtRequerimiento.Text = frm.CodRequerimientoCompra;
+            txtCotizacion.Text = frm.CodCotizacion;
+            txtProveedor.Text = frm.Proveedor;            
+            if (frm.DtDetalleRequerimientoCompra != null && frm.DtDetalleRequerimientoCompra.Rows.Count > 0)
+            {
+                dtGridDetalleOC.DataSource = frm.DtDetalleRequerimientoCompra;
+                txtSubTotal.Text = frm.TotalSinIGV;
+                txtTotal.Text = (Double.Parse(frm.TotalSinIGV) - (Double.Parse(frm.TotalSinIGV) * IGV)).ToString("0.00");
+            }            
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            if ("".Equals(txtLugarEntrega.Text)) {
+                MessageBox.Show("Debe ingresar el lugar de entrega");
+                return;
+            }
+            if ("".Equals(txtRequerimiento.Text))
+            {
+                MessageBox.Show("Debe seleccionar el requerimiento de compra");
+                return;
+            }
+            if (dtpFechaEntrega.Value <= DateTime.Today)
+            {
+                MessageBox.Show("Debe seleccionar una fecha mayor a la actual");
+                return;
+            }
+
+            // Guardar la Orden de Compra con su detalle
+
         }
     }
 }

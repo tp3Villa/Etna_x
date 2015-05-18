@@ -23,14 +23,6 @@ namespace ETNA.SGI.Data.Compras
             return dOrdenCompra;
         }
 
-        public DataTable DCorrelativoOrdenCompra()
-        {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT count(*)+1 AS corr FROM OrdenCompra", cn.Conectar);
-            DataTable tabla = new DataTable();
-            da.Fill(tabla);
-            return tabla;
-        }
-
         public DataTable DGetAllOrdenCompra(EOrdenCompra EOrdenCompra)
         {
             string sql = "SELECT oc.codOrdenCompra,oc.codRequerimiento,oc.codCotizacion,p.razonSocial,oc.codEstado,e.desEstado,oc.fechaEntrega,oc.lugarEntrega " +

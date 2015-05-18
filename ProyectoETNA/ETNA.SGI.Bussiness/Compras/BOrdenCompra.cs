@@ -24,11 +24,6 @@ namespace ETNA.SGI.Bussiness.Compras
             return bOrdenCompra;
         }
 
-        public DataTable DCorrelativoOrdenCompra()
-        {
-            return dOrdenCompra.DCorrelativoOrdenCompra();
-        }
-
         public DataTable ObtenerListadoOrdenCompra(EOrdenCompra EOrdenCompra)
         {
             return dOrdenCompra.DGetAllOrdenCompra(EOrdenCompra);
