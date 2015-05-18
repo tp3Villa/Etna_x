@@ -81,6 +81,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             Formularios.Compras.frmCotizacion frm = new Formularios.Compras.frmCotizacion();
             frm.Show();
             this.Cursor = Cursors.Default;
+
         }
 
         private void frmListadoCotizacion_Load(object sender, EventArgs e)

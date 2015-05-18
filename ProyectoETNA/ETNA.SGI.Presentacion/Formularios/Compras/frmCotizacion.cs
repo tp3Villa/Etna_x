@@ -96,7 +96,9 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            /* Validamos sólo el ingreso de nùmeros */
+            const char Delete = (char)8;
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
         }
 
         private void dataGridView1_KeyPress(object sender, DataGridViewCellEventArgs e)
