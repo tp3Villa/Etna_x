@@ -84,9 +84,8 @@ namespace ETNA.SGI.Data.Compras
                             "ON c.codCategoria = rq.codCategoria " +
                             "INNER JOIN Cotizacion ct " +
                             "ON ct.codRequerimiento = rq.codRequerimiento " +
-                            "INNER JOIN OrdenCompra oc " +
-                            "ON oc.codRequerimiento <> rq.codRequerimiento " +
                          "WHERE rq.codEstado = 2 AND ct.codEstado = 2 " +
+                         " AND rq.codRequerimiento not in (select oc.codRequerimiento from OrdenCompra oc WHERE oc.codEstado <> 3) " +
                          " AND ( @codRequerimiento = 0 OR rq.codRequerimiento = @codRequerimiento ) " +
                           "AND ( @codCategoria = 0 OR rq.codCategoria = @codCategoria ) ";
             

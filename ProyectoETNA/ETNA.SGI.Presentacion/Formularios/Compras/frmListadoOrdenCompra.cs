@@ -193,6 +193,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
             Formularios.Compras.frmOrdenCompra frm = new frmOrdenCompra();
             frm.ShowDialog();
+            cargaGrilla(new EOrdenCompra());
         }
 
         private void btnClose_Click(object sender, EventArgs e)

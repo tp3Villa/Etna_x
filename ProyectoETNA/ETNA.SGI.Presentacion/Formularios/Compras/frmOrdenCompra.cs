@@ -1,4 +1,5 @@
 ﻿using ETNA.SGI.Bussiness.Compras;
+using ETNA.SGI.Entity.Compras;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,8 +13,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 {
     public partial class frmOrdenCompra : Form
     {
+        private BOrdenCompra bOrdenCompra = BOrdenCompra.getInstance();
         private BMoneda bMoneda = BMoneda.getInstance();
         private static double IGV = 0.19;
+        private static int ESTADO_GENERADA = 4;
 
         public frmOrdenCompra()
         {
@@ -74,23 +77,53 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            if ("".Equals(txtLugarEntrega.Text)) {
-                MessageBox.Show("Debe ingresar el lugar de entrega");
-                return;
-            }
-            if ("".Equals(txtRequerimiento.Text))
-            {
-                MessageBox.Show("Debe seleccionar el requerimiento de compra");
-                return;
-            }
             if (dtpFechaEntrega.Value <= DateTime.Today)
             {
                 MessageBox.Show("Debe seleccionar una fecha mayor a la actual");
                 return;
             }
+            if ("".Equals(txtLugarEntrega.Text)) {
+                MessageBox.Show("Debe ingresar el lugar de entrega");
+                return;
+            }            
+            if ("".Equals(txtRequerimiento.Text))
+            {
+                MessageBox.Show("Debe seleccionar el requerimiento de compra");
+                return;
+            }
+            
 
             // Guardar la Orden de Compra con su detalle
+            // Datos de Cabecera
+            EOrdenCompra eOrdenCompra = new EOrdenCompra();
+            eOrdenCompra.CodMoneda = (int)cboMoneda.SelectedValue;
+            eOrdenCompra.FechaEntrega = dtpFechaEntrega.Value;
+            eOrdenCompra.LugarEntrega = txtLugarEntrega.Text;
+            eOrdenCompra.Observacion = txtObservacion.Text;
+            eOrdenCompra.CodRequerimiento = Int32.Parse(txtRequerimiento.Text);
+            eOrdenCompra.CodCotizacion = Int32.Parse(txtCotizacion.Text);
+            eOrdenCompra.Igv = Double.Parse(txtIgv.Text);
+            eOrdenCompra.CodEstado = ESTADO_GENERADA;
+            eOrdenCompra.FechaRegistro = DateTime.Today;
+            eOrdenCompra.UsuarioRegistro = Program.Usuario.Trim();
 
+            // Datos de detalle
+            DataTable dtCurrent = (DataTable)(dtGridDetalleOC.DataSource);
+
+            EOrdenCompraDetalle eOrdenCompraDetalle;
+            List<EOrdenCompraDetalle> listaEOrdenCompraDetalle = new List<EOrdenCompraDetalle>();
+            foreach (DataRow dr in dtCurrent.Rows) {
+                eOrdenCompraDetalle = new EOrdenCompraDetalle();
+                eOrdenCompraDetalle.IdProducto = Int32.Parse(dr["idProducto"].ToString());
+                eOrdenCompraDetalle.Cantidad = Int32.Parse(dr["cantidad"].ToString());
+                eOrdenCompraDetalle.PrecioUnidad = Double.Parse(dr["precioUnidad"].ToString());
+                eOrdenCompraDetalle.Descuento = Double.Parse(dr["descuento"].ToString());
+                listaEOrdenCompraDetalle.Add(eOrdenCompraDetalle);
+            }
+
+            bOrdenCompra.RegistrarOrdenCompra(eOrdenCompra, listaEOrdenCompraDetalle);
+            MessageBox.Show("Se generó la Orden de Compra satisfactoriamente");
+            this.Close();
         }
     }
 }

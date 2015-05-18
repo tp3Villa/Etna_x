@@ -93,6 +93,97 @@ namespace ETNA.SGI.Data.Compras
             return i;
         }
 
-        
+         public int DInsertOrdenCompra(EOrdenCompra eOrdenCompra, List<EOrdenCompraDetalle> listaEOrdenCompraDetalle)
+         {
+             int i = 0;
+                    
+             cn.Conectar.Open();
+             SqlTransaction transaction = cn.Conectar.BeginTransaction();
+             try
+             {
+                 // Se registra la cabecera de la Orden de Compra
+                 SqlCommand command = new SqlCommand();
+                 command.CommandType = CommandType.Text;
+                 string sql = "INSERT INTO OrdenCompra " +
+                                   "(codRequerimiento,codCotizacion,codMoneda,codEstado,igv,fechaEntrega,lugarEntrega " +
+                                   ",observacion,fechaRegistro,usuarioRegistro) " +
+                               "VALUES " +
+                               "(@codRequerimiento,@codCotizacion,@codMoneda,@codEstado,@igv,@fechaEntrega,@lugarEntrega " +
+                               ",@observacion,@fechaRegistro,@usuarioRegistro) ";
+
+                 command.Parameters.Add("@codRequerimiento", SqlDbType.Int);
+                 command.Parameters["@codRequerimiento"].Value = eOrdenCompra.CodRequerimiento;
+                 command.Parameters.Add("@codCotizacion", SqlDbType.Int);
+                 command.Parameters["@codCotizacion"].Value = eOrdenCompra.CodCotizacion;
+                 command.Parameters.Add("@codMoneda", SqlDbType.Int);
+                 command.Parameters["@codMoneda"].Value = eOrdenCompra.CodMoneda;
+                 command.Parameters.Add("@codEstado", SqlDbType.Int);
+                 command.Parameters["@codEstado"].Value = eOrdenCompra.CodEstado;
+                 command.Parameters.Add("@igv", SqlDbType.Decimal);
+                 command.Parameters["@igv"].Value = eOrdenCompra.Igv;
+                 command.Parameters.Add("@fechaEntrega", SqlDbType.DateTime);
+                 command.Parameters["@fechaEntrega"].Value = eOrdenCompra.FechaEntrega;
+                 command.Parameters.Add("@lugarEntrega", SqlDbType.VarChar);
+                 command.Parameters["@lugarEntrega"].Value = eOrdenCompra.LugarEntrega;
+                 command.Parameters.Add("@observacion", SqlDbType.VarChar);
+                 command.Parameters["@observacion"].Value = eOrdenCompra.Observacion;
+                 command.Parameters.Add("@fechaRegistro", SqlDbType.DateTime);
+                 command.Parameters["@fechaRegistro"].Value = eOrdenCompra.FechaEntrega;
+                 command.Parameters.Add("@usuarioRegistro", SqlDbType.VarChar);
+                 command.Parameters["@usuarioRegistro"].Value = eOrdenCompra.UsuarioRegistro;
+                 
+                 command.CommandText = sql;
+                 command.Connection = cn.Conectar;
+                 command.Transaction = transaction;
+                 command.ExecuteNonQuery();
+
+                 // Se obtiene el codigo de la Orden de Compra registrada
+                 command = new SqlCommand();
+                 command.CommandType = CommandType.Text;
+                 sql = "SELECT Max(oc.codOrdenCompra) AS corr FROM OrdenCompra oc";
+                 
+                 command.CommandText = sql;
+                 command.Connection = cn.Conectar;
+                 command.Transaction = transaction;
+                 int codOrdenCompra = (int)command.ExecuteScalar();
+
+                 // Se registra el detalle de la Orden de Compra
+                 foreach (EOrdenCompraDetalle eOrdenCompraDetalle in listaEOrdenCompraDetalle)
+                 {
+                     command = new SqlCommand();
+                     command.CommandType = CommandType.Text;
+                     sql = "INSERT INTO OrdenCompraDetalle " +
+                               "(codOrdenCompra,idProducto,cantidad,precioUnidad,descuento) " +
+                           "VALUES " +
+                               "(@codOrdenCompra,@idProducto,@cantidad,@precioUnidad,@descuento) ";
+
+                     command.Parameters.Add("@codOrdenCompra", SqlDbType.Int);
+                     command.Parameters["@codOrdenCompra"].Value = codOrdenCompra;
+                     command.Parameters.Add("@idProducto", SqlDbType.Int);
+                     command.Parameters["@idProducto"].Value = eOrdenCompraDetalle.IdProducto;
+                     command.Parameters.Add("@cantidad", SqlDbType.Int);
+                     command.Parameters["@cantidad"].Value = eOrdenCompraDetalle.Cantidad;
+                     command.Parameters.Add("@precioUnidad", SqlDbType.Decimal);
+                     command.Parameters["@precioUnidad"].Value = eOrdenCompraDetalle.PrecioUnidad;
+                     command.Parameters.Add("@descuento", SqlDbType.Decimal);
+                     command.Parameters["@descuento"].Value = eOrdenCompraDetalle.Descuento;
+
+                     command.CommandText = sql;
+                     command.Connection = cn.Conectar;
+                     command.Transaction = transaction;
+                     command.ExecuteNonQuery();
+                 }
+                  
+                 transaction.Commit();
+                 i = 1;
+             }
+             catch
+             {
+                 transaction.Rollback();
+             }
+             cn.Conectar.Close();
+             return i;
+         }
+
     }
 }
