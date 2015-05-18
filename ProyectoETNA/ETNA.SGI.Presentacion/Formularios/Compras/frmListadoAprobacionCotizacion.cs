@@ -28,6 +28,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
             DataTable table = new DataTable();
             table = bCotizacion.DGetCotizacionAprobacion();
+            //table = bCotizacion.DGetCotizacionAprobacionWithParameters(Convert.ToDateTime(dtExpiracionFrom.Text), Convert.ToDateTime(dtExpiracionTo.Text)); 
 
             dataGridView1.DataSource = table;
 
@@ -36,7 +37,19 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             DataTable table = new DataTable();
-            table = bCotizacion.DGetCotizacionAprobacion();
+            //table = bCotizacion.DGetCotizacionAprobacion();
+            int codProveedor = 0;
+            int codRequerimiento = 0;
+
+            if (txtProveedor.Text != "") { 
+                codProveedor = Convert.ToInt32(txtProveedor.Text);
+            }
+
+            if (txtSolicitud.Text != "") {
+                codRequerimiento = Convert.ToInt32(txtSolicitud.Text);
+            }
+
+            table = bCotizacion.DGetCotizacionAprobacionWithParameters(Convert.ToDateTime(dtExpiracionFrom.Text), Convert.ToDateTime(dtExpiracionTo.Text),codRequerimiento, codProveedor); 
 
             dataGridView1.DataSource = table;
         }
@@ -76,6 +89,22 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             {
                 this.Close();
             }
+        }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            Compras.frmBusquedaProveedor frm = new frmBusquedaProveedor();
+            frm.ShowDialog();
+
+            txtProveedor.Text = frm.vCodigo;
+        }
+
+        private void btnSolicitud_Click(object sender, EventArgs e)
+        {
+            Compras.frmListadoReqCotizacion frm = new frmListadoReqCotizacion();
+            frm.ShowDialog();
+
+            txtSolicitud.Text = frm.vCodigoReq;
         }
     }
 }

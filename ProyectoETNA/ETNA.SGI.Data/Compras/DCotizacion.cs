@@ -410,7 +410,7 @@ namespace ETNA.SGI.Data.Compras
         public DataTable DGetCotizacionAprobacion()
         {
             //string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion from Cotizacion a INNER JOIN Proveedor b where a.codEstado = 4 and b.codProveedor = a.codProveedor and codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
-            string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion from Cotizacion a where a.codEstado =@codEstado and a.codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
+            string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion , b.razonSocial razonSocial from Cotizacion a , proveedor b where b.codProveedor = a.codProveedor and a.codEstado =@codEstado and a.codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
 
             SqlDataAdapter adapter = new SqlDataAdapter();
 
@@ -420,6 +420,42 @@ namespace ETNA.SGI.Data.Compras
             // Add the parameters for the SelectCommand.
             command.Parameters.Add("@codEstado", SqlDbType.Int);
             command.Parameters["@codEstado"].Value = 4;
+            adapter.SelectCommand = command;
+
+            DataTable tabla = new DataTable();
+            adapter.Fill(tabla);
+            return tabla;
+        }
+
+        public DataTable DGetCotizacionAprobacionWithParameters(DateTime dtFrom , DateTime dtTo, int codRequerimiento , int codProveedor)
+        {
+            //string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion from Cotizacion a INNER JOIN Proveedor b where a.codEstado = 4 and b.codProveedor = a.codProveedor and codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
+            string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion , b.razonSocial razonSocial from Cotizacion a , proveedor b where b.codProveedor = a.codProveedor and a.codEstado =@codEstado and a.codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento ) and fechaExpiracion between @dtFrom and @dtTo";
+
+            if (codRequerimiento > 0) {
+                sql = sql + " and a.codRequerimiento =" + codRequerimiento;
+            }
+
+            if (codProveedor > 0)
+            {
+                sql = sql + " and a.codProveedor =" + codProveedor;
+            }
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            // Create the SelectCommand.
+            SqlCommand command = new SqlCommand(sql, cn.Conectar);
+
+            // Add the parameters for the SelectCommand.
+            command.Parameters.Add("@codEstado", SqlDbType.Int);
+            command.Parameters["@codEstado"].Value = 4;
+
+            command.Parameters.Add("@dtFrom", SqlDbType.Date);
+            command.Parameters["@dtFrom"].Value = dtFrom;
+
+            command.Parameters.Add("@dtTo", SqlDbType.Date);
+            command.Parameters["@dtTo"].Value = dtTo;
+
             adapter.SelectCommand = command;
 
             DataTable tabla = new DataTable();

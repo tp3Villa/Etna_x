@@ -105,7 +105,12 @@ namespace ETNA.SGI.Bussiness.Compras
         {
             return dCotizacion.DUpdateAprobacionCotizacion(ECotizacion);
         }
+
+         public DataTable DGetCotizacionAprobacionWithParameters(DateTime dtFrom , DateTime dtTo , int codRequerimiento , int codProveedor)
+        {
+            return dCotizacion.DGetCotizacionAprobacionWithParameters(dtFrom, dtTo, codRequerimiento, codProveedor);
+        }
         
-        
+
     }
 }
