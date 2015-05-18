@@ -41,6 +41,15 @@
             this.btnGenerarOC = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.codOrdenCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codRequerimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codCotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lugarEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modificar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.anular = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridOC)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -138,6 +147,16 @@
             this.dtGridOC.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dtGridOC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtGridOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridOC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codOrdenCompra,
+            this.codRequerimiento,
+            this.codCotizacion,
+            this.razonSocial,
+            this.desEstado,
+            this.fechaEntrega,
+            this.lugarEntrega,
+            this.modificar,
+            this.anular});
             this.dtGridOC.Location = new System.Drawing.Point(12, 133);
             this.dtGridOC.Name = "dtGridOC";
             this.dtGridOC.ReadOnly = true;
@@ -197,6 +216,76 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // codOrdenCompra
+            // 
+            this.codOrdenCompra.DataPropertyName = "codOrdenCompra";
+            this.codOrdenCompra.HeaderText = "Código";
+            this.codOrdenCompra.Name = "codOrdenCompra";
+            this.codOrdenCompra.ReadOnly = true;
+            this.codOrdenCompra.Width = 60;
+            // 
+            // codRequerimiento
+            // 
+            this.codRequerimiento.DataPropertyName = "codRequerimiento";
+            this.codRequerimiento.HeaderText = "Requerimiento";
+            this.codRequerimiento.Name = "codRequerimiento";
+            this.codRequerimiento.ReadOnly = true;
+            this.codRequerimiento.Width = 80;
+            // 
+            // codCotizacion
+            // 
+            this.codCotizacion.DataPropertyName = "codCotizacion";
+            this.codCotizacion.HeaderText = "Cotización";
+            this.codCotizacion.Name = "codCotizacion";
+            this.codCotizacion.ReadOnly = true;
+            this.codCotizacion.Width = 60;
+            // 
+            // razonSocial
+            // 
+            this.razonSocial.DataPropertyName = "razonSocial";
+            this.razonSocial.HeaderText = "Proveedor";
+            this.razonSocial.Name = "razonSocial";
+            this.razonSocial.ReadOnly = true;
+            // 
+            // desEstado
+            // 
+            this.desEstado.DataPropertyName = "desEstado";
+            this.desEstado.HeaderText = "Estado";
+            this.desEstado.Name = "desEstado";
+            this.desEstado.ReadOnly = true;
+            // 
+            // fechaEntrega
+            // 
+            this.fechaEntrega.DataPropertyName = "fechaEntrega";
+            this.fechaEntrega.HeaderText = "Fecha Entrega";
+            this.fechaEntrega.Name = "fechaEntrega";
+            this.fechaEntrega.ReadOnly = true;
+            // 
+            // lugarEntrega
+            // 
+            this.lugarEntrega.DataPropertyName = "lugarEntrega";
+            this.lugarEntrega.HeaderText = "Lugar Entrega";
+            this.lugarEntrega.Name = "lugarEntrega";
+            this.lugarEntrega.ReadOnly = true;
+            // 
+            // modificar
+            // 
+            this.modificar.DataPropertyName = "modificar";
+            this.modificar.HeaderText = "";
+            this.modificar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Edit;
+            this.modificar.Name = "modificar";
+            this.modificar.ReadOnly = true;
+            this.modificar.Width = 40;
+            // 
+            // anular
+            // 
+            this.anular.DataPropertyName = "anular";
+            this.anular.HeaderText = "";
+            this.anular.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Cancel_Red_mini;
+            this.anular.Name = "anular";
+            this.anular.ReadOnly = true;
+            this.anular.Width = 40;
+            // 
             // frmListadoOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +327,15 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnGenerarOC;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codOrdenCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codRequerimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codCotizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaEntrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lugarEntrega;
+        private System.Windows.Forms.DataGridViewImageColumn modificar;
+        private System.Windows.Forms.DataGridViewImageColumn anular;
 
     }
 }

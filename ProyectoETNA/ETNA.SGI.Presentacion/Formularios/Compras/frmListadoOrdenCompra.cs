@@ -15,8 +15,6 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
     {
         private BOrdenCompra bOrdenCompra = BOrdenCompra.getInstance();
         private BEstado bEstado = BEstado.getInstance();
-        private DataTable dtOrdenCompra = new DataTable();
-        private DataRow dr;
         private static int ESTADO_ANULADA = 3;
 
         public frmListadoOrdenCompra()
@@ -39,12 +37,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
             cargaGrilla(eOrdenCompra);
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+              
         private void txtCodOC_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar)) {
@@ -76,94 +69,29 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             cboEstado.SelectedIndex = 0;
 
             // Carga de Grilla
-            crearColumnasGrid();
             cargaGrilla(new EOrdenCompra());
         }
 
         private void cargaGrilla(EOrdenCompra eOrdenCompra)
         {
             DataTable dt = bOrdenCompra.ObtenerListadoOrdenCompra(eOrdenCompra);
-
-            dtOrdenCompra.Clear();
-            for (int i = 0; i <= dt.Rows.Count - 1; i++)
-            {
-                dr = dtOrdenCompra.NewRow();
-                dr["codigo"] = dt.Rows[i]["codOrdenCompra"].ToString();
-                dr["requerimiento"] = dt.Rows[i]["codRequerimiento"].ToString();
-                dr["cotizacion"] = dt.Rows[i]["codCotizacion"].ToString();
-                dr["proveedor"] = dt.Rows[i]["razonSocial"].ToString();
-                dr["fechaEntrega"] = ((DateTime)dt.Rows[i]["fechaEntrega"]).ToShortDateString();
-                dr["lugarEntrega"] = dt.Rows[i]["lugarEntrega"].ToString();
-                dr["estado"] = dt.Rows[i]["desEstado"].ToString();
-                dtOrdenCompra.Rows.Add(dr);
-                dtOrdenCompra.AcceptChanges();
-            }
+            dt.Columns["codEstado"].ColumnMapping = MappingType.Hidden;
+            dtGridOC.DataSource = dt;
         }
-
-        private void crearColumnasGrid() {
-            dtOrdenCompra = new DataTable("dtOrdenCompra");    
-            dtOrdenCompra.Columns.Add(new DataColumn("codigo", typeof(string)));
-            dtOrdenCompra.Columns.Add(new DataColumn("requerimiento", typeof(string)));
-            dtOrdenCompra.Columns.Add(new DataColumn("cotizacion", typeof(string)));
-            dtOrdenCompra.Columns.Add(new DataColumn("proveedor", typeof(string)));
-            dtOrdenCompra.Columns.Add(new DataColumn("fechaEntrega", typeof(string)));
-            dtOrdenCompra.Columns.Add(new DataColumn("lugarEntrega", typeof(string)));
-            dtOrdenCompra.Columns.Add(new DataColumn("estado", typeof(string)));
-            dtOrdenCompra.PrimaryKey = new DataColumn[] { dtOrdenCompra.Columns[0] };
-            dtGridOC.DataSource = dtOrdenCompra;
-            
-            DataGridViewImageColumn modificar = new DataGridViewImageColumn();
-            modificar.Name = "modificar";
-            modificar.HeaderText = "";
-            modificar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.BO12;
-            modificar.ReadOnly = true;
-            dtGridOC.Columns.Add(modificar);
-
-            DataGridViewImageColumn anular = new DataGridViewImageColumn();
-            anular.Name = "anular";
-            anular.HeaderText = "";
-            anular.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Cancel_Red_mini;
-            anular.ReadOnly = true;
-            dtGridOC.Columns.Add(anular);
-
-            // Estilos
-            dtGridOC.GridColor = Color.Red;
-            dtGridOC.Columns["codigo"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtGridOC.Columns["codigo"].Width = 60;
-            dtGridOC.Columns["codigo"].HeaderText = "Codigo";
-            dtGridOC.Columns["requerimiento"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtGridOC.Columns["requerimiento"].Width = 80;
-            dtGridOC.Columns["requerimiento"].HeaderText = "Requerimiento";
-            dtGridOC.Columns["cotizacion"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtGridOC.Columns["cotizacion"].Width = 60;
-            dtGridOC.Columns["cotizacion"].HeaderText = "Cotizacion";
-            dtGridOC.Columns["proveedor"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtGridOC.Columns["proveedor"].HeaderText = "Proveedor";
-            dtGridOC.Columns["fechaEntrega"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtGridOC.Columns["fechaEntrega"].HeaderText = "Fecha Entrega";
-            dtGridOC.Columns["lugarEntrega"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtGridOC.Columns["lugarEntrega"].HeaderText = "Lugar Entrega";
-            dtGridOC.Columns["estado"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtGridOC.Columns["estado"].HeaderText = "Estado";
-            dtGridOC.Columns["modificar"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtGridOC.Columns["modificar"].Width = 40;
-            dtGridOC.Columns["anular"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtGridOC.Columns["anular"].Width = 40;
-        }
-
+        
         private void dtGridOC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Modificar
-            if (e.ColumnIndex == 7) 
+            if (e.ColumnIndex == 0) 
             {
                 MessageBox.Show("Modificar");
 
             }
 
             // Anular
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 1)
             {
-                if (MessageBox.Show("¿Está seguro que desea eliminar la Orden de Compra?\nNro OC: " + dtGridOC.Rows[e.RowIndex].Cells[0].Value.ToString(), "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show("¿Está seguro que desea anular la Orden de Compra?\nNro OC: " + dtGridOC.Rows[e.RowIndex].Cells[2].Value.ToString(), "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     EOrdenCompra eOrdenCompra = new EOrdenCompra();
                     eOrdenCompra.CodOrdenCompra = Int32.Parse(dtGridOC.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -184,12 +112,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             cboEstado.SelectedIndex = 0;
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGenerarOC_Click(object sender, EventArgs e)
+       private void btnGenerarOC_Click(object sender, EventArgs e)
         {
             Formularios.Compras.frmOrdenCompra frm = new frmOrdenCompra();
             frm.ShowDialog();
