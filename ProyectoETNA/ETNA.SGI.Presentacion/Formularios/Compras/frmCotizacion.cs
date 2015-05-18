@@ -76,6 +76,13 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             tblDetalle = bRequerimientoCompra.ObtenerRequerimientoDetalleCompraCotizacion(txtRequerimiento.Text);
             dataGridView1.DataSource = tblDetalle;
 
+            for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
+            {
+                    
+                    dataGridView1.Rows[i].Cells["precioUnidad"].Value=0;
+                    dataGridView1.Rows[i].Cells["descuento"].Value=0;
+                
+            }
             
         }
 
@@ -179,8 +186,34 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 this.Close();
 
 
-
             }
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                double dAmount = 0;
+                double dActualAmount = 0;
+
+                for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
+                {
+                   dActualAmount =
+                      (Convert.ToDouble(dataGridView1.Rows[i].Cells["cantidad"].Value.ToString()) * 
+                       Convert.ToDouble(dataGridView1.Rows[i].Cells["precioUnidad"].Value.ToString())) -
+                       Convert.ToDouble(dataGridView1.Rows[i].Cells["descuento"].Value.ToString());
+                   dAmount = dAmount + dActualAmount;
+                }
+
+                txtTotal.Text = Convert.ToString(dAmount);
+            }
+            catch { }
+        }
+
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+            
         }
 
 
