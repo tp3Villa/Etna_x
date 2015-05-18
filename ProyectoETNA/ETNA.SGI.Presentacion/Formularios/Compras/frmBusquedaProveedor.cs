@@ -33,7 +33,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             DataTable tblDetalle = new DataTable();
 
             proveedor.CodEstado = 5;
-            tblDetalle = bProveedor.DGetProveedorWithStatus(proveedor);
+            tblDetalle = bProveedor.DGetAllProveedorActive(proveedor);
 
             dataGridView1.DataSource = tblDetalle; 
         }
@@ -45,7 +45,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             proveedor.RazonSocial = txtRazonSocial.Text.Trim();
 
             proveedor.CodEstado = 5;
-            tblDetalle = bProveedor.DGetProveedorWithStatus(proveedor);
+            tblDetalle = bProveedor.DGetAllProveedorActive(proveedor);
 
             dataGridView1.DataSource = tblDetalle;
         }

@@ -40,7 +40,6 @@
             this.razonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ruc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +57,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
             this.groupBox1.Location = new System.Drawing.Point(12, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(860, 90);
+            this.groupBox1.Size = new System.Drawing.Size(754, 90);
             this.groupBox1.TabIndex = 107;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
@@ -82,7 +81,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
-            this.btnBuscar.Location = new System.Drawing.Point(792, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(689, 19);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(55, 57);
             this.btnBuscar.TabIndex = 103;
@@ -101,14 +100,13 @@
             this.razonSocial,
             this.direccion,
             this.telefono,
-            this.fechaRegistro,
             this.email,
             this.ruc,
             this.observacion});
             this.dataGridView1.Location = new System.Drawing.Point(12, 163);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(860, 165);
+            this.dataGridView1.Size = new System.Drawing.Size(754, 165);
             this.dataGridView1.TabIndex = 106;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -117,7 +115,7 @@
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Location = new System.Drawing.Point(12, 12);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(860, 49);
+            this.groupBox6.Size = new System.Drawing.Size(754, 49);
             this.groupBox6.TabIndex = 105;
             this.groupBox6.TabStop = false;
             // 
@@ -128,7 +126,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label11.Location = new System.Drawing.Point(6, 12);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(848, 29);
+            this.label11.Size = new System.Drawing.Size(738, 29);
             this.label11.TabIndex = 0;
             this.label11.Text = "Búsqueda de Proveedores";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,13 +169,6 @@
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
             // 
-            // fechaRegistro
-            // 
-            this.fechaRegistro.DataPropertyName = "fechaRegistro";
-            this.fechaRegistro.HeaderText = "Fecha Registro";
-            this.fechaRegistro.Name = "fechaRegistro";
-            this.fechaRegistro.ReadOnly = true;
-            // 
             // email
             // 
             this.email.DataPropertyName = "email";
@@ -203,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 338);
+            this.ClientSize = new System.Drawing.Size(775, 334);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox6);
@@ -232,7 +223,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn razonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn ruc;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
