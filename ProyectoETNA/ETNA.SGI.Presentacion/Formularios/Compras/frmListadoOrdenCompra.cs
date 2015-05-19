@@ -76,13 +76,20 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         {
             DataTable dt = bOrdenCompra.ObtenerListadoOrdenCompra(eOrdenCompra);           
             dt.Columns["codEstado"].ColumnMapping = MappingType.Hidden;
-            //dt.Columns["codMoneda"].ColumnMapping = MappingType.Hidden;
-            //dt.Columns["observacion"].ColumnMapping = MappingType.Hidden;
+            dt.Columns["codMoneda"].ColumnMapping = MappingType.Hidden;
+            dt.Columns["observacion"].ColumnMapping = MappingType.Hidden;
+            dt.AcceptChanges();
             dtGridOC.DataSource = dt;           
         }
         
         private void dtGridOC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if ("3".Equals(dtGridOC.Rows[e.RowIndex].Cells["codEstado"].Value.ToString()))
+            {
+                if (e.ColumnIndex == 0) { MessageBox.Show("No se puede modificar una orden de compra anulada"); }
+                if (e.ColumnIndex == 1) { MessageBox.Show("No se puede anular una orden de compra anulada"); }                
+                return;
+            }
             // Modificar
             if (e.ColumnIndex == 0) 
             {
@@ -100,18 +107,22 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                     frm.CodMoneda = dtGridOC.Rows[currentIndex].Cells["codMoneda"].Value.ToString();
                     frm.Observacion = dtGridOC.Rows[currentIndex].Cells["observacion"].Value.ToString();
                     frm.ShowDialog();
+                    cargaGrilla(new EOrdenCompra());
+                    resetFiltro();
                 }
-                catch { }
+                catch {
+                    MessageBox.Show("Ocurrió un error inesperado.\nSi el error persiste comuniquese con el administrador.");
+                }
 
             }
 
             // Anular
             if (e.ColumnIndex == 1)
             {
-                if (MessageBox.Show("¿Está seguro que desea anular la Orden de Compra?\nNro OC: " + dtGridOC.Rows[e.RowIndex].Cells[2].Value.ToString(), "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show("¿Está seguro que desea anular la Orden de Compra?\nNro OC: " + dtGridOC.Rows[e.RowIndex].Cells["codOrdenCompra"].Value.ToString(), "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     EOrdenCompra eOrdenCompra = new EOrdenCompra();
-                    eOrdenCompra.CodOrdenCompra = Int32.Parse(dtGridOC.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    eOrdenCompra.CodOrdenCompra = Int32.Parse(dtGridOC.Rows[e.RowIndex].Cells["codOrdenCompra"].Value.ToString());
                     eOrdenCompra.FechaActualizacion = DateTime.Today;
                     eOrdenCompra.UsuarioModificacion = Program.Usuario.Trim();
                     eOrdenCompra.CodEstado = ESTADO_ANULADA;
@@ -135,6 +146,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             frm.CodOrdenCompra = "";
             frm.ShowDialog();
             cargaGrilla(new EOrdenCompra());
+            resetFiltro();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

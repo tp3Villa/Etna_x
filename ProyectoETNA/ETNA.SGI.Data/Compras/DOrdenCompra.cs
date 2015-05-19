@@ -93,6 +93,53 @@ namespace ETNA.SGI.Data.Compras
             return i;
         }
 
+          public int DUpdateOrdenCompra(EOrdenCompra eOrdenCompra)
+        {
+            int i = 0;
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+
+                string sql = "UPDATE OrdenCompra " +
+                              "SET codMoneda = @codMoneda " +
+                                  ",fechaEntrega = @fechaEntrega " +
+                                  ",lugarEntrega = @lugarEntrega " +
+                                  ",observacion = @observacion " +
+                                  ",fechaActualizacion = @fechaActualizacion " +
+                                  ",usuarioModificacion = @usuarioModificacion " +
+                             "WHERE codOrdenCompra = @codOrdenCompra";
+
+                // Configurando los parametros
+                command.Parameters.Add("@codMoneda", SqlDbType.Int);
+                command.Parameters["@codMoneda"].Value = eOrdenCompra.CodMoneda;
+                command.Parameters.Add("@fechaEntrega", SqlDbType.DateTime);
+                command.Parameters["@fechaEntrega"].Value = eOrdenCompra.FechaEntrega;
+                command.Parameters.Add("@lugarEntrega", SqlDbType.VarChar);
+                command.Parameters["@lugarEntrega"].Value = eOrdenCompra.LugarEntrega;
+                command.Parameters.Add("@observacion", SqlDbType.VarChar);
+                command.Parameters["@observacion"].Value = eOrdenCompra.Observacion;
+                command.Parameters.Add("@fechaActualizacion", SqlDbType.DateTime);
+                command.Parameters["@fechaActualizacion"].Value = eOrdenCompra.FechaActualizacion;
+                command.Parameters.Add("@usuarioModificacion", SqlDbType.VarChar);
+                command.Parameters["@usuarioModificacion"].Value = eOrdenCompra.UsuarioModificacion;
+                command.Parameters.Add("@codOrdenCompra", SqlDbType.Int);
+                command.Parameters["@codOrdenCompra"].Value = eOrdenCompra.CodOrdenCompra;
+
+                command.CommandText = sql;
+                command.Connection = cn.Conectar;
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+                i = 1;
+                command.Dispose();
+                //command.Connection.Dispose();
+                command.Connection.Close();
+            }
+            catch { throw; }
+            return i;
+        }
+        
+
          public int DInsertOrdenCompra(EOrdenCompra eOrdenCompra, List<EOrdenCompraDetalle> listaEOrdenCompraDetalle)
          {
              int i = 0;

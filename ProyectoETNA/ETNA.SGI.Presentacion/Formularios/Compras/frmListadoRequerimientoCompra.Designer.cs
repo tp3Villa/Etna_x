@@ -31,6 +31,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -85,6 +85,16 @@
             this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de búsqueda";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(10, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(355, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "* Listado de requerimientos de compra aprobados y cotizados";
             // 
             // cboCategoria
             // 
@@ -192,16 +202,6 @@
             this.observacion.ReadOnly = true;
             this.observacion.Width = 150;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(10, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(355, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "* Listado de requerimientos de compra aprobados y cotizados";
-            // 
             // frmListadoRequerimientoCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +210,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox6);
+            this.MaximizeBox = false;
             this.Name = "frmListadoRequerimientoCompra";
             this.Text = "Requerimiento de Compra";
             this.Load += new System.EventHandler(this.frmListadoRequerimientoCompra_Load);

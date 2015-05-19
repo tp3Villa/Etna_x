@@ -52,15 +52,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             get { return dtDetalleRequerimientoCompra; }
             set { dtDetalleRequerimientoCompra = value; }
         }
-
-        private string totalSinIGV;
-
-        public string TotalSinIGV
-        {
-            get { return totalSinIGV; }
-            set { totalSinIGV = value; }
-        }
-        
+                        
         public frmListadoRequerimientoCompra()
         {
             InitializeComponent();
@@ -82,7 +74,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             cboCategoria.SelectedIndex = 0;
 
             txtCodigo.Text = "";
-
+            
             // Carga de Grilla
             cargarGrilla(new ERequerimientoCompra());
         }
@@ -99,28 +91,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                     dtDetalleRequerimientoCompra = bRequerimientoCompra.ObtenerListadoDetallePorCodigoRequerimientoCompra(Int32.Parse(codRequerimientoCompra));
                     codCotizacion = dtDetalleRequerimientoCompra.Rows[0]["codCotizacion"].ToString();
                     proveedor = dtDetalleRequerimientoCompra.Rows[0]["razonSocial"].ToString();
-
-                    DataColumn dcSubTotal = new DataColumn("subTotal");
-                    dcSubTotal.DataType = typeof(Double);
-                    dtDetalleRequerimientoCompra.Columns.Add(dcSubTotal);
-
-                    // Columnas a ocultar
-                    dtDetalleRequerimientoCompra.Columns["codRequerimiento"].ColumnMapping = MappingType.Hidden;
-                    dtDetalleRequerimientoCompra.Columns["codCotizacion"].ColumnMapping = MappingType.Hidden;
-                    dtDetalleRequerimientoCompra.Columns["razonSocial"].ColumnMapping = MappingType.Hidden;                    
-                    dtDetalleRequerimientoCompra.Columns["idProducto"].ColumnMapping = MappingType.Hidden;
-
-                    double totalDt = 0;
-                    for (int i = 0; i <= dtDetalleRequerimientoCompra.Rows.Count - 1; i++) {
-                        int cantidad = Int32.Parse(dtDetalleRequerimientoCompra.Rows[i]["cantidad"].ToString());
-                        double precioUnidad = Double.Parse(dtDetalleRequerimientoCompra.Rows[i]["precioUnidad"].ToString());
-                        double descuento = Double.Parse(dtDetalleRequerimientoCompra.Rows[i]["descuento"].ToString());
-                        double subTotalSinDesc = cantidad * precioUnidad;
-                        double subTotal = subTotalSinDesc - (subTotalSinDesc * descuento);
-                        dtDetalleRequerimientoCompra.Rows[i]["subTotal"] =  subTotal;
-                        totalDt += subTotal;
-                    }
-                    totalSinIGV = totalDt.ToString("0.00");
+                    
                     this.Close();
                 }
                 catch { }

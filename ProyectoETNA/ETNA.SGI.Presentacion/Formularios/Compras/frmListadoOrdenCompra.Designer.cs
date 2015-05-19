@@ -48,6 +48,9 @@
             this.desEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lugarEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codMoneda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.anular = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox6.SuspendLayout();
@@ -155,6 +158,9 @@
             this.desEstado,
             this.fechaEntrega,
             this.lugarEntrega,
+            this.codEstado,
+            this.codMoneda,
+            this.observacion,
             this.modificar,
             this.anular});
             this.dtGridOC.Location = new System.Drawing.Point(12, 133);
@@ -268,6 +274,30 @@
             this.lugarEntrega.Name = "lugarEntrega";
             this.lugarEntrega.ReadOnly = true;
             // 
+            // codEstado
+            // 
+            this.codEstado.DataPropertyName = "codEstado";
+            this.codEstado.HeaderText = "codEstado";
+            this.codEstado.Name = "codEstado";
+            this.codEstado.ReadOnly = true;
+            this.codEstado.Visible = false;
+            // 
+            // codMoneda
+            // 
+            this.codMoneda.DataPropertyName = "codMoneda";
+            this.codMoneda.HeaderText = "CodMoneda";
+            this.codMoneda.Name = "codMoneda";
+            this.codMoneda.ReadOnly = true;
+            this.codMoneda.Visible = false;
+            // 
+            // observacion
+            // 
+            this.observacion.DataPropertyName = "observacion";
+            this.observacion.HeaderText = "Observacion";
+            this.observacion.Name = "observacion";
+            this.observacion.ReadOnly = true;
+            this.observacion.Visible = false;
+            // 
             // modificar
             // 
             this.modificar.DataPropertyName = "modificar";
@@ -301,7 +331,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox6);
+            this.MaximizeBox = false;
             this.Name = "frmListadoOrdenCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Órdenes de Compra";
             this.Load += new System.EventHandler(this.frmListadoOrdenCompra_Load);
             this.groupBox6.ResumeLayout(false);
@@ -334,6 +366,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn desEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn lugarEntrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codMoneda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
         private System.Windows.Forms.DataGridViewImageColumn modificar;
         private System.Windows.Forms.DataGridViewImageColumn anular;
 
