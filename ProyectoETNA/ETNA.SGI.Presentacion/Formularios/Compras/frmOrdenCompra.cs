@@ -17,6 +17,62 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         private BMoneda bMoneda = BMoneda.getInstance();
         private static double IGV = 0.19;
         private static int ESTADO_GENERADA = 4;
+        private string codOrdenCompra;
+
+        public string CodOrdenCompra
+        {
+            get { return codOrdenCompra; }
+            set { codOrdenCompra = value; }
+        }
+        private string codRequerimiento;
+
+        public string CodRequerimiento
+        {
+            get { return codRequerimiento; }
+            set { codRequerimiento = value; }
+        }
+        private string codCotizacion;
+
+        public string CodCotizacion
+        {
+            get { return codCotizacion; }
+            set { codCotizacion = value; }
+        }
+        private string codMoneda;
+
+        public string CodMoneda
+        {
+            get { return codMoneda; }
+            set { codMoneda = value; }
+        }
+        private string fechaEntrega;
+
+        public string FechaEntrega
+        {
+            get { return fechaEntrega; }
+            set { fechaEntrega = value; }
+        }
+        private string lugarEntrega;
+
+        public string LugarEntrega
+        {
+            get { return lugarEntrega; }
+            set { lugarEntrega = value; }
+        }
+        private string observacion;
+
+        public string Observacion
+        {
+            get { return observacion; }
+            set { observacion = value; }
+        }
+        private string proveedor;
+
+        public string Proveedor
+        {
+            get { return proveedor; }
+            set { proveedor = value; }
+        }
 
         public frmOrdenCompra()
         {
@@ -35,20 +91,46 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             cboMoneda.DataSource = dtMoneda;
             cboMoneda.DisplayMember = "desMoneda";
             cboMoneda.ValueMember = "codMoneda";
+
+            if ("".Equals(codOrdenCompra))
+            {
+                cboMoneda.SelectedIndex = 0;
+
+                // Fecha Actual
+                dtpFechaEntrega.Value = DateTime.Today;
+
+                txtLugarEntrega.Text = "";
+                txtObservacion.Text = "";
+                txtRequerimiento.Text = "";
+                txtCotizacion.Text = "";
+                txtProveedor.Text = "";
+                txtSubTotal.Text = 0.ToString("0.00");
+                txtIgv.Text = IGV.ToString("0.00");
+                txtTotal.Text = 0.ToString("0.00");
+                btnGenerar.Text = "Generar";
+                btnBuscarRequerimiento.Enabled = true;
+                this.Text = "Generar Órden de Compra";
+            }
+            else {
+                cboMoneda.SelectedIndex = Int32.Parse(codMoneda);
+
+                // Fecha Actual
+                dtpFechaEntrega.Value = DateTime.Parse(fechaEntrega);
+
+                txtLugarEntrega.Text = lugarEntrega;
+                txtObservacion.Text = observacion;
+                txtRequerimiento.Text = codRequerimiento;
+                txtCotizacion.Text = codCotizacion;
+                txtProveedor.Text = proveedor;
+
+                btnGenerar.Text = "Modificar";
+                btnBuscarRequerimiento.Enabled = false;
+                this.Text = "Modificar Órden de Compra";
+                //txtSubTotal.Text = 0.ToString("0.00");
+                //txtIgv.Text = IGV.ToString("0.00");
+                //txtTotal.Text = 0.ToString("0.00");
+            }
             
-            cboMoneda.SelectedIndex = 0;
-
-            // Fecha Actual
-            dtpFechaEntrega.Value = DateTime.Today;
-
-            txtLugarEntrega.Text = "";
-            txtObservacion.Text = "";
-            txtRequerimiento.Text = "";
-            txtCotizacion.Text = "";
-            txtProveedor.Text = "";
-            txtSubTotal.Text = 0.ToString("0.00");
-            txtIgv.Text = IGV.ToString("0.00");
-            txtTotal.Text = 0.ToString("0.00");
         }
 
         private void btnBuscarRequerimiento_Click(object sender, EventArgs e)

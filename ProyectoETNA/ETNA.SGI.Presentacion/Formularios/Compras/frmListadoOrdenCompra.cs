@@ -74,9 +74,11 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void cargaGrilla(EOrdenCompra eOrdenCompra)
         {
-            DataTable dt = bOrdenCompra.ObtenerListadoOrdenCompra(eOrdenCompra);
+            DataTable dt = bOrdenCompra.ObtenerListadoOrdenCompra(eOrdenCompra);           
             dt.Columns["codEstado"].ColumnMapping = MappingType.Hidden;
-            dtGridOC.DataSource = dt;
+            //dt.Columns["codMoneda"].ColumnMapping = MappingType.Hidden;
+            //dt.Columns["observacion"].ColumnMapping = MappingType.Hidden;
+            dtGridOC.DataSource = dt;           
         }
         
         private void dtGridOC_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -84,7 +86,22 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             // Modificar
             if (e.ColumnIndex == 0) 
             {
-                MessageBox.Show("Modificar");
+                try
+                {
+                    int currentIndex = dtGridOC.CurrentRow.Index;
+                    Formularios.Compras.frmOrdenCompra frm = new frmOrdenCompra();
+
+                    frm.CodOrdenCompra = dtGridOC.Rows[currentIndex].Cells["codOrdenCompra"].Value.ToString();
+                    frm.CodRequerimiento = dtGridOC.Rows[currentIndex].Cells["codRequerimiento"].Value.ToString();
+                    frm.CodCotizacion = dtGridOC.Rows[currentIndex].Cells["codCotizacion"].Value.ToString();
+                    frm.Proveedor = dtGridOC.Rows[currentIndex].Cells["razonSocial"].Value.ToString();
+                    frm.FechaEntrega = dtGridOC.Rows[currentIndex].Cells["fechaEntrega"].Value.ToString();
+                    frm.LugarEntrega = dtGridOC.Rows[currentIndex].Cells["lugarEntrega"].Value.ToString();
+                    frm.CodMoneda = dtGridOC.Rows[currentIndex].Cells["codMoneda"].Value.ToString();
+                    frm.Observacion = dtGridOC.Rows[currentIndex].Cells["observacion"].Value.ToString();
+                    frm.ShowDialog();
+                }
+                catch { }
 
             }
 
@@ -115,6 +132,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
        private void btnGenerarOC_Click(object sender, EventArgs e)
         {
             Formularios.Compras.frmOrdenCompra frm = new frmOrdenCompra();
+            frm.CodOrdenCompra = "";
             frm.ShowDialog();
             cargaGrilla(new EOrdenCompra());
         }

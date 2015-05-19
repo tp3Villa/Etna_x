@@ -25,7 +25,7 @@ namespace ETNA.SGI.Data.Compras
 
         public DataTable DGetAllOrdenCompra(EOrdenCompra EOrdenCompra)
         {
-            string sql = "SELECT oc.codOrdenCompra,oc.codRequerimiento,oc.codCotizacion,p.razonSocial,oc.codEstado,e.desEstado,oc.fechaEntrega,oc.lugarEntrega " +
+            string sql = "SELECT oc.codOrdenCompra,oc.codRequerimiento,oc.codCotizacion,p.razonSocial,oc.codEstado,e.desEstado,oc.fechaEntrega,oc.lugarEntrega, oc.codMoneda, oc.observacion " +
                               "FROM OrdenCompra oc " +
                               "INNER JOIN Cotizacion c " +
                               "ON oc.codCotizacion = c.codCotizacion " +
