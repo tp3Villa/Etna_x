@@ -41,6 +41,7 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
+        //Obtener Listado Cotizacion
         public DataTable DGetAllCotizacion(ECotizacion eCotizacion)
         {
             string sql = "SELECT c.codCotizacion,c.codRequerimiento,p.razonSocial,c.descripcion,c.telefono, c.fechaExpiracion,e.desEstado " +
@@ -73,6 +74,7 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
+        //Obtener Cabecera Cotizaciòn por Id
         public DataTable DGetCotizacionById(ECotizacion eCotizacion)
         {
             string sql = "SELECT c.codCotizacion,c.codRequerimiento,c.codProveedor, p.razonSocial,c.descripcion,c.telefono, c.fechaExpiracion,e.desEstado " +
@@ -105,6 +107,31 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
         }
 
+
+        //Obtener Estado de Cotización por Id
+        public DataTable DGetEstadoCotizacionById(int codCotizacion)
+        {
+            string sql = "SELECT c.codEstado " +
+                              "FROM Cotizacion c " +
+                          "WHERE  ( @codCotizacion = 0 OR c.codCotizacion = @codCotizacion ) ";
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            // Create the SelectCommand.
+            SqlCommand command = new SqlCommand(sql, cn.Conectar);
+
+            // Add the parameters for the SelectCommand.
+            command.Parameters.Add("@codCotizacion", SqlDbType.Int);
+            command.Parameters["@codCotizacion"].Value = codCotizacion;
+
+            adapter.SelectCommand = command;
+
+            DataTable tabla = new DataTable();
+            adapter.Fill(tabla);
+            return tabla;
+        }
+
+        //Obtener detalle cotizacion por Id
         public DataTable DGetCotizacionDetalleById(ECotizacionDetalle eCotizacionDetalle)
         {
             string sql = "SELECT c.idProducto, p.descripcionProducto, c.cantidad,c.precioUnidad,c.descuento " +
@@ -131,6 +158,7 @@ namespace ETNA.SGI.Data.Compras
 
         }
 
+        //Obtener Detalle Cotizacion
         public DataTable DGetAllCotizacionDetalle(ECotizacionDetalle eCotizacionDetalle)
         {
             string sql = "SELECT c.codCotizacion,c.idProducto,c.cantidad,c.precioUnidad,c.descuento " +
@@ -156,16 +184,22 @@ namespace ETNA.SGI.Data.Compras
             return tabla;
                         
         }
-        public int DInsertCotizacion(ECotizacion eCotizacion)
+
+
+        //Insertar datos Cotizacion
+        public int DInsertCotizacion(ECotizacion eCotizacion,  List<ECotizacionDetalle> listaECotizacionDetalle)
         {
             int i = 0;
+
+            cn.Conectar.Open();
+            SqlTransaction transaction = cn.Conectar.BeginTransaction();
             try
             {
+                // Se registra la cabecera de la Cotizacion
                 SqlCommand command = new SqlCommand();
                 command.CommandType = CommandType.Text;
-
                 string sql = "INSERT INTO Cotizacion (codCotizacion, codRequerimiento ,codProveedor ,descripcion ,telefono ,fechaExpiracion ,codEstado, fechaRegistro, fechaActualizacion, usuarioRegistro, usuarioModificacion) " +
-               " VALUES (@codCotizacion, @codRequerimiento, @codProveedor, @descripcion, @telefono, @fechaExpiracion, @codEstado, @fechaRegistro, @fechaActualizacion, @usuarioRegistro, @usuarioActualizacion)";
+                " VALUES (@codCotizacion, @codRequerimiento, @codProveedor, @descripcion, @telefono, @fechaExpiracion, @codEstado, @fechaRegistro, @fechaActualizacion, @usuarioRegistro, @usuarioActualizacion)";
 
                 // Configurando los parametros
                 command.Parameters.Add("@codCotizacion", SqlDbType.Int);
@@ -182,51 +216,91 @@ namespace ETNA.SGI.Data.Compras
                 command.Parameters["@fechaExpiracion"].Value = eCotizacion.FechaExpiracion;
                 command.Parameters.Add("@codEstado", SqlDbType.Int);
                 command.Parameters["@codEstado"].Value = eCotizacion.CodEstado;
-
                 command.Parameters.Add("@fechaRegistro", SqlDbType.DateTime);
-                command.Parameters["@fechaRegistro"].Value = eCotizacion.FechaRegistro;                
+                command.Parameters["@fechaRegistro"].Value = eCotizacion.FechaRegistro;
                 command.Parameters.Add("@fechaActualizacion", SqlDbType.DateTime);
                 command.Parameters["@fechaActualizacion"].Value = eCotizacion.FechaActualizacion;
-
                 command.Parameters.Add("@usuarioRegistro", SqlDbType.VarChar);
                 command.Parameters["@usuarioRegistro"].Value = eCotizacion.UsuarioRegistro;
-
                 command.Parameters.Add("@usuarioActualizacion", SqlDbType.VarChar);
                 command.Parameters["@usuarioActualizacion"].Value = eCotizacion.UsuarioModificacion;
 
                 command.CommandText = sql;
                 command.Connection = cn.Conectar;
-                command.Connection.Open();
+                command.Transaction = transaction;
                 command.ExecuteNonQuery();
+
+                // Se obtiene el codigo de la cotizacion registrada
+                command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                sql = "SELECT Max(c.codCotizacion) AS corr FROM Cotizacion c";
+
+                command.CommandText = sql;
+                command.Connection = cn.Conectar;
+                command.Transaction = transaction;
+                int codCotizacion = (int)command.ExecuteScalar();
+
+                // Se registra el detalle de la Orden de Compra
+                foreach (ECotizacionDetalle eCotizacionDetalle in listaECotizacionDetalle)
+                {
+                    command = new SqlCommand();
+                    command.CommandType = CommandType.Text;
+                    sql = "INSERT INTO CotizacionDetalle " +
+                              "(codCotizacion,idProducto,cantidad,precioUnidad,descuento) " +
+                          "VALUES " +
+                              "(@codOrdenCompra,@idProducto,@cantidad,@precioUnidad,@descuento) ";
+
+                    command.Parameters.Add("@codOrdenCompra", SqlDbType.Int);
+                    command.Parameters["@codOrdenCompra"].Value = codCotizacion;
+                    command.Parameters.Add("@idProducto", SqlDbType.Int);
+                    command.Parameters["@idProducto"].Value = eCotizacionDetalle.IdProducto;
+                    command.Parameters.Add("@cantidad", SqlDbType.Int);
+                    command.Parameters["@cantidad"].Value = eCotizacionDetalle.Cantidad;
+                    command.Parameters.Add("@precioUnidad", SqlDbType.Decimal);
+                    command.Parameters["@precioUnidad"].Value = eCotizacionDetalle.PrecioUnidad;
+                    command.Parameters.Add("@descuento", SqlDbType.Decimal);
+                    command.Parameters["@descuento"].Value = eCotizacionDetalle.Descuento;
+
+                    command.CommandText = sql;
+                    command.Connection = cn.Conectar;
+                    command.Transaction = transaction;
+                    command.ExecuteNonQuery();
+                }
+
+                transaction.Commit();
                 i = 1;
-                command.Dispose();
-                //command.Connection.Dispose();
-                command.Connection.Close();
             }
-            catch { throw; }
+            catch
+            {
+                transaction.Rollback();
+            }
+            cn.Conectar.Close();
             return i;
-
-
         }
 
 
-        public int DUpdateCotizacion(ECotizacion eCotizacion)
+
+        //Actualizar datos Cotizacion
+        public int DUpdateCotizacion(ECotizacion eCotizacion, List<ECotizacionDetalle> listaECotizacionDetalle)
         {
             int i = 0;
+
+            cn.Conectar.Open();
+            SqlTransaction transaction = cn.Conectar.BeginTransaction();
             try
             {
+                // Se actualiza datos  la cabecera de Cotizacion
                 SqlCommand command = new SqlCommand();
                 command.CommandType = CommandType.Text;
+                string sql = "UPDATE Cotizacion " +
+               "SET descripcion = @descripcion " +
+                          ",fechaExpiracion = @fechaExpiracion " +
+                          ",telefono = @telefono " +
+                          ",fechaActualizacion = @fechaActualizacion " +
+                          ",usuarioModificacion = @usuarioModificacion " +
+                     " WHERE codCotizacion = @codCotizacion ";
+              
 
-                string sql = "UPDATE INTO Cotizacion" +
-                "SET descripcion = @descripcion " +
-                           ",fechaExpiracion = @fechaExpiracion" +
-                           ",telefono = @telefono'" +
-                           ",fechaActualizacion = @fechaActualizacion'" +
-                           ",usuarioModificacion = @usuarioActualizacion'" +
-                      "WHERE codCotizacion = @codCotizacion";
-
-      
                 // Configurando los parametros
                 command.Parameters.Add("@codCotizacion", SqlDbType.Int);
                 command.Parameters["@codCotizacion"].Value = eCotizacion.CodCotizacion;
@@ -238,51 +312,126 @@ namespace ETNA.SGI.Data.Compras
                 command.Parameters["@fechaExpiracion"].Value = eCotizacion.FechaExpiracion;
                 command.Parameters.Add("@fechaActualizacion", SqlDbType.DateTime);
                 command.Parameters["@fechaActualizacion"].Value = eCotizacion.FechaActualizacion;
-                command.Parameters.Add("@usuarioActualizacion", SqlDbType.VarChar);
-                command.Parameters["@usuarioActualizacion"].Value = eCotizacion.UsuarioModificacion;
+                command.Parameters.Add("@usuarioModificacion", SqlDbType.VarChar);
+                command.Parameters["@usuarioModificacion"].Value = eCotizacion.UsuarioModificacion;
 
                 command.CommandText = sql;
                 command.Connection = cn.Conectar;
-                command.Connection.Open();
+                command.Transaction = transaction;
                 command.ExecuteNonQuery();
+
+                 // Se actualiza el detalle de la cotizacion
+                foreach (ECotizacionDetalle eCotizacionDetalle in listaECotizacionDetalle)
+                {
+                    command = new SqlCommand();
+                    command.CommandType = CommandType.Text;
+                    sql = "UPDATE CotizacionDetalle " +
+                     "SET precioUnidad = @precioUnidad " +
+                         ",descuento = @descuento " +
+                    " WHERE codCotizacion = @codCotizacion AND idProducto = @idProducto ";
+
+                    command.Parameters.Add("@codCotizacion", SqlDbType.Int);
+                    command.Parameters["@codCotizacion"].Value = eCotizacion.CodCotizacion;
+                    command.Parameters.Add("@idProducto", SqlDbType.Int);
+                    command.Parameters["@idProducto"].Value = eCotizacionDetalle.IdProducto;
+                    command.Parameters.Add("@precioUnidad", SqlDbType.Decimal);
+                    command.Parameters["@precioUnidad"].Value = eCotizacionDetalle.PrecioUnidad;
+                    command.Parameters.Add("@descuento", SqlDbType.Decimal);
+                    command.Parameters["@descuento"].Value = eCotizacionDetalle.Descuento;
+
+                    command.CommandText = sql;
+                    command.Connection = cn.Conectar;
+                    command.Transaction = transaction;
+                    command.ExecuteNonQuery();
+                }
+
+                transaction.Commit();
                 i = 1;
-                command.Dispose();
-                //command.Connection.Dispose();
-                command.Connection.Close();
             }
-            catch { throw; }
+            catch
+            {
+                transaction.Rollback();
+            }
+            cn.Conectar.Close();
             return i;
-
-
         }
 
-        //public int DUpdateCotizacion(ECotizacion ECotizacion)
-        //{
-        //    int i = 0;
-        //    try
-        //    {
-        //        SqlCommand cmd = new SqlCommand();
-        //        cmd.CommandType = CommandType.Text;
+        //Eliminar datos Cotizacion
+        public int DDeleteCotizacion(int codCotizacion)
+        {
+            int i = 0;
 
-        //        string sql = "UPDATE Cotizacion" +
-        //                     "SET descripcion = '" + ECotizacion.Descripcion + "'" +
-        //                      ",fechaExpiracion = '" + ECotizacion.FechaExpiracion + "'" +
-        //                      ",telefono = " + ECotizacion.Telefono + "'" +
-        //                 "WHERE codCotizacion = " + ECotizacion.CodCotizacion;
+            cn.Conectar.Open();
+            SqlTransaction transaction = cn.Conectar.BeginTransaction();
+            try
+            {
+                // Se actualiza datos  la cabecera de Cotizacion
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.Text;
+                string sql = "DELETE FROM Cotizacion " +
+                             "WHERE codCotizacion = @codCotizacion";
 
-        //        cmd.CommandText = sql;
-        //        cmd.Connection = cn.Conectar;
-        //        cmd.Connection.Open();
-        //        cmd.ExecuteNonQuery();
-        //        i = 1;
-        //        cmd.Dispose();
-        //        // cn.Conectar.Dispose();
-        //        cn.Conectar.Close();
-        //    }
-        //    catch { throw; }
-        //    return i;
-        //}
 
+                // Configurando los parametros
+                command.Parameters.Add("@codCotizacion", SqlDbType.Int);
+                command.Parameters["@codCotizacion"].Value = codCotizacion;
+              
+                command.CommandText = sql;
+                command.Connection = cn.Conectar;
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+
+                // Se Elimina el detalle de la Cotizacion
+
+                    command = new SqlCommand();
+                    command.CommandType = CommandType.Text;
+                    sql = "DELETE FROM CotizacionDetalle " +
+                    "WHERE codCotizacion = @codCotizacion";
+
+                    command.Parameters.Add("@CodCotizacion", SqlDbType.Int);
+                    command.Parameters["@CodCotizacion"].Value = codCotizacion;
+                 
+                    command.CommandText = sql;
+                    command.Connection = cn.Conectar;
+                    command.Transaction = transaction;
+                    command.ExecuteNonQuery();
+              
+
+                transaction.Commit();
+                i = 1;
+            }
+            catch
+            {
+                transaction.Rollback();
+            }
+            cn.Conectar.Close();
+            return i;
+        }
+        
+
+
+        /* Aprobación Cotización */
+        public DataTable DGetCotizacionAprobacion()
+        {
+            //string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion from Cotizacion a INNER JOIN Proveedor b where a.codEstado = 4 and b.codProveedor = a.codProveedor and codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
+            string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion , b.razonSocial razonSocial from Cotizacion a , proveedor b where b.codProveedor = a.codProveedor and a.codEstado =@codEstado and a.codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            // Create the SelectCommand.
+            SqlCommand command = new SqlCommand(sql, cn.Conectar);
+
+            // Add the parameters for the SelectCommand.
+            command.Parameters.Add("@codEstado", SqlDbType.Int);
+            command.Parameters["@codEstado"].Value = 4;
+            adapter.SelectCommand = command;
+
+            DataTable tabla = new DataTable();
+            adapter.Fill(tabla);
+            return tabla;
+        }
+
+        //Actualiza estado cotizacion
         public int DUpdateEstadoCotizacion(int codCotizacion, int codEstado)
         {
             int i = 0;
@@ -305,127 +454,6 @@ namespace ETNA.SGI.Data.Compras
             return i;
         }
 
-        public int DDeleteCotizacion(int codCotizacion)
-        {
-            int i = 0;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-
-                string sql = "DELETE Cotizacion WHERE codCotizacion = " + codCotizacion;
-
-                cmd.CommandText = sql;
-                cmd.Connection = cn.Conectar;
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-                i = 1;
-                cmd.Dispose();
-                //  cn.Conectar.Dispose();
-                cn.Conectar.Close();
-            }
-            catch { throw; }
-            return i;
-        }
-
-
-        public int DInsertCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
-        {
-            int i = 0;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-
-                string sql = "INSERT INTO CotizacionDetalle (codCotizacion, idProducto ,cantidad  ,precioUnidad, descuento) " +
-                " VALUES (" + ECotizacionDetalle.CodCotizacion + ", '" + ECotizacionDetalle.IdProducto + "', '" + ECotizacionDetalle.Cantidad + "', " + "', '" + ECotizacionDetalle.Descuento + "', " +
-                " " + ECotizacionDetalle.PrecioUnidad + "')";
-
-
-                cmd.CommandText = sql;
-                cmd.Connection = cn.Conectar;
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-                i = 1;
-                cmd.Dispose();
-                // cn.Conectar.Dispose();
-                cn.Conectar.Close();
-            }
-            catch { throw; }
-            return i;
-        }
-
-        public int DUpdateCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
-        {
-            int i = 0;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-
-                string sql = "UPDATE CotizacionDetalle" +
-                             "SET precioUnidad = '" + ECotizacionDetalle.PrecioUnidad + "'" +
-                              ",descuento = '" + ECotizacionDetalle.Descuento + "'" +
-                         "WHERE codCotizacion = '" + ECotizacionDetalle.CodCotizacion + "' AND " +
-                         " idProducto = '" + ECotizacionDetalle.IdProducto + "' ";
-
-                cmd.CommandText = sql;
-                cmd.Connection = cn.Conectar;
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-                i = 1;
-                cmd.Dispose();
-                //cn.Conectar.Dispose();
-                cn.Conectar.Close();
-            }
-            catch { throw; }
-            return i;
-        }
-
-
-        public int DDeleteCotizacionDetalle(int codCotizacion, int idProducto)
-        {
-            int i = 0;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-
-                string sql = "DELETE CotizacionDetalle WHERE codCotizacion = '" + codCotizacion + "' AND idProducto ='" + idProducto + "'";
-
-                cmd.CommandText = sql;
-                cmd.Connection = cn.Conectar;
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-                i = 1;
-                cmd.Dispose();
-                //cn.Conectar.Dispose();
-                cn.Conectar.Close();
-            }
-            catch { throw; }
-            return i;
-        }
-
-        /* Aprobación Cotización */
-        public DataTable DGetCotizacionAprobacion()
-        {
-            //string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion from Cotizacion a INNER JOIN Proveedor b where a.codEstado = 4 and b.codProveedor = a.codProveedor and codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
-            string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion , b.razonSocial razonSocial from Cotizacion a , proveedor b where b.codProveedor = a.codProveedor and a.codEstado =@codEstado and a.codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-
-            // Create the SelectCommand.
-            SqlCommand command = new SqlCommand(sql, cn.Conectar);
-
-            // Add the parameters for the SelectCommand.
-            command.Parameters.Add("@codEstado", SqlDbType.Int);
-            command.Parameters["@codEstado"].Value = 4;
-            adapter.SelectCommand = command;
-
-            DataTable tabla = new DataTable();
-            adapter.Fill(tabla);
-            return tabla;
-        }
 
         public DataTable DGetCotizacionAprobacionWithParameters(DateTime dtFrom , DateTime dtTo, int codRequerimiento , int codProveedor)
         {
