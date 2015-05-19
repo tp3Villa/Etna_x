@@ -62,6 +62,7 @@
             // txtRazonSocial
             // 
             this.txtRazonSocial.Location = new System.Drawing.Point(99, 23);
+            this.txtRazonSocial.MaxLength = 30;
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(416, 20);
             this.txtRazonSocial.TabIndex = 0;
@@ -88,6 +89,7 @@
             // txtDire
             // 
             this.txtDire.Location = new System.Drawing.Point(99, 108);
+            this.txtDire.MaxLength = 100;
             this.txtDire.Name = "txtDire";
             this.txtDire.Size = new System.Drawing.Size(416, 20);
             this.txtDire.TabIndex = 4;
@@ -104,6 +106,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(99, 139);
+            this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(202, 20);
             this.txtEmail.TabIndex = 5;
@@ -111,6 +114,7 @@
             // txtObs
             // 
             this.txtObs.Location = new System.Drawing.Point(99, 197);
+            this.txtObs.MaxLength = 100;
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(416, 51);
