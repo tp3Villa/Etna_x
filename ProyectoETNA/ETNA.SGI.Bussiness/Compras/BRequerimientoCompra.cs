@@ -28,6 +28,12 @@ namespace ETNA.SGI.Bussiness.Compras
             return dRequerimientoCompra.DGetAllRequerimientoCompraCotizacion(eRequerimientoCompra);
         }
 
+        //Listado Requerimientos frmCotizacion
+        public DataTable ObtenerListadoRequerimientoCompraCotizacion_Final(ERequerimientoCompra eRequerimientoCompra)
+        {
+            return dRequerimientoCompra.DGetAllRequerimientoCompraCotizacion_Final(eRequerimientoCompra);
+        }
+
         public DataTable ObtenerListadoRequerimientoCompraOrdenCompra(ERequerimientoCompra eRequerimientoCompra)
         {
             return dRequerimientoCompra.DGetAllRequerimientoCompraOrdenCompra(eRequerimientoCompra);
