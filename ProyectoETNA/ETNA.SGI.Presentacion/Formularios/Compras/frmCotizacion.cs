@@ -262,6 +262,20 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
         }
 
+        private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+           
+            /* Se valida el ingreso de solo valores de tipo double */
+                double i;
+
+                if (!Double.TryParse(Convert.ToString(e.FormattedValue), out i))
+                {
+                    e.Cancel = true;
+                    MessageBox.Show("Formato incorrecto.", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+        }
+
 
    
     }
