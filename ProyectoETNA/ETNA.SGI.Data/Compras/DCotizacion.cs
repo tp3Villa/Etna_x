@@ -26,7 +26,7 @@ namespace ETNA.SGI.Data.Compras
 
         public DataTable DCorrelativoCotizacion()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT max(codCotizacion)+1 AS corr FROM Cotizacion", cn.Conectar);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT isnull(max(codCotizacion),0)+1 AS corr FROM Cotizacion", cn.Conectar);
             DataTable tabla = new DataTable();
             da.Fill(tabla);
             return tabla;
@@ -207,7 +207,7 @@ namespace ETNA.SGI.Data.Compras
                 command.Parameters.Add("@codRequerimiento", SqlDbType.Int);
                 command.Parameters["@codRequerimiento"].Value = eCotizacion.CodRequerimiento;
                 command.Parameters.Add("@codProveedor", SqlDbType.Int);
-                command.Parameters["@codProveedor"].Value = eCotizacion.CodRequerimiento;
+                command.Parameters["@codProveedor"].Value = eCotizacion.CodProveedor;
                 command.Parameters.Add("@descripcion", SqlDbType.VarChar);
                 command.Parameters["@descripcion"].Value = eCotizacion.Descripcion;
                 command.Parameters.Add("@telefono", SqlDbType.Int);
@@ -408,7 +408,7 @@ namespace ETNA.SGI.Data.Compras
         public DataTable DGetCotizacionAprobacion()
         {
             //string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion from Cotizacion a INNER JOIN Proveedor b where a.codEstado = 4 and b.codProveedor = a.codProveedor and codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
-            string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion , b.razonSocial razonSocial from Cotizacion a , proveedor b where b.codProveedor = a.codProveedor and a.codEstado =@codEstado and a.codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
+            string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion , b.razonSocial razonSocial from Cotizacion a , proveedor b where b.codProveedor = a.codProveedor and a.codEstado =@codEstado and a.codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento ) and a.codRequerimiento not in ( select d.codRequerimiento  from Cotizacion d   where d.codEstado = 2   and d.codRequerimiento = a.codRequerimiento  )";
 
             SqlDataAdapter adapter = new SqlDataAdapter();
 
@@ -452,7 +452,7 @@ namespace ETNA.SGI.Data.Compras
         public DataTable DGetCotizacionAprobacionWithParameters(DateTime dtFrom , DateTime dtTo, int codRequerimiento , int codProveedor)
         {
             //string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion from Cotizacion a INNER JOIN Proveedor b where a.codEstado = 4 and b.codProveedor = a.codProveedor and codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento )";
-            string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion , b.razonSocial razonSocial from Cotizacion a , proveedor b where b.codProveedor = a.codProveedor and a.codEstado =@codEstado and a.codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento ) and fechaExpiracion between @dtFrom and @dtTo";
+            string sql = "select codCotizacion ,descripcion , codRequerimiento , fechaExpiracion , b.razonSocial razonSocial from Cotizacion a , proveedor b where b.codProveedor = a.codProveedor and a.codEstado =@codEstado and a.codCotizacion not in (select c.codCotizacion from OrdenCompra c where c.codCotizacion = a.codCotizacion and c.codRequerimiento = a.codRequerimiento ) and a.codRequerimiento not in ( select d.codRequerimiento  from Cotizacion d  where d.codEstado = 2  and d.codRequerimiento = a.codRequerimiento ) and fechaExpiracion between @dtFrom and @dtTo";
 
             if (codRequerimiento > 0) {
                 sql = sql + " and a.codRequerimiento =" + codRequerimiento;
