@@ -106,5 +106,13 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
             txtSolicitud.Text = frm.vCodigoReq;
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtProveedor.Text = "";
+            txtSolicitud.Text = "";
+            dtExpiracionFrom.Value = DateTime.Now;
+            dtExpiracionTo.Value = DateTime.Now;
+        }
     }
 }

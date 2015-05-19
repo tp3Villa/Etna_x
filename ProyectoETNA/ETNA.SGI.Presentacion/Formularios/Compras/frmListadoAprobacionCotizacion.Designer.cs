@@ -52,6 +52,8 @@
             this.Aprobar = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,6 +87,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLimpiar);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.btnSolicitud);
             this.groupBox1.Controls.Add(this.btnProveedor);
             this.groupBox1.Controls.Add(this.lblSolicitud);
@@ -92,7 +97,6 @@
             this.groupBox1.Controls.Add(this.lblProveedor);
             this.groupBox1.Controls.Add(this.txtProveedor);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Navy;
             this.groupBox1.Location = new System.Drawing.Point(12, 67);
@@ -206,9 +210,9 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Buscar;
-            this.btnBuscar.Location = new System.Drawing.Point(442, 27);
+            this.btnBuscar.Location = new System.Drawing.Point(476, 34);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(55, 57);
+            this.btnBuscar.Size = new System.Drawing.Size(55, 46);
             this.btnBuscar.TabIndex = 103;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -299,6 +303,27 @@
             this.label11.Text = "Aprobación de Cotización";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Image = global::ETNA.SGI.Presentacion.Properties.Resources.Borrar;
+            this.btnLimpiar.Location = new System.Drawing.Point(537, 34);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(55, 47);
+            this.btnLimpiar.TabIndex = 111;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Location = new System.Drawing.Point(446, 19);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(178, 73);
+            this.groupBox4.TabIndex = 112;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Acciones";
+            // 
             // frmListadoAprobacionCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,5 +373,7 @@
         private System.Windows.Forms.TextBox txtSolicitud;
         private System.Windows.Forms.Button btnSolicitud;
         private System.Windows.Forms.Button btnProveedor;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
