@@ -47,6 +47,14 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
                 DataTable tblDetalle2 = new DataTable();
 
+
+                for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
+                {
+                    dataGridView1.Rows[i].Cells["precioUnidad"].Value = 0;
+                    dataGridView1.Rows[i].Cells["descuento"].Value = 0;
+
+                }
+
                 cotizacionDetalle.CodCotizacion = icodCotizacion;
                 tblDetalle2 = bCotizacion.ObtenerCotizacionDetallePorId(cotizacionDetalle);
                 dataGridView1.DataSource = tblDetalle2;
@@ -65,6 +73,25 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
                 txtTotal.Text = Convert.ToString(dAmount);
 
+                DataTable tblDetalle3 = new DataTable();
+                 tblDetalle3 = bCotizacion.ObtenerEstadoCotizacionPorId(icodCotizacion);
+
+                 string estadoCotizacion = tblDetalle3.Rows[0][0].ToString();
+
+                //Si esta aprobada no habilitamos nada
+                if (estadoCotizacion == "2") 
+                {
+                    txtTelefono.Enabled = false;
+                    dtExpiracion.Enabled = false;
+                    btnGrabar.Enabled = false;
+                    for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
+                    {
+                       dataGridView1.Rows[i].Cells["precioUnidad"].ReadOnly = true;
+                       dataGridView1.Rows[i].Cells["descuento"].ReadOnly = true;
+                    }
+
+                }
+
             }
             else
             {
@@ -81,10 +108,23 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseas Cancelar la Transaccion", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                this.Close();
-            }
+                 DataTable tblDetalle3 = new DataTable();
+                 tblDetalle3 = bCotizacion.ObtenerEstadoCotizacionPorId(icodCotizacion);
+
+                 string estadoCotizacion = tblDetalle3.Rows[0][0].ToString();
+
+                //Si esta aprobada no mostramos nada
+                if (estadoCotizacion == "2") 
+                {
+                    this.Close();
+                }
+                else
+                 {
+                    if (MessageBox.Show("Deseas Cancelar la Transaccion", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        this.Close();
+                    }
+                 }
         }
 
         private void btnFindReq_Click(object sender, EventArgs e)
@@ -94,15 +134,18 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
             txtRequerimiento.Text = frm.vCodigoReq;
 
-            DataTable tblDetalle = new DataTable();
-            tblDetalle = bRequerimientoCompra.ObtenerRequerimientoDetalleCompraCotizacion(txtRequerimiento.Text);
-            dataGridView1.DataSource = tblDetalle;
+            if  (txtRequerimiento.Text != "")
+            {
+                DataTable tblDetalle = new DataTable();
+                tblDetalle = bRequerimientoCompra.ObtenerRequerimientoDetalleCompraCotizacion(txtRequerimiento.Text);
+                dataGridView1.DataSource = tblDetalle;
 
-            for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
-            {                    
-                    dataGridView1.Rows[i].Cells["precioUnidad"].Value=0;
-                    dataGridView1.Rows[i].Cells["descuento"].Value=0;
+                for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
+                {                    
+                        dataGridView1.Rows[i].Cells["precioUnidad"].Value=0;
+                        dataGridView1.Rows[i].Cells["descuento"].Value=0;
                 
+                }
             }
             
         }
@@ -162,6 +205,21 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 txtTelefono.Focus();
                 this.Cursor = Cursors.Default;
                 return; 
+            }
+
+            int precioUnidadValida;
+            int descuentoValida;
+            for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
+            {
+              
+                precioUnidadValida = Convert.ToInt32(dataGridView1.Rows[i].Cells["precioUnidad"].Value.ToString());
+                descuentoValida = Convert.ToInt32(dataGridView1.Rows[i].Cells["descuento"].Value.ToString());
+
+                if (precioUnidadValida <= 0  ) 
+                 {
+                MessageBox.Show("Ingresar un precio mayor a cero", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 return;
+                }
             }
            
             if (MessageBox.Show("Se procederá a grabar la cotización", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
