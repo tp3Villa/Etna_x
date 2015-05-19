@@ -41,11 +41,29 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 txtDescripcion.Text = tblDetalle.Rows[0]["descripcion"].ToString();
                 dtExpiracion.Text = tblDetalle.Rows[0]["fechaExpiracion"].ToString();
 
+                btnFindProv.Enabled = false;
+                btnFindReq.Enabled = false;
+                txtDescripcion.Enabled = false;
+
                 DataTable tblDetalle2 = new DataTable();
 
                 cotizacionDetalle.CodCotizacion = icodCotizacion;
                 tblDetalle2 = bCotizacion.ObtenerCotizacionDetallePorId(cotizacionDetalle);
                 dataGridView1.DataSource = tblDetalle2;
+
+                double dAmount = 0;
+                double dActualAmount = 0;
+
+                for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
+                {
+                    dActualAmount =
+                       (Convert.ToDouble(dataGridView1.Rows[i].Cells["cantidad"].Value.ToString()) *
+                        Convert.ToDouble(dataGridView1.Rows[i].Cells["precioUnidad"].Value.ToString())) -
+                        Convert.ToDouble(dataGridView1.Rows[i].Cells["descuento"].Value.ToString());
+                    dAmount = dAmount + dActualAmount;
+                }
+
+                txtTotal.Text = Convert.ToString(dAmount);
 
             }
             else
@@ -54,6 +72,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                txtProveedor.Text = "";
                txtTelefono.Text = "";
                txtDescripcion.Text = "";
+               btnFindProv.Enabled = true;
+               btnFindReq.Enabled = true;
+               txtDescripcion.Enabled= true;
+               dtExpiracion.Value = DateTime.Today;
             }
         }
 
@@ -77,8 +99,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             dataGridView1.DataSource = tblDetalle;
 
             for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
-            {
-                    
+            {                    
                     dataGridView1.Rows[i].Cells["precioUnidad"].Value=0;
                     dataGridView1.Rows[i].Cells["descuento"].Value=0;
                 
@@ -101,28 +122,6 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
         }
 
-        private void dataGridView1_KeyPress(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                int p = dataGridView1.CurrentRow.Index;
-
-     //           frm.icodCotizacion = Convert.ToInt32(dataGridView1.Rows[p].Cells["codCotizacion"].Value);
-     
-
-
-                for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
-                {
-       //             dr = dtOrdenCompra.NewRow();
-         //           dr["codigo"] = dataGridView1.Rows[i]["descuento"].value;
-               
-                }
-
-            }
-            catch { }
-
-
-        }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
@@ -131,15 +130,44 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             string fecha;
             FechaSis = DateTime.Now;
 
-            if (txtRequerimiento.Text == "") { MessageBox.Show("Seleccionar Requerimiento", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); btnFindReq.Focus(); this.Cursor = Cursors.Default; return; }
-            if (txtProveedor.Text == "") { MessageBox.Show("Seleccionar Proveedor", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); btnFindProv.Focus(); this.Cursor = Cursors.Default; return; }
-            if (txtTelefono.Text == "") { MessageBox.Show("Ingresar Teléfono", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); txtTelefono.Focus(); this.Cursor = Cursors.Default; return; }
+            if (dtExpiracion.Value <= DateTime.Today)
+            {
+    
+                MessageBox.Show("Debe seleccionar una fecha de expiracìón mayor a la actual", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtExpiracion.Focus();
+                this.Cursor = Cursors.Default;
+                return; 
+            }
+
+
+            if (txtRequerimiento.Text == "") 
+            { 
+                MessageBox.Show("Seleccionar Requerimiento", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                btnFindReq.Focus(); 
+                this.Cursor = Cursors.Default; 
+                return; 
+            }
+
+            if (txtProveedor.Text == "") 
+            { 
+                MessageBox.Show("Seleccionar Proveedor", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnFindProv.Focus(); 
+                this.Cursor = Cursors.Default;
+                return; 
+            }
+
+            if (txtTelefono.Text == "") 
+            {
+                MessageBox.Show("Ingresar Teléfono", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTelefono.Focus();
+                this.Cursor = Cursors.Default;
+                return; 
+            }
            
             if (MessageBox.Show("Se procederá a grabar la cotización", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
 
                 string corr = "";
-
                 if (sOpcion == "UPD")
                 {
                     corr = Convert.ToString(icodCotizacion);
@@ -147,8 +175,6 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 else
                 {
                     corr = bCotizacion.CorrelativoCotizacion().Rows[0][0].ToString();
-
-                   // MessageBox.Show(corr);
                 }
                 fecha = FechaSis.ToShortDateString().Substring(6, 4) + FechaSis.ToShortDateString().Substring(3, 2) + FechaSis.ToShortDateString().Substring(0, 2);
 
@@ -160,28 +186,44 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 cotizacion.Telefono = Convert.ToInt32(txtTelefono.Text.Trim());
                 cotizacion.FechaExpiracion = Convert.ToDateTime(dtExpiracion.Text.Trim());
                 cotizacion.CodEstado = 4;
+
+                // Datos de detalle
+                DataTable dtCurrent = (DataTable)(dataGridView1.DataSource);
+
+                ECotizacionDetalle eCotizacionDetalle;
+                List<ECotizacionDetalle> listaECotizacionDetalle = new List<ECotizacionDetalle>();
        
-               
+                for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
+                {
+                    eCotizacionDetalle = new ECotizacionDetalle();
+                    eCotizacionDetalle.IdProducto = Int32.Parse(dataGridView1.Rows[i].Cells["idProducto"].Value.ToString());
+                    eCotizacionDetalle.Cantidad = Int32.Parse(dataGridView1.Rows[i].Cells["cantidad"].Value.ToString());
+                    eCotizacionDetalle.PrecioUnidad = Double.Parse(dataGridView1.Rows[i].Cells["precioUnidad"].Value.ToString());
+                    eCotizacionDetalle.Descuento = Double.Parse(dataGridView1.Rows[i].Cells["descuento"].Value.ToString());
+                    listaECotizacionDetalle.Add(eCotizacionDetalle);
+                }
+
+
                 if (sOpcion == "UPD")
                 {
-                    cotizacion.FechaActualizacion = FechaSis;
-                    cotizacion.UsuarioModificacion = Program.Usuario;
+                    cotizacion.FechaActualizacion = DateTime.Today;
+                    cotizacion.UsuarioModificacion = Program.Usuario.Trim();
                 }
                 else
                 {
-                    cotizacion.FechaRegistro = FechaSis;
-                    cotizacion.UsuarioRegistro = Program.Usuario;
-                    cotizacion.FechaActualizacion = FechaSis;
-                    cotizacion.UsuarioModificacion = Program.Usuario;
+                    cotizacion.FechaRegistro = DateTime.Today;
+                    cotizacion.UsuarioRegistro = Program.Usuario.Trim();
+                    cotizacion.FechaActualizacion = DateTime.Today;
+                    cotizacion.UsuarioModificacion = Program.Usuario.Trim();
                 }
                 if (sOpcion == "UPD")
                 {
-                    bCotizacion.ActualizarCotizacion(cotizacion);
+                    int result = bCotizacion.ActualizarCotizacion(cotizacion, listaECotizacionDetalle);
                     MessageBox.Show("Cotizacion actualizada correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    int result = bCotizacion.InsertarCotizacion(cotizacion);
+                    int result = bCotizacion.RegistrarCotizacion(cotizacion, listaECotizacionDetalle);
                     MessageBox.Show("Cotizacion registrada correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -214,8 +256,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
-            
+
+            /* Validamos sólo el ingreso de nùmeros */
+            const char Delete = (char)8;
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
         }
 
 
