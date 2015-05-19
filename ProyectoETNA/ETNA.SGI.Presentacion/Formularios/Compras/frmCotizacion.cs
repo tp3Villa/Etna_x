@@ -130,6 +130,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         private void btnFindReq_Click(object sender, EventArgs e)
         {
             Compras.frmListadoReqCotizacion frm = new frmListadoReqCotizacion();
+            frm.sOpcion = "COTIZ";
             frm.ShowDialog();
 
             txtRequerimiento.Text = frm.vCodigoReq;

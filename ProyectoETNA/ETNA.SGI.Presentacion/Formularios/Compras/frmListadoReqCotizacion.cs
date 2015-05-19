@@ -15,6 +15,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
     {
 
         public string vCodigoReq;
+        public string sOpcion;
 
         private BRequerimientoCompra bRequerimientoCompra = BRequerimientoCompra.getInstance();
         private BCategoria bCategoria = BCategoria.getInstance();
@@ -50,9 +51,20 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             txtRequerimiento.Text = "";
 
             // Carga de Grilla
+            if (sOpcion== "COTIZ") {
+                DataTable tblDetalle = new DataTable();
+                tblDetalle = bRequerimientoCompra.ObtenerListadoRequerimientoCompraCotizacion_Final(new ERequerimientoCompra());
+                dataGridView1.DataSource = tblDetalle;
+
+            }
+
+            if (sOpcion == "APR")
+            {
             DataTable tblDetalle = new DataTable();
             tblDetalle = bRequerimientoCompra.ObtenerListadoRequerimientoCompraCotizacion(new ERequerimientoCompra());
             dataGridView1.DataSource = tblDetalle;
+
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -66,9 +78,21 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
             eRequerimientoCompra.CodCategoria = (int)cboCategoria.SelectedValue;
 
-            DataTable tblDetalle = new DataTable();
-            tblDetalle = bRequerimientoCompra.ObtenerListadoRequerimientoCompraCotizacion(eRequerimientoCompra);
-            dataGridView1.DataSource = tblDetalle;
+            if (sOpcion == "COTIZ")
+            {
+                DataTable tblDetalle = new DataTable();
+                tblDetalle = bRequerimientoCompra.ObtenerListadoRequerimientoCompraCotizacion_Final(eRequerimientoCompra);
+                dataGridView1.DataSource = tblDetalle;
+
+            }
+
+            if (sOpcion == "APR")
+            {
+                DataTable tblDetalle = new DataTable();
+                tblDetalle = bRequerimientoCompra.ObtenerListadoRequerimientoCompraCotizacion(eRequerimientoCompra);
+                dataGridView1.DataSource = tblDetalle;
+
+            }
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
