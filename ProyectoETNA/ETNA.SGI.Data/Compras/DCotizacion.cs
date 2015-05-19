@@ -26,7 +26,7 @@ namespace ETNA.SGI.Data.Compras
 
         public DataTable DCorrelativoCotizacion()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT count(*)+1 AS corr FROM Cotizacion", cn.Conectar);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT max(codCotizacion)+1 AS corr FROM Cotizacion", cn.Conectar);
             DataTable tabla = new DataTable();
             da.Fill(tabla);
             return tabla;
@@ -231,14 +231,8 @@ namespace ETNA.SGI.Data.Compras
                 command.ExecuteNonQuery();
 
                 // Se obtiene el codigo de la cotizacion registrada
-                command = new SqlCommand();
-                command.CommandType = CommandType.Text;
-                sql = "SELECT Max(c.codCotizacion) AS corr FROM Cotizacion c";
 
-                command.CommandText = sql;
-                command.Connection = cn.Conectar;
-                command.Transaction = transaction;
-                int codCotizacion = (int)command.ExecuteScalar();
+                int codCotizacion = eCotizacion.CodCotizacion;
 
                 // Se registra el detalle de la Orden de Compra
                 foreach (ECotizacionDetalle eCotizacionDetalle in listaECotizacionDetalle)

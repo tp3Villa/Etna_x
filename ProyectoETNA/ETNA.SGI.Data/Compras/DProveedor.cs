@@ -25,7 +25,7 @@ namespace ETNA.SGI.Data.Compras
 
         public DataTable DCorrelativoProveedor()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT count(*)+1 AS corr FROM Proveedor", cn.Conectar);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT max(codProveedor)+1 AS corr FROM Proveedor", cn.Conectar);
             DataTable tabla = new DataTable();
             da.Fill(tabla);
             return tabla;
