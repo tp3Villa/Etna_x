@@ -33,7 +33,7 @@ namespace ETNA.SGI.Bussiness.Compras
             return dCotizacion.DCorrelativoCotizacion();
         }
 
-
+        // Listados de Cotizacion -- frmListadoCotizacion Load
         public DataTable ObtenerListadoCotizacion(ECotizacion ECotizacion)
         {
             return dCotizacion.DGetAllCotizacion(ECotizacion);
@@ -45,57 +45,50 @@ namespace ETNA.SGI.Bussiness.Compras
             return dCotizacion.DGetCotizacionById(eCotizacion);
         }
 
+          //Obtener Estado de Cotización por Id
+        public DataTable ObtenerEstadoCotizacionPorId(int codCotizacion)
+        {
+            return dCotizacion.DGetEstadoCotizacionById(codCotizacion);
+        }
+
 
         public DataTable ObtenerCotizacionDetallePorId(ECotizacionDetalle eCotizacionDetalle)
         {
             return dCotizacion.DGetCotizacionDetalleById(eCotizacionDetalle);
         }
-
-
-        
+                
 
         public DataTable ObtenerCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
         {
             return dCotizacion.DGetAllCotizacionDetalle(ECotizacionDetalle);
         }
 
-        public int InsertarCotizacion(ECotizacion ECotizacion)
+        // Registrar Cotizacion
+        public int RegistrarCotizacion(ECotizacion eCotizacion, List<ECotizacionDetalle> listaECotizacionDetalle)
         {
-            return dCotizacion.DInsertCotizacion(ECotizacion);
-        }
-
-        public int ActualizarCotizacion(ECotizacion ECotizacion)
-        {
-            return dCotizacion.DUpdateCotizacion(ECotizacion);
+            return dCotizacion.DInsertCotizacion(eCotizacion, listaECotizacionDetalle);
         }
 
 
+        // Actualizar Cotizacion
+        public int ActualizarCotizacion(ECotizacion eCotizacion, List<ECotizacionDetalle> listaECotizacionDetalle)
+        {
+            return dCotizacion.DUpdateCotizacion(eCotizacion, listaECotizacionDetalle);
+        }
+
+        //Actualiza estado cotizacion
         public int ActualizarEstadoCotizacion(int CodCotizacion, int CodEstado)
         {
             return dCotizacion.DUpdateEstadoCotizacion(CodCotizacion, CodEstado);
         }
 
-        public int EliminarCotizacion(int CodCotizacion)
+        //Eliminar Cotizacion
+        public int EliminarCotizacion(int codCotizacion)
         {
-            return dCotizacion.DDeleteCotizacion(CodCotizacion);
+            return dCotizacion.DDeleteCotizacion(codCotizacion);
         }
 
-        public int InsertarCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
-        {
-            return dCotizacion.DInsertCotizacionDetalle(ECotizacionDetalle);
-        }
-
-        public int ActualizarCotizacionDetalle(ECotizacionDetalle ECotizacionDetalle)
-        {
-            return dCotizacion.DUpdateCotizacionDetalle(ECotizacionDetalle);
-        }
-
-
-        public int EliminarCotizacionDetalle(int CodCotizacion, int IdProducto)
-        {
-            return dCotizacion.DDeleteCotizacionDetalle(CodCotizacion, IdProducto);
-        }
-
+      
          public DataTable DGetCotizacionAprobacion()
         {
             return dCotizacion.DGetCotizacionAprobacion();
