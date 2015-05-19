@@ -102,7 +102,6 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
         private void btnSolicitud_Click(object sender, EventArgs e)
         {
             Compras.frmListadoReqCotizacion frm = new frmListadoReqCotizacion();
-            frm.sOpcion = "APR";
             frm.ShowDialog();
 
             txtSolicitud.Text = frm.vCodigoReq;

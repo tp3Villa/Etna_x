@@ -120,17 +120,17 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 }
                 else
                  {
-                    if (MessageBox.Show("Deseas Cancelar la Transaccion", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                    {
-                        this.Close();
-                    }
+                     if (MessageBox.Show("Se procederá a cerrar la ventana, desea continuar?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                     {
+                         this.Close();
+                     }
                  }
         }
 
         private void btnFindReq_Click(object sender, EventArgs e)
         {
             Compras.frmListadoReqCotizacion frm = new frmListadoReqCotizacion();
-            frm.sOpcion = "COTIZ";
+          
             frm.ShowDialog();
 
             txtRequerimiento.Text = frm.vCodigoReq;
