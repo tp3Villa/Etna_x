@@ -208,13 +208,13 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
                 return; 
             }
 
-            int precioUnidadValida;
-            int descuentoValida;
+            double precioUnidadValida;
+            double descuentoValida;
             for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
             {
-              
-                precioUnidadValida = Convert.ToInt32(dataGridView1.Rows[i].Cells["precioUnidad"].Value.ToString());
-                descuentoValida = Convert.ToInt32(dataGridView1.Rows[i].Cells["descuento"].Value.ToString());
+
+                precioUnidadValida = Convert.ToDouble(dataGridView1.Rows[i].Cells["precioUnidad"].Value.ToString());
+                descuentoValida = Convert.ToDouble(dataGridView1.Rows[i].Cells["descuento"].Value.ToString());
 
                 if (precioUnidadValida <= 0  ) 
                  {
