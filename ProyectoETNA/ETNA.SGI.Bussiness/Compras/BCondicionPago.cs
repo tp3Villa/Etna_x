@@ -9,11 +9,8 @@ using System.Text;
 
 namespace ETNA.SGI.Bussiness.Compras
 {
-    public class BCondicionPago
+    public class BCondicionPago : BBase
     {
-
-        private DCondicionPago dCondicionPago = DCondicionPago.getInstance();
-
         private static BCondicionPago bCondicionPago;
 
         public static BCondicionPago getInstance()
@@ -24,6 +21,13 @@ namespace ETNA.SGI.Bussiness.Compras
             }
             return bCondicionPago;
         }
+
+        private CondicionPagoDAO dCondicionPago;
+
+        public BCondicionPago()
+        {
+            this.dCondicionPago = ObjFactoryDAO.getCondicionPagoDAO();
+        } 
 
         public DataTable DGetAllCondicionPago()
         {

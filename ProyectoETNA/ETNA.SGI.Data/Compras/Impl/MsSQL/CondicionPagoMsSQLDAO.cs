@@ -7,19 +7,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace ETNA.SGI.Data.Compras
+namespace ETNA.SGI.Data.Compras.Impl.MsSQL
 {
-    public class DCondicionPago
+    public class CondicionPagoMsSQLDAO : CondicionPagoDAO
     {
         private DConexion cn = new DConexion();
 
-        private static DCondicionPago dCondicionPago;
+        private static CondicionPagoDAO dCondicionPago;
 
-        public static DCondicionPago getInstance()
+        public static CondicionPagoDAO getInstance()
         {
             if (dCondicionPago == null)
             {
-                dCondicionPago = new DCondicionPago();
+                dCondicionPago = new CondicionPagoMsSQLDAO();
             }
             return dCondicionPago;
         }

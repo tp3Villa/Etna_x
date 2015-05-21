@@ -8,10 +8,8 @@ using System.Text;
 
 namespace ETNA.SGI.Bussiness.Compras
 {
-    public class BEstado
+    public class BEstado : BBase
     {
-
-        private DEstado dEstado = DEstado.getInstance();
 
         private static BEstado bEstado;
 
@@ -23,6 +21,13 @@ namespace ETNA.SGI.Bussiness.Compras
             }
             return bEstado;
         }
+
+        private EstadoDAO dEstado;
+
+        public BEstado()
+        {
+            this.dEstado = ObjFactoryDAO.getEstadoDAO();
+        } 
         
         public DataTable ObtenerListadoEstadoPorOrdenCompra()
         {

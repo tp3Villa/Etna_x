@@ -8,10 +8,8 @@ using System.Text;
 
 namespace ETNA.SGI.Bussiness.Compras
 {
-    public class BMoneda
+    public class BMoneda : BBase
     {
-
-        private DMoneda dMoneda = DMoneda.getInstance();
 
         private static BMoneda bMoneda;
 
@@ -23,7 +21,14 @@ namespace ETNA.SGI.Bussiness.Compras
             }
             return bMoneda;
         }
-        
+
+        private MonedaDAO dMoneda;
+
+        public BMoneda()
+        {
+            this.dMoneda = ObjFactoryDAO.getMonedaDAO();
+        } 
+
         public DataTable ObtenerListadoMoneda()
         {
             return dMoneda.DGetAllMoneda();

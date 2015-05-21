@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 
 
-namespace ETNA.SGI.Data.Compras
+namespace ETNA.SGI.Data.Compras.Impl.MsSQL
 {
-    public class DCotizacion
+    public class CotizacionMsSQLDAO : CotizacionDAO
     {
         private DConexion cn = new DConexion();
 
-        private static DCotizacion dCotizacion;
+        private static CotizacionDAO dCotizacion;
 
-        public static DCotizacion getInstance()
+        public static CotizacionDAO getInstance()
         {
             if (dCotizacion == null)
             {
-                dCotizacion = new DCotizacion();
+                dCotizacion = new CotizacionMsSQLDAO();
             }
             return dCotizacion;
         }

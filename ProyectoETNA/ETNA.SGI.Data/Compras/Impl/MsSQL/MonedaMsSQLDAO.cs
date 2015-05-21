@@ -6,19 +6,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace ETNA.SGI.Data.Compras
+namespace ETNA.SGI.Data.Compras.Impl.MsSQL
 {
-    public class DMoneda
+    public class MonedaMsSQLDAO : MonedaDAO
     {
         private DConexion cn = new DConexion();
 
-        private static DMoneda dMoneda;
+        private static MonedaDAO dMoneda;
 
-        public static DMoneda getInstance()
+        public static MonedaDAO getInstance()
         {
             if (dMoneda == null)
             {
-                dMoneda = new DMoneda();
+                dMoneda = new MonedaMsSQLDAO();
             }
             return dMoneda;
         }

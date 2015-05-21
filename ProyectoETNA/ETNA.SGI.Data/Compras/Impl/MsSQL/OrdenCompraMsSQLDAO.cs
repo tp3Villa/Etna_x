@@ -6,19 +6,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace ETNA.SGI.Data.Compras
+namespace ETNA.SGI.Data.Compras.Impl.MsSQL
 {
-    public class DOrdenCompra
+    public class OrdenCompraMsSQLDAO : OrdenCompraDAO
     {
         private DConexion cn = new DConexion();
 
-        private static DOrdenCompra dOrdenCompra;
+        private static OrdenCompraDAO dOrdenCompra;
 
-        public static DOrdenCompra getInstance()
+        public static OrdenCompraDAO getInstance()
         {
             if (dOrdenCompra == null)
             {
-                dOrdenCompra = new DOrdenCompra();
+                dOrdenCompra = new OrdenCompraMsSQLDAO();
             }
             return dOrdenCompra;
         }

@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 
 
-namespace ETNA.SGI.Data.Compras
+namespace ETNA.SGI.Data.Compras.Impl.MsSQL
 {
-    public class DRequerimientoCompra
+    public class RequerimientoCompraMsSQLDAO : RequerimientoCompraDAO
     {
 
         private DConexion cn = new DConexion();
 
-        private static DRequerimientoCompra dRequerimientoCompra;
+        private static RequerimientoCompraDAO dRequerimientoCompra;
 
-        public static DRequerimientoCompra getInstance()
+        public static RequerimientoCompraDAO getInstance()
         {
             if (dRequerimientoCompra == null)
             {
-                dRequerimientoCompra = new DRequerimientoCompra();
+                dRequerimientoCompra = new RequerimientoCompraMsSQLDAO();
             }
             return dRequerimientoCompra;
         }

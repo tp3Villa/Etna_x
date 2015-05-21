@@ -79,7 +79,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             dt.Columns["codMoneda"].ColumnMapping = MappingType.Hidden;
             dt.Columns["observacion"].ColumnMapping = MappingType.Hidden;
             dt.AcceptChanges();
-            dtGridOC.DataSource = dt;           
+            dtGridOC.DataSource = dt;            
         }
         
         private void dtGridOC_CellContentClick(object sender, DataGridViewCellEventArgs e)

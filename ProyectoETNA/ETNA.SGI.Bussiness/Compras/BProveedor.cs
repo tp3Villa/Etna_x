@@ -8,10 +8,8 @@ using System.Text;
 
 namespace ETNA.SGI.Bussiness.Compras
 {
-    public class BProveedor
+    public class BProveedor : BBase
     {
-        private DProveedor dProveedor = DProveedor.getInstance();
-
         private static BProveedor bProveedor;
 
         public static BProveedor getInstance()
@@ -21,7 +19,14 @@ namespace ETNA.SGI.Bussiness.Compras
                 bProveedor = new BProveedor();
             }
             return bProveedor;
-        }   
+        }
+
+        private ProveedorDAO dProveedor;
+
+        public BProveedor()
+        {
+            this.dProveedor = ObjFactoryDAO.getProveedorDAO();
+        } 
 
         public DataTable BCorrelativoProveedor()
         {

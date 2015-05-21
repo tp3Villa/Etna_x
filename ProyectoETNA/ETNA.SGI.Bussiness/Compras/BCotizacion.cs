@@ -8,10 +8,8 @@ using System.Text;
 
 namespace ETNA.SGI.Bussiness.Compras
 {
-    public class BCotizacion
+    public class BCotizacion : BBase
     {
-        private DCotizacion dCotizacion = DCotizacion.getInstance();
-
         private static BCotizacion bCotizacion;
 
         public static BCotizacion getInstance()
@@ -22,6 +20,13 @@ namespace ETNA.SGI.Bussiness.Compras
             }
             return bCotizacion;
         }
+
+        private CotizacionDAO dCotizacion;
+
+        public BCotizacion()
+        {
+            this.dCotizacion = ObjFactoryDAO.getCotizacionDAO();
+        } 
 
         public DataTable SelectLibre(string SQL)
         {

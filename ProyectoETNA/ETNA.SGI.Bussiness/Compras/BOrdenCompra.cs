@@ -8,10 +8,8 @@ using System.Text;
 
 namespace ETNA.SGI.Bussiness.Compras
 {
-    public class BOrdenCompra
+    public class BOrdenCompra : BBase
     {
-
-        private DOrdenCompra dOrdenCompra = DOrdenCompra.getInstance();
 
         private static BOrdenCompra bOrdenCompra;
 
@@ -23,6 +21,13 @@ namespace ETNA.SGI.Bussiness.Compras
             }
             return bOrdenCompra;
         }
+
+        private OrdenCompraDAO dOrdenCompra;
+
+        public BOrdenCompra()
+        {
+            this.dOrdenCompra = ObjFactoryDAO.getOrdenCompraDAO();
+        } 
 
         public DataTable ObtenerListadoOrdenCompra(EOrdenCompra EOrdenCompra)
         {

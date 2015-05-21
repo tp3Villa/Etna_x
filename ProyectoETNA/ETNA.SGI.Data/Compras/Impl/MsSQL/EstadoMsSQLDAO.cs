@@ -6,19 +6,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace ETNA.SGI.Data.Compras
+namespace ETNA.SGI.Data.Compras.Impl.MsSQL
 {
-    public class DEstado
+    public class EstadoMsSQLDAO : EstadoDAO
     {
         private DConexion cn = new DConexion();
 
-        private static DEstado dEstado;
+        private static EstadoDAO dEstado;
 
-        public static DEstado getInstance()
+        public static EstadoDAO getInstance()
         {
             if (dEstado == null)
             {
-                dEstado = new DEstado();
+                dEstado = new EstadoMsSQLDAO();
             }
             return dEstado;
         }

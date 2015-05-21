@@ -7,10 +7,8 @@ using System.Linq;
 using System.Text;
 namespace ETNA.SGI.Bussiness.Compras
 {
-    public class BRequerimientoCompra
+    public class BRequerimientoCompra : BBase
     {
-
-        private DRequerimientoCompra dRequerimientoCompra = DRequerimientoCompra.getInstance();
 
         private static BRequerimientoCompra bRequerimientoCompra;
 
@@ -22,6 +20,13 @@ namespace ETNA.SGI.Bussiness.Compras
             }
             return bRequerimientoCompra;
         }
+
+        private RequerimientoCompraDAO dRequerimientoCompra;
+
+        public BRequerimientoCompra()
+        {
+            this.dRequerimientoCompra = ObjFactoryDAO.getRequerimientoCompraDAO();
+        } 
 
         public DataTable ObtenerListadoRequerimientoCompraCotizacion(ERequerimientoCompra eRequerimientoCompra)
         {

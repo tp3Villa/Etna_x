@@ -6,19 +6,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace ETNA.SGI.Data.Compras
+namespace ETNA.SGI.Data.Compras.Impl.MsSQL
 {
-    public class DCategoria
+    public class CategoriaMsSQLDAO : CategoriaDAO
     {
         private DConexion cn = new DConexion();
 
-        private static DCategoria dCategoria;
+        private static CategoriaDAO dCategoria;
 
-        public static DCategoria getInstance()
+        public static CategoriaDAO getInstance()
         {
             if (dCategoria == null)
             {
-                dCategoria = new DCategoria();
+                dCategoria = new CategoriaMsSQLDAO();
             }
             return dCategoria;
         }
