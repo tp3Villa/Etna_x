@@ -48,7 +48,6 @@
     <Compile Include="Compras\MonedaDAO.cs" />
     <Compile Include="Compras\OrdenCompraDAO.cs" />
     <Compile Include="Compras\ProveedorDAO.cs" />
-    <Compile Include="Compras\RequerimientoCompraDAO.cs" />
     <Compile Include="Compras\Impl\MsSQL\CategoriaMsSQLDAO.cs" />
     <Compile Include="Compras\Impl\MsSQL\CondicionPagoMsSQLDAO.cs" />
     <Compile Include="Compras\Impl\MsSQL\EstadoMsSQLDAO.cs" />
@@ -57,6 +56,7 @@
     <Compile Include="Compras\Impl\MsSQL\OrdenCompraMsSQLDAO.cs" />
     <Compile Include="Compras\Impl\MsSQL\ProveedorMsSQLDAO.cs" />
     <Compile Include="Compras\Impl\MsSQL\RequerimientoCompraMsSQLDAO.cs" />
+    <Compile Include="Compras\RequerimientoCompraDAO.cs" />
     <Compile Include="DConexion.cs" />
     <Compile Include="Exportacion\DLogin.cs" />
     <Compile Include="Exportacion\DTablas.cs" />
