@@ -60,7 +60,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             {
                 try
                 {
-                    if (MessageBox.Show("Se procederá a aprobar la Cotización, desea continuar?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    if (MessageBox.Show("Se procederá a aprobar la cotización, desea continuar?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                     {
                         int p = dataGridView1.CurrentRow.Index;
 
