@@ -187,7 +187,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox6);
             this.Name = "frmListadoReqCotizacion";
-            this.Text = "frmListadoReqCotizacion";
+            this.Text = "Búsqueda de Requerimiento de Compra";
             this.Load += new System.EventHandler(this.frmListadoReqCotizacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
