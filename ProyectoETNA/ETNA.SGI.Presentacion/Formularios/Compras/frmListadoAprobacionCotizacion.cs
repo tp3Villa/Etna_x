@@ -66,7 +66,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
 
                         eCotizacion.CodCotizacion = Convert.ToInt32(dataGridView1.Rows[p].Cells["codCotizacion"].Value.ToString());
                         eCotizacion.CodEstado = 2;
-                        eCotizacion.UsuarioAprobacion = Program.Usuario;
+                        eCotizacion.UsuarioAprobacion = Program.Usuario.Trim();
+
                         eCotizacion.FechaAprobacion =  DateTime.Now;
                         
                         int exito = bCotizacion.DUpdateAprobacionCotizacion(eCotizacion);
