@@ -126,24 +126,22 @@ namespace ETNA.SGI.Presentacion.Formularios.Compras
             else if
                 (e.ColumnIndex == 1)
             {
-
-                if (MessageBox.Show("Esta seguro de eliminar la cotizacion selecccionada?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                {
-             
-            
-               int p = dtGridCot.CurrentRow.Index;
-               int i_codCotizacion = Convert.ToInt32(dtGridCot.Rows[p].Cells["codCotizacion"].Value.ToString());
-
-                 DataTable tblDetalle = new DataTable();
-                 tblDetalle = bCotizacion.ObtenerEstadoCotizacionPorId(i_codCotizacion);
+                int p = dtGridCot.CurrentRow.Index;
+                int i_codCotizacion = Convert.ToInt32(dtGridCot.Rows[p].Cells["codCotizacion"].Value.ToString());
+                
+                DataTable tblDetalle = new DataTable();
+                tblDetalle = bCotizacion.ObtenerEstadoCotizacionPorId(i_codCotizacion);
 
                 string estadoCotizacion = tblDetalle.Rows[0][0].ToString();
 
-                if (estadoCotizacion == "2") 
-                { 
+                if (estadoCotizacion == "2")
+                {
                     MessageBox.Show("No se puede eliminar una cotizacion aprobada ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return; 
+                    return;
                 }
+
+                if (MessageBox.Show("Esta seguro de eliminar la cotizacion selecccionada?", "Compras", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
 
                 int result = bCotizacion.EliminarCotizacion(i_codCotizacion);
                 MessageBox.Show("Cotizacion Eliminada correctamente ", "Compras", MessageBoxButtons.OK, MessageBoxIcon.Information);
