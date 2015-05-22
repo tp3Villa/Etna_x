@@ -8,9 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 
 
-using ETNA.SGI.Entity.Exportacion;
-using ETNA.SGI.Bussiness.Exportacion;
+using ETNA.SGI.Entity.Entidades.Exportacion;
+
 using System.Globalization;
+using ETNA.SGI.Bussiness.FabricaNegocio;
 
 namespace ETNA.SGI.Presentacion
 {
@@ -22,7 +23,7 @@ namespace ETNA.SGI.Presentacion
         }
 
         ELogin ObjEnt = new ELogin();
-        BLogin ObjBus = new BLogin();
+        //BLogin ObjBus = new BLogin();
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -37,7 +38,9 @@ namespace ETNA.SGI.Presentacion
             int nroUsuario = 0;
             try
             {
-                nroUsuario = ObjBus.BLogueo(ObjEnt).Rows.Count;
+                
+                //nroUsuario = ObjBus.BLogueo(ObjEnt).Rows.Count;
+                nroUsuario = FabricaNeg._instancia().ObtenerLogin().BLogueo(ObjEnt).Rows.Count;
             }
             catch (Exception ex)
             {
@@ -49,9 +52,9 @@ namespace ETNA.SGI.Presentacion
             {
                 try
                 {
-                    Program.Usuario = ObjBus.BLogueo(ObjEnt).Rows[0][0].ToString();
-                    Program.Nombre = ObjBus.BLogueo(ObjEnt).Rows[0][2].ToString();
-                    Program.CodCli = ObjBus.BLogueo(ObjEnt).Rows[0][5].ToString().Trim();
+                    Program.Usuario = FabricaNeg._instancia().ObtenerLogin().BLogueo(ObjEnt).Rows[0][0].ToString();
+                    Program.Nombre = FabricaNeg._instancia().ObtenerLogin().BLogueo(ObjEnt).Rows[0][2].ToString();
+                    Program.CodCli = FabricaNeg._instancia().ObtenerLogin().BLogueo(ObjEnt).Rows[0][5].ToString().Trim();
                 }
                 catch (Exception ex)
                 {
@@ -87,9 +90,7 @@ namespace ETNA.SGI.Presentacion
         }
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-
-            proLogin();           
-            
+            proLogin();
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -101,8 +102,8 @@ namespace ETNA.SGI.Presentacion
             textBox1.CharacterCasing = CharacterCasing.Upper;
             textBox2.CharacterCasing = CharacterCasing.Upper;
             textBox1.Focus();
-            textBox1.Text = "JPEREZ";
-            textBox2.Text = "123";
+            textBox1.Text = "ET22200";
+            textBox2.Text = "123456";
 
         }
 

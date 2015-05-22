@@ -8,8 +8,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using ETNA.SGI.Bussiness.Exportacion;
-using ETNA.SGI.Entity.Exportacion;
+using ETNA.SGI.Bussiness.ReglasNegocio.Exportacion;
+using ETNA.SGI.Entity.Entidades.Exportacion;
 
 
 

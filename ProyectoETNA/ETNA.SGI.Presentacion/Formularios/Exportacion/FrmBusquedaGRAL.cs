@@ -6,8 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ETNA.SGI.Bussiness.FabricaNegocio;
 
-using ETNA.SGI.Bussiness.Exportacion;
+
 
 namespace ETNA.SGI.Presentacion.Formularios.Exportacion
 {
@@ -33,7 +34,7 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
 
 
 
-        BTablas oBusTab = new BTablas();
+
         DataView dv = new DataView();
         DataTable dt = new DataTable();
        
@@ -77,8 +78,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
             Text = "Lista de Paises";
             lblBusqueda.Text = "Lista de Paises";
 
-            oBusTab = new BTablas();
-            dt = oBusTab.BPaises();
+            //oBusTab = new BTablas();
+            dt = FabricaNeg._instancia().ObtenerTablas().BPaises();
             dgvBusqueda.DataSource = dt;
 
             cboBusqueda.Items.Add("Cod.Pais");
@@ -107,8 +108,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
             Text = "Lista IATA";
             lblBusqueda.Text = "Lista IATA";
 
-            oBusTab = new BTablas();
-            dt = oBusTab.BPaisesIATA(cod_pai_IATA);
+            //oBusTab = new BTablas();
+            dt = FabricaNeg._instancia().ObtenerTablas().BPaisesIATA(cod_pai_IATA);
             dgvBusqueda.DataSource = dt;
 
             cboBusqueda.Items.Add("Cod.IATA");
@@ -136,8 +137,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
             Text = "Lista de Clientes";
             lblBusqueda.Text = "Lista de Clientes";
 
-            oBusTab = new BTablas();
-            dt = oBusTab.BClienteCodRaz();
+            //oBusTab = new BTablas();
+            dt = FabricaNeg._instancia().ObtenerTablas().BClienteCodRaz();
             dgvBusqueda.DataSource = dt;
 
             cboBusqueda.Items.Add("Cod.Cliente");
@@ -165,8 +166,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
             Text = "Lista de Producto";
             lblBusqueda.Text = "Lista de Producto";
 
-            oBusTab = new BTablas();
-            dt = oBusTab.BProducto();
+            //oBusTab = new BTablas();
+            dt = FabricaNeg._instancia().ObtenerTablas().BProducto();
             dgvBusqueda.DataSource = dt;
 
             cboBusqueda.Items.Add("Cod.Producto");

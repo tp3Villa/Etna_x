@@ -41,37 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compras\CategoriaDAO.cs" />
-    <Compile Include="Compras\CondicionPagoDAO.cs" />
-    <Compile Include="Compras\CotizacionDAO.cs" />
-    <Compile Include="Compras\EstadoDAO.cs" />
-    <Compile Include="Compras\MonedaDAO.cs" />
-    <Compile Include="Compras\OrdenCompraDAO.cs" />
-    <Compile Include="Compras\ProveedorDAO.cs" />
-    <Compile Include="Compras\Impl\MsSQL\CategoriaMsSQLDAO.cs" />
-    <Compile Include="Compras\Impl\MsSQL\CondicionPagoMsSQLDAO.cs" />
-    <Compile Include="Compras\Impl\MsSQL\EstadoMsSQLDAO.cs" />
-    <Compile Include="Compras\Impl\MsSQL\CotizacionMsSQLDAO.cs" />
-    <Compile Include="Compras\Impl\MsSQL\MonedaMsSQLDAO.cs" />
-    <Compile Include="Compras\Impl\MsSQL\OrdenCompraMsSQLDAO.cs" />
-    <Compile Include="Compras\Impl\MsSQL\ProveedorMsSQLDAO.cs" />
-    <Compile Include="Compras\Impl\MsSQL\RequerimientoCompraMsSQLDAO.cs" />
-    <Compile Include="Compras\RequerimientoCompraDAO.cs" />
-    <Compile Include="DConexion.cs" />
-    <Compile Include="Exportacion\DLogin.cs" />
-    <Compile Include="Exportacion\DTablas.cs" />
-    <Compile Include="Exportacion\DTransaccion.cs" />
-    <Compile Include="Factory\FactoryDAO.cs" />
-    <Compile Include="Factory\MsSQLFactoryDAO.cs" />
+    <Compile Include="FabricaAbstractaDAO\FabricaAbstracta.cs" />
+    <Compile Include="FabricaDAO\FabricaDAOSQL.cs" />
+    <Compile Include="PersistenciaSQL\DConexionSQL.cs" />
+    <Compile Include="PersistenciaSQL\Exportacion\daoLoginSQL.cs" />
+    <Compile Include="PersistenciaSQL\Exportacion\daoTablasSQL.cs" />
+    <Compile Include="PersistenciaSQL\Exportacion\daoTransaccionSQL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ETNA.SGI.Entity\ETNA.SGI.Entity.csproj">
       <Project>{9D5B3824-833F-413A-B2F7-15F37A5E645F}</Project>
       <Name>ETNA.SGI.Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ETNA.SGI.Propiedades\ETNA.SGI.Propiedades.csproj">
+      <Project>{B6C813C1-82AE-40DA-A193-6F79C49B756B}</Project>
+      <Name>ETNA.SGI.Propiedades</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

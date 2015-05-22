@@ -9,8 +9,8 @@ using System.Windows.Forms;
 using System.Diagnostics;
 
 
-using ETNA.SGI.Bussiness.Exportacion;
 
+using ETNA.SGI.Bussiness.FabricaNegocio;
 
 namespace ETNA.SGI.Presentacion
 {
@@ -22,7 +22,7 @@ namespace ETNA.SGI.Presentacion
         }
 
         Process pr = new Process();
-        BTablas objBusTab = new BTablas();
+        //BTablas objBusTab = new BTablas();
 
         DataTable dtOcpionesxUsuario = new DataTable();
         DataView dvOpcionesxUsuario = new DataView();
@@ -33,8 +33,8 @@ namespace ETNA.SGI.Presentacion
             stStrip01.Text = "Sistema ETNA      ";
             stStrip02.Text = "Usuario: " + Program.Usuario.Trim();
 
-            objBusTab = new BTablas();
-            dtOcpionesxUsuario = objBusTab.getSELECTLIBRE("select * from dbo.UsuMenu");
+            //objBusTab = new BTablas();
+            dtOcpionesxUsuario = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("select COD_USUARIO AS COD_USU,COD_OPCIONMENU AS cod_men from dbo.UsuMenu");
             dvOpcionesxUsuario = new DataView(dtOcpionesxUsuario, "cod_usu = '" + Program.Usuario.Trim() + "'", "", DataViewRowState.OriginalRows);
 
             CargaAutorizaciones();
@@ -55,12 +55,6 @@ namespace ETNA.SGI.Presentacion
                     string opcion = dvOpcionesxUsuario[i]["cod_men"].ToString().Trim();
                     string opcion1 = dvOpcionesxUsuario[i]["cod_men"].ToString().Trim() + "S";
                     string opcion2 = dvOpcionesxUsuario[i]["cod_men"].ToString().Trim() + "T";
-                    string opcion3 = dvOpcionesxUsuario[i]["cod_men"].ToString().Trim() + "C";
-
-                    // Para cargar opciones del modulo Compra
-                    // Ejemplo codigo: ETN010C
-                    try { item2.DropDownItems[opcion3].Visible = true; }
-                    catch { }
 
                     //if ((opcion!="RQG06") && (opcion!="RQG07"))
                     //{
@@ -81,7 +75,7 @@ namespace ETNA.SGI.Presentacion
                     try { item1.DropDownItems[opcion1].Visible = true; }
                     catch { }
                     try { item2.DropDownItems[opcion1].Visible = true; }
-                    catch { }                    
+                    catch { }
                     try { item3.DropDownItems[opcion1].Visible = true; }
                     catch { }
                     try { item4.DropDownItems[opcion1].Visible = true; }
@@ -178,39 +172,20 @@ namespace ETNA.SGI.Presentacion
             this.Cursor = Cursors.Default;   
         }
 
-        private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ETN04S_Click(object sender, EventArgs e)
         {
-            Formularios.Compras.frmListadoProveedor frm = SingletonFormProvider.GetInstance <Formularios.Compras.frmListadoProveedor>(this);
-            frm.Show();
+            this.Cursor = Cursors.WaitCursor;
+            Formularios.Exportacion.frmActualizarInfoRequerimiento frm = new Formularios.Exportacion.frmActualizarInfoRequerimiento();
+            frm.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
 
-        private void Exportacion_Click(object sender, EventArgs e)
+        private void ETN09S_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Formularios.Compras.frmListadoOrdenCompra frm = SingletonFormProvider.GetInstance <Formularios.Compras.frmListadoOrdenCompra>(this);
-            frm.Show();
-        }
-
-        private void Compras_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ETN03C_Click(object sender, EventArgs e)
-        {
-            Formularios.Compras.frmListadoCotizacion frm = SingletonFormProvider.GetInstance <Formularios.Compras.frmListadoCotizacion>(this);
-            frm.Show();
-        }
-
-        private void aprobacionCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           // Formularios.Compras.frmListadoAprobacionCotizacion frm = new Formularios.Compras.frmListadoAprobacionCotizacion();
-            Formularios.Compras.frmListadoAprobacionCotizacion frm = SingletonFormProvider.GetInstance <Formularios.Compras.frmListadoAprobacionCotizacion>(this);
-            frm.Show();
+            this.Cursor = Cursors.WaitCursor;
+            Formularios.Exportacion.frmCronogramaDespacho frm = new Formularios.Exportacion.frmCronogramaDespacho();
+            frm.ShowDialog();
+            this.Cursor = Cursors.Default;
         }
     }
 }

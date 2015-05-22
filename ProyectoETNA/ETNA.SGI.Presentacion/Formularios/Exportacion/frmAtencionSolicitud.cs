@@ -8,8 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 
 
-using ETNA.SGI.Bussiness.Exportacion;
+
 using System.Globalization;
+using ETNA.SGI.Bussiness.FabricaNegocio;
 
 namespace ETNA.SGI.Presentacion.Formularios.Exportacion
 {
@@ -22,8 +23,8 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
 
         
 
-        BTablas objBus = new BTablas();
-        BTransaccion objTra = new BTransaccion();
+        //BTablas objBus = new BTablas();
+        //BTransaccion objTra = new BTransaccion();
         DataTable dtSolicitud = new DataTable();
         public static Boolean Actualiza;
 
@@ -43,11 +44,11 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
         private void frmAtencionSolicitud_Load(object sender, EventArgs e)
         {
             dataGridView1.GridColor = Color.Red;
-            objBus = new BTablas();
-            dtSolicitud = objBus.getSELECTLIBRE("SELECT cod_solicitud,cod_cab_req_solicitud,razon_social,fec_reg_solicitud FROM SolicitudAtencion LEFT OUTER JOIN " +
-" Requerimiento ON (cod_cab_req_solicitud=Cod_Cab_Req) LEFT OUTER JOIN " +
-" cliente ON (cli_cab_req=Codigo) where estado_solicitud='A'");
-            dataGridView1.DataSource = dtSolicitud;
+            //objBus = new BTablas();
+            dtSolicitud = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT cod_solicitud,S.Cod_Cab_Req AS cod_cab_req_solicitud,razon_social,Convert(varchar(10), fec_reg_solicitud,103) AS fec_reg_solicitud FROM SolicitudAtencion AS S LEFT OUTER JOIN " +
+" Requerimiento AS R ON (S.Cod_Cab_Req=R.Cod_Cab_Req) LEFT OUTER JOIN " +
+" cliente AS C ON (R.Cod_Cliente=C.Cod_Cliente) where estado_solicitud='A'");
+            dataGridView1.DataSource = dtSolicitud;            
 
         }
 
@@ -59,20 +60,20 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
 
 
             dataGridView1.GridColor = Color.Red;
-            objBus = new BTablas();
-            dtSolicitud = objBus.getSELECTLIBRE("SELECT cod_solicitud,cod_cab_req_solicitud,razon_social,fec_reg_solicitud FROM SolicitudAtencion LEFT OUTER JOIN " +
-" Requerimiento ON (cod_cab_req_solicitud=Cod_Cab_Req) LEFT OUTER JOIN " +
-" cliente ON (cli_cab_req=Codigo) WHERE RAZON_SOCIAL LIKE '%" + razon + "%' AND fec_reg_solicitud BETWEEN " + Desde + " AND " + hasta + " and estado_solicitud='A'");
+            //objBus = new BTablas();
+            dtSolicitud = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT cod_solicitud,S.Cod_Cab_Req AS cod_cab_req_solicitud,razon_social,Convert(varchar(10), fec_reg_solicitud,103) AS fec_reg_solicitud FROM SolicitudAtencion AS S LEFT OUTER JOIN " +
+" Requerimiento AS R ON (S.Cod_Cab_Req=R.Cod_Cab_Req) LEFT OUTER JOIN " +
+" cliente AS C ON (R.Cod_Cliente=C.Cod_Cliente) WHERE RAZON_SOCIAL LIKE '%" + razon + "%' AND fec_reg_solicitud BETWEEN '" + Desde + "' AND '" + hasta + "' and estado_solicitud='A'");
             dataGridView1.DataSource = dtSolicitud;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             dataGridView1.GridColor = Color.Red;
-            objBus = new BTablas();
-            dtSolicitud = objBus.getSELECTLIBRE("SELECT cod_solicitud,cod_cab_req_solicitud,razon_social,fec_reg_solicitud FROM SolicitudAtencion LEFT OUTER JOIN " +
-" Requerimiento ON (cod_cab_req_solicitud=Cod_Cab_Req) LEFT OUTER JOIN " +
-" cliente ON (cli_cab_req=Codigo) where estado_solicitud='A'");
+            //objBus = new BTablas();
+            dtSolicitud = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT cod_solicitud,S.Cod_Cab_Req AS cod_cab_req_solicitud,razon_social,Convert(varchar(10), fec_reg_solicitud,103) AS fec_reg_solicitud FROM SolicitudAtencion AS S LEFT OUTER JOIN " +
+" Requerimiento AS R ON (S.Cod_Cab_Req=R.Cod_Cab_Req) LEFT OUTER JOIN  " +
+" cliente AS C ON (R.Cod_Cliente=C.Cod_Cliente) where estado_solicitud='A'");
             dataGridView1.DataSource = dtSolicitud;
             txtRazon.Text = "";
             txtRazon.Focus();
@@ -85,10 +86,10 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
             if (Actualiza == true)
             {
                 dataGridView1.GridColor = Color.Red;
-                objBus = new BTablas();
-                dtSolicitud = objBus.getSELECTLIBRE("SELECT cod_solicitud,cod_cab_req_solicitud,razon_social,fec_reg_solicitud FROM SolicitudAtencion LEFT OUTER JOIN " +
-    " Requerimiento ON (cod_cab_req_solicitud=Cod_Cab_Req) LEFT OUTER JOIN " +
-    " cliente ON (cli_cab_req=Codigo) where estado_solicitud='A'");
+                //objBus = new BTablas();
+                dtSolicitud = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT cod_solicitud,S.Cod_Cab_Req AS cod_cab_req_solicitud,razon_social,Convert(varchar(10), fec_reg_solicitud,103) AS fec_reg_solicitud FROM SolicitudAtencion AS S LEFT OUTER JOIN " +
+" Requerimiento AS R ON (S.Cod_Cab_Req=R.Cod_Cab_Req) LEFT OUTER JOIN  " +
+" cliente AS C ON (R.Cod_Cliente=C.Cod_Cliente) where estado_solicitud='A'");
                 dataGridView1.DataSource = dtSolicitud;
                 txtRazon.Text = "";
                 txtRazon.Focus();
@@ -140,30 +141,30 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
                     CodSoli = dataGridView1.Rows[p].Cells["cod_solicitud"].Value.ToString();
                     CodReq = dataGridView1.Rows[p].Cells["cod_cab_req_solicitud"].Value.ToString();
 
-                    if (MessageBox.Show("Se Anulara la Solicitud " + CodSoli, "Exportación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    if (MessageBox.Show("¿Desea Anular la Solicitud " + CodSoli + "?", "Exportación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                     {
                         //hacemos la reversa de todo sino se ha aprobado
                         int y = 0;
-                        objTra = new BTransaccion();
-                        y = objTra.BTransaccionVarias("UPDATE SolicitudAtencion SET estado_solicitud='E' WHERE cod_solicitud=" + CodSoli);
+                        //objTra = new BTransaccion();
+                        y = FabricaNeg._instancia().ObtenerTransaccion().BTransaccionVarias("UPDATE SolicitudAtencion SET estado_solicitud='E' WHERE cod_solicitud=" + CodSoli);
 
-                        objTra = new BTransaccion();
-                        y = objTra.BTransaccionVarias("DELETE FROM DocProdReq WHERE Doc_Req=" + CodReq);
+                        //objTra = new BTransaccion();
+                        y = FabricaNeg._instancia().ObtenerTransaccion().BTransaccionVarias("DELETE FROM DocProdReq WHERE Cod_Cab_Req=" + CodReq);
 
-                        objTra = new BTransaccion();
-                        y = objTra.BTransaccionVarias("UPDATE dbo.Requerimiento SET IATA_CAB_REQ='',EST_CAB_REQ='A' WHERE Cod_Cab_Req=" + CodReq);
+                        //objTra = new BTransaccion();
+                        y = FabricaNeg._instancia().ObtenerTransaccion().BTransaccionVarias("UPDATE dbo.Requerimiento SET IATA_CAB_REQ='',EST_CAB_REQ='A' WHERE Cod_Cab_Req=" + CodReq);
 
-                        objTra = new BTransaccion();
-                        y = objTra.BTransaccionVarias("UPDATE dbo.Requerimiento_Detalle SET CIF=0,FOB=0 WHERE Cod_Det_Req=" + CodReq);
+                        //objTra = new BTransaccion();
+                        y = FabricaNeg._instancia().ObtenerTransaccion().BTransaccionVarias("UPDATE dbo.Requerimiento_Detalle SET CIF=0,FOB=0 WHERE Cod_Det_Req=" + CodReq);
 
-                        MessageBox.Show("solicitud Anulada correctamente", "Exportación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Solicitud Anulada correctamente", "Exportación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                         dataGridView1.GridColor = Color.Red;
-                        objBus = new BTablas();
-                        dtSolicitud = objBus.getSELECTLIBRE("SELECT cod_solicitud,cod_cab_req_solicitud,razon_social,fec_reg_solicitud FROM SolicitudAtencion LEFT OUTER JOIN " +
-            " Requerimiento ON (cod_cab_req_solicitud=Cod_Cab_Req) LEFT OUTER JOIN " +
-            " cliente ON (cli_cab_req=Codigo) where estado_solicitud='A'");
+                        //objBus = new BTablas();
+                        dtSolicitud = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT cod_solicitud,S.Cod_Cab_Req AS cod_cab_req_solicitud,razon_social,Convert(varchar(10), fec_reg_solicitud,103) AS fec_reg_solicitud FROM SolicitudAtencion AS S LEFT OUTER JOIN " +
+" Requerimiento AS R ON (S.Cod_Cab_Req=R.Cod_Cab_Req) LEFT OUTER JOIN  " +
+" cliente AS C ON (R.Cod_Cliente=C.Cod_Cliente) where estado_solicitud='A'");
                         dataGridView1.DataSource = dtSolicitud;
                         txtRazon.Text = "";
                         txtRazon.Focus();

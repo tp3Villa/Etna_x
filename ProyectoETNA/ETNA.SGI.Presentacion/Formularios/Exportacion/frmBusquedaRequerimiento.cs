@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using ETNA.SGI.Bussiness.Exportacion;
+
 using System.Globalization;
+using ETNA.SGI.Bussiness.FabricaNegocio;
 
 namespace ETNA.SGI.Presentacion.Formularios.Exportacion
 {
@@ -20,13 +21,13 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
         }
 
 
-        BTablas objBus = new BTablas();
+        //BTablas objBus = new BTablas();
 
         private void frmBusquedaRequerimiento_Load(object sender, EventArgs e)
         {
             dgvRequerimiento.GridColor = Color.Red;
-            objBus = new BTablas();
-            dgvRequerimiento.DataSource = objBus.BRequerimientos();
+            //objBus = new BTablas();
+            dgvRequerimiento.DataSource = FabricaNeg._instancia().ObtenerTablas().BRequerimientos();
         }
 
 
@@ -64,16 +65,16 @@ namespace ETNA.SGI.Presentacion.Formularios.Exportacion
             decimal Desde = Convert.ToDecimal(dtDesde.Value.Year.ToString() + dtDesde.Value.Month.ToString("00", CultureInfo.InvariantCulture) + dtDesde.Value.Day.ToString("00", CultureInfo.InvariantCulture));
             decimal hasta = Convert.ToDecimal(dtHasta.Value.Year.ToString() + dtHasta.Value.Month.ToString("00", CultureInfo.InvariantCulture) + dtHasta.Value.Day.ToString("00", CultureInfo.InvariantCulture));
 
-            objBus = new BTablas();
-            dgvRequerimiento.DataSource = objBus.BRequerimientosBUSQUEDAANIDAD(cod, razon, Desde, hasta);
+            //objBus = new BTablas();
+            dgvRequerimiento.DataSource = FabricaNeg._instancia().ObtenerTablas().BRequerimientosBUSQUEDAANIDAD(cod, razon, Desde, hasta);
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             dgvRequerimiento.GridColor = Color.Red;
-            objBus = new BTablas();
-            dgvRequerimiento.DataSource = objBus.BRequerimientos();
+            //objBus = new BTablas();
+            dgvRequerimiento.DataSource = FabricaNeg._instancia().ObtenerTablas().BRequerimientos();
         }
     }
 }

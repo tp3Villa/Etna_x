@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using ETNA.SGI.Bussiness.Exportacion;
+using ETNA.SGI.Bussiness.ReglasNegocio.Exportacion;
 
 namespace ETNA.SGI.WebSite.PaginasWeb
 {

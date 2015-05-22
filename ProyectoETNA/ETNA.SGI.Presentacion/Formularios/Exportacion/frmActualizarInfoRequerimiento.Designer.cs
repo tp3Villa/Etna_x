@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -58,6 +59,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -125,6 +127,7 @@
             this.button3.TabIndex = 103;
             this.button3.Text = "Buscar";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button3, "Buscar Requerimiento");
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -135,7 +138,6 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(271, 20);
             this.txtCliente.TabIndex = 100;
-            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // label25
             // 
@@ -306,6 +308,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Nuevo";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button1, "Ingresar Nuevo Requerimiento");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -318,6 +321,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "Salir";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button5, "Salir");
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -388,5 +392,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Destino;
         private System.Windows.Forms.DataGridViewImageColumn editar;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

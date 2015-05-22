@@ -37,8 +37,18 @@
     <ApplicationIcon>APLICAC.ICO</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v10.2, Version=10.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,71 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Compras\frmBusquedaProveedor.cs">
+    <Compile Include="Formularios\Exportacion\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Compras\frmBusquedaProveedor.Designer.cs">
-      <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoAprobacionCotizacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoAprobacionCotizacion.Designer.cs">
-      <DependentUpon>frmListadoAprobacionCotizacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoProveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoProveedor.Designer.cs">
-      <DependentUpon>frmListadoProveedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoReqCotizacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoReqCotizacion.Designer.cs">
-      <DependentUpon>frmListadoReqCotizacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoRequerimientoCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoRequerimientoCompra.Designer.cs">
-      <DependentUpon>frmListadoRequerimientoCompra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmCotizacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmCotizacion.Designer.cs">
-      <DependentUpon>frmCotizacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoCondicionPago.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoCondicionPago.Designer.cs">
-      <DependentUpon>frmListadoCondicionPago.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoCotizacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoCotizacion.Designer.cs">
-      <DependentUpon>frmListadoCotizacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmProveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmProveedor.Designer.cs">
-      <DependentUpon>frmProveedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoOrdenCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmListadoOrdenCompra.Designer.cs">
-      <DependentUpon>frmListadoOrdenCompra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmOrdenCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Compras\frmOrdenCompra.Designer.cs">
-      <DependentUpon>frmOrdenCompra.cs</DependentUpon>
+    <Compile Include="Formularios\Exportacion\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Exportacion\frmActualizarInfoRequerimiento.cs">
       <SubType>Form</SubType>
@@ -157,6 +107,12 @@
     <Compile Include="Formularios\Exportacion\frmBusquedaRequerimiento.Designer.cs">
       <DependentUpon>frmBusquedaRequerimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Exportacion\frmCronogramaDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Exportacion\frmCronogramaDespacho.Designer.cs">
+      <DependentUpon>frmCronogramaDespacho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Exportacion\frmFormatoComercial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +136,12 @@
     </Compile>
     <Compile Include="Formularios\Exportacion\frmRegistroSolicitudAtencion.Designer.cs">
       <DependentUpon>frmRegistroSolicitudAtencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Exportacion\Reporte\frmReporteCronograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Exportacion\Reporte\frmReporteCronograma.Designer.cs">
+      <DependentUpon>frmReporteCronograma.cs</DependentUpon>
     </Compile>
     <Compile Include="frmConfiguracion.cs">
       <SubType>Form</SubType>
@@ -213,40 +175,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SingletonFormProvider.cs" />
-    <EmbeddedResource Include="Formularios\Compras\frmBusquedaProveedor.resx">
-      <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmListadoAprobacionCotizacion.resx">
-      <DependentUpon>frmListadoAprobacionCotizacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmListadoProveedor.resx">
-      <DependentUpon>frmListadoProveedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmListadoReqCotizacion.resx">
-      <DependentUpon>frmListadoReqCotizacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmListadoRequerimientoCompra.resx">
-      <DependentUpon>frmListadoRequerimientoCompra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmCotizacion.resx">
-      <DependentUpon>frmCotizacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmListadoCondicionPago.resx">
-      <DependentUpon>frmListadoCondicionPago.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmListadoCotizacion.resx">
-      <DependentUpon>frmListadoCotizacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmOrdenCompra.resx">
-      <DependentUpon>frmOrdenCompra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmProveedor.resx">
-      <DependentUpon>frmProveedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Compras\frmListadoOrdenCompra.resx">
-      <DependentUpon>frmListadoOrdenCompra.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Exportacion\frmActualizarInfoRequerimiento.resx">
       <DependentUpon>frmActualizarInfoRequerimiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +196,9 @@
     <EmbeddedResource Include="Formularios\Exportacion\frmBusquedaRequerimiento.resx">
       <DependentUpon>frmBusquedaRequerimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Exportacion\frmCronogramaDespacho.resx">
+      <DependentUpon>frmCronogramaDespacho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Exportacion\frmFormatoComercial.resx">
       <DependentUpon>frmFormatoComercial.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +210,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Exportacion\frmRegistroSolicitudAtencion.resx">
       <DependentUpon>frmRegistroSolicitudAtencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Exportacion\Reporte\CronogramaDespacho.rdlc" />
+    <EmbeddedResource Include="Formularios\Exportacion\Reporte\frmReporteCronograma.resx">
+      <DependentUpon>frmReporteCronograma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\TablasPrincipales\frmPaises.resx">
       <DependentUpon>frmPaises.cs</DependentUpon>
@@ -301,6 +236,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\ETNA.SGI.Entity.Entidades.Exportacion.eCronogramaDespacho.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -374,8 +310,6 @@
     <Content Include="Resources\BuscarAbonados.png" />
     <None Include="Resources\CALC1.ICO" />
     <Content Include="Resources\CALCULA.BMP" />
-    <None Include="Resources\Cancel__Red.png" />
-    <None Include="Resources\Cancel_Red_mini.png" />
     <Content Include="Resources\CIERRPER.BMP" />
     <Content Include="Resources\CLIENTES.bmp" />
     <Content Include="Resources\CLIENTES12.bmp" />
@@ -439,6 +373,7 @@
     <Content Include="Resources\TIPOCAMB12.BMP" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Formularios\Compras\" />
     <Folder Include="Formularios\Ventas\" />
   </ItemGroup>
   <ItemGroup>
@@ -454,6 +389,25 @@
       <Project>{5D9C7F95-E28A-40B8-A788-7293CF53A400}</Project>
       <Name>ETNA.SGI.Utils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

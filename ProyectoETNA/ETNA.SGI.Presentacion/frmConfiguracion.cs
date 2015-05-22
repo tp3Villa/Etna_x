@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using ETNA.SGI.Bussiness.Exportacion;
-using ETNA.SGI.Entity.Exportacion;
+
+using ETNA.SGI.Entity.Entidades.Exportacion;
 using ETNA.SGI.Utils;
+using ETNA.SGI.Bussiness.FabricaNegocio;
 
 
 
@@ -25,8 +26,8 @@ namespace ETNA.SGI.Presentacion.Formularios
 
 
         DataTable dtOcpionesxUsuario = new DataTable();
-        BTablas objBusTab = new BTablas();
-        BTransaccion objTra = new BTransaccion();
+        //BTablas objBusTab = new BTablas();
+        //BTransaccion objTra = new BTransaccion();
         ELogin eLogin = new ELogin();
         private void frmConfiguracion_Load(object sender, EventArgs e)
         {
@@ -44,8 +45,8 @@ namespace ETNA.SGI.Presentacion.Formularios
             }
 
             dgvUsuarios.GridColor = Color.Red;  
-            objBusTab = new BTablas();
-            dgvUsuarios.DataSource = objBusTab.getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
+            //objBusTab = new BTablas();
+            dgvUsuarios.DataSource = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
             dgvUsuarios.Columns["Cod_Usuario"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvUsuarios.Columns["Nom_Usuario"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvUsuarios.Columns["Tipo_Usuario"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -53,11 +54,11 @@ namespace ETNA.SGI.Presentacion.Formularios
 
 
             dgvUsuarios1.GridColor = Color.Red;
-            objBusTab = new BTablas();
-            dgvUsuarios1.DataSource = objBusTab.getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
+            //objBusTab = new BTablas();
+            dgvUsuarios1.DataSource = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
             int j = 0;
-            objBusTab = new BTablas();
-            DataTable dtOcpiones = objBusTab.getSELECTLIBRE("select cod_opcionmenu,des_opcionmenu from dbo.OpcMenu");
+            //objBusTab = new BTablas();
+            DataTable dtOcpiones = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("select cod_opcionmenu,des_opcionmenu from dbo.OpcMenu");
             while (j <= dtOcpiones.Rows.Count - 1)
             {
                 ListViewItem List;
@@ -66,8 +67,8 @@ namespace ETNA.SGI.Presentacion.Formularios
                 j += 1;
             }
 
-            objBusTab = new BTablas();
-            dtOcpionesxUsuario = objBusTab.getSELECTLIBRE("select * from dbo.UsuMenu");
+            //objBusTab = new BTablas();
+            dtOcpionesxUsuario = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("select COD_USUARIO AS cod_usu,COD_OPCIONMENU AS cod_men from dbo.UsuMenu");
         }
 
 
@@ -170,8 +171,8 @@ namespace ETNA.SGI.Presentacion.Formularios
 
             if (MessageBox.Show("Desea Eliminar Usuario", "Alm. Ing.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                objTra = new BTransaccion();
-                int i = objTra.DDeleteUSUARIO(Cod_Usuario1);
+                //objTra = new BTransaccion();
+                int i = FabricaNeg._instancia().ObtenerTransaccion().DDeleteUSUARIO(Cod_Usuario1);
                 if (i == 1)
                 {
                     MessageBox.Show("Eliminación Correcto", "Alm. Ing.", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -184,12 +185,12 @@ namespace ETNA.SGI.Presentacion.Formularios
 
 
             dgvUsuarios.GridColor = Color.Red;
-            objBusTab = new BTablas();
-            dgvUsuarios.DataSource = objBusTab.getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
+            //objBusTab = new BTablas();
+            dgvUsuarios.DataSource = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
 
             dgvUsuarios1.GridColor = Color.Red;
-            objBusTab = new BTablas();
-            dgvUsuarios1.DataSource = objBusTab.getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
+            //objBusTab = new BTablas();
+            dgvUsuarios1.DataSource = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
 
             rdb1.Enabled = false;
             rdb2.Enabled = false;
@@ -248,8 +249,8 @@ namespace ETNA.SGI.Presentacion.Formularios
                         if (rdb1.Checked == true) { eLogin.Tipo_Usuario = "E"; eLogin.Filler1 = ""; }
                         else { eLogin.Tipo_Usuario = "C"; eLogin.Filler1 = Filler11; }
                         eLogin.Estado_Usuario = "A";   
-                        objTra = new BTransaccion();
-                        int i = objTra.BInserUsuario(eLogin);
+                        //objTra = new BTransaccion();
+                        int i = FabricaNeg._instancia().ObtenerTransaccion().BInserUsuario(eLogin);
                         if (i == 1)
                         {
                             MessageBox.Show("Ingreso Correcto", "Exportación", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -265,8 +266,8 @@ namespace ETNA.SGI.Presentacion.Formularios
                 {
                     if (MessageBox.Show("Desea Modificar Usuario", "Alm. Ing.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                     {
-                        objTra = new BTransaccion();
-                        int i = objTra.DUpdateUSUARIO(Cod_Usuario1, "cod_usuario='" + txtUsu.Text.Trim() + "',pwd_usuario='" + txtPwd.Text.Trim() + "'");
+                        //objTra = new BTransaccion();
+                        int i = FabricaNeg._instancia().ObtenerTransaccion().DUpdateUSUARIO(Cod_Usuario1, "cod_usuario='" + txtUsu.Text.Trim() + "',pwd_usuario='" + txtPwd.Text.Trim() + "'");
                         if (i == 1)
                         {
                             MessageBox.Show("Modificación Correcta", "Alm. Ing.", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -281,12 +282,12 @@ namespace ETNA.SGI.Presentacion.Formularios
             catch { }
 
             dgvUsuarios.GridColor = Color.Red;
-            objBusTab = new BTablas();
-            dgvUsuarios.DataSource = objBusTab.getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
+            //objBusTab = new BTablas();
+            dgvUsuarios.DataSource = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
 
             dgvUsuarios1.GridColor = Color.Red;
-            objBusTab = new BTablas();
-            dgvUsuarios1.DataSource = objBusTab.getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
+            //objBusTab = new BTablas();
+            dgvUsuarios1.DataSource = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("SELECT * FROM USUARIO WHERE ESTADO_USUARIO='A'");
 
             rdb1.Enabled = false;
             rdb2.Enabled = false;
@@ -340,8 +341,8 @@ namespace ETNA.SGI.Presentacion.Formularios
 
             i = 0;
             k = 0;
-            objTra = new BTransaccion();
-            k = objTra.BDeleteUsuMenu(CodigoUsers);
+            //objTra = new BTransaccion();
+            k = FabricaNeg._instancia().ObtenerTransaccion().BDeleteUsuMenu(CodigoUsers);
             k = 0;
             while (i <= lvAccesos.Items.Count - 1)
             {
@@ -349,8 +350,8 @@ namespace ETNA.SGI.Presentacion.Formularios
                 {
                     k = 0;
                     opcion = lvAccesos.Items[i].Text.ToString().Trim();
-                    objTra = new BTransaccion();
-                    k = objTra.BInserUsuMenu(CodigoUsers, opcion);
+                    //objTra = new BTransaccion();
+                    k = FabricaNeg._instancia().ObtenerTransaccion().BInserUsuMenu(CodigoUsers, opcion);
                     flat = "1";
                 }
                 i += 1;
@@ -363,8 +364,8 @@ namespace ETNA.SGI.Presentacion.Formularios
             {
                 MessageBox.Show("Ingreso Correcto", "Alm. Ing.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            objBusTab = new BTablas();
-            dtOcpionesxUsuario = objBusTab.getSELECTLIBRE("select * from dbo.UsuMenu");
+            //objBusTab = new BTablas();
+            dtOcpionesxUsuario = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("select COD_USUARIO AS cod_usu,COD_OPCIONMENU AS cod_men from dbo.UsuMenu");
         }       
        
 
@@ -450,8 +451,8 @@ namespace ETNA.SGI.Presentacion.Formularios
             CodigoUsers = dgvUsuarios1.Rows[p].Cells["Cod_Usuario2"].Value.ToString().Trim();
             if (MessageBox.Show("Desea Eliminar Accesos Users.", "Alm. Ing.", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                objTra = new BTransaccion();
-                int i = objTra.BDeleteUsuMenu(CodigoUsers);
+                //objTra = new BTransaccion();
+                int i = FabricaNeg._instancia().ObtenerTransaccion().BDeleteUsuMenu(CodigoUsers);
                 if (i == 1)
                 {
                     MessageBox.Show("Eliminación Correcto", "Alm. Ing.", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -461,8 +462,8 @@ namespace ETNA.SGI.Presentacion.Formularios
                     MessageBox.Show("Fallo Eliminación", "Alm. Ing.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             } 
-            objBusTab = new BTablas();
-            dtOcpionesxUsuario = objBusTab.getSELECTLIBRE("select * from dbo.UsuMenu");
+            //objBusTab = new BTablas();
+            dtOcpionesxUsuario = FabricaNeg._instancia().ObtenerTablas().getSELECTLIBRE("select COD_USUARIO AS cod_usu,COD_OPCIONMENU AS cod_men from dbo.UsuMenu");
         }
     }
 }

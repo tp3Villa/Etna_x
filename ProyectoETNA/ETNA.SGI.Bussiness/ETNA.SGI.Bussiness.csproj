@@ -40,18 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BBase.cs" />
-    <Compile Include="Compras\BCategoria.cs" />
-    <Compile Include="Compras\BCondicionPago.cs" />
-    <Compile Include="Compras\BCotizacion.cs" />
-    <Compile Include="Compras\BMoneda.cs" />
-    <Compile Include="Compras\BOrdenCompra.cs" />
-    <Compile Include="Compras\BProveedor.cs" />
-    <Compile Include="Compras\BEstado.cs" />
-    <Compile Include="Compras\BRequerimientoCompra.cs" />
-    <Compile Include="Exportacion\BLogin.cs" />
-    <Compile Include="Exportacion\BTablas.cs" />
-    <Compile Include="Exportacion\BTransaccion.cs" />
+    <Compile Include="FabricaNegocio\FabricaNeg.cs" />
+    <Compile Include="ReglasNegocio\Exportacion\BLogin.cs" />
+    <Compile Include="ReglasNegocio\Exportacion\BTablas.cs" />
+    <Compile Include="ReglasNegocio\Exportacion\BTransaccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

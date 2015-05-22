@@ -1,0 +1,15 @@
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\bin\Debug\ETNA.SGI.Propiedades.dll.config
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\bin\Debug\ETNA.SGI.Propiedades.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\bin\Debug\ETNA.SGI.Propiedades.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\obj\Debug\ETNA.SGI.Propiedades.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\obj\Debug\ETNA.SGI.Propiedades.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\bin\Debug\ETNA.SGI.Propiedades.dll.config
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\bin\Debug\ETNA.SGI.Propiedades.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\bin\Debug\ETNA.SGI.Propiedades.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\obj\Debug\ETNA.SGI.Propiedades.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\obj\Debug\ETNA.SGI.Propiedades.pdb
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\bin\Debug\ETNA.SGI.Propiedades.dll.config
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\bin\Debug\ETNA.SGI.Propiedades.dll
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\bin\Debug\ETNA.SGI.Propiedades.pdb
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\obj\Debug\ETNA.SGI.Propiedades.dll
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Propiedades\obj\Debug\ETNA.SGI.Propiedades.pdb

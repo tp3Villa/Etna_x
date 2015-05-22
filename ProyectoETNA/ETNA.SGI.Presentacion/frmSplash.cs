@@ -24,5 +24,10 @@ namespace ETNA.SGI.Presentacion
             this.Visible = false;
             frm.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -56,6 +57,7 @@
             this.Deta = new System.Windows.Forms.DataGridViewImageColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Anular = new System.Windows.Forms.DataGridViewImageColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox6.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -190,6 +192,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "Salir";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button5, "Salir");
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -202,6 +205,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Limpiar";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button4, "Limpiar campos de Busqueda");
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -214,6 +218,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Nuevo";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button3, "Ingresar Nueva solicitud");
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -226,6 +231,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Buscar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button2, "Buscar Solicitud");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -289,7 +295,6 @@
             // fec_reg_solicitud
             // 
             this.fec_reg_solicitud.DataPropertyName = "fec_reg_solicitud";
-            dataGridViewCellStyle4.Format = "0000/00/00";
             dataGridViewCellStyle4.NullValue = null;
             this.fec_reg_solicitud.DefaultCellStyle = dataGridViewCellStyle4;
             this.fec_reg_solicitud.HeaderText = "Fecha Registro";
@@ -375,5 +380,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Deta;
         private System.Windows.Forms.DataGridViewImageColumn Modificar;
         private System.Windows.Forms.DataGridViewImageColumn Anular;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

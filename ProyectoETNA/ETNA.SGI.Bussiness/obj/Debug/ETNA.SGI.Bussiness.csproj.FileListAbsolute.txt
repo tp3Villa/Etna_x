@@ -43,39 +43,36 @@ C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussines
 C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.csprojResolveAssemblyReference.cache
 C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.dll
 C:\Users\User\Desktop\Terminar ETNA\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.pdb
-C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.dll
-C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.pdb
-C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.dll
-C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.dll
-C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.pdb
-C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.pdb
-C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.csprojResolveAssemblyReference.cache
-C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.dll
-C:\Users\Ricardo\Desktop\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.pdb
-C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.dll
-C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.pdb
-C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.dll
-C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.dll
-C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.pdb
-C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.pdb
-C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.csprojResolveAssemblyReference.cache
-C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.dll
-C:\App\visualstudio\UPC\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.pdb
-C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.dll
-C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.pdb
-C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.dll
-C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.dll
-C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.pdb
-C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.pdb
-C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.csprojResolveAssemblyReference.cache
-C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.dll
-C:\Users\hitss\Source\Repos\etnaRepository\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.pdb
-C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.dll
-C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.pdb
-C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.dll
-C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.dll
-C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.pdb
-C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.pdb
-C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.csprojResolveAssemblyReference.cache
-C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.dll
-C:\Users\hitss\Source\Repos\etnaRepository2\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.csprojResolveAssemblyReference.cache
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Propiedades.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Propiedades.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Propiedades.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Propiedades.pdb
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.csprojResolveAssemblyReference.cache
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.dll
+C:\Users\LAPDIER1\Desktop\Proyecto TP3\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.pdb
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.dll
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Bussiness.pdb
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.dll
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.dll
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Propiedades.dll
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Data.pdb
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Entity.pdb
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\bin\Debug\ETNA.SGI.Propiedades.pdb
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.dll
+C:\Users\User\Desktop\Proyecto TP3 Parcial\Presentacion Parcial\Proyecto ETNA\ProyectoETNA\ETNA.SGI.Bussiness\obj\Debug\ETNA.SGI.Bussiness.pdb

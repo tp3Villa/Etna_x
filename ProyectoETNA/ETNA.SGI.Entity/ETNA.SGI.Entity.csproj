@@ -40,21 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Compras\EOrdenCompraDetalle.cs" />
-    <Compile Include="Compras\ECategoria.cs" />
-    <Compile Include="Compras\ECondicionPago.cs" />
-    <Compile Include="Compras\ECotizacion.cs" />
-    <Compile Include="Compras\ECotizacionDetalle.cs" />
-    <Compile Include="Compras\EEstado.cs" />
-    <Compile Include="Compras\EMoneda.cs" />
-    <Compile Include="Compras\EOrdenCompra.cs" />
-    <Compile Include="Compras\EProveedor.cs" />
-    <Compile Include="Compras\ERequerimientoCompraDetalle.cs" />
-    <Compile Include="Compras\ERquerimientoCompra.cs" />
-    <Compile Include="Exportacion\ELogin.cs" />
-    <Compile Include="Exportacion\eReqCab.cs" />
-    <Compile Include="Exportacion\EReqDetalle.cs" />
+    <Compile Include="Entidades\Exportacion\eCronogramaDespacho.cs" />
+    <Compile Include="Entidades\Exportacion\ELogin.cs" />
+    <Compile Include="Entidades\Exportacion\eReqCab.cs" />
+    <Compile Include="Entidades\Exportacion\EReqDetalle.cs" />
+    <Compile Include="Interfaces\daoILogin.cs" />
+    <Compile Include="Interfaces\daoITablas.cs" />
+    <Compile Include="Interfaces\daoITransaccion.cs" />
+    <Compile Include="Interfaces\negILogin.cs" />
+    <Compile Include="Interfaces\negITablas.cs" />
+    <Compile Include="Interfaces\negITransaccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
