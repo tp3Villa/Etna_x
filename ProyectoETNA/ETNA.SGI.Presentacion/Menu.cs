@@ -180,7 +180,7 @@ namespace ETNA.SGI.Presentacion
 
         private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.Compras.frmListadoProveedor frm = new Formularios.Compras.frmListadoProveedor();
+            Formularios.Compras.frmListadoProveedor frm = SingletonFormProvider.GetInstance <Formularios.Compras.frmListadoProveedor>(this);
             frm.Show();
         }
 
@@ -191,7 +191,7 @@ namespace ETNA.SGI.Presentacion
 
         private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.Compras.frmListadoOrdenCompra frm = new Formularios.Compras.frmListadoOrdenCompra();
+            Formularios.Compras.frmListadoOrdenCompra frm = SingletonFormProvider.GetInstance <Formularios.Compras.frmListadoOrdenCompra>(this);
             frm.Show();
         }
 
@@ -202,13 +202,14 @@ namespace ETNA.SGI.Presentacion
 
         private void ETN03C_Click(object sender, EventArgs e)
         {
-            Formularios.Compras.frmListadoCotizacion frm = new Formularios.Compras.frmListadoCotizacion();
+            Formularios.Compras.frmListadoCotizacion frm = SingletonFormProvider.GetInstance <Formularios.Compras.frmListadoCotizacion>(this);
             frm.Show();
         }
 
         private void aprobacionCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.Compras.frmListadoAprobacionCotizacion frm = new Formularios.Compras.frmListadoAprobacionCotizacion();
+           // Formularios.Compras.frmListadoAprobacionCotizacion frm = new Formularios.Compras.frmListadoAprobacionCotizacion();
+            Formularios.Compras.frmListadoAprobacionCotizacion frm = SingletonFormProvider.GetInstance <Formularios.Compras.frmListadoAprobacionCotizacion>(this);
             frm.Show();
         }
     }

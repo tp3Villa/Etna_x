@@ -213,6 +213,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingletonFormProvider.cs" />
     <EmbeddedResource Include="Formularios\Compras\frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </EmbeddedResource>
